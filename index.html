@@ -32,8 +32,1180 @@
 <link rel="stylesheet" href="./base.css">
 <link rel="stylesheet" href="./style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DoNext",
+  "description": "Family events discovery for UK cities",
+  "url": "https://www.perplexity.ai/computer",
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+}
+</script>
 </head>
 <body>
-<p>DoNext — loading...</p>
+
+<!-- Skip to content -->
+<a href="#main-content" class="sr-only" style="position:absolute;top:var(--space-2);left:var(--space-2);z-index:9999;padding:var(--space-2) var(--space-4);background:var(--color-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--text-sm);" onfocus="this.style.display='block'" onblur="this.style.display=''">Skip to main content</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" role="banner" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#home" class="logo" aria-label="DoNext — go to homepage" data-nav="home">
+        <svg width="120" height="32" viewBox="0 0 120 32" fill="none" aria-label="DoNext" role="img">
+          <!-- "Do" pill background - emphasized action word -->
+          <rect x="0" y="4" width="46" height="24" rx="6" fill="currentColor" opacity="0.1"/>
+          <rect x="0" y="4" width="46" height="24" rx="6" fill="var(--color-primary)" opacity="0.18"/>
+          <!-- D -->
+          <path d="M8 10h5.5c3.5 0 6 2 6 6s-2.5 6-6 6H8V10zm3 2.5v7h2.2c1.8 0 3.2-1.1 3.2-3.5S15 12.5 13.2 12.5H11z" fill="var(--color-primary)"/>
+          <!-- o -->
+          <path d="M22.5 17.5c0-2.8 2-4.6 4.8-4.6s4.8 1.8 4.8 4.6-2 4.6-4.8 4.6-4.8-1.8-4.8-4.6zm7 0c0-1.5-.9-2.4-2.2-2.4s-2.2.9-2.2 2.4.9 2.4 2.2 2.4 2.2-.9 2.2-2.4z" fill="var(--color-primary)"/>
+          <!-- Forward arrow -->
+          <path d="M38 15.5l4 2-4 2" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- N -->
+          <path d="M52 10v12h2.8V14l5.2 8h2.8V10h-2.8v8l-5.2-8H52z" fill="currentColor"/>
+          <!-- e -->
+          <path d="M65 17.5c0-2.8 1.9-4.6 4.6-4.6 2.6 0 4.3 1.7 4.3 4.4 0 .3 0 .6-.05.9H67.6c.2 1.3 1 2 2.2 2 .9 0 1.6-.4 2-.9l1.8 1.2c-.8 1.1-2 1.8-3.8 1.8-2.9 0-4.8-1.8-4.8-4.8zm6.5-1.1c-.1-1.1-.8-1.8-1.9-1.8s-1.8.7-2 1.8h3.9z" fill="currentColor"/>
+          <!-- x -->
+          <path d="M75 13l3 4.5L75 22h3l1.5-2.3L81 22h3l-3-4.5 3-4.5h-3l-1.5 2.3L78 13h-3z" fill="currentColor"/>
+          <!-- t -->
+          <path d="M86.5 10.5V13H84v2.2h2.5v4.3c0 1.8.9 2.7 2.7 2.7.8 0 1.5-.2 2-.4l-.5-2c-.3.1-.6.2-.9.2-.6 0-.9-.3-.9-1v-3.8H91V13h-2.1v-2.5h-2.4z" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="#home" data-nav="home" class="active">Home</a></li>
+          <li><a href="#cardiff" data-nav="cardiff">Cardiff</a></li>
+          <li><a href="#about" data-nav="about">About</a></li>
+          <li><a href="#blog" data-nav="blog">Blog</a></li>
+          <li class="nav-cta"><a href="#join" data-nav="join">Join Club</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" id="mobile-menu-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#cardiff" data-nav="cardiff">Cardiff</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#blog" data-nav="blog">Blog</a>
+      <a href="#join" data-nav="join" style="color: var(--color-primary); font-weight: 600;">Join the Club →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============================================================
+       VIEW: HOME
+       ============================================================ -->
+  <div class="view active" id="view-home" role="region" aria-label="Homepage">
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-image-wrap">
+        <img
+          src="./assets/donext-hero.jpg"
+          alt="Family exploring a park with a castle in the background — a perfect DoNext day out"
+          width="1400"
+          height="680"
+          loading="eager"
+          decoding="async"
+        >
+        <div class="hero-content">
+          <span class="hero-label">Family Events · Cardiff · UK</span>
+          <h1 class="hero-title">Never run out of<br><em>ideas.</em></h1>
+          <p class="hero-subtitle">Curated family events, weather-smart day plans, and hidden gems — delivered fresh every morning to your inbox.</p>
+          <div class="hero-actions">
+            <a href="#cardiff" class="btn btn-primary btn--lg" data-nav="cardiff">
+              Explore Cardiff
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#join" class="btn btn-ghost btn--lg" data-nav="join" style="color: #fff; border-color: rgba(255,255,255,0.35);">
+              Join free
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- City selector -->
+    <section class="section section--alt" aria-labelledby="cities-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Now & Coming Soon</span>
+          <h2 class="section-title" id="cities-heading">Choose your city</h2>
+          <p class="section-desc">DoNext launches city by city — going deep, not wide. Cardiff is live. Your city is coming.</p>
+        </div>
+        <div class="city-grid" data-reveal>
+          <a href="#cardiff" class="city-card city-card--active" data-nav="cardiff" data-reveal="1">
+            <span class="city-card__badge city-card__badge--live">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Live now
+            </span>
+            <div class="city-card__name">Cardiff</div>
+            <div class="city-card__desc">Wales' capital — packed with free museums, landmark parks, and outdoor adventures.</div>
+          </a>
+          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="2">
+            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
+            <div class="city-card__name">Bristol</div>
+            <div class="city-card__desc">Harbourside culture, gorge walks, and the most creative city in the South West.</div>
+          </div>
+          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="3">
+            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
+            <div class="city-card__name">Manchester</div>
+            <div class="city-card__desc">Museums, markets, and more family-friendly culture than you could ever exhaust.</div>
+          </div>
+          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="4">
+            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
+            <div class="city-card__name">Edinburgh</div>
+            <div class="city-card__desc">Castles, hills, and storytelling around every corner. A city built for wonder.</div>
+          </div>
+          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="5">
+            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
+            <div class="city-card__name">Birmingham</div>
+            <div class="city-card__desc">Canals, chocolate, science museums and the UK's most diverse family food scene.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <span class="section-label">The DoNext Method</span>
+          <h2 class="section-title" id="how-heading">How DoNext works</h2>
+          <p class="section-desc">Every morning, our editorial team scours local listings, community boards, and hidden gems so you don't have to.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card" data-reveal="1">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div class="step-title">We find it</div>
+            <p class="step-desc">Every morning our team scours dozens of local sources — council pages, community groups, museum listings — to unearth the best events for the day ahead.</p>
+          </div>
+          <div class="step-card" data-reveal="2">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="step-title">You pick it</div>
+            <p class="step-desc">Browse our curated shortlist for today or this weekend. Filter by age, budget, indoor or outdoor — and save anything that looks good.</p>
+          </div>
+          <div class="step-card" data-reveal="3">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="step-title">You go do it</div>
+            <p class="step-desc">We give you everything you need — directions, tips, what to bring, and backup options if the weather turns. Just grab your coat and go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof strip -->
+    <div class="proof-strip" role="complementary" aria-label="Social proof">
+      <div class="container">
+        <span class="proof-strip__number">500+</span>
+        <span class="proof-strip__text">Cardiff families trust DoNext every week. <a href="#join" data-nav="join" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-weight: 600;">Join them free →</a></span>
+      </div>
+    </div>
+
+    <!-- Email CTA -->
+    <section class="section signup-section" aria-labelledby="signup-heading">
+      <div class="container">
+        <div class="signup-card">
+          <span class="section-label">Free weekly guide</span>
+          <h2 class="section-title" id="signup-heading">Get your city in your inbox</h2>
+          <p class="section-desc">The best events for this week, curated fresh every Monday morning. No spam. Unsubscribe any time.</p>
+          <form class="signup-form" onsubmit="return false;" role="form" aria-label="Email signup">
+            <label for="email-home" class="sr-only">Email address</label>
+            <input type="email" id="email-home" placeholder="your@email.com" autocomplete="email" required>
+            <button type="submit" class="btn btn-primary">Get free guide</button>
+          </form>
+          <p class="signup-note">Join 500+ Cardiff families. No spam. One morning email, once a week.</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end #view-home -->
+
+
+  <!-- ============================================================
+       VIEW: CARDIFF
+       ============================================================ -->
+  <div class="view" id="view-cardiff" role="region" aria-label="Cardiff city page">
+
+    <!-- Cardiff Hero -->
+    <section class="cardiff-hero" aria-label="Cardiff hero">
+      <div class="cardiff-hero-image-wrap">
+        <img
+          src="./assets/donext-cardiff.png"
+          alt="Cardiff cityscape panorama showing the castle and bay — your DoNext playground"
+          width="1400"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="cardiff-hero-content">
+          <span class="hero-label">DoNext · Cardiff Edition</span>
+          <h1 class="hero-title" style="font-size: var(--text-xl);">What's on in Cardiff<br>this week</h1>
+          <p class="hero-subtitle" style="font-size: var(--text-sm);">Curated events for families with children aged 0–12. Updated every morning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cardiff content -->
+    <section class="section" aria-label="Cardiff events">
+      <div class="container">
+
+        <!-- Weather Bar -->
+        <div class="weather-bar" aria-label="5-day Cardiff weather forecast">
+          <div class="weather-bar__title">5-Day Cardiff Forecast</div>
+          <div class="weather-days" role="list">
+            <div class="weather-day" role="listitem" aria-label="Wednesday: Sunny intervals, high 14°C">
+              <div class="weather-day__name">Wed</div>
+              <div class="weather-day__icon" role="img" aria-label="Sunny intervals">🌤️</div>
+              <div class="weather-day__temp">14°</div>
+              <div class="weather-day__low">5°</div>
+              <div class="weather-day__rain">0%</div>
+            </div>
+            <div class="weather-day" role="listitem" aria-label="Thursday: Drizzle, high 15°C">
+              <div class="weather-day__name">Thu</div>
+              <div class="weather-day__icon" role="img" aria-label="Drizzle">🌦️</div>
+              <div class="weather-day__temp">15°</div>
+              <div class="weather-day__low">7°</div>
+              <div class="weather-day__rain" style="color:var(--color-warning);">52%</div>
+            </div>
+            <div class="weather-day" role="listitem" aria-label="Friday: Cloudy, high 11°C">
+              <div class="weather-day__name">Fri</div>
+              <div class="weather-day__icon" role="img" aria-label="Thick cloud">☁️</div>
+              <div class="weather-day__temp">11°</div>
+              <div class="weather-day__low">5°</div>
+              <div class="weather-day__rain" style="color:var(--color-warning);">38%</div>
+            </div>
+            <div class="weather-day" role="listitem" aria-label="Saturday: Sunny intervals, high 12°C">
+              <div class="weather-day__name">Sat</div>
+              <div class="weather-day__icon" role="img" aria-label="Partly cloudy">⛅</div>
+              <div class="weather-day__temp">12°</div>
+              <div class="weather-day__low">6°</div>
+              <div class="weather-day__rain" style="color:var(--color-warning);">40%</div>
+            </div>
+            <div class="weather-day" role="listitem" aria-label="Sunday: Light rain, high 13°C">
+              <div class="weather-day__name">Sun</div>
+              <div class="weather-day__icon" role="img" aria-label="Light rain">🌧️</div>
+              <div class="weather-day__temp">13°</div>
+              <div class="weather-day__low">7°</div>
+              <div class="weather-day__rain" style="color:var(--color-warning);">45%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Gems -->
+        <div class="events-section" aria-labelledby="hidden-gems-heading">
+          <div class="events-section-header">
+            <h2 class="events-section-title" id="hidden-gems-heading">Hidden Gems</h2>
+            <span class="events-section-badge badge--gem">Under the radar</span>
+          </div>
+          <div class="event-list" role="list">
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Little Explorers Forest School</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Every Wed 9:30–10:30am
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    The Cathedral School, Llandaff
+                  </span>
+                </div>
+                <p class="event-card__desc">Yurt storytelling, outdoor activities, and proper muddy fun for little ones. One of Cardiff's most loved weekly sessions for the under-4s.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">£12</div>
+                <div class="event-card__age">Ages 2–4</div>
+                <a href="https://www.google.com/search?q=Little+Explorers+Forest+School+Cardiff" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Info
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Carry On Screaming: Parent &amp; Baby Cinema</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Fri 6 Mar, 2:15pm
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Chapter Arts Centre, Canton
+                  </span>
+                </div>
+                <p class="event-card__desc">A film for grown-ups, baby-friendly volume and lighting. Nappy changing, feeding-friendly seating. Chapter's beloved new-parent institution.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">£5–£9</div>
+                <div class="event-card__age">Adults + babies under 1</div>
+                <a href="https://www.chapter.org" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Book
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Wildlife Crafts — Cardiff Library Hubs</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Wed 4 Mar (Ely &amp; Caerau) · Thu 5 Mar (Fairwater)
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Cardiff Library Hubs
+                  </span>
+                </div>
+                <p class="event-card__desc">Drop-in wildlife-themed crafts at local libraries. Perfect for a weekday afternoon — totally free, no booking needed.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free</div>
+                <div class="event-card__age">All ages</div>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Mother's Day Card Making</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    9–14 March · Multiple locations
+                  </span>
+                </div>
+                <p class="event-card__desc">Make a heartfelt card across multiple Cardiff community hubs. All materials provided. A lovely seasonal craft for any age.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free</div>
+                <div class="event-card__age">All ages</div>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Family Silent Disco</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Sat 28 Mar
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    National Museum Cardiff
+                  </span>
+                </div>
+                <p class="event-card__desc">Sold out — but the waitlist is worth joining. Wireless headphones in a world-class museum. Kids absolutely love this one.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">From £13.70</div>
+                <div class="event-card__age">Ages 5+</div>
+                <a href="https://www.museumwales.ac.uk/cardiff" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Waitlist
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Reliable Anchors -->
+        <div class="events-section" aria-labelledby="anchors-heading">
+          <div class="events-section-header">
+            <h2 class="events-section-title" id="anchors-heading">Reliable Anchors</h2>
+            <span class="events-section-badge badge--anchor">Always worth it</span>
+          </div>
+          <div class="event-list" role="list">
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Museum of the Moon</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Opens 10 March
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    National Museum Cardiff
+                  </span>
+                </div>
+                <p class="event-card__desc">A breathtaking 7-metre lunar installation using NASA imagery. Walking underneath it is genuinely awe-inspiring — one of the best free family experiences in Wales this season.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free</div>
+                <div class="event-card__age">All ages</div>
+                <a href="https://www.museumwales.ac.uk/cardiff" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Info
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">St Fagans — Lambing Season</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Daily through March
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    St Fagans, Cardiff
+                  </span>
+                </div>
+                <p class="event-card__desc">Newborn lambs, 50 historic buildings, and acres of meadow to roam. Museum entry is free — just pay for parking (£7). An unmissable spring ritual for Cardiff families.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free entry</div>
+                <div class="event-card__age">All ages</div>
+                <a href="https://www.museumwales.ac.uk/stfagans/" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Info
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Walk for Wales: Family Group Walk</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Sun 8 Mar, 11am
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Bute Park
+                  </span>
+                </div>
+                <p class="event-card__desc">Buggy-friendly group walk through Bute Park finishing with free Welsh cakes. A lovely Sunday community event with great vibes.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free</div>
+                <div class="event-card__age">All ages</div>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Techniquest</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Daily
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Cardiff Bay
+                  </span>
+                </div>
+                <p class="event-card__desc">100+ hands-on science exhibits. A guaranteed good time regardless of weather, and one of the best science centres in Wales.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">Family £29</div>
+                <div class="event-card__age">Ages 4+</div>
+                <a href="https://www.techniquest.org" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Book
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Cardiff Castle</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Daily
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    City Centre
+                  </span>
+                </div>
+                <p class="event-card__desc">The city's most iconic landmark. Victorian Gothic apartments, Roman walls, and a clock tower that kids absolutely love climbing. Under 5s are free.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">From £9.25</div>
+                <div class="event-card__age">Under 5s free</div>
+                <a href="https://www.cardiffcastle.com" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Book
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- DIY Adventures -->
+        <div class="events-section" aria-labelledby="diy-heading">
+          <div class="events-section-header">
+            <h2 class="events-section-title" id="diy-heading">DIY Adventures</h2>
+            <span class="events-section-badge badge--diy">No booking needed</span>
+          </div>
+          <div class="event-list" role="list">
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Cardiff Bay Treasure Trail</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l2 2"/></svg>
+                    Self-paced · ~3 hours
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Cardiff Bay
+                  </span>
+                </div>
+                <p class="event-card__desc">A self-guided detective walk around the Bay. Solve clues, find landmarks, and discover hidden stories. 2.2 miles — perfect for kids who like a mission.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">From £9.99</div>
+                <div class="event-card__age">Ages 6+</div>
+                <a href="https://www.treasuretrails.co.uk" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Buy
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Cardiff Scavenger Hunt (Let's Roam)</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20"/><path d="M12 8v4l2 2"/></svg>
+                    App-based · Any time
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    City Centre
+                  </span>
+                </div>
+                <p class="event-card__desc">Download the app and explore Cardiff with trivia challenges, photo tasks, and hidden history. One price for the whole group — brilliant value.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost">~£13/group</div>
+                <div class="event-card__age">Ages 8+</div>
+                <a href="https://www.letsroam.com" class="event-card__link" target="_blank" rel="noopener noreferrer">
+                  Start
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-card__main">
+                <div class="event-card__name">Bute Park Free Play</div>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20"/><path d="M12 8v4l2 2"/></svg>
+                    Daily · Dawn to dusk
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    City Centre
+                  </span>
+                </div>
+                <p class="event-card__desc">Spring daffodils, a sculpture trail, climbable trees, and acres of space. The beating green heart of Cardiff — always free, always beautiful.</p>
+              </div>
+              <div class="event-card__side">
+                <div class="event-card__cost event-card__cost--free">Free</div>
+                <div class="event-card__age">All ages</div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Sample Day Plan -->
+        <div class="day-plan" aria-labelledby="day-plan-heading">
+          <div class="day-plan__title" id="day-plan-heading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Sample Day Plan: Rainy Thursday Indoor Day
+          </div>
+          <div class="timeline" role="list">
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-time">10:00 AM</div>
+              <div class="timeline-content">
+                <div class="timeline-name">National Museum Cardiff</div>
+                <div class="timeline-detail">Dinosaurs, fossils, art. Free entry. Give yourselves 1.5 hours — the kids will want longer.</div>
+              </div>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-time">11:30 AM</div>
+              <div class="timeline-content">
+                <div class="timeline-name">Pettigrew Tea Rooms</div>
+                <div class="timeline-detail">A proper independent cafe at the Bute Park entrance. Warm, child-friendly, great coffee. Budget ~£10.</div>
+              </div>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-time">1:30 PM</div>
+              <div class="timeline-content">
+                <div class="timeline-name">Techniquest, Cardiff Bay</div>
+                <div class="timeline-detail">100+ hands-on science exhibits. The Planetarium is an extra but worth it. Allow 2 hours minimum.</div>
+              </div>
+            </div>
+            <div class="timeline-item" role="listitem">
+              <div class="timeline-time">3:45 PM</div>
+              <div class="timeline-content">
+                <div class="timeline-name">Hot chocolate at Mermaid Quay</div>
+                <div class="timeline-detail">Watch the harbour lights come on as the afternoon winds down. Perfect ending.</div>
+              </div>
+            </div>
+          </div>
+          <div class="day-plan__cost">
+            <span class="day-plan__cost-label">Estimated family cost</span>
+            <span class="day-plan__cost-value">~£50</span>
+          </div>
+        </div>
+
+        <!-- Cardiff signup -->
+        <div style="padding-top: clamp(var(--space-10), 6vw, var(--space-16));">
+          <div class="signup-card" style="max-width: 100%;">
+            <span class="section-label">Cardiff Morning Brief</span>
+            <h2 class="section-title" style="font-size: var(--text-xl);">Get Cardiff events in your inbox every morning</h2>
+            <p class="section-desc" style="margin-inline: auto;">What's on today, what the weather's doing, and one brilliant suggestion you hadn't thought of.</p>
+            <form class="signup-form" onsubmit="return false;" style="margin-top: var(--space-6);">
+              <label for="email-cardiff" class="sr-only">Email address</label>
+              <input type="email" id="email-cardiff" placeholder="your@email.com" autocomplete="email">
+              <button type="submit" class="btn btn-primary">Subscribe free</button>
+            </form>
+            <p class="signup-note">One email per morning. Free forever.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- end #view-cardiff -->
+
+
+  <!-- ============================================================
+       VIEW: ABOUT
+       ============================================================ -->
+  <div class="view" id="view-about" role="region" aria-label="About DoNext">
+
+    <section class="about-hero section" aria-label="About hero">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The story</span>
+          <h1 class="section-title">Built by parents,<br>for parents</h1>
+          <p class="section-desc">DoNext started as a family problem. Sunday evening, nothing planned, two kids climbing the walls.</p>
+        </div>
+        <img
+          src="./assets/donext-about.jpg"
+          alt="A parent relaxing on a sofa discovering family activities on their phone with DoNext"
+          class="about-hero-image"
+          width="960"
+          height="480"
+          decoding="async"
+        >
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="about-what-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="section-label">What is DoNext?</span>
+            <h2 class="section-title" id="about-what-heading">Your family's daily ideas engine</h2>
+            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; margin-bottom: var(--space-5);">DoNext is a curated family events discovery service for UK cities. Every morning, we scour local council pages, museum listings, community groups, Facebook events, and neighbourhood message boards — so you don't have to.</p>
+            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">We don't just list what's on. We editorially select the best — weigh them against the week's weather — and deliver them in plain language, straight to your inbox.</p>
+          </div>
+          <div class="about-block">
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <div class="about-feature__title">Editorial curation, not an algorithm</div>
+              <p class="about-feature__text">Real humans read the listings and make real editorial judgements. We're looking for the unexpected — the community forest school, the free museum morning, the pop-up that won't appear on any tourist website.</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="about-feature__title">Weather-smart recommendations</div>
+              <p class="about-feature__text">We check the forecast and adjust every morning. Rainy Thursday? Here are five brilliant indoor options. Sunny Sunday? Time to get outside.</p>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="about-feature__title">Age-appropriate for 0–12</div>
+              <p class="about-feature__text">Every event is tagged with the age range that will genuinely enjoy it. We never recommend a toddler group to an 8-year-old, or a forest school to a teenager.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-heading">
+      <div class="container container--narrow">
+        <span class="section-label">Why we built this</span>
+        <h2 class="section-title" id="why-heading">Parents shouldn't have to spend hours finding something to do</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-5); margin-top: var(--space-8);">
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">The information is out there — scattered across 47 different websites, five council pages, three Facebook groups, and a WhatsApp message someone sent you three weeks ago. No parent has time for that.</p>
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">DoNext started as a text message between two parents: "what are you doing this weekend?" It turned into a shared spreadsheet. Then a weekly email to twelve friends. Then a city service.</p>
+          <p style="font-size: var(--text-base); color: var(--color-text); line-height: 1.7; font-weight: 500; font-family: var(--font-display); font-size: var(--text-lg); font-style: italic;">"We believe every family in every UK city deserves to know what's brilliant and free and happening in their neighbourhood this weekend."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <span class="section-label">The team</span>
+          <h2 class="section-title" id="team-heading">Made with love in Cardiff</h2>
+          <p class="section-desc">We're a small team of parents, writers, and local experts. We live in the cities we cover. Our kids go to the events we recommend.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: var(--space-4); max-width: 640px; margin-inline: auto;">
+          <div class="step-card">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--color-primary-light); display: flex; align-items: center; justify-content: center; color: var(--color-primary); font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg);">M</div>
+            <div class="step-title">Matt</div>
+            <p class="step-desc">Co-founder. Dad of two. Former journalist. Started DoNext because he kept missing the good stuff.</p>
+          </div>
+          <div class="step-card">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--color-accent-highlight); display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg);">S</div>
+            <div class="step-title">Sara</div>
+            <p class="step-desc">Cardiff editor. Mum of three. Knows every free museum morning in the city by heart.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end #view-about -->
+
+
+  <!-- ============================================================
+       VIEW: JOIN
+       ============================================================ -->
+  <div class="view" id="view-join" role="region" aria-label="Join DoNext Club">
+
+    <section class="join-hero" aria-label="Join hero">
+      <div class="container">
+        <div class="coming-soon-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Coming Soon
+        </div>
+        <h1 class="section-title" style="font-size: var(--text-2xl); max-width: 18ch; margin-inline: auto;">The DoNext Club is almost here</h1>
+        <p class="section-desc">We're putting the finishing touches on a membership that makes family weekends genuinely easier, richer, and more adventurous.</p>
+        <form class="signup-form" onsubmit="return false;" style="justify-content: center; margin-top: var(--space-8);">
+          <label for="email-join" class="sr-only">Email address</label>
+          <input type="email" id="email-join" placeholder="your@email.com" autocomplete="email">
+          <button type="submit" class="btn btn-primary btn--lg">Join the waitlist</button>
+        </form>
+        <p class="signup-note" style="margin-top: var(--space-4);">First 200 members get founding member pricing. No spam, ever.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="perks-heading">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <span class="section-label">DoNext Club</span>
+          <h2 class="section-title" id="perks-heading">What members get</h2>
+        </div>
+        <div class="perks-grid">
+          <div class="perk-card">
+            <div class="perk-card__icon">🌟</div>
+            <div class="perk-card__title">Early access to sold-out events</div>
+            <p class="perk-card__text">Members get 48-hour priority access before events go public — including the ones that always sell out in minutes.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-card__icon">🎟️</div>
+            <div class="perk-card__title">Exclusive member discounts</div>
+            <p class="perk-card__text">Negotiated deals with Cardiff's best family attractions — museums, cafes, activity centres, and experiences.</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-card__icon">🗺️</div>
+            <div class="perk-card__title">Weather-proof day plans</div>
+            <p class="perk-card__text">Full curated itineraries built around the week's forecast — rainy day, sunny day, or "we have 2 hours and a buggy".</p>
+          </div>
+          <div class="perk-card">
+            <div class="perk-card__icon">🔮</div>
+            <div class="perk-card__title">Secret events</div>
+            <p class="perk-card__text">Members-only events and experiences that never appear on public listings. Our most exciting curation, exclusively for the club.</p>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <span class="section-label" style="display: block; margin-bottom: var(--space-4);">Membership pricing</span>
+          <div class="pricing-price">From £5 <span>/ month</span></div>
+          <p class="pricing-desc">Cancel anytime. No commitment. First month free for founding members.</p>
+          <a href="#join" class="btn btn-primary btn--lg" style="width: 100%; justify-content: center;" onclick="document.getElementById('email-join').focus(); return false;">
+            Join the waitlist
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end #view-join -->
+
+
+  <!-- ============================================================
+       VIEW: BLOG
+       ============================================================ -->
+  <div class="view" id="view-blog" role="region" aria-label="DoNext Blog">
+
+    <section class="section" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Ideas, guides &amp; inspiration</span>
+          <h1 class="section-title" id="blog-heading">The DoNext Journal</h1>
+          <p class="section-desc">Honest guides, hidden spots, and everything we've learned about doing Cardiff with kids.</p>
+        </div>
+
+        <div class="blog-grid" role="list">
+
+          <article class="blog-card" role="listitem">
+            <div class="blog-card__image-wrap">
+              <div class="blog-card__image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Rainy days</span>
+              <h2 class="blog-card__title">10 Rainy Day Activities in Cardiff (That Kids Actually Love)</h2>
+              <p class="blog-card__excerpt">Rain is a fact of life in South Wales. Here are the ten indoor activities we keep coming back to — ranked by how much your kids will thank you.</p>
+              <div class="blog-card__footer">
+                <span>4 Mar 2026</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" role="listitem">
+            <div class="blog-card__image-wrap">
+              <div class="blog-card__image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Free days out</span>
+              <h2 class="blog-card__title">The Best Free Days Out in South Wales</h2>
+              <p class="blog-card__excerpt">You don't need to spend a fortune to have a brilliant family day. This is our definitive guide to South Wales' best free family experiences.</p>
+              <div class="blog-card__footer">
+                <span>28 Feb 2026</span>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" role="listitem">
+            <div class="blog-card__image-wrap">
+              <div class="blog-card__image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="1.5" opacity="0.5"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 0 0 6.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 0 0 6.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+              </div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Toddlers</span>
+              <h2 class="blog-card__title">A Parent's Guide to St Fagans with Toddlers</h2>
+              <p class="blog-card__excerpt">St Fagans is incredible — but with a toddler, you need a plan. Here's exactly how we do it, including the secret parking spot and best picnic location.</p>
+              <div class="blog-card__footer">
+                <span>22 Feb 2026</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" role="listitem">
+            <div class="blog-card__image-wrap">
+              <div class="blog-card__image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Local secrets</span>
+              <h2 class="blog-card__title">Hidden Playgrounds of Cardiff: 8 You Probably Don't Know</h2>
+              <p class="blog-card__excerpt">Cardiff's best playgrounds aren't the ones on the tourist maps. These eight spots are where local families actually go — and they're worth finding.</p>
+              <div class="blog-card__footer">
+                <span>14 Feb 2026</span>
+                <span>4 min read</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end #view-blog -->
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" data-nav="home" aria-label="DoNext homepage">
+          <svg width="100" height="28" viewBox="0 0 120 32" fill="none" aria-hidden="true">
+            <rect x="0" y="4" width="46" height="24" rx="6" fill="var(--color-primary)" opacity="0.18"/>
+            <path d="M8 10h5.5c3.5 0 6 2 6 6s-2.5 6-6 6H8V10zm3 2.5v7h2.2c1.8 0 3.2-1.1 3.2-3.5S15 12.5 13.2 12.5H11z" fill="var(--color-primary)"/>
+            <path d="M22.5 17.5c0-2.8 2-4.6 4.8-4.6s4.8 1.8 4.8 4.6-2 4.6-4.8 4.6-4.8-1.8-4.8-4.6zm7 0c0-1.5-.9-2.4-2.2-2.4s-2.2.9-2.2 2.4.9 2.4 2.2 2.4 2.2-.9 2.2-2.4z" fill="var(--color-primary)"/>
+            <path d="M38 15.5l4 2-4 2" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M52 10v12h2.8V14l5.2 8h2.8V10h-2.8v8l-5.2-8H52z" fill="currentColor"/>
+            <path d="M65 17.5c0-2.8 1.9-4.6 4.6-4.6 2.6 0 4.3 1.7 4.3 4.4 0 .3 0 .6-.05.9H67.6c.2 1.3 1 2 2.2 2 .9 0 1.6-.4 2-.9l1.8 1.2c-.8 1.1-2 1.8-3.8 1.8-2.9 0-4.8-1.8-4.8-4.8zm6.5-1.1c-.1-1.1-.8-1.8-1.9-1.8s-1.8.7-2 1.8h3.9z" fill="currentColor"/>
+            <path d="M75 13l3 4.5L75 22h3l1.5-2.3L81 22h3l-3-4.5 3-4.5h-3l-1.5 2.3L78 13h-3z" fill="currentColor"/>
+            <path d="M86.5 10.5V13H84v2.2h2.5v4.3c0 1.8.9 2.7 2.7 2.7.8 0 1.5-.2 2-.4l-.5-2c-.3.1-.6.2-.9.2-.6 0-.9-.3-.9-1v-3.8H91V13h-2.1v-2.5h-2.4z" fill="currentColor"/>
+          </svg>
+        </a>
+        <p class="footer-brand__desc">Curated family events, weather-smart day plans, and hidden gems for UK cities. Never run out of ideas.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="DoNext on Instagram">In</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="DoNext on Twitter">Tw</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="DoNext on Facebook">Fb</a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Explore">
+        <div class="footer-nav__title">Explore</div>
+        <ul role="list">
+          <li><a href="#home" data-nav="home">Home</a></li>
+          <li><a href="#cardiff" data-nav="cardiff">Cardiff</a></li>
+          <li><a href="#about" data-nav="about">About</a></li>
+          <li><a href="#blog" data-nav="blog">Blog</a></li>
+          <li><a href="#join" data-nav="join">Join Club</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Cardiff">
+        <div class="footer-nav__title">Cardiff</div>
+        <ul role="list">
+          <li><a href="#cardiff" data-nav="cardiff">Hidden Gems</a></li>
+          <li><a href="#cardiff" data-nav="cardiff">Reliable Anchors</a></li>
+          <li><a href="#cardiff" data-nav="cardiff">DIY Adventures</a></li>
+          <li><a href="#cardiff" data-nav="cardiff">Day Plans</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-label="Cities">
+        <div class="footer-nav__title">Coming Soon</div>
+        <ul role="list">
+          <li><a href="#home" data-nav="home">Bristol</a></li>
+          <li><a href="#home" data-nav="home">Manchester</a></li>
+          <li><a href="#home" data-nav="home">Edinburgh</a></li>
+          <li><a href="#home" data-nav="home">Birmingham</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-bottom__copy">© 2026 DoNext. Made with ♥ in Cardiff.</span>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer-bottom__attribution">
+        Created with Perplexity Computer
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT — Routing, theme, mobile nav, scroll reveals
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // --- Theme toggle ---
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+
+  function updateThemeIcon() {
+    if (!themeToggle) return;
+    themeToggle.innerHTML = theme === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+  }
+  updateThemeIcon();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateThemeIcon();
+    });
+  }
+
+  // --- Hash-based routing ---
+  var views = {
+    home:    document.getElementById('view-home'),
+    cardiff: document.getElementById('view-cardiff'),
+    about:   document.getElementById('view-about'),
+    join:    document.getElementById('view-join'),
+    blog:    document.getElementById('view-blog')
+  };
+  var navLinks = document.querySelectorAll('[data-nav]');
+
+  function showView(name) {
+    var viewName = (name && views[name]) ? name : 'home';
+    // Hide all views
+    Object.values(views).forEach(function(v) {
+      if (v) v.classList.remove('active');
+    });
+    // Show requested view
+    if (views[viewName]) views[viewName].classList.add('active');
+    // Update nav active state
+    navLinks.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('data-nav') === viewName);
+    });
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Trigger reveals on new view
+    setTimeout(triggerReveals, 50);
+    // Close mobile nav
+    closeMobileNav();
+    // Update page title
+    var titles = {
+      home:    'DoNext — Never run out of ideas',
+      cardiff: 'DoNext Cardiff — Family Events this Week',
+      about:   'About DoNext — Built by parents, for parents',
+      join:    'Join DoNext Club — Coming Soon',
+      blog:    'The DoNext Journal — Ideas & Guides'
+    };
+    document.title = titles[viewName] || titles.home;
+  }
+
+  function getHashView() {
+    var hash = window.location.hash.replace('#', '');
+    return (hash && views[hash]) ? hash : 'home';
+  }
+
+  // Intercept nav clicks
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = this.getAttribute('data-nav');
+      if (target && views[target]) {
+        e.preventDefault();
+        history.pushState(null, '', '#' + target);
+        showView(target);
+      }
+    });
+  });
+
+  // Handle hero CTA links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    if (!a.hasAttribute('data-nav')) return;
+    // already handled above
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function() {
+    showView(getHashView());
+  });
+
+  // Init on load
+  showView(getHashView());
+
+  // --- Mobile nav ---
+  var mobileBtn = document.getElementById('mobile-menu-btn');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobileNav() {
+    if (mobileNav) mobileNav.classList.remove('open');
+    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  if (mobileBtn && mobileNav) {
+    mobileBtn.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  // --- Header scroll state ---
+  var header = document.getElementById('site-header');
+  function onScroll() {
+    if (header) {
+      header.classList.toggle('site-header--scrolled', window.scrollY > 20);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // --- Scroll reveals ---
+  function triggerReveals() {
+    var els = document.querySelectorAll('.view.active [data-reveal]');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { observer.observe(el); });
+    } else {
+      els.forEach(function(el) { el.classList.add('revealed'); });
+    }
+  }
+  triggerReveals();
+
+  // --- Image fallbacks ---
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('error', function() {
+      this.style.background = 'var(--color-surface-offset)';
+    });
+  });
+
+})();
+</script>
+
 </body>
 </html>
