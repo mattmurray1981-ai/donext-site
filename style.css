@@ -1,0 +1,14 @@
+/* style.css — DoNext Design System */
+
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+:root {
+  --color-primary: #2563eb;
+  --color-warning: #f59e0b;
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --radius-md: 0.375rem;
+  --text-sm: 0.875rem;
+  --text-xl: 1.5rem;
+}

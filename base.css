@@ -1,0 +1,5 @@
+/* base.css — DoNext */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: 'General Sans', sans-serif; line-height: 1.5; }
