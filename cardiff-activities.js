@@ -922,7 +922,8 @@ window.DONEXT_ACTIVITIES = [
  * not UTC timestamps, so the selected day is stable for readers in other zones.
  * Every listing includes the source used during the editorial check.
  */
-window.DONEXT_CARDIFF_REPORT = {
+/* DEPRECATED: live catalog is data/cardiff-today.json (see cardiff-catalog.js). Kept for reference only. */
+window.DONEXT_CARDIFF_REPORT_LEGACY = {
   version: 1,
   city: 'Cardiff',
   rangeLabel: '3\u20136 September 2026',

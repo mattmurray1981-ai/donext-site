@@ -97,7 +97,8 @@
           <li><a href="#about" data-nav="about">About</a></li>
           <li id="nav-discover-link" style="display:none;"><a href="#discover" data-community-nav="discover" data-nav="discover" class="nav-discover-btn">+ Discover</a></li>
           <li id="nav-admin-link" style="display:none;"><a href="#admin" data-community-nav="admin" data-nav="admin">Admin</a></li>
-          <li class="nav-cta"><a href="#join" data-nav="join">Join Club</a></li>
+          <li class="nav-cta"><a href="#brief" data-nav="home">Get the brief</a></li>
+          <li class="soft-hidden" hidden><a href="#join" data-nav="join">Join Club</a></li>
         </ul>
       </nav>
 
@@ -131,7 +132,8 @@
       <a href="#about" data-nav="about">About</a>
       <a href="#discover" data-community-nav="discover" data-nav="discover" id="nav-discover-link-mobile" style="display:none;">+ Submit Discovery</a>
       <a href="#admin" data-community-nav="admin" data-nav="admin" id="nav-admin-link-mobile" style="display:none;">Admin</a>
-      <a href="#join" data-nav="join" style="color: var(--color-primary); font-weight: 600;">Join the Club →</a>
+      <a href="#brief" data-nav="home" style="color: var(--color-primary); font-weight: 600;">Get the Friday brief →</a>
+      <a href="#join" data-nav="join" class="soft-hidden" hidden>Join the Club →</a>
     </nav>
   </div>
 </header>
@@ -163,8 +165,8 @@
               Choose your city
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
             </a>
-            <a href="#join" class="btn btn-ghost btn--lg" data-nav="join" style="color: #fff; border-color: rgba(255,255,255,0.35);">
-              Join free
+            <a href="#brief" class="btn btn-ghost btn--lg" data-nav="home" style="color: #fff; border-color: rgba(255,255,255,0.35);">
+              Get the Friday brief
             </a>
           </div>
         </div>
@@ -299,27 +301,46 @@
 
         <div style="text-align: center; margin-top: var(--space-8);">
           <p style="font-family: var(--font-display); font-size: var(--text-lg); font-style: italic; color: var(--color-text); margin-bottom: var(--space-6);">"Imagine opening one app on Saturday morning and knowing exactly what to do today — based on your family, your budget, your postcode, and the weather outside your window."</p>
-          <a href="#join" class="btn btn-primary btn--lg" data-nav="join">
-            Get early access
+          <a href="#brief" class="btn btn-primary btn--lg" data-nav="home">
+            Get the Friday brief
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Email CTA -->
-    <section class="section signup-section" aria-labelledby="signup-heading">
+    <!-- Email CTA - Netlify Forms -->
+    <section class="section signup-section" id="brief" aria-labelledby="signup-heading">
       <div class="container">
         <div class="signup-card">
-          <span class="section-label">Free weekly guide</span>
-          <h2 class="section-title" id="signup-heading">Cardiff email updates are coming later</h2>
-          <p class="section-desc">The dated Cardiff report is available on this site now. Email delivery is not connected yet.</p>
-          <form class="signup-form signup-form--inactive" role="form" aria-label="Email signup unavailable" aria-describedby="email-home-note">
-            <label for="email-home" class="sr-only">Email address</label>
-            <input type="email" id="email-home" placeholder="Email sign-up is not live" disabled>
-            <button type="submit" class="btn btn-primary" disabled>Email sign-up coming soon</button>
-          </form>
-          <p class="signup-note" id="email-home-note">This form does not send or store your email.</p>
+          <span class="section-label">Free Cardiff email</span>
+          <h2 class="section-title" id="signup-heading">Get the weekend brief</h2>
+          <p class="section-desc">Primary mail: every Friday at 3:30pm - what is on this weekend for Cardiff families. Optional weekday morning brief below.</p>
+          <div class="signup-choice">
+            <div class="signup-choice__card">
+              <h3>Friday 3:30pm weekend brief</h3>
+              <p class="signup-note">Hero mail - curated weekend picks.</p>
+              <form class="signup-form" name="weekend-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekend brief signup">
+                <input type="hidden" name="form-name" value="weekend-brief">
+                <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                <label for="email-weekend" class="sr-only">Email address</label>
+                <input type="email" id="email-weekend" name="email" placeholder="you@example.com" required>
+                <button type="submit" class="btn btn-primary">Get the Friday brief</button>
+              </form>
+            </div>
+            <div class="signup-choice__card">
+              <h3>Optional weekday morning</h3>
+              <p class="signup-note">A lighter weekday note when there is something worth knowing.</p>
+              <form class="signup-form" name="weekday-morning" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekday morning signup">
+                <input type="hidden" name="form-name" value="weekday-morning">
+                <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                <label for="email-weekday" class="sr-only">Email address</label>
+                <input type="email" id="email-weekday" name="email" placeholder="you@example.com" required>
+                <button type="submit" class="btn btn-ghost">Get weekday mornings</button>
+              </form>
+            </div>
+          </div>
+          <p class="signup-note" id="email-home-note">Powered by Netlify Forms. No fake subscriber counts - unsubscribe any time.</p>
         </div>
       </div>
     </section>
@@ -344,8 +365,8 @@
         >
         <div class="cardiff-hero-content">
           <span class="hero-label">DoNext &middot; Cardiff Edition</span>
-          <h1 class="hero-title" style="font-size: var(--text-xl);">Cardiff family report<br>3&ndash;6 September 2026</h1>
-          <p class="hero-subtitle" style="font-size: var(--text-sm);">A dated, source-checked guide for families with children aged 0&ndash;12.</p>
+          <h1 class="hero-title" style="font-size: var(--text-xl);">What&rsquo;s on in Cardiff</h1>
+          <p class="hero-subtitle" style="font-size: var(--text-sm);">Dated picks from <code>data/cardiff-today.json</code>, plus evergreen venue backups. Ages 0&ndash;4 / 5&ndash;8 / 9&ndash;12.</p>
         </div>
       </div>
     </section>
@@ -353,23 +374,24 @@
     <section class="cardiff-dual-panel" aria-labelledby="cardiff-report-heading">
       <div class="container">
         <div class="dual-panel-card dual-panel-card--report daily-report-overview active">
-          <span class="daily-report-card__badge" id="cardiff-report-freshness">Checked 3 September 2026</span>
-          <h2 class="dual-panel-card__title" id="cardiff-report-heading">Cardiff daily family report</h2>
-          <p class="dual-panel-card__desc">Choose a day to see its forecast snapshot, one distinct featured pick, closures and every sourced listing.</p>
-          <div class="report-date-tabs" id="cardiff-report-days" role="tablist" aria-label="Choose a report day"></div>
-          <p class="report-source-note">Event details were checked against the linked sources. Forecasts can change, so check before setting out.</p>
+          <span class="daily-report-card__badge" id="cardiff-report-freshness">Loading catalog&hellip;</span>
+          <h2 class="dual-panel-card__title" id="cardiff-report-heading">Cardiff family picks</h2>
+          <p class="dual-panel-card__desc" id="cardiff-report-desc">Dated picks and evergreen backups, loaded from the catalog data file.</p>
+          <div class="age-filter-bar" id="cardiff-age-filters" role="group" aria-label="Filter by age band"></div>
+          <div class="stale-banner" id="cardiff-stale-banner" hidden></div>
+          <p class="report-source-note">Listings come from <code>data/cardiff-today.json</code>. Evergreen cards are clearly marked and link only to official pages.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-live="polite" aria-label="Cardiff daily report details">
+    <section class="section" aria-live="polite" aria-label="Cardiff catalog details">
       <div class="container">
         <noscript>
-          <p class="report-error">This daily report needs JavaScript to display its sourced event data.</p>
+          <p class="report-error">This catalog needs JavaScript to load <code>data/cardiff-today.json</code>.</p>
         </noscript>
         <div id="cardiff-report-content">
           <div class="weather-bar" id="cardiff-report-weather">
-            <div class="weather-bar__title">Loading forecast snapshot&hellip;</div>
+            <div class="weather-bar__title">Loading&hellip;</div>
           </div>
           <div id="cardiff-report-notices"></div>
           <div id="cardiff-report-feature"></div>
@@ -379,30 +401,28 @@
         <div class="instagram-section" id="cardiff-instagram">
           <div class="instagram-section__header">
             <span class="section-label">Social updates</span>
-            <h2 class="instagram-section__title">DoNext Cardiff on Instagram</h2>
-            <p class="instagram-section__desc">Instagram is not connected yet.</p>
-          </div>
-          <div class="instagram-grid" id="instagram-feed-grid">
-            <div class="instagram-placeholder">
-              <div class="instagram-placeholder__icon" aria-hidden="true">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-              </div>
-              <p class="instagram-placeholder__text">There is no live Instagram feed or account link on this draft.</p>
-            </div>
+            <h2 class="instagram-section__title">@DoNextCardiff on Instagram</h2>
+            <p class="instagram-section__desc">Daily Cardiff inspiration from DoNext.</p>
+            <a class="btn btn-primary instagram-cta" href="https://www.instagram.com/DoNextCardiff/" target="_blank" rel="noopener noreferrer">
+              Follow @DoNextCardiff
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
           </div>
         </div>
 
         <div style="padding-top: clamp(var(--space-10), 6vw, var(--space-16));">
           <div class="signup-card" style="max-width: 100%;">
-            <span class="section-label">Cardiff Morning Brief</span>
-            <h2 class="section-title" style="font-size: var(--text-xl);">Email updates are coming later</h2>
-            <p class="section-desc" style="margin-inline: auto;">Read the dated report on this page for now.</p>
-            <form class="signup-form signup-form--inactive" style="margin-top: var(--space-6);" aria-describedby="email-cardiff-note">
+            <span class="section-label">Cardiff email</span>
+            <h2 class="section-title" style="font-size: var(--text-xl);">Friday 3:30pm weekend brief</h2>
+            <p class="section-desc" style="margin-inline: auto;">Same hero mail as the homepage - weekend picks for Cardiff families. Optional weekday morning available on the home page.</p>
+            <form class="signup-form" name="weekend-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top: var(--space-6);" aria-describedby="email-cardiff-note">
+              <input type="hidden" name="form-name" value="weekend-brief">
+              <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
               <label for="email-cardiff" class="sr-only">Email address</label>
-              <input type="email" id="email-cardiff" placeholder="Email sign-up is not live" disabled>
-              <button type="submit" class="btn btn-primary" disabled>Email sign-up coming soon</button>
+              <input type="email" id="email-cardiff" name="email" placeholder="you@example.com" required>
+              <button type="submit" class="btn btn-primary">Get the Friday brief</button>
             </form>
-            <p class="signup-note" id="email-cardiff-note">This form does not send or store your email.</p>
+            <p class="signup-note" id="email-cardiff-note">Netlify Forms capture. Prefer the homepage if you also want the optional weekday morning list.</p>
           </div>
         </div>
       </div>
@@ -502,7 +522,7 @@
   <!-- ============================================================
        VIEW: JOIN
        ============================================================ -->
-  <div class="view" id="view-join" role="region" aria-label="Join DoNext Club">
+  <div class="view soft-hidden" id="view-join" role="region" aria-label="Join DoNext Club" hidden>
 
     <section class="join-hero" aria-label="Join hero">
       <div class="container">
@@ -669,7 +689,7 @@
         <!-- Community tabs -->
         <div class="community-tabs" role="tablist">
           <button class="community-tab active" role="tab" aria-selected="true" data-tab="activities">Activities</button>
-          <button class="community-tab" role="tab" aria-selected="false" data-tab="leaderboard">Leaderboard</button>
+          <button class="community-tab soft-hidden" role="tab" aria-selected="false" data-tab="leaderboard" hidden>Leaderboard</button>
         </div>
 
         <!-- Activities tab -->
@@ -806,7 +826,7 @@
   <!-- ============================================================
        VIEW: LEADERBOARD
        ============================================================ -->
-  <div class="view" id="view-leaderboard" role="region" aria-label="Leaderboard">
+  <div class="view soft-hidden" id="view-leaderboard" role="region" aria-label="Leaderboard" hidden>
     <section class="section">
       <div class="container">
         <div class="section-header section-header--centered">
@@ -838,7 +858,7 @@
   <!-- ============================================================
        VIEW: ADMIN
        ============================================================ -->
-  <div class="view" id="view-admin" role="region" aria-label="Admin Panel">
+  <div class="view soft-hidden" id="view-admin" role="region" aria-label="Admin Panel" hidden>
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -888,7 +908,7 @@
           <li><a href="#home" data-nav="home">Home</a></li>
           <li><a href="#cardiff" data-nav="cardiff">Cardiff</a></li>
           <li><a href="#about" data-nav="about">About</a></li>
-          <li><a href="#join" data-nav="join">Join Club</a></li>
+          <li><a href="#brief" data-nav="home">Get the brief</a></li>
         </ul>
       </nav>
 
@@ -1079,6 +1099,7 @@
 </script>
 
 <script src="./cardiff-activities.js"></script>
+<script src="./cardiff-catalog.js"></script>
 <script src="./app.js"></script>
 
 

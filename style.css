@@ -3976,3 +3976,95 @@
   margin-right: var(--space-1);
   text-transform: capitalize;
 }
+
+/* Cardiff catalog — age filters, stale banner, soft-hidden surfaces */
+.age-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: var(--space-4) 0 var(--space-5);
+}
+.age-filter-chip {
+  border: 1px solid var(--color-border, #d6d3d1);
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #1c1917);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+}
+.age-filter-chip--active {
+  background: var(--color-primary, #0f766e);
+  border-color: var(--color-primary, #0f766e);
+  color: #fff;
+}
+.age-filter-summary {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #78716c);
+  margin-left: 0.25rem;
+}
+.stale-banner {
+  margin: var(--space-4) 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-md, 12px);
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+  line-height: 1.5;
+}
+[data-theme="dark"] .stale-banner {
+  background: #431407;
+  border-color: #c2410c;
+  color: #ffedd5;
+}
+.report-empty {
+  color: var(--color-text-muted, #78716c);
+  line-height: 1.6;
+  margin: 0;
+}
+.report-empty code {
+  font-size: 0.9em;
+}
+.event-card__kind {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary, #0f766e);
+  margin-bottom: 0.35rem;
+}
+.instagram-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-4);
+}
+.soft-hidden {
+  display: none !important;
+}
+.signup-choice {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+@media (min-width: 768px) {
+  .signup-choice {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.signup-choice__card {
+  text-align: left;
+}
+.signup-choice__card h3 {
+  font-size: var(--text-lg, 1.125rem);
+  margin-bottom: var(--space-2);
+}
+.form-success {
+  display: none;
+  margin-top: var(--space-3);
+  color: var(--color-primary, #0f766e);
+  font-weight: 600;
+}
