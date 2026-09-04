@@ -1,21 +1,161 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-04T12:45:00+01:00",
+  "updatedAt": "2026-09-04T19:22:32+01:00",
   "staleAfterHours": 36,
-  "headline": "Cardiff family picks",
-  "summary": "Dated picks are empty until the morning automation writes today's shortlist. Evergreen venues below stay available with official links.",
-  "notices": [],
-  "datedPicks": [],
+  "headline": "Sunny weekend family picks — 5–6 Sep",
+  "summary": "Met Office: Sat dry and sunny ~20°C; Sun warmer ~24°C with any early drizzle clearing. Free/cheap dated picks at Llanishen Reservoir, Chapter and Hubs, plus Techniquest’s last A-Mazing Summer days and a toddler show at New Theatre.",
+  "notices": [
+    {
+      "title": "Llanishen Reservoir — early close Sunday",
+      "detail": "Site closes at 16:00 on Sunday 6 Sep for staff training. Plan morning or early-afternoon visits.",
+      "sourceName": "Lisvane & Llanishen Reservoirs",
+      "sourceUrl": "https://lisvane-llanishen.com/"
+    },
+    {
+      "title": "National Museum Cardiff opening change",
+      "detail": "Open 10:00–17:00 Sat and Sun this weekend. From Monday 7 Sep the museum closes on Mondays.",
+      "sourceName": "Museum Wales",
+      "sourceUrl": "https://museum.wales/cardiff/visit/"
+    }
+  ],
+  "datedPicks": [
+    {
+      "id": "llanishen-back-to-school-sat",
+      "title": "Back to School kids activities",
+      "date": "2026-09-05",
+      "time": "10:00–13:00",
+      "location": "Llanishen Reservoir, Lisvane Road, Cardiff CF14 0BB",
+      "cost": "Free drop-in",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Explore Learning free educational games and activities aimed at ages 4–14. Drop in; good outdoor morning if the sun holds.",
+      "url": "https://www.eventbrite.co.uk/e/back-to-school-kids-activities-tickets-1998077720248",
+      "sourceName": "Eventbrite · Explore Learning",
+      "indoorOutdoor": "outdoor",
+      "confidence": "high"
+    },
+    {
+      "id": "indie-collectives-wmc-sat",
+      "title": "Indie Collectives market at WMC",
+      "date": "2026-09-05",
+      "time": "Daytime (check on arrival)",
+      "location": "Wales Millennium Centre, Cardiff Bay",
+      "cost": "Free to browse",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Curated South Wales makers, bakers and small creatives trading inside WMC. Pair with a Bay walk; coincides with separate 999 Day activity outside.",
+      "url": "https://itsoncardiff.co.uk/indie-market-that-champions-small-creators-returns-to-cardiff-bay/",
+      "sourceName": "It's On Cardiff",
+      "indoorOutdoor": "indoor",
+      "confidence": "medium",
+      "statusNote": "Confirm stall hours on the day at WMC."
+    },
+    {
+      "id": "hubs-homework-club-sat",
+      "title": "Homework Club — Ely and Caerau Hub",
+      "date": "2026-09-05",
+      "time": "09:30–16:00",
+      "location": "Ely and Caerau Hub, Cowbridge Road West, Ely, Cardiff CF5 5BQ",
+      "cost": "Free · free printing for schoolwork",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Weekly Saturday quiet study space with help using hub resources. Clear homework early, then enjoy the rest of a sunny weekend.",
+      "url": "https://cardiffhubs.co.uk/hub-events/homework-club/",
+      "sourceName": "Cardiff Hubs",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "techniquest-amazing-summer-sat",
+      "title": "Techniquest — A-Mazing Summer (Sat)",
+      "date": "2026-09-05",
+      "time": "10:00–17:00",
+      "location": "Techniquest, Stuart Street, Cardiff Bay CF10 5BW",
+      "cost": "Full-day ticket from £15.45 · book ahead",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Mirror Maze, musical exhibits, Battle of the Bangs and Create & Shape Zone. Last weekend of this special programme — ends Sunday.",
+      "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
+      "sourceName": "Techniquest",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "chapter-faces-of-culture-sun",
+      "title": "Faces of Culture mask workshop",
+      "date": "2026-09-06",
+      "time": "12:00 (drop-in during 2-hour session)",
+      "location": "Chapter, Market Road, Canton, Cardiff CF5 1QE",
+      "cost": "Free",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Free drop-in mask-making for ages 7–13, led by Young Producers responding to the Dream Inheritances exhibition. Masks take about 20–30 minutes.",
+      "url": "https://www.chapter.cymru/whats-on/faces-of-culture",
+      "sourceName": "Chapter",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "ms-rachel-new-theatre-sun",
+      "title": "Fun For Little Ones — Tribute to Ms Rachel",
+      "date": "2026-09-06",
+      "time": "12:30 (about 70 mins incl. interval)",
+      "location": "New Theatre, Park Place, Cardiff",
+      "cost": "From £20 · under-12-months free on lap (babes-in-arms ticket)",
+      "ageBands": [
+        "0-4"
+      ],
+      "description": "Interactive toddler tribute show with sing-alongs, puppets and screen content. Selling fast — book via New Theatre / Trafalgar Tickets.",
+      "url": "https://trafalgartickets.com/new-theatre-cardiff/en-GB/event/family/fun-for-little-ones-a-tribute-to-ms-rachel-tickets",
+      "sourceName": "New Theatre Cardiff",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "techniquest-amazing-summer-sun",
+      "title": "Techniquest — A-Mazing Summer (final day)",
+      "date": "2026-09-06",
+      "time": "10:00–17:00",
+      "location": "Techniquest, Stuart Street, Cardiff Bay CF10 5BW",
+      "cost": "Full-day ticket from £15.45 · book ahead",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Last day of A-Mazing Summer: Mirror Maze, sound exhibits, science theatre and hands-on zones. Strong indoor backup if Sunday morning starts damp.",
+      "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
+      "sourceName": "Techniquest",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    }
+  ],
   "evergreen": [
     {
       "id": "national-museum-cardiff",
       "title": "National Museum Cardiff",
-      "time": "Usually 10:00–17:00 (check before travel)",
-      "location": "Cathays Park, Cardiff, CF10 3NP",
+      "time": "10:00–17:00 this weekend (closed Mondays from 7 Sep)",
+      "location": "Cathays Park, Cardiff CF10 3NP",
       "cost": "Free entry",
-      "ageBands": ["0-4", "5-8", "9-12"],
-      "description": "Art, natural history and science galleries in the city centre. Under-16s must visit with an adult.",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Art, natural history and science galleries in the city centre. Under-16s must visit with an adult. Free day tickets recommended.",
       "url": "https://museum.wales/cardiff/visit/",
       "sourceName": "Museum Wales",
       "indoorOutdoor": "indoor",
@@ -25,26 +165,34 @@
       "id": "st-fagans",
       "title": "St Fagans National Museum of History",
       "time": "Usually 10:00–17:00 (check before travel)",
-      "location": "St Fagans, Cardiff, CF5 6XB",
+      "location": "St Fagans, Cardiff CF5 6XB",
       "cost": "Free entry · parking charged",
-      "ageBands": ["0-4", "5-8", "9-12"],
-      "description": "Historic buildings, open meadows and indoor galleries. A dependable all-weather family day out west of the city.",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Historic buildings, open meadows and indoor galleries — dependable all-weather family day out west of the city.",
       "url": "https://museum.wales/stfagans/",
       "sourceName": "Museum Wales",
       "indoorOutdoor": "either",
       "confidence": "high"
     },
     {
-      "id": "techniquest",
-      "title": "Techniquest",
-      "time": "Check opening times before travel",
-      "location": "Stuart Street, Cardiff Bay, CF10 5BW",
-      "cost": "Paid admission · book ahead recommended",
-      "ageBands": ["0-4", "5-8", "9-12"],
-      "description": "Hands-on science centre in Cardiff Bay. Capacity can be limited — confirm times and tickets on the venue site.",
-      "url": "https://www.techniquest.org/visit/opening-times-and-prices/",
-      "sourceName": "Techniquest",
-      "indoorOutdoor": "indoor",
+      "id": "llanishen-reservoir",
+      "title": "Lisvane & Llanishen Reservoirs",
+      "time": "Open daily · café & trails (Sun 6 Sep closes 16:00)",
+      "location": "Lisvane Road, Lisvane, Cardiff CF14 0BB",
+      "cost": "Free to walk · paid water activities",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Circular paths, woodland story trail, visitor-centre café and optional watersports. Ideal sunny outdoor backup after the Saturday kids session.",
+      "url": "https://lisvane-llanishen.com/",
+      "sourceName": "Welsh Water Adventures",
+      "indoorOutdoor": "outdoor",
       "confidence": "high"
     },
     {
@@ -53,11 +201,32 @@
       "time": "Dawn to dusk",
       "location": "Castle Street / North Road, Cardiff",
       "cost": "Free",
-      "ageBands": ["0-4", "5-8", "9-12"],
-      "description": "Central parkland beside Cardiff Castle — paths, play space and room to roam without booking.",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Central parkland beside Cardiff Castle — paths, play space and room to roam without booking. Perfect for the fine weekend forecast.",
       "url": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx",
       "sourceName": "Cardiff Council",
       "indoorOutdoor": "outdoor",
+      "confidence": "high"
+    },
+    {
+      "id": "techniquest",
+      "title": "Techniquest",
+      "time": "Check opening times and tickets before travel",
+      "location": "Stuart Street, Cardiff Bay CF10 5BW",
+      "cost": "Paid admission · book ahead recommended",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Hands-on science centre in Cardiff Bay. After A-Mazing Summer ends, use the visit page for regular opening times and prices.",
+      "url": "https://www.techniquest.org/visit/opening-times-and-prices/",
+      "sourceName": "Techniquest",
+      "indoorOutdoor": "indoor",
       "confidence": "high"
     }
   ]
