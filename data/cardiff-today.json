@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-04T20:58:38+01:00",
+  "updatedAt": "2026-09-04T21:51:17+01:00",
   "staleAfterHours": 36,
   "headline": "Sunny weekend family picks — 5–6 Sep",
   "summary": "Met Office Cardiff: Sat dry sunny ~20°C; Sun warmer ~24°C after any early drizzle. Hero: Fonmon Castle’s Great Crisp & Potato Festival (Sat, Vale ~30–40 min). Free/local: Roath Market (Sat), Riverside Market (Sun), Chapter mask workshop (Sun), Hubs homework club. Indie Collectives at WMC (Sat). Toddler show at New Theatre (Sun).",
@@ -89,7 +89,7 @@
         "5-8",
         "9-12"
       ],
-      "description": "Curated South Wales makers, bakers and small creatives trading inside WMC. Pair with a Bay walk; coincides with separate 999 Day activity outside.",
+      "description": "Curated South Wales makers, bakers and small creatives trading inside WMC. Pair with a Bay walk.",
       "url": "https://itsoncardiff.co.uk/indie-market-that-champions-small-creators-returns-to-cardiff-bay/",
       "sourceName": "Indie Collectives / It's On Cardiff",
       "indoorOutdoor": "indoor",
@@ -99,7 +99,7 @@
       "score": 72,
       "role": "feature",
       "whyPicked": "Indoor Bay browse that pairs with a walk; local makers rather than a tourist staple.",
-      "parentHeadsUp": "Confirm stall hours on the day at WMC; coincides with separate 999 Day activity outside.",
+      "parentHeadsUp": "Confirm stall hours on the day at WMC.",
       "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "free to browse · no booking"
     },
