@@ -1,0 +1,28 @@
+[
+  {
+    "runId": "20260904-2042",
+    "startedAt": "2026-09-04T20:40:00+01:00",
+    "finishedAt": "2026-09-04T20:42:30+01:00",
+    "sourcesChecked": 12,
+    "groupPostsProcessed": 63,
+    "candidatesNew": 9,
+    "candidatesDeduped": 2,
+    "verified": 4,
+    "published": 0,
+    "rejected": 1,
+    "notes": "First Gmail ingest newer_than:3d (Label_8 DoNext/Leads). Most posts junk: nostalgia CARDIFF DAYS GONE BY, van/pest/roofing/cleaning/PT/food ads, join-approvals. Gold lead: Cardiff Mums weekend roundup. Editorial skip: Canton Pride Family Sunday. Skipped Techniquest default. Llanishen free session cancelled on Eventbrite. ≥1 strong unusual weekend pick verified: Fonmon Crisp & Potato Festival (not auto-published). Also verified: National Cinema Weekend £4, Ms Rachel tribute, Sparkle Walk (18 Sep). Coverage gaps unchanged: north/east Cardiff, Llandaff/Whitchurch/Rhiwbina, Penarth, Barry, Caerphilly."
+  },
+  {
+    "runId": "20260904-2058",
+    "startedAt": "2026-09-04T20:58:38+01:00",
+    "finishedAt": "2026-09-04T20:58:38+01:00",
+    "sourcesChecked": 48,
+    "groupPostsProcessed": 50,
+    "candidatesNew": 8,
+    "candidatesDeduped": 1,
+    "verified": 8,
+    "published": 8,
+    "rejected": 6,
+    "notes": "FULL weekend re-run expanded registry. Weather: Met Office Cardiff Sat sunny ~20°C / Sun ~24°C early drizzle risk. Kept Fonmon hero (re-verified DigiTickets). Replaced Techniquest Sat with Roath Market; added Riverside Market Sun; Chapter Faces + Hubs + Indie Collectives + Ms Rachel; Techniquest Sun only as max-1 tourist backup. Editorial skip Canton Pride/Queer Art Market. Rejected vegan festival (organiser now 2027). Museum of Cardiff closed (leak). Source fails: hubs /hub-events/ 404 (event page OK), cadw /visit/events 404, WMC what's-on JS empty, Visit Cardiff stale July article, Eventbrite WebFetch 405 (curl 200), Met Office registry URL pointed at Stoke Gifford — used Cardiff gcjszevgx. Gmail: 50 threads newer_than:3d skimmed; 0 genuinely newer than prior checkpoint. Coverage gaps unchanged."
+  }
+]
