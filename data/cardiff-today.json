@@ -35,7 +35,14 @@
       "url": "https://www.eventbrite.co.uk/e/back-to-school-kids-activities-tickets-1998077720248",
       "sourceName": "Eventbrite · Explore Learning",
       "indoorOutdoor": "outdoor",
-      "confidence": "high"
+      "confidence": "high",
+      "bookingUrl": "https://www.eventbrite.co.uk/e/back-to-school-kids-activities-tickets-1998077720248",
+      "score": 86,
+      "role": "hero",
+      "whyPicked": "Free outdoor drop-in with a clear Saturday morning window — strong “if you do one thing” pick for a sunny weekend.",
+      "parentHeadsUp": "Drop-in 10:00–13:00; Explore Learning games aimed ~4–14. Pair with reservoir walks after.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "free drop-in · Eventbrite listing for details"
     },
     {
       "id": "indie-collectives-wmc-sat",
@@ -54,7 +61,14 @@
       "sourceName": "It's On Cardiff",
       "indoorOutdoor": "indoor",
       "confidence": "medium",
-      "statusNote": "Confirm stall hours on the day at WMC."
+      "statusNote": "Confirm stall hours on the day at WMC.",
+      "organiserUrl": "https://itsoncardiff.co.uk/indie-market-that-champions-small-creators-returns-to-cardiff-bay/",
+      "score": 72,
+      "role": "feature",
+      "whyPicked": "Indoor Bay browse that pairs with a walk; local makers rather than a tourist staple.",
+      "parentHeadsUp": "Confirm stall hours on the day at WMC; coincides with separate 999 Day activity outside.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "free to browse · no booking"
     },
     {
       "id": "hubs-homework-club-sat",
@@ -71,7 +85,14 @@
       "url": "https://cardiffhubs.co.uk/hub-events/homework-club/",
       "sourceName": "Cardiff Hubs",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://cardiffhubs.co.uk/hub-events/homework-club/",
+      "score": 74,
+      "role": "feature",
+      "whyPicked": "Free community hub session with practical value — clear homework early, then enjoy the weekend.",
+      "parentHeadsUp": "Ely and Caerau Hub; free printing for schoolwork. Weekly Saturday slot.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "free · drop-in / hub hours"
     },
     {
       "id": "techniquest-amazing-summer-sat",
@@ -89,7 +110,14 @@
       "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
       "sourceName": "Techniquest",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://www.techniquest.org/events/the-a-mazing-summer/",
+      "score": 68,
+      "role": "backup",
+      "whyPicked": "Last weekend of A-Mazing Summer — solid indoor paid option labelled as backup, not the hero.",
+      "parentHeadsUp": "Book ahead; full-day from £15.45. Ends Sunday.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "paid · book ahead on Techniquest"
     },
     {
       "id": "chapter-faces-of-culture-sun",
@@ -106,7 +134,14 @@
       "url": "https://www.chapter.cymru/whats-on/faces-of-culture",
       "sourceName": "Chapter",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://www.chapter.cymru/whats-on/faces-of-culture",
+      "score": 84,
+      "role": "feature",
+      "whyPicked": "Free drop-in mask workshop with clear age fit (7–13) — distinctive local cultural session.",
+      "parentHeadsUp": "Masks ~20–30 mins; drop-in during the 2-hour session from 12:00.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "free drop-in · no booking"
     },
     {
       "id": "ms-rachel-new-theatre-sun",
@@ -122,7 +157,14 @@
       "url": "https://trafalgartickets.com/new-theatre-cardiff/en-GB/event/family/fun-for-little-ones-a-tribute-to-ms-rachel-tickets",
       "sourceName": "New Theatre Cardiff",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "bookingUrl": "https://trafalgartickets.com/new-theatre-cardiff/en-GB/event/family/fun-for-little-ones-a-tribute-to-ms-rachel-tickets",
+      "score": 70,
+      "role": "feature",
+      "whyPicked": "Clear 0–4 age fit and an official ticket path — useful paid toddler option when free slots do not cover under-fives.",
+      "parentHeadsUp": "Selling fast; under-12-months free on lap with babes-in-arms ticket.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "paid tickets · book via Trafalgar / New Theatre"
     },
     {
       "id": "techniquest-amazing-summer-sun",
@@ -140,7 +182,14 @@
       "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
       "sourceName": "Techniquest",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://www.techniquest.org/events/the-a-mazing-summer/",
+      "score": 68,
+      "role": "backup",
+      "whyPicked": "Final day of the special programme — indoor backup if Sunday starts damp.",
+      "parentHeadsUp": "Last day; book ahead.",
+      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "bookingStatus": "paid · book ahead on Techniquest"
     }
   ],
   "evergreen": [
@@ -159,7 +208,8 @@
       "url": "https://museum.wales/cardiff/visit/",
       "sourceName": "Museum Wales",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://museum.wales/cardiff/visit/"
     },
     {
       "id": "st-fagans",
@@ -176,7 +226,8 @@
       "url": "https://museum.wales/stfagans/",
       "sourceName": "Museum Wales",
       "indoorOutdoor": "either",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://museum.wales/stfagans/"
     },
     {
       "id": "llanishen-reservoir",
@@ -193,7 +244,8 @@
       "url": "https://lisvane-llanishen.com/",
       "sourceName": "Welsh Water Adventures",
       "indoorOutdoor": "outdoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://lisvane-llanishen.com/"
     },
     {
       "id": "bute-park",
@@ -210,7 +262,8 @@
       "url": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx",
       "sourceName": "Cardiff Council",
       "indoorOutdoor": "outdoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx"
     },
     {
       "id": "techniquest",
@@ -227,7 +280,8 @@
       "url": "https://www.techniquest.org/visit/opening-times-and-prices/",
       "sourceName": "Techniquest",
       "indoorOutdoor": "indoor",
-      "confidence": "high"
+      "confidence": "high",
+      "organiserUrl": "https://www.techniquest.org/visit/opening-times-and-prices/"
     }
   ]
 }

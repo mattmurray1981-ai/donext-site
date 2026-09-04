@@ -23,6 +23,18 @@
       .replace(/'/g, '&#39;');
   }
 
+
+  /** Public CTA: organiserUrl → bookingUrl → url. Never leadUrl. */
+  function publicCtaUrl(pick) {
+    if (!pick || typeof pick !== 'object') return '';
+    var u = pick.organiserUrl || pick.bookingUrl || pick.url || '';
+    // Hard guard: never render Facebook group URLs even if mis-filed
+    if (/facebook\.com\/groups\//i.test(String(u))) return pick.organiserUrl && !/facebook\.com\/groups\//i.test(String(pick.organiserUrl))
+      ? pick.organiserUrl
+      : (pick.bookingUrl || '');
+    return u;
+  }
+
   function formatStamp(iso) {
     var d = new Date(iso);
     if (isNaN(d.getTime())) return 'unknown time';
@@ -145,26 +157,41 @@
     var kind = kindLabel
       ? '<span class="event-card__kind">' + escapeHtml(kindLabel) + '</span>'
       : '';
+    var roleBadge = pick.role === 'hero'
+      ? '<span class="event-card__kind">If you do one thing</span>'
+      : (pick.role === 'backup' ? '<span class="event-card__kind">Backup</span>' : '');
+    var why = pick.whyPicked
+      ? '<p class="event-card__why"><strong>Why we picked it:</strong> ' + escapeHtml(pick.whyPicked) + '</p>'
+      : '';
+    var heads = pick.parentHeadsUp
+      ? '<p class="event-card__status-note">' + escapeHtml(pick.parentHeadsUp) + '</p>'
+      : '';
+    var cta = publicCtaUrl(pick);
+    var linkHtml = cta
+      ? '<a href="' + escapeHtml(cta) + '" class="event-card__link" target="_blank" rel="noopener noreferrer">' +
+          escapeHtml(sourceLabel) +
+          '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>' +
+        '</a>'
+      : '';
 
     return '<article class="event-card" role="listitem" data-event-id="' + escapeHtml(pick.id) + '">' +
       '<div class="event-card__main">' +
-        kind +
+        (roleBadge || kind) +
         '<div class="event-card__name">' + escapeHtml(pick.title) + '</div>' +
         '<div class="event-card__meta">' +
           '<span class="event-card__meta-item">' + when + '</span>' +
           '<span class="event-card__meta-item">' + escapeHtml(pick.location) + '</span>' +
         '</div>' +
         '<p class="event-card__desc">' + escapeHtml(pick.description) + '</p>' +
+        why +
+        heads +
         status +
       '</div>' +
       '<div class="event-card__side">' +
         '<div class="event-card__cost' + (isFree ? ' event-card__cost--free' : '') + '">' + escapeHtml(pick.cost) + '</div>' +
         ageBadges(pick) +
         confidence +
-        '<a href="' + escapeHtml(pick.url) + '" class="event-card__link" target="_blank" rel="noopener noreferrer">' +
-          escapeHtml(sourceLabel) +
-          '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>' +
-        '</a>' +
+        linkHtml +
       '</div>' +
     '</article>';
   }
@@ -283,5 +310,5 @@
       });
   }
 
-  global.DoNextCatalog = { load: load, render: renderAll };
+  global.DoNextCatalog = { load: load, render: renderAll, publicCtaUrl: publicCtaUrl };
 })(window);
