@@ -1152,7 +1152,7 @@
         if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
 
         var pageTitles = {
-          home: 'DoNext — Never run out of ideas',
+          home:    'DoNext — Cardiff kids’ weekend plans',
           cardiff: 'DoNext Cardiff — Family Events this Week',
           about: 'About DoNext — Built by parents, for parents',
           join: 'Join DoNext Club — Coming Soon'

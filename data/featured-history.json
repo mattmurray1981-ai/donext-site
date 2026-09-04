@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-04T19:30:00+01:00",
+  "campaigns": [
+    {
+      "campaignId": "weekend-2026-09-04",
+      "label": "Cardiff weekend 5-6 Sep 2026",
+      "publishedAt": "2026-09-04T15:30:00+01:00",
+      "window": {
+        "start": "2026-09-05",
+        "end": "2026-09-06"
+      },
+      "features": [
+        {
+          "eventId": "llanishen-back-to-school-sat",
+          "seriesId": "llanishen-kids-activities",
+          "venueId": "llanishen-reservoir",
+          "campaignId": "weekend-2026-09-04",
+          "role": "hero",
+          "score": 86,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site",
+            "email",
+            "instagram"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "chapter-faces-of-culture-sun",
+          "seriesId": "chapter-family-workshops",
+          "venueId": "chapter",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 84,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site",
+            "email",
+            "instagram"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "indie-collectives-wmc-sat",
+          "seriesId": "indie-collectives-wmc",
+          "venueId": "wmc",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 72,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-homework-club-sat",
+          "seriesId": "cardiff-hubs-homework-club",
+          "venueId": "ely-caerau-hub",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 74,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "ms-rachel-new-theatre-sun",
+          "seriesId": "new-theatre-family-shows",
+          "venueId": "new-theatre-cardiff",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 70,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "techniquest-amazing-summer-sat",
+          "seriesId": "techniquest-amazing-summer",
+          "venueId": "techniquest",
+          "campaignId": "weekend-2026-09-04",
+          "role": "backup",
+          "score": 68,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "techniquest-amazing-summer-sun",
+          "seriesId": "techniquest-amazing-summer",
+          "venueId": "techniquest",
+          "campaignId": "weekend-2026-09-04",
+          "role": "backup",
+          "score": 68,
+          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "channels": [
+            "site"
+          ],
+          "override": null
+        }
+      ]
+    }
+  ]
+}

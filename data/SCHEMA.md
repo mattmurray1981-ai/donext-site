@@ -37,11 +37,35 @@ Static Cardiff catalog consumed by the site at `./data/cardiff-today.json`.
 | `cost` | string | yes | |
 | `ageBands` | string[] | yes | Subset of `"0-4"`, `"5-8"`, `"9-12"`. |
 | `description` | string | yes | |
-| `url` | string (https) | yes | Official / source link only — never invent events or fake URLs. |
+| `url` | string (https) | yes | **Primary public CTA.** Prefer `organiserUrl` when actionable; else `bookingUrl`. Never a Facebook group URL. |
 | `sourceName` | string | no | Link label; defaults to “Details”. |
-| `indoorOutdoor` | `"indoor"` \| `"outdoor"` \| `"either"` | no | |
-| `confidence` | `"high"` \| `"medium"` | no | Medium shows a “check before travel” cue. |
+| `indoorOutdoor` | `"indoor"` | `"outdoor"` | `"either"` | no | |
+| `confidence` | `"high"` | `"medium"` | no | Medium shows a “check before travel” cue. |
 | `statusNote` | string | no | Extra caution copy. |
+
+### Optional link fields
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| `leadUrl` | string (https) | no | **Private discovery source only** (may include Facebook groups). **Never rendered** on the public site, email CTAs, or Instagram. Ops/automation only. |
+| `organiserUrl` | string (https) | no | Public source of truth (venue/organiser page). Preferred public CTA when it has actionable details. |
+| `bookingUrl` | string (https) | no | Official booking destination (Eventbrite only when the organiser uses it for booking, or it is the only verifiable listing). |
+| `donextUrl` | string (https) | no | DoNext editorial/shortlist page — only when it adds verdict, age/price, booking status, advice or last-checked. Not a redirect-only wrapper. |
+
+**Public CTA order:** `organiserUrl` → `bookingUrl` → legacy `url`. Set `url` to the chosen public CTA so older renderers stay correct. Never expose Facebook-group links. Credit the venue/organiser publicly.
+
+### Optional editorial fields
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| `score` | number | no | Selection score. Publish ≥65; hero ≥80. |
+| `role` | `"hero"` | `"feature"` | `"backup"` | no | Campaign role for this pick. |
+| `whyPicked` | string | no | Why DoNext chose it (parent-facing). |
+| `parentHeadsUp` | string | no | Practical complication: booking, parking, capacity, sensory, weather. |
+| `checkedAt` | string (ISO-8601 with offset) | no | Last verification time for this pick. |
+| `bookingStatus` | string | no | Human status, e.g. `free drop-in`, `book ahead`, `selling fast`. |
+
+Campaign-level anti-repeat history lives in [`featured-history.json`](./featured-history.json) — see [`FEATURED-HISTORY.md`](./FEATURED-HISTORY.md).
 
 ## Rules for automation
 
@@ -50,3 +74,5 @@ Static Cardiff catalog consumed by the site at `./data/cardiff-today.json`.
 3. Keep `evergreen` to real venues with official URLs.
 4. Set `updatedAt` to the real check time (UK offset).
 5. Prefer an empty `datedPicks` array over invented filler — the UI is empty/stale-safe.
+6. Set `organiserUrl` / `bookingUrl` / `url` per the link policy above; never put `leadUrl` in public HTML.
+7. Append or update `featured-history.json` for the same campaign when publishing.

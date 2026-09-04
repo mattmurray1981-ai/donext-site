@@ -4,3 +4,13 @@
 # Netlify Forms are declared in index.html (weekend-brief, weekday-morning).
 # No build command — static site. Production publish follows your Netlify
 # branch settings (usually main). PR branches get Deploy Previews if enabled.
+
+[[redirects]]
+  from = "/now"
+  to = "/now.html"
+  status = 200
+
+[[redirects]]
+  from = "/now/"
+  to = "/now.html"
+  status = 200
