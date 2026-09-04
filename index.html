@@ -1,1108 +1,139 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-<!--
-   ______                            __
-  / ____/___  ____ ___  ____  __  __/ /____  _____
- / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
-/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
-\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
-                    /_/
-        Created with Perplexity Computer
-        https://www.perplexity.ai/computer
--->
-
-<!-- Perplexity Computer Attribution — SEO Meta Tags -->
-<meta name="generator" content="Perplexity Computer">
-<meta name="author" content="Perplexity Computer">
-<meta property="og:see_also" content="https://www.perplexity.ai/computer">
-<link rel="author" href="https://www.perplexity.ai/computer">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DoNext — The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free. Friday brief at 3:30.">
-<meta property="og:title" content="DoNext — Cardiff kids’ weekend plans">
-<meta property="og:description" content="We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0–12—mostly free.">
-<meta property="og:type" content="website">
-<title>DoNext — Cardiff kids’ weekend plans</title>
-
-<!-- Favicon -->
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<link rel="icon" href="./favicon.ico" sizes="32x32">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
-
-<!-- Fonts: Sentient (display) + General Sans (body) from Fontshare -->
-<link href="https://api.fontshare.com/v2/css?f[]=sentient@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="./base.css">
-<link rel="stylesheet" href="./style.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "DoNext",
-  "description": "Family events discovery for UK cities",
-  "url": "https://www.perplexity.ai/computer",
-  "creator": {
-    "@type": "SoftwareApplication",
-    "name": "Perplexity Computer",
-    "url": "https://www.perplexity.ai/computer"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DoNext Cardiff — this weekend’s few kids’ plans</title>
+  <meta name="description" content="The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free. No Saturday-morning trawl.">
+  <meta name="theme-color" content="#0F766E">
+  <meta property="og:title" content="DoNext Cardiff — this weekend’s few kids’ plans">
+  <meta property="og:description" content="The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://donext.co.uk/">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://donext.co.uk/">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@500,600,700&amp;f[]=general-sans@400,500,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DoNext Cardiff",
+    "url": "https://donext.co.uk/",
+    "description": "The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "DoNext",
+      "url": "https://donext.co.uk/"
+    }
   }
-}
-</script>
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#weekend">Skip to this weekend</a>
 
-<!-- Skip to content -->
-<a href="#main-content" class="sr-only" style="position:absolute;top:var(--space-2);left:var(--space-2);z-index:9999;padding:var(--space-2) var(--space-4);background:var(--color-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--text-sm);" onfocus="this.style.display='block'" onblur="this.style.display=''">Skip to main content</a>
-
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
-<header class="site-header" role="banner" id="site-header">
-  <div class="container">
-    <div class="header-inner">
-
-      <!-- Logo -->
-      <a href="#home" class="logo" aria-label="DoNext — go to homepage" data-nav="home">
-        <svg width="120" height="32" viewBox="0 0 120 32" fill="none" aria-label="DoNext" role="img">
-          <!-- "Do" pill background - emphasized action word -->
-          <rect x="0" y="4" width="46" height="24" rx="6" fill="currentColor" opacity="0.1"/>
-          <rect x="0" y="4" width="46" height="24" rx="6" fill="var(--color-primary)" opacity="0.18"/>
-          <!-- D -->
-          <path d="M8 10h5.5c3.5 0 6 2 6 6s-2.5 6-6 6H8V10zm3 2.5v7h2.2c1.8 0 3.2-1.1 3.2-3.5S15 12.5 13.2 12.5H11z" fill="var(--color-primary)"/>
-          <!-- o -->
-          <path d="M22.5 17.5c0-2.8 2-4.6 4.8-4.6s4.8 1.8 4.8 4.6-2 4.6-4.8 4.6-4.8-1.8-4.8-4.6zm7 0c0-1.5-.9-2.4-2.2-2.4s-2.2.9-2.2 2.4.9 2.4 2.2 2.4 2.2-.9 2.2-2.4z" fill="var(--color-primary)"/>
-          <!-- Forward arrow -->
-          <path d="M38 15.5l4 2-4 2" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- N -->
-          <path d="M52 10v12h2.8V14l5.2 8h2.8V10h-2.8v8l-5.2-8H52z" fill="currentColor"/>
-          <!-- e -->
-          <path d="M65 17.5c0-2.8 1.9-4.6 4.6-4.6 2.6 0 4.3 1.7 4.3 4.4 0 .3 0 .6-.05.9H67.6c.2 1.3 1 2 2.2 2 .9 0 1.6-.4 2-.9l1.8 1.2c-.8 1.1-2 1.8-3.8 1.8-2.9 0-4.8-1.8-4.8-4.8zm6.5-1.1c-.1-1.1-.8-1.8-1.9-1.8s-1.8.7-2 1.8h3.9z" fill="currentColor"/>
-          <!-- x -->
-          <path d="M75 13l3 4.5L75 22h3l1.5-2.3L81 22h3l-3-4.5 3-4.5h-3l-1.5 2.3L78 13h-3z" fill="currentColor"/>
-          <!-- t -->
-          <path d="M86.5 10.5V13H84v2.2h2.5v4.3c0 1.8.9 2.7 2.7 2.7.8 0 1.5-.2 2-.4l-.5-2c-.3.1-.6.2-.9.2-.6 0-.9-.3-.9-1v-3.8H91V13h-2.1v-2.5h-2.4z" fill="currentColor"/>
-        </svg>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="/" aria-label="DoNext Cardiff home">
+        <span class="wordmark__name">DoNext</span>
+        <span class="wordmark__place">Cardiff</span>
       </a>
-
-      <!-- Desktop nav -->
-      <nav aria-label="Main navigation">
-        <ul class="nav-links" role="list">
-          <li><a href="#home" data-nav="home" class="active">Home</a></li>
-          <li><a href="#cardiff" data-nav="cardiff">Cardiff</a></li>
-          <li><a href="#cardiff/community" data-community-nav="cardiff/community" data-nav="community">Community</a></li>
-          <li><a href="#about" data-nav="about">About</a></li>
-          <li id="nav-discover-link" style="display:none;"><a href="#discover" data-community-nav="discover" data-nav="discover" class="nav-discover-btn">+ Discover</a></li>
-          <li id="nav-admin-link" style="display:none;"><a href="#admin" data-community-nav="admin" data-nav="admin">Admin</a></li>
-          <li class="nav-cta"><a href="#brief" data-nav="home">Get the brief</a></li>
-          <li class="soft-hidden" hidden><a href="#join" data-nav="join">Join Club</a></li>
-        </ul>
+      <nav class="nav" aria-label="Primary">
+        <a href="#weekend">This weekend</a>
+        <a class="nav__cta" href="#brief">Get the Friday brief</a>
       </nav>
-
-      <!-- Actions -->
-      <div class="nav-actions">
-        <button class="btn btn-ghost btn-sm auth-signin-btn" id="auth-signin-btn">Sign in</button>
-        <div class="auth-user-menu" id="auth-user-menu" style="display:none;position:relative;">
-          <div class="auth-avatar" id="auth-user-avatar">D</div>
-          <span class="auth-user-name" id="auth-user-name">DoNexter</span>
-          <div class="auth-dropdown" id="auth-dropdown">
-            <a href="#cardiff/community" data-community-nav="cardiff/community">My Community</a>
-            <a href="#discover" data-community-nav="discover">Submit Discovery</a>
-            <a href="#" id="auth-logout-btn">Sign out</a>
-          </div>
-        </div>
-        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" id="mobile-menu-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-
     </div>
+  </header>
 
-    <!-- Mobile nav -->
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#cardiff" data-nav="cardiff">Cardiff</a>
-      <a href="#cardiff/community" data-community-nav="cardiff/community" data-nav="community">Community</a>
-      <a href="#about" data-nav="about">About</a>
-      <a href="#discover" data-community-nav="discover" data-nav="discover" id="nav-discover-link-mobile" style="display:none;">+ Submit Discovery</a>
-      <a href="#admin" data-community-nav="admin" data-nav="admin" id="nav-admin-link-mobile" style="display:none;">Admin</a>
-      <a href="#brief" data-nav="home" style="color: var(--color-primary); font-weight: 600;">Get the Friday brief →</a>
-      <a href="#join" data-nav="join" class="soft-hidden" hidden>Join the Club →</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main-content">
-
-  <!-- ============================================================
-       VIEW: HOME
-       ============================================================ -->
-  <div class="view active" id="view-home" role="region" aria-label="Homepage">
-
-    <!-- Hero -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-image-wrap">
-        <img
-          src="./assets/donext-hero.jpg"
-          alt="Family exploring a park with a castle in the background — a perfect DoNext day out"
-          width="1400"
-          height="680"
-          loading="eager"
-          decoding="async"
-        >
-        <div class="hero-content">
-          <span class="hero-label">Cardiff · Ages 0–12 · Friday decision</span>
-          <h1 class="hero-title">The best few Cardiff kids&rsquo; plans<br><em>for this weekend.</em></h1>
-          <p class="hero-subtitle">Locally checked, age-fit and mostly free. No Saturday-morning trawl.</p>
-          <div class="hero-actions">
-            <a href="#cardiff" class="btn btn-primary btn--lg" data-nav="cardiff">
-              See this weekend&rsquo;s few plans
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-            </a>
-            <a href="#brief" class="btn btn-ghost btn--lg" data-nav="home" style="color: #fff; border-color: rgba(255,255,255,0.35);">
-              Get the Friday brief
-            </a>
-          </div>
+  <main id="main">
+    <section class="hero" aria-labelledby="usp-title">
+      <div class="wrap hero__inner">
+        <p class="eyebrow">Cardiff · ages 0–12</p>
+        <h1 id="usp-title" class="hero__title">The best few Cardiff kids’ plans for this weekend.</h1>
+        <p class="hero__lede">Locally checked, age-fit and mostly free. No Saturday-morning trawl.</p>
+        <p class="hero__support">We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0–12—mostly free, with age, price and booking details sorted.</p>
+        <div class="hero__meta">
+          <p class="freshness" id="catalog-freshness">Loading catalog…</p>
+          <p class="weather-note">
+            <a href="https://weather.metoffice.gov.uk/forecast/gcjszevgx" target="_blank" rel="noopener noreferrer">Met Office Cardiff forecast</a>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- City selector -->
-    <section class="section section--alt" aria-labelledby="cities-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Now & Coming Soon</span>
-          <h2 class="section-title" id="cities-heading">Choose your city</h2>
-          <p class="section-desc">DoNext launches city by city — going deep, not wide. Cardiff is live. Your city is coming.</p>
-        </div>
-        <div class="city-grid" data-reveal>
-          <a href="#cardiff" class="city-card city-card--active" data-nav="cardiff" data-reveal="1">
-            <span class="city-card__badge city-card__badge--live">
-              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-              Live now
-            </span>
-            <div class="city-card__name">Cardiff</div>
-            <div class="city-card__desc">Wales' capital and beyond — free museums, landmark parks, community events, and outdoor adventures.</div>
-          </a>
-          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="2">
-            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
-            <div class="city-card__name">Bristol</div>
-            <div class="city-card__desc">Harbourside culture, gorge walks, and the most creative city in the South West.</div>
-          </div>
-          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="3">
-            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
-            <div class="city-card__name">Manchester</div>
-            <div class="city-card__desc">Museums, markets, and more family-friendly culture than you could ever exhaust.</div>
-          </div>
-          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="4">
-            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
-            <div class="city-card__name">Edinburgh</div>
-            <div class="city-card__desc">Castles, hills, and storytelling around every corner. A city built for wonder.</div>
-          </div>
-          <div class="city-card city-card--coming" aria-disabled="true" data-reveal="5">
-            <span class="city-card__badge city-card__badge--soon">Coming Soon</span>
-            <div class="city-card__name">Birmingham</div>
-            <div class="city-card__desc">Canals, chocolate, science museums and the UK's most diverse family food scene.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section" aria-labelledby="how-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <span class="section-label">The DoNext Method</span>
-          <h2 class="section-title" id="how-heading">How DoNext works</h2>
-          <p class="section-desc">We hunt Cardiff kids stuff, check it against organiser pages, and send a short Friday list — so you can decide in minutes.</p>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card" data-reveal="1">
-            <div class="step-number">01</div>
-            <div class="step-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </div>
-          <div class="step-title">We hunt it</div>
-          <p class="step-desc">We look for interesting Cardiff kids plans (hubs, Chapter, libraries, indie markets) and verify what, when, where, ages, cost and booking on organiser pages.</p>
-          </div>
-          <div class="step-card" data-reveal="2">
-            <div class="step-number">02</div>
-            <div class="step-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <div class="step-title">You choose from a few</div>
-            <p class="step-desc">A short, opinionated list — mostly free, age-banded 0–4 / 5–8 / 9–12 — not another endless what&rsquo;s-on database.</p>
-          </div>
-          <div class="step-card" data-reveal="3">
-            <div class="step-number">03</div>
-            <div class="step-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <div class="step-title">You go do it</div>
-            <p class="step-desc">Age, price and booking details sorted, with a direct organiser or booking link. One useful heads-up when it matters. Then grab your coat and go.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social proof strip -->
-    <div class="proof-strip" role="complementary" aria-label="Social proof">
-      <div class="container">
-        <span class="proof-strip__number">Cardiff</span>
-        <span class="proof-strip__text">Locally checked Cardiff kids plans — age, price and booking details sorted. <a href="#cardiff" data-nav="cardiff" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-weight: 600;">This weekend&rsquo;s few →</a></span>
-      </div>
-    </div>
-
-    <!-- Coming Soon: The DoNext App -->
-    <section class="section" aria-labelledby="app-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <span class="section-label">What we are proving first</span>
-          <h2 class="section-title" id="app-heading">One clear Friday decision</h2>
-          <p class="section-desc">We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0&ndash;12&mdash;mostly free, with age, price and booking details sorted.</p>
+    <section class="section" id="weekend" aria-labelledby="weekend-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="weekend-heading" class="section-title">This weekend</h2>
+          <p class="section-sub" id="catalog-headline">Shortlist loading…</p>
         </div>
 
-        <div class="perks-grid soft-hidden" hidden aria-hidden="true">
-          <div class="perk-card">
-            <div class="perk-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <div class="perk-card__title">Swipe to decide</div>
-            <p class="perk-card__text">Like Tinder, but for family days out. Swipe right on experiences you love, left on ones that aren't for you. The app learns what your family enjoys and serves you more of it.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M3 6l3 1m0 0l-3 9a5 5 0 006 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5 5 0 006 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-            </div>
-            <div class="perk-card__title">Smart filters</div>
-            <p class="perk-card__text">Filter by budget (free / under £5 / under £10 / splash out), distance from your postcode, your kids' ages, indoor vs outdoor, vibe (burn energy / chill / educational) — and accessibility needs.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="perk-card__title">Community discoveries</div>
-            <p class="perk-card__text">Tip us off about events we've missed — the school fête, the random pop-up, the church hall craft morning. Your discoveries help every family in the city.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="perk-card__title">Family profiles &amp; community</div>
-            <p class="perk-card__text">Add your family, generate fun avatars from photos, track your adventures ("47 days out this year!"), and tip us off about events we've missed — the school fete, the random pop-up, the church hall craft morning.</p>
-          </div>
-        </div>
+        <div class="age-chips" id="age-chips" role="group" aria-label="Filter by age"></div>
+        <div class="stale-banner" id="stale-banner" hidden></div>
+        <div class="notices" id="notices" aria-label="Notices"></div>
 
-        <div style="text-align: center; margin-top: var(--space-8);">
-          <p style="font-family: var(--font-display); font-size: var(--text-lg); font-style: italic; color: var(--color-text); margin-bottom: var(--space-6);">&ldquo;Open DoNext on Friday afternoon and know the best few Cardiff kids&rsquo; plans for the weekend — without a Saturday-morning trawl.&rdquo;</p>
-          <a href="#brief" class="btn btn-primary btn--lg" data-nav="home">
-            Get the Friday brief
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Email CTA - Netlify Forms -->
-    <section class="section signup-section" id="brief" aria-labelledby="signup-heading">
-      <div class="container">
-        <div class="signup-card">
-          <span class="section-label">Free Cardiff email</span>
-          <h2 class="section-title" id="signup-heading">Get the weekend brief</h2>
-          <p class="section-desc">We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0&ndash;12&mdash;mostly free, with age, price and booking details sorted. Optional weekday morning note below.</p>
-          <div class="signup-choice">
-            <div class="signup-choice__card">
-              <h3>Friday 3:30pm weekend brief</h3>
-              <p class="signup-note">Hero mail - curated weekend picks.</p>
-              <form class="signup-form" name="weekend-brief" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekend brief signup">
-                <input type="hidden" name="form-name" value="weekend-brief">
-                <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-                <label for="email-weekend" class="sr-only">Email address</label>
-                <input type="email" id="email-weekend" name="email" placeholder="you@example.com" required>
-                <button type="submit" class="btn btn-primary">Get the Friday brief</button>
-              </form>
-            </div>
-            <div class="signup-choice__card">
-              <h3>Optional weekday morning</h3>
-              <p class="signup-note">A lighter weekday note when there is something worth knowing.</p>
-              <form class="signup-form" name="weekday-morning" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekday morning signup">
-                <input type="hidden" name="form-name" value="weekday-morning">
-                <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-                <label for="email-weekday" class="sr-only">Email address</label>
-                <input type="email" id="email-weekday" name="email" placeholder="you@example.com" required>
-                <button type="submit" class="btn btn-ghost">Get weekday mornings</button>
-              </form>
-            </div>
-          </div>
-          <p class="signup-note" id="email-home-note">Powered by Netlify Forms. No fake subscriber counts - unsubscribe any time.</p>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- end #view-home -->
-
-
-  <!-- ============================================================
-       VIEW: CARDIFF
-       ============================================================ -->
-  <div class="view" id="view-cardiff" role="region" aria-label="Cardiff city page">
-
-    <section class="cardiff-hero" aria-label="Cardiff hero">
-      <div class="cardiff-hero-image-wrap">
-        <img
-          src="./assets/donext-cardiff.jpg"
-          alt="Cardiff cityscape panorama showing the castle and bay &mdash; your DoNext playground"
-          width="1400"
-          height="480"
-          loading="lazy"
-          decoding="async"
-        >
-        <div class="cardiff-hero-content">
-          <span class="hero-label">DoNext &middot; Cardiff</span>
-          <h1 class="hero-title" style="font-size: var(--text-xl);">This weekend&rsquo;s few plans</h1>
-          <p class="hero-subtitle" style="font-size: var(--text-sm);">Locally checked, age-fit and mostly free. Ages 0&ndash;4 / 5&ndash;8 / 9&ndash;12 — plus evergreen venue backups.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cardiff-dual-panel" aria-labelledby="cardiff-report-heading">
-      <div class="container">
-        <div class="dual-panel-card dual-panel-card--report daily-report-overview active">
-          <span class="daily-report-card__badge" id="cardiff-report-freshness">Loading catalog&hellip;</span>
-          <h2 class="dual-panel-card__title" id="cardiff-report-heading">Cardiff family picks</h2>
-          <p class="dual-panel-card__desc" id="cardiff-report-desc">Dated picks and evergreen backups, loaded from the catalog data file.</p>
-          <div class="age-filter-bar" id="cardiff-age-filters" role="group" aria-label="Filter by age band"></div>
-          <div class="stale-banner" id="cardiff-stale-banner" hidden></div>
-          <p class="report-source-note">Listings come from <code>data/cardiff-today.json</code>. Evergreen cards are clearly marked and link only to official pages.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-live="polite" aria-label="Cardiff catalog details">
-      <div class="container">
         <noscript>
-          <p class="report-error">This catalog needs JavaScript to load <code>data/cardiff-today.json</code>.</p>
+          <p class="empty-state">Enable JavaScript to load this weekend’s shortlist from <code>data/cardiff-today.json</code>.</p>
         </noscript>
-        <div id="cardiff-report-content">
-          <div class="weather-bar" id="cardiff-report-weather">
-            <div class="weather-bar__title">Loading&hellip;</div>
-          </div>
-          <div id="cardiff-report-notices"></div>
-          <div id="cardiff-report-feature"></div>
-          <div id="cardiff-report-events"></div>
-        </div>
 
-        <div class="instagram-section" id="cardiff-instagram">
-          <div class="instagram-section__header">
-            <span class="section-label">Social updates</span>
-            <h2 class="instagram-section__title">@DoNextCardiff on Instagram</h2>
-            <p class="instagram-section__desc">Daily Cardiff inspiration from DoNext.</p>
-            <a class="btn btn-primary instagram-cta" href="https://www.instagram.com/DoNextCardiff/" target="_blank" rel="noopener noreferrer">
-              Follow @DoNextCardiff
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div style="padding-top: clamp(var(--space-10), 6vw, var(--space-16));">
-          <div class="signup-card" style="max-width: 100%;">
-            <span class="section-label">Cardiff email</span>
-            <h2 class="section-title" style="font-size: var(--text-xl);">Friday 3:30pm weekend brief</h2>
-            <p class="section-desc" style="margin-inline: auto;">Same hero mail as the homepage - weekend picks for Cardiff families. Optional weekday morning available on the home page.</p>
-            <form class="signup-form" name="weekend-brief" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" style="margin-top: var(--space-6);" aria-describedby="email-cardiff-note">
-              <input type="hidden" name="form-name" value="weekend-brief">
-              <p class="soft-hidden" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-              <label for="email-cardiff" class="sr-only">Email address</label>
-              <input type="email" id="email-cardiff" name="email" placeholder="you@example.com" required>
-              <button type="submit" class="btn btn-primary">Get the Friday brief</button>
-            </form>
-            <p class="signup-note" id="email-cardiff-note">Netlify Forms capture. Prefer the homepage if you also want the optional weekday morning list.</p>
-          </div>
-        </div>
+        <div id="hero-pick"></div>
+        <div id="dated-picks"></div>
+        <div id="backups"></div>
       </div>
     </section>
 
-  </div><!-- end #view-cardiff -->
+    <section class="section section--signup" id="brief" aria-labelledby="brief-heading">
+      <div class="wrap narrow">
+        <h2 id="brief-heading" class="section-title">Get the Friday brief</h2>
+        <p class="section-sub">Every Friday at 3:30 — the best few locally checked Cardiff plans for ages 0–12, mostly free, with age, price and booking details sorted.</p>
 
-  <!-- ============================================================
-       VIEW: ABOUT
-       ============================================================ -->
-  <div class="view" id="view-about" role="region" aria-label="About DoNext">
-
-    <section class="about-hero section" aria-label="About hero">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Our story</span>
-          <h1 class="section-title">We kept running out of ideas.<br>So we fixed it.</h1>
-          <p class="section-desc">DoNext is the family events service we wished existed.</p>
-        </div>
-        <img
-          src="./assets/donext-about.jpg"
-          alt="A parent relaxing on a sofa discovering family activities on their phone with DoNext"
-          class="about-hero-image"
-          width="960"
-          height="480"
-          decoding="async"
-        >
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="our-story-heading">
-      <div class="container container--narrow">
-        <span class="section-label">The problem we kept hitting</span>
-        <h2 class="section-title" id="our-story-heading">Finding good stuff shouldn't be this hard</h2>
-        <div style="display: flex; flex-direction: column; gap: var(--space-5); margin-top: var(--space-8);">
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">Every weekend, same story. You know there's good stuff happening — craft sessions at the library, forest schools, pop-up workshops — but finding it means trawling through Facebook groups, council websites, and local blogs that haven't been updated since half-term.</p>
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">By the time you've pieced it together, half the morning's gone and you've defaulted to soft play again.</p>
-          <p style="font-size: var(--text-base); color: var(--color-text); line-height: 1.7; font-weight: 500; font-family: var(--font-display); font-size: var(--text-lg); font-style: italic;">&ldquo;We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0&ndash;12&mdash;mostly free, with age, price and booking details sorted.&rdquo;</p>
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">That is the whole product. Not another Cardiff events database. Visit Cardiff, Eventbrite and big seasonal roundups already own inventory. DoNext owns a small, opinionated, dependable Friday decision.</p>
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">Each pick is verified against an organiser or venue page: what, when, where, ages, cost and booking status. Public links go to the organiser (or official booking) — never Facebook groups.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="about-what-heading">
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <span class="section-label">What makes us different</span>
-            <h2 class="section-title" id="about-what-heading">Not another listings site</h2>
-            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; margin-bottom: var(--space-5);">Most what&rsquo;s-on sites are long lists. DoNext is a short shortlist — locally checked, age-fit, mostly free — so a parent can choose a worthwhile weekend plan in under five minutes.</p>
-            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">We editorially pick a few, score them, and ship age, price and booking details with a direct official link. Weather only nudges ranking among strong finds; it does not promote a dull museum visit into the hero slot.</p>
+        <form class="signup" name="weekend-brief" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Friday weekend brief signup">
+          <input type="hidden" name="form-name" value="weekend-brief">
+          <p class="hp" aria-hidden="true">
+            <label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+          <label class="signup__label" for="email-weekend">Email</label>
+          <div class="signup__row">
+            <input id="email-weekend" type="email" name="email" required autocomplete="email" placeholder="you@example.com" inputmode="email">
+            <button type="submit" class="btn">Send me the brief</button>
           </div>
-          <div class="about-block">
-            <div class="about-feature">
-              <div class="about-feature__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              </div>
-              <div class="about-feature__title">Curated, not scraped</div>
-              <p class="about-feature__text">Every event is editorially reviewed — not auto-generated from a feed. We're looking for the unexpected: the community forest school, the free museum morning, the pop-up that won't appear on any tourist website.</p>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              </div>
-              <div class="about-feature__title">Finite list, real links</div>
-          <p class="about-feature__text">Publish only what clears the bar. Public CTAs prefer organiser pages, then official booking. No Facebook-group links, no invented events.</p>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature__icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div class="about-feature__title">Babies to tweens — 0 to 12</div>
-              <p class="about-feature__text">Every event is tagged with the age range that will genuinely enjoy it. We never recommend a toddler group to an 8-year-old, or a forest school to a teenager.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="team-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <span class="section-label">Who this is for</span>
-          <h2 class="section-title" id="team-heading">Every kind of family</h2>
-          <p class="section-desc">Families with kids aged 0–12, in all their shapes and sizes. Whether you're a two-parent household, a solo dad on a Saturday, step-families figuring out the routine, or grandparents with the kids for the day — if you need ideas that go beyond "just Google it", we're here.</p>
-        </div>
-        <div style="max-width: 640px; margin-inline: auto; text-align: center;">
-          <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; font-family: var(--font-display); font-style: italic;">Built in Cardiff, starting with Cardiff. One parent got fed up with the search — now we're building it into something every family in the city can use, with plans to bring it to more UK cities soon.</p>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- end #view-about -->
-
-
-  <!-- ============================================================
-       VIEW: JOIN
-       ============================================================ -->
-  <div class="view soft-hidden" id="view-join" role="region" aria-label="Join DoNext Club" hidden>
-
-    <section class="join-hero" aria-label="Join hero">
-      <div class="container">
-        <div class="coming-soon-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-          Coming Soon
-        </div>
-        <h1 class="section-title" style="font-size: var(--text-2xl); max-width: 18ch; margin-inline: auto;">The DoNext Club is almost here</h1>
-        <p class="section-desc">We're putting the finishing touches on a membership that makes family weekends genuinely easier, richer, and more adventurous.</p>
-        <form class="signup-form signup-form--inactive" style="justify-content: center; margin-top: var(--space-8);" aria-describedby="email-join-note">
-          <label for="email-join" class="sr-only">Email address</label>
-          <input type="email" id="email-join" placeholder="Waitlist is not live" disabled>
-          <button type="submit" class="btn btn-primary btn--lg" disabled>Waitlist coming soon</button>
+          <p class="signup__note">Primary list. Unsubscribe anytime.</p>
         </form>
-        <p class="signup-note" id="email-join-note" style="margin-top: var(--space-4);">This form does not send or store your email.</p>
+
+        <details class="signup-extra">
+          <summary>Also want optional weekday mornings?</summary>
+          <form class="signup signup--compact" name="weekday-morning" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekday morning signup">
+            <input type="hidden" name="form-name" value="weekday-morning">
+            <p class="hp" aria-hidden="true">
+              <label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+            <label class="signup__label" for="email-weekday">Email</label>
+            <div class="signup__row">
+              <input id="email-weekday" type="email" name="email" required autocomplete="email" placeholder="you@example.com" inputmode="email">
+              <button type="submit" class="btn btn--ghost">Join weekday list</button>
+            </div>
+          </form>
+        </details>
       </div>
     </section>
+  </main>
 
-    <section class="section" aria-labelledby="perks-heading">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <span class="section-label">DoNext Club</span>
-          <h2 class="section-title" id="perks-heading">What members get</h2>
-        </div>
-        <div class="perks-grid">
-          <div class="perk-card">
-            <div class="perk-card__icon">🌟</div>
-            <div class="perk-card__title">Early access to sold-out events</div>
-            <p class="perk-card__text">Members get 48-hour priority access before events go public — including the ones that always sell out in minutes.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">🎟️</div>
-            <div class="perk-card__title">Exclusive member discounts</div>
-            <p class="perk-card__text">Negotiated deals with Cardiff's best family attractions — museums, cafes, activity centres, and experiences.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">🗺️</div>
-            <div class="perk-card__title">Weather-smart curation</div>
-          <p class="perk-card__text">Each day's picks are matched to the forecast — rainy day indoor options, sunny day adventures, or "we have 2 hours and a buggy" quick wins.</p>
-          </div>
-          <div class="perk-card">
-            <div class="perk-card__icon">🔮</div>
-            <div class="perk-card__title">Secret events</div>
-            <p class="perk-card__text">Members-only events and experiences that never appear on public listings. Our most exciting curation, exclusively for the club.</p>
-          </div>
-        </div>
-
-        <div class="pricing-card">
-          <span class="section-label" style="display: block; margin-bottom: var(--space-4);">Membership pricing</span>
-          <div class="pricing-price">From £5 <span>/ month</span></div>
-          <p class="pricing-desc">Cancel anytime. No commitment. First month free for founding members.</p>
-          <span class="btn btn-primary btn--lg" style="width: 100%; justify-content: center;" aria-disabled="true">
-            Waitlist not open yet
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- end #view-join -->
-
-
-  <!-- ============================================================
-       VIEW: BLOG
-       ============================================================ -->
-  <div class="view" id="view-blog" role="region" aria-label="DoNext Blog">
-
-    <section class="section" aria-labelledby="blog-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Ideas, guides &amp; inspiration</span>
-          <h1 class="section-title" id="blog-heading">The DoNext Journal</h1>
-          <p class="section-desc">Honest guides, hidden spots, and everything we've learned about doing Cardiff with kids.</p>
-        </div>
-
-        <div class="blog-grid" role="list">
-
-          <article class="blog-card" role="listitem">
-            <div class="blog-card__image-wrap">
-              <div class="blog-card__image-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-            </div>
-            <div class="blog-card__body">
-              <span class="blog-card__tag">Rainy days</span>
-              <h2 class="blog-card__title">10 Rainy Day Activities in Cardiff (That Kids Actually Love)</h2>
-              <p class="blog-card__excerpt">Rain is a fact of life in South Wales. Here are the ten indoor activities we keep coming back to — ranked by how much your kids will thank you.</p>
-              <div class="blog-card__footer">
-                <span>4 Mar 2026</span>
-                <span>6 min read</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="blog-card" role="listitem">
-            <div class="blog-card__image-wrap">
-              <div class="blog-card__image-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" opacity="0.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-            </div>
-            <div class="blog-card__body">
-              <span class="blog-card__tag">Free days out</span>
-              <h2 class="blog-card__title">The Best Free Days Out in South Wales</h2>
-              <p class="blog-card__excerpt">You don't need to spend a fortune to have a brilliant family day. This is our definitive guide to South Wales' best free family experiences.</p>
-              <div class="blog-card__footer">
-                <span>28 Feb 2026</span>
-                <span>8 min read</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="blog-card" role="listitem">
-            <div class="blog-card__image-wrap">
-              <div class="blog-card__image-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="1.5" opacity="0.5"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 0 0 6.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 0 0 6.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-              </div>
-            </div>
-            <div class="blog-card__body">
-              <span class="blog-card__tag">Toddlers</span>
-              <h2 class="blog-card__title">A Parent's Guide to St Fagans with Toddlers</h2>
-              <p class="blog-card__excerpt">St Fagans is incredible — but with a toddler, you need a plan. Here's exactly how we do it, including the secret parking spot and best picnic location.</p>
-              <div class="blog-card__footer">
-                <span>22 Feb 2026</span>
-                <span>5 min read</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="blog-card" role="listitem">
-            <div class="blog-card__image-wrap">
-              <div class="blog-card__image-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-            </div>
-            <div class="blog-card__body">
-              <span class="blog-card__tag">Local secrets</span>
-              <h2 class="blog-card__title">Hidden Playgrounds of Cardiff: 8 You Probably Don't Know</h2>
-              <p class="blog-card__excerpt">Cardiff's best playgrounds aren't the ones on the tourist maps. These eight spots are where local families actually go — and they're worth finding.</p>
-              <div class="blog-card__footer">
-                <span>14 Feb 2026</span>
-                <span>4 min read</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-  </div><!-- end #view-blog -->
-
-  <!-- ============================================================
-       VIEW: COMMUNITY
-       ============================================================ -->
-  <div class="view" id="view-community" role="region" aria-label="Community">
-    <section class="section" aria-labelledby="community-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">DoNext Community</span>
-          <h1 class="section-title" id="community-heading">This weekend in Cardiff</h1>
-          <p class="section-desc">Activities discovered and validated by local families. Filter, explore, and share your experiences.</p>
-        </div>
-
-        <!-- Community tabs -->
-        <div class="community-tabs" role="tablist">
-          <button class="community-tab active" role="tab" aria-selected="true" data-tab="activities">Activities</button>
-          <button class="community-tab soft-hidden" role="tab" aria-selected="false" data-tab="leaderboard" hidden>Leaderboard</button>
-        </div>
-
-        <!-- Activities tab -->
-        <div class="community-tab-panel active" id="community-tab-activities" data-tab-panel="activities">
-          <div class="community-filters">
-            <button class="community-filter-chip" data-filter="Kids">Kids</button>
-            <button class="community-filter-chip" data-filter="Rain-proof">Rain-proof</button>
-            <button class="community-filter-chip" data-filter="Free">Free</button>
-            <button class="community-filter-chip" data-filter="Date night">Date night</button>
-          </div>
-          <div id="community-activities" class="community-grid"></div>
-        </div>
-
-        <!-- Leaderboard tab -->
-        <div class="community-tab-panel" id="community-tab-leaderboard" data-tab-panel="leaderboard">
-          <div class="section-header section-header--centered" style="margin-top: var(--space-4);">
-            <span class="section-label">Top DoNexters</span>
-            <p class="section-desc">The most active community members — ranked by validations, discoveries, and hidden gems found.</p>
-          </div>
-          <div class="leaderboard-table-wrap">
-            <table class="leaderboard-table">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>Level</th>
-                  <th>Validations</th>
-                  <th>Discoveries</th>
-                  <th>Gems</th>
-                </tr>
-              </thead>
-              <tbody id="leaderboard-table-body-inline">
-                <tr><td colspan="6" style="text-align:center;padding:var(--space-8);">Loading leaderboard…</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </div><!-- end #view-community -->
-
-  <!-- ============================================================
-       VIEW: ACTIVITY DETAIL
-       ============================================================ -->
-  <div class="view" id="view-activity" role="region" aria-label="Activity Detail">
-    <section class="section">
-      <div class="container container--narrow">
-        <div id="activity-detail-content"></div>
-      </div>
-    </section>
-  </div><!-- end #view-activity -->
-
-  <!-- ============================================================
-       VIEW: DISCOVER
-       ============================================================ -->
-  <div class="view" id="view-discover" role="region" aria-label="Submit Discovery">
-    <section class="section">
-      <div class="container container--narrow">
-        <div class="section-header">
-          <span class="section-label">Share with the community</span>
-          <h1 class="section-title">Submit a discovery</h1>
-          <p class="section-desc">Found a great family activity? Tell us about it and help other Cardiff families discover something new.</p>
-        </div>
-        <form id="discovery-form" class="discovery-form">
-          <div class="form-group">
-            <label class="form-label" for="disc-title">Activity name *</label>
-            <input type="text" id="disc-title" required class="form-input" placeholder="e.g. Forest School at Bute Park">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="disc-description">Description *</label>
-            <textarea id="disc-description" required class="form-textarea" rows="3" placeholder="What is it? Why is it great for families?"></textarea>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="disc-location">Location name *</label>
-              <input type="text" id="disc-location" required class="form-input" placeholder="e.g. Bute Park">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="disc-address">Address</label>
-              <input type="text" id="disc-address" class="form-input" placeholder="e.g. North Road, Cardiff CF10 3DX">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="disc-postcode">Postcode or what3words *</label>
-            <input type="text" id="disc-postcode" required class="form-input" placeholder="e.g. CF10 3DX or ///filled.count.soap">
-            <p class="form-hint">Helps others find the exact spot. Use a UK postcode or a <a href="https://what3words.com" target="_blank" rel="noopener noreferrer">what3words</a> address.</p>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="disc-cost">Cost</label>
-              <input type="text" id="disc-cost" class="form-input" placeholder="e.g. Free, £5, £10-15">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="disc-age">Age range</label>
-              <input type="text" id="disc-age" class="form-input" placeholder="e.g. All ages, 2-8, 5+">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tags</label>
-            <div class="chip-options">
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="worth-it"><span>Worth it</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="rain-proof"><span>Rain-proof</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="great-for-toddlers"><span>Great for toddlers</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="great-for-tweens"><span>Great for tweens</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="free-fun"><span>Free fun</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="educational"><span>Educational</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="burns-energy"><span>Burns energy</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="cozy-indoor"><span>Cosy indoor</span></label>
-              <label class="chip-option"><input type="checkbox" name="disc-tag" value="hidden-gem-find"><span>Hidden gem</span></label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="disc-photo">Verification photo (optional)</label>
-            <input type="file" accept="image/*" id="disc-photo" class="form-file-input">
-            <p class="form-hint">A photo of the venue or activity (not people). This helps us verify the location exists. Please avoid including identifiable faces — we'll reject photos with children in them.</p>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="disc-booking">Booking URL (optional)</label>
-            <input type="url" id="disc-booking" class="form-input" placeholder="https://...">
-          </div>
-          <button type="submit" class="btn btn-primary btn--lg" style="width:100%;justify-content:center;">Submit discovery</button>
-        </form>
-        <div id="discovery-success" class="discovery-success" style="display:none;">
-          <div class="success-icon">✓</div>
-          <h2 class="modal-title">Thanks!</h2>
-          <p>Your discovery will be reviewed and added soon. You're helping Cardiff families find great things to do!</p>
-          <a href="#cardiff/community" data-community-nav="cardiff/community" class="btn btn-primary" style="margin-top:var(--space-4);">Back to community</a>
-        </div>
-      </div>
-    </section>
-  </div><!-- end #view-discover -->
-
-  <!-- ============================================================
-       VIEW: LEADERBOARD
-       ============================================================ -->
-  <div class="view soft-hidden" id="view-leaderboard" role="region" aria-label="Leaderboard" hidden>
-    <section class="section">
-      <div class="container">
-        <div class="section-header section-header--centered">
-          <span class="section-label">Top DoNexters</span>
-          <h1 class="section-title">City Leaderboard</h1>
-          <p class="section-desc">The most active community members in Cardiff — ranked by validations, discoveries, and hidden gems found.</p>
-        </div>
-        <div class="leaderboard-table-wrap">
-          <table class="leaderboard-table">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Level</th>
-                <th>Validations</th>
-                <th>Discoveries</th>
-                <th>Gems</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboard-table-body">
-              <tr><td colspan="6" style="text-align:center;padding:var(--space-8);">Loading leaderboard…</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </div><!-- end #view-leaderboard -->
-
-  <!-- ============================================================
-       VIEW: ADMIN
-       ============================================================ -->
-  <div class="view soft-hidden" id="view-admin" role="region" aria-label="Admin Panel" hidden>
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Administration</span>
-          <h1 class="section-title">Admin Panel</h1>
-        </div>
-        <div class="admin-tabs">
-          <button class="admin-tab-btn active" data-tab="discoveries">Pending Discoveries</button>
-          <button class="admin-tab-btn" data-tab="validations">Recent Validations</button>
-          <button class="admin-tab-btn" data-tab="users">User Management</button>
-        </div>
-        <div id="admin-content" class="admin-content"></div>
-      </div>
-    </section>
-  </div><!-- end #view-admin -->
-
-</main>
-
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-
-      <div class="footer-brand">
-        <a href="#home" data-nav="home" aria-label="DoNext homepage">
-          <svg width="100" height="28" viewBox="0 0 120 32" fill="none" aria-hidden="true">
-            <rect x="0" y="4" width="46" height="24" rx="6" fill="var(--color-primary)" opacity="0.18"/>
-            <path d="M8 10h5.5c3.5 0 6 2 6 6s-2.5 6-6 6H8V10zm3 2.5v7h2.2c1.8 0 3.2-1.1 3.2-3.5S15 12.5 13.2 12.5H11z" fill="var(--color-primary)"/>
-            <path d="M22.5 17.5c0-2.8 2-4.6 4.8-4.6s4.8 1.8 4.8 4.6-2 4.6-4.8 4.6-4.8-1.8-4.8-4.6zm7 0c0-1.5-.9-2.4-2.2-2.4s-2.2.9-2.2 2.4.9 2.4 2.2 2.4 2.2-.9 2.2-2.4z" fill="var(--color-primary)"/>
-            <path d="M38 15.5l4 2-4 2" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M52 10v12h2.8V14l5.2 8h2.8V10h-2.8v8l-5.2-8H52z" fill="currentColor"/>
-            <path d="M65 17.5c0-2.8 1.9-4.6 4.6-4.6 2.6 0 4.3 1.7 4.3 4.4 0 .3 0 .6-.05.9H67.6c.2 1.3 1 2 2.2 2 .9 0 1.6-.4 2-.9l1.8 1.2c-.8 1.1-2 1.8-3.8 1.8-2.9 0-4.8-1.8-4.8-4.8zm6.5-1.1c-.1-1.1-.8-1.8-1.9-1.8s-1.8.7-2 1.8h3.9z" fill="currentColor"/>
-            <path d="M75 13l3 4.5L75 22h3l1.5-2.3L81 22h3l-3-4.5 3-4.5h-3l-1.5 2.3L78 13h-3z" fill="currentColor"/>
-            <path d="M86.5 10.5V13H84v2.2h2.5v4.3c0 1.8.9 2.7 2.7 2.7.8 0 1.5-.2 2-.4l-.5-2c-.3.1-.6.2-.9.2-.6 0-.9-.3-.9-1v-3.8H91V13h-2.1v-2.5h-2.4z" fill="currentColor"/>
-          </svg>
-        </a>
-        <p class="footer-brand__desc">The best few Cardiff kids&rsquo; plans for this weekend. Locally checked, age-fit and mostly free.</p>
-        <div class="footer-social" aria-label="Social media status"><span class="social-placeholder">Social channels coming soon</span></div>
-      </div>
-
-      <nav class="footer-nav" aria-label="Explore">
-        <div class="footer-nav__title">Explore</div>
-        <ul role="list">
-          <li><a href="#home" data-nav="home">Home</a></li>
-          <li><a href="#cardiff" data-nav="cardiff">Cardiff</a></li>
-          <li><a href="#about" data-nav="about">About</a></li>
-          <li><a href="#brief" data-nav="home">Get the brief</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-nav" aria-label="Cardiff">
-        <div class="footer-nav__title">Cardiff</div>
-        <ul role="list">
-          <li><a href="#cardiff" data-nav="cardiff">Hidden Gems</a></li>
-          <li><a href="#cardiff" data-nav="cardiff">Reliable Anchors</a></li>
-          <li><a href="#cardiff" data-nav="cardiff">DIY Adventures</a></li>
-          <li><a href="#cardiff/community" data-community-nav="cardiff/community">Community</a></li>
-        </ul>
-      </nav>
-
-      <nav class="footer-nav" aria-label="Cities">
-        <div class="footer-nav__title">Coming Soon</div>
-        <ul role="list">
-          <li><a href="#home" data-nav="home">Bristol</a></li>
-          <li><a href="#home" data-nav="home">Manchester</a></li>
-          <li><a href="#home" data-nav="home">Edinburgh</a></li>
-          <li><a href="#home" data-nav="home">Birmingham</a></li>
-        </ul>
-      </nav>
-
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap footer-inner">
+      <p class="footer-honesty">A shortlist, not every event in Cardiff.</p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://www.instagram.com/donext_cardiff/" target="_blank" rel="noopener noreferrer">Instagram @donext_cardiff</a></li>
+        <li><a href="/now">donext.co.uk/now</a></li>
+      </ul>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <span class="footer-bottom__copy">© 2026 DoNext. Made with ♥ in Cardiff.</span>
-      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer-bottom__attribution">
-        Created with Perplexity Computer
-      </a>
-    </div>
-  </div>
-</footer>
-
-
-<!-- ============================================================
-     JAVASCRIPT — Routing, theme, mobile nav, scroll reveals
-     ============================================================ -->
-<script>
-(function() {
-  'use strict';
-
-  // --- Theme toggle ---
-  const root = document.documentElement;
-  const themeToggle = document.querySelector('[data-theme-toggle]');
-  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  root.setAttribute('data-theme', theme);
-
-  function updateThemeIcon() {
-    if (!themeToggle) return;
-    themeToggle.innerHTML = theme === 'dark'
-      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
-  }
-  updateThemeIcon();
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      theme = theme === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', theme);
-      updateThemeIcon();
-    });
-  }
-
-  // --- Hash-based routing ---
-  var views = {
-    home:    document.getElementById('view-home'),
-    cardiff: document.getElementById('view-cardiff'),
-    about:   document.getElementById('view-about'),
-    join:    document.getElementById('view-join')
-  };
-  var navLinks = document.querySelectorAll('[data-nav]');
-
-  function showView(name) {
-    var viewName = (name && views[name]) ? name : 'home';
-    // Hide all views
-    Object.values(views).forEach(function(v) {
-      if (v) v.classList.remove('active');
-    });
-    // Show requested view
-    if (views[viewName]) views[viewName].classList.add('active');
-    // Update nav active state
-    navLinks.forEach(function(link) {
-      link.classList.toggle('active', link.getAttribute('data-nav') === viewName);
-    });
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    // Trigger reveals on new view
-    setTimeout(triggerReveals, 50);
-    // Close mobile nav
-    closeMobileNav();
-    // Load daily report when showing Cardiff
-    if (viewName === 'cardiff' && window._donextLoadReport) window._donextLoadReport();
-    // Update page title
-    var titles = {
-      home:    'DoNext — Cardiff kids’ weekend plans',
-      cardiff: 'DoNext Cardiff — Family Events this Week',
-      about:   'About DoNext — Built by parents, for parents',
-      join:    'Join DoNext Club — Coming Soon'
-    };
-    document.title = titles[viewName] || titles.home;
-  }
-
-  function getHashView() {
-    var hash = window.location.hash.replace('#', '');
-    return (hash && views[hash]) ? hash : 'home';
-  }
-
-  // Intercept nav clicks
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var target = this.getAttribute('data-nav');
-      if (target && views[target]) {
-        e.preventDefault();
-        history.pushState(null, '', '#' + target);
-        showView(target);
-      }
-    });
-  });
-
-  // Handle hero CTA links
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    if (!a.hasAttribute('data-nav')) return;
-    // already handled above
-  });
-
-  // Handle browser back/forward
-  window.addEventListener('popstate', function() {
-    showView(getHashView());
-  });
-
-  // Init on load
-  showView(getHashView());
-
-  // --- Mobile nav ---
-  var mobileBtn = document.getElementById('mobile-menu-btn');
-  var mobileNav = document.getElementById('mobile-nav');
-
-  function closeMobileNav() {
-    if (mobileNav) mobileNav.classList.remove('open');
-    if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
-  }
-
-  if (mobileBtn && mobileNav) {
-    mobileBtn.addEventListener('click', function() {
-      var isOpen = mobileNav.classList.toggle('open');
-      mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  }
-
-  // --- Header scroll state ---
-  var header = document.getElementById('site-header');
-  function onScroll() {
-    if (header) {
-      header.classList.toggle('site-header--scrolled', window.scrollY > 20);
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // --- Scroll reveals ---
-  function triggerReveals() {
-    var els = document.querySelectorAll('.view.active [data-reveal]');
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      els.forEach(function(el) { observer.observe(el); });
-    } else {
-      els.forEach(function(el) { el.classList.add('revealed'); });
-    }
-  }
-  triggerReveals();
-
-  // --- Image fallbacks ---
-  document.querySelectorAll('img').forEach(function(img) {
-    img.addEventListener('error', function() {
-      this.style.background = 'var(--color-surface-offset)';
-    });
-  });
-
-})();
-</script>
-
-<script src="./cardiff-activities.js"></script>
-<script src="./cardiff-catalog.js"></script>
-<script src="./app.js"></script>
-
-
-
+  <script src="./cardiff-catalog.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
