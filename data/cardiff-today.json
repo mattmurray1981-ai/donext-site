@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "city": "Cardiff",
+  "updatedAt": "2026-09-04T12:45:00+01:00",
+  "staleAfterHours": 36,
+  "headline": "Cardiff family picks",
+  "summary": "Dated picks are empty until the morning automation writes today's shortlist. Evergreen venues below stay available with official links.",
+  "notices": [],
+  "datedPicks": [],
+  "evergreen": [
+    {
+      "id": "national-museum-cardiff",
+      "title": "National Museum Cardiff",
+      "time": "Usually 10:00–17:00 (check before travel)",
+      "location": "Cathays Park, Cardiff, CF10 3NP",
+      "cost": "Free entry",
+      "ageBands": ["0-4", "5-8", "9-12"],
+      "description": "Art, natural history and science galleries in the city centre. Under-16s must visit with an adult.",
+      "url": "https://museum.wales/cardiff/visit/",
+      "sourceName": "Museum Wales",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "st-fagans",
+      "title": "St Fagans National Museum of History",
+      "time": "Usually 10:00–17:00 (check before travel)",
+      "location": "St Fagans, Cardiff, CF5 6XB",
+      "cost": "Free entry · parking charged",
+      "ageBands": ["0-4", "5-8", "9-12"],
+      "description": "Historic buildings, open meadows and indoor galleries. A dependable all-weather family day out west of the city.",
+      "url": "https://museum.wales/stfagans/",
+      "sourceName": "Museum Wales",
+      "indoorOutdoor": "either",
+      "confidence": "high"
+    },
+    {
+      "id": "techniquest",
+      "title": "Techniquest",
+      "time": "Check opening times before travel",
+      "location": "Stuart Street, Cardiff Bay, CF10 5BW",
+      "cost": "Paid admission · book ahead recommended",
+      "ageBands": ["0-4", "5-8", "9-12"],
+      "description": "Hands-on science centre in Cardiff Bay. Capacity can be limited — confirm times and tickets on the venue site.",
+      "url": "https://www.techniquest.org/visit/opening-times-and-prices/",
+      "sourceName": "Techniquest",
+      "indoorOutdoor": "indoor",
+      "confidence": "high"
+    },
+    {
+      "id": "bute-park",
+      "title": "Bute Park",
+      "time": "Dawn to dusk",
+      "location": "Castle Street / North Road, Cardiff",
+      "cost": "Free",
+      "ageBands": ["0-4", "5-8", "9-12"],
+      "description": "Central parkland beside Cardiff Castle — paths, play space and room to roam without booking.",
+      "url": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx",
+      "sourceName": "Cardiff Council",
+      "indoorOutdoor": "outdoor",
+      "confidence": "high"
+    }
+  ]
+}
