@@ -1,65 +1,69 @@
-# DoNext
+# DoNext Cardiff
 
-Static Cardiff family-events site for [donext.co.uk](https://donext.co.uk).
+Lean static site for [donext.co.uk](https://donext.co.uk) — a Friday-decision shortlist of Cardiff kids’ plans (ages 0–12), not an events database.
+
+## Product
+
+**USP:** The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free. No Saturday-morning trawl.
+
+**Support:** We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0–12—mostly free, with age, price and booking details sorted.
+
+## Redesign (2026)
+
+The previous Perplexity Computer SPA (swipe UI, club chrome, heavy CSS/JS, wrong schema.org URLs) was replaced with a purpose-built minimal static page: sticky header, hero USP, age chips, hero pick, dated cards, compact evergreen backups, and Netlify Forms signup.
 
 ## Catalog data
 
-Cardiff listings are **not** hardcoded in HTML.
-
-The static site reads:
+Listings are **not** hardcoded in HTML. The site reads:
 
 ```text
 data/cardiff-today.json
 ```
 
-Schema: [`data/SCHEMA.md`](data/SCHEMA.md).
+Schema: [`data/SCHEMA.md`](data/SCHEMA.md). Featured history: [`data/featured-history.json`](data/featured-history.json).
 
-- **`datedPicks`** — verified, date-specific picks for the current window (may be empty).
+- **`datedPicks`** — verified, date-specific picks (may be empty).
 - **`evergreen`** — always-on venue backups with official URLs.
-- **`updatedAt`** — honest last-checked timestamp. If older than ~36 hours (`staleAfterHours`), the page shows a stale banner.
-- Age filters: **0–4 / 5–8 / 9–12**.
+- **`updatedAt`** — honest last-checked stamp; stale banner after ~36 hours.
+- Age filters: **All / 0–4 / 5–8 / 9–12**.
+- Public CTA order: `organiserUrl` → `bookingUrl` → `url`. Never `leadUrl`.
 
-## Morning automation (overwrite + deploy)
+## Morning automation
 
-Typical weekday/weekend job:
+1. Verify Cardiff family listings from organiser/venue sources.
+2. Overwrite `data/cardiff-today.json` (real `updatedAt`, fill `datedPicks`, keep real evergreen URLs).
+3. Update `data/featured-history.json` when publishing a campaign.
+4. Commit and deploy via your usual Netlify branch flow.
 
-1. Gather and verify today’s Cardiff family listings from organiser/venue sources.
-2. Build a fresh `data/cardiff-today.json` (set real `updatedAt`, fill `datedPicks`, keep real evergreen URLs).
-3. Commit on a working branch (do **not** force-push `main`):
-
-   ```bash
-   git add data/cardiff-today.json
-   git commit -m "Update Cardiff today catalog"
-   git push
-   ```
-
-4. Merge the PR (or push to the Netlify production branch) so Netlify rebuilds and publishes the new JSON.
-
-Empty `datedPicks` is valid — the UI stays empty/stale-safe and still shows evergreen backups.
+Empty `datedPicks` is valid — UI stays empty/stale-safe and still shows backups.
 
 ## Email signup
 
-Homepage and Cardiff forms use **Netlify Forms**:
+Netlify Forms (declared in static HTML at deploy time):
 
-- `weekend-brief` — primary Friday **3:30pm** weekend brief (hero mail).
-- `weekday-morning` — optional weekday morning brief.
+- `weekend-brief` — primary Friday **3:30** weekend brief.
+- `weekday-morning` — optional weekday mornings.
 
-Forms must remain in static HTML at deploy time (`data-netlify="true"` + hidden `form-name`) so Netlify can register them. Check submissions in the Netlify site admin → Forms.
+Hidden field declarations also live in `__forms.html`. Success redirect: `/thank-you`.
 
-## Instagram
+## Routes
 
-Cardiff page links to [@DoNextCardiff](https://www.instagram.com/DoNextCardiff/).
-
-## Soft-hidden surfaces
-
-Club membership, community leaderboard, and admin are soft-hidden while those backends are not production-ready. Community discovery code remains in the repo for later.
+- `/` — homepage shortlist + signup
+- `/now` → `now.html` (Instagram bio destination)
+- `/thank-you` → `thank-you.html`
 
 ## Local preview
 
-Serve the repo root over HTTP (required for `fetch('./data/cardiff-today.json')`), e.g.:
+Serve the repo root over HTTP (required for `fetch('./data/cardiff-today.json')`):
 
 ```bash
 npx --yes serve .
+# or: python3 -m http.server 8080
 ```
 
-Then open the Cardiff view (`#cardiff`).
+Open `/` or `/now.html`. Do not open `index.html` via `file://` — catalog fetch will fail.
+
+## Intentionally unused / legacy
+
+- `cardiff-activities.js` — legacy hardcoded activities; **not** loaded on the homepage.
+- Old club / leaderboard / swipe / personalisation UI — removed from the public pages.
