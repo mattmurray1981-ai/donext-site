@@ -1,11 +1,17 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-04T19:22:32+01:00",
+  "updatedAt": "2026-09-04T20:58:38+01:00",
   "staleAfterHours": 36,
   "headline": "Sunny weekend family picks — 5–6 Sep",
-  "summary": "Met Office: Sat dry and sunny ~20°C; Sun warmer ~24°C with any early drizzle clearing. Free/cheap dated picks at Llanishen Reservoir, Chapter and Hubs, plus Techniquest’s last A-Mazing Summer days and a toddler show at New Theatre.",
+  "summary": "Met Office Cardiff: Sat dry sunny ~20°C; Sun warmer ~24°C after any early drizzle. Hero: Fonmon Castle’s Great Crisp & Potato Festival (Sat, Vale ~30–40 min). Free/local: Roath Market (Sat), Riverside Market (Sun), Chapter mask workshop (Sun), Hubs homework club. Indie Collectives at WMC (Sat). Toddler show at New Theatre (Sun).",
   "notices": [
+    {
+      "title": "Museum of Cardiff — currently closed",
+      "detail": "Museum of Cardiff (Old Library / The Hayes) is closed due to a leak; organisers say they will update when they know more. Do not plan a visit this weekend.",
+      "sourceName": "Museum of Cardiff",
+      "sourceUrl": "https://cardiffmuseum.com/"
+    },
     {
       "title": "Llanishen Reservoir — early close Sunday",
       "detail": "Site closes at 16:00 on Sunday 6 Sep for staff training. Plan morning or early-afternoon visits.",
@@ -21,34 +27,61 @@
   ],
   "datedPicks": [
     {
-      "id": "llanishen-back-to-school-sat",
-      "title": "Back to School kids activities",
+      "id": "fonmon-crisp-potato-festival-sat",
+      "title": "Great Crisp & Potato Festival",
       "date": "2026-09-05",
-      "time": "10:00–13:00",
-      "location": "Llanishen Reservoir, Lisvane Road, Cardiff CF14 0BB",
-      "cost": "Free drop-in",
+      "time": "11:00–18:00",
+      "location": "Fonmon Castle, Castle Road, Fonmon, Vale of Glamorgan CF62 3ZN",
+      "cost": "Adult £15 · child £10 · under-3 free (+ £1 booking fee on paid tickets)",
       "ageBands": [
+        "0-4",
         "5-8",
         "9-12"
       ],
-      "description": "Explore Learning free educational games and activities aimed at ages 4–14. Drop in; good outdoor morning if the sun holds.",
-      "url": "https://www.eventbrite.co.uk/e/back-to-school-kids-activities-tickets-1998077720248",
-      "sourceName": "Eventbrite · Explore Learning",
+      "description": "Wales’ first crisp & potato festival: free crisps on arrival, kids’ craft (design your own packet), blindfold tasting, crisp zones, potato food trailers, tribute acts, DJ, dinosaur trail and full castle/grounds entry. Dogs not permitted.",
+      "url": "https://fonmoncastle.com/whats-on",
+      "sourceName": "Fonmon Castle",
       "indoorOutdoor": "outdoor",
       "confidence": "high",
-      "bookingUrl": "https://www.eventbrite.co.uk/e/back-to-school-kids-activities-tickets-1998077720248",
-      "score": 86,
+      "organiserUrl": "https://fonmoncastle.com/whats-on",
+      "bookingUrl": "https://fonmoncastle.digitickets.co.uk/event-tickets/77908?catID=73101",
+      "score": 88,
       "role": "hero",
-      "whyPicked": "Free outdoor drop-in with a clear Saturday morning window — strong “if you do one thing” pick for a sunny weekend.",
-      "parentHeadsUp": "Drop-in 10:00–13:00; Explore Learning games aimed ~4–14. Pair with reservoir walks after.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
-      "bookingStatus": "free drop-in · Eventbrite listing for details"
+      "whyPicked": "Unusual family day out with clear kids activities (crafts, dinosaur trail) and castle entry included — strong “if you do one thing” outdoor pick for a sunny Saturday.",
+      "parentHeadsUp": "Vale of Glamorgan near Barry — about 30–40 min drive from Cardiff (within DoNext coverage). Book via DigiTickets; dogs not allowed. SatNav to CF62 3ZN can stop short — follow brown tourism signs from the B4265, not via Fonmon village.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
+      "bookingStatus": "paid tickets · book via DigiTickets (castle entry included)"
+    },
+    {
+      "id": "roath-farmers-market-sat",
+      "title": "Roath Farmers Market",
+      "date": "2026-09-05",
+      "time": "09:30–13:00",
+      "location": "Mackintosh Sports Club car park, Keppoch Street, Roath, Cardiff CF24 3JW",
+      "cost": "Free to browse",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Weekly Roath community food market with local bakers, eggs, organic veg, cheese, coffee and street food. Easy free Saturday morning browse opposite The Gate.",
+      "url": "http://www.riversidemarket.org.uk/roath-market",
+      "sourceName": "Cardiff Farmers Markets",
+      "indoorOutdoor": "outdoor",
+      "confidence": "high",
+      "organiserUrl": "http://www.riversidemarket.org.uk/roath-market",
+      "score": 78,
+      "role": "feature",
+      "whyPicked": "Verified free local indie market with named traders listed for Sat 5 Sep — beats a tourist-staple default for a sunny morning.",
+      "parentHeadsUp": "Car park of Mackintosh Sports Club on Keppoch Street (opposite The Gate). Ends 13:00 — go early.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
+      "bookingStatus": "free to browse · no booking"
     },
     {
       "id": "indie-collectives-wmc-sat",
       "title": "Indie Collectives market at WMC",
       "date": "2026-09-05",
-      "time": "Daytime (check on arrival)",
+      "time": "Daytime (confirm stall hours on arrival)",
       "location": "Wales Millennium Centre, Cardiff Bay",
       "cost": "Free to browse",
       "ageBands": [
@@ -58,16 +91,16 @@
       ],
       "description": "Curated South Wales makers, bakers and small creatives trading inside WMC. Pair with a Bay walk; coincides with separate 999 Day activity outside.",
       "url": "https://itsoncardiff.co.uk/indie-market-that-champions-small-creators-returns-to-cardiff-bay/",
-      "sourceName": "It's On Cardiff",
+      "sourceName": "Indie Collectives / It's On Cardiff",
       "indoorOutdoor": "indoor",
       "confidence": "medium",
-      "statusNote": "Confirm stall hours on the day at WMC.",
-      "organiserUrl": "https://itsoncardiff.co.uk/indie-market-that-champions-small-creators-returns-to-cardiff-bay/",
+      "statusNote": "Confirm stall hours on the day at WMC. WMC what's-on calendar failed to load events in this check; date confirmed via It's On Cardiff + press citing Indie Collectives (organiser markets page still shows summer list).",
+      "organiserUrl": "https://www.indiecollectives.co.uk/",
       "score": 72,
       "role": "feature",
       "whyPicked": "Indoor Bay browse that pairs with a walk; local makers rather than a tourist staple.",
       "parentHeadsUp": "Confirm stall hours on the day at WMC; coincides with separate 999 Day activity outside.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "free to browse · no booking"
     },
     {
@@ -90,34 +123,9 @@
       "score": 74,
       "role": "feature",
       "whyPicked": "Free community hub session with practical value — clear homework early, then enjoy the weekend.",
-      "parentHeadsUp": "Ely and Caerau Hub; free printing for schoolwork. Weekly Saturday slot.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "parentHeadsUp": "Ely and Caerau Hub; free printing for schoolwork. Weekly Saturday slot. Note: hubs /hub-events/ index returned 404; this event page loaded.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "free · drop-in / hub hours"
-    },
-    {
-      "id": "techniquest-amazing-summer-sat",
-      "title": "Techniquest — A-Mazing Summer (Sat)",
-      "date": "2026-09-05",
-      "time": "10:00–17:00",
-      "location": "Techniquest, Stuart Street, Cardiff Bay CF10 5BW",
-      "cost": "Full-day ticket from £15.45 · book ahead",
-      "ageBands": [
-        "0-4",
-        "5-8",
-        "9-12"
-      ],
-      "description": "Mirror Maze, musical exhibits, Battle of the Bangs and Create & Shape Zone. Last weekend of this special programme — ends Sunday.",
-      "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
-      "sourceName": "Techniquest",
-      "indoorOutdoor": "indoor",
-      "confidence": "high",
-      "organiserUrl": "https://www.techniquest.org/events/the-a-mazing-summer/",
-      "score": 68,
-      "role": "backup",
-      "whyPicked": "Last weekend of A-Mazing Summer — solid indoor paid option labelled as backup, not the hero.",
-      "parentHeadsUp": "Book ahead; full-day from £15.45. Ends Sunday.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
-      "bookingStatus": "paid · book ahead on Techniquest"
     },
     {
       "id": "chapter-faces-of-culture-sun",
@@ -125,12 +133,12 @@
       "date": "2026-09-06",
       "time": "12:00 (drop-in during 2-hour session)",
       "location": "Chapter, Market Road, Canton, Cardiff CF5 1QE",
-      "cost": "Free",
+      "cost": "Free (no ticket CTA on organiser page; sibling Dream Inheritances workshops listed Free)",
       "ageBands": [
         "5-8",
         "9-12"
       ],
-      "description": "Free drop-in mask-making for ages 7–13, led by Young Producers responding to the Dream Inheritances exhibition. Masks take about 20–30 minutes.",
+      "description": "Drop-in mask-making for ages 7–13, led by Young Producers responding to the Dream Inheritances exhibition. Masks take about 20–30 minutes.",
       "url": "https://www.chapter.cymru/whats-on/faces-of-culture",
       "sourceName": "Chapter",
       "indoorOutdoor": "indoor",
@@ -139,9 +147,34 @@
       "score": 84,
       "role": "feature",
       "whyPicked": "Free drop-in mask workshop with clear age fit (7–13) — distinctive local cultural session.",
-      "parentHeadsUp": "Masks ~20–30 mins; drop-in during the 2-hour session from 12:00.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "parentHeadsUp": "Ages 7–13 on organiser page. Masks ~20–30 mins; drop-in during the 2-hour session from 12:00.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "free drop-in · no booking"
+    },
+    {
+      "id": "riverside-farmers-market-sun",
+      "title": "Riverside Farmers Market",
+      "date": "2026-09-06",
+      "time": "10:00–14:00",
+      "location": "Fitzhamon Embankment, Cardiff CF11 6AN (opposite Principality Stadium)",
+      "cost": "Free to browse",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Cardiff’s original Sunday farmers’ market along the Taff — local eggs, bread, veg, cheese, coffee and street food. Named traders listed for Sun 6 Sep.",
+      "url": "http://www.riversidemarket.org.uk/riversidemarket",
+      "sourceName": "Cardiff Farmers Markets",
+      "indoorOutdoor": "outdoor",
+      "confidence": "high",
+      "organiserUrl": "http://www.riversidemarket.org.uk/riversidemarket",
+      "score": 77,
+      "role": "feature",
+      "whyPicked": "Verified free Sunday local food market with trader list for 6 Sep — strong free/local composition pick for a warm afternoon.",
+      "parentHeadsUp": "Opposite Principality Stadium on Fitzhamon Embankment. Ends 14:00.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
+      "bookingStatus": "free to browse · no booking"
     },
     {
       "id": "ms-rachel-new-theatre-sun",
@@ -153,17 +186,18 @@
       "ageBands": [
         "0-4"
       ],
-      "description": "Interactive toddler tribute show with sing-alongs, puppets and screen content. Selling fast — book via New Theatre / Trafalgar Tickets.",
+      "description": "Interactive toddler tribute show with sing-alongs, puppets and screen content. Book via New Theatre / Trafalgar Tickets.",
       "url": "https://trafalgartickets.com/new-theatre-cardiff/en-GB/event/family/fun-for-little-ones-a-tribute-to-ms-rachel-tickets",
-      "sourceName": "New Theatre Cardiff",
+      "sourceName": "New Theatre Cardiff / Fun For Little Ones",
       "indoorOutdoor": "indoor",
       "confidence": "high",
+      "organiserUrl": "https://www.funforlittleones.co.uk/cardiff",
       "bookingUrl": "https://trafalgartickets.com/new-theatre-cardiff/en-GB/event/family/fun-for-little-ones-a-tribute-to-ms-rachel-tickets",
       "score": 70,
       "role": "feature",
       "whyPicked": "Clear 0–4 age fit and an official ticket path — useful paid toddler option when free slots do not cover under-fives.",
-      "parentHeadsUp": "Selling fast; under-12-months free on lap with babes-in-arms ticket.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "parentHeadsUp": "Under-12-months free on lap with babes-in-arms ticket from box office.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "paid tickets · book via Trafalgar / New Theatre"
     },
     {
@@ -178,7 +212,7 @@
         "5-8",
         "9-12"
       ],
-      "description": "Last day of A-Mazing Summer: Mirror Maze, sound exhibits, science theatre and hands-on zones. Strong indoor backup if Sunday morning starts damp.",
+      "description": "Last day of A-Mazing Summer: Mirror Maze, sound exhibits, science theatre and hands-on zones. Indoor backup if Sunday morning starts damp.",
       "url": "https://www.techniquest.org/events/the-a-mazing-summer/",
       "sourceName": "Techniquest",
       "indoorOutdoor": "indoor",
@@ -186,9 +220,9 @@
       "organiserUrl": "https://www.techniquest.org/events/the-a-mazing-summer/",
       "score": 68,
       "role": "backup",
-      "whyPicked": "Final day of the special programme — indoor backup if Sunday starts damp.",
-      "parentHeadsUp": "Last day; book ahead.",
-      "checkedAt": "2026-09-04T19:22:32+01:00",
+      "whyPicked": "Final day of the special programme — single tourist-staple backup only (Sat Techniquest dated pick dropped in favour of local markets).",
+      "parentHeadsUp": "Last day; book ahead on Techniquest tickets.",
+      "checkedAt": "2026-09-04T20:58:38+01:00",
       "bookingStatus": "paid · book ahead on Techniquest"
     }
   ],
@@ -222,7 +256,7 @@
         "5-8",
         "9-12"
       ],
-      "description": "Historic buildings, open meadows and indoor galleries — dependable all-weather family day out west of the city.",
+      "description": "Historic buildings, open meadows and indoor galleries — dependable all-weather family day out west of the city. Food Festival is next weekend (12–13 Sep).",
       "url": "https://museum.wales/stfagans/",
       "sourceName": "Museum Wales",
       "indoorOutdoor": "either",
@@ -240,7 +274,7 @@
         "5-8",
         "9-12"
       ],
-      "description": "Circular paths, woodland story trail, visitor-centre café and optional watersports. Ideal sunny outdoor backup after the Saturday kids session.",
+      "description": "Circular paths, woodland story trail, visitor-centre café and optional watersports. Ideal sunny outdoor backup — note Sun 6 Sep early close at 16:00.",
       "url": "https://lisvane-llanishen.com/",
       "sourceName": "Welsh Water Adventures",
       "indoorOutdoor": "outdoor",
@@ -258,30 +292,12 @@
         "5-8",
         "9-12"
       ],
-      "description": "Central parkland beside Cardiff Castle — paths, play space and room to roam without booking. Perfect for the fine weekend forecast.",
-      "url": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx",
-      "sourceName": "Cardiff Council",
+      "description": "Central parkland beside Cardiff Castle — paths, play space and room to roam without booking. Perfect for the fine weekend forecast. Outdoor Cardiff lists no dated park events this weekend.",
+      "url": "https://bute-park.com/whats-on/",
+      "sourceName": "Bute Park / Outdoor Cardiff",
       "indoorOutdoor": "outdoor",
       "confidence": "high",
-      "organiserUrl": "https://www.cardiff.gov.uk/ENG/resident/Leisure-parks-libraries/Parks/Parks/Bute-Park/Pages/default.aspx"
-    },
-    {
-      "id": "techniquest",
-      "title": "Techniquest",
-      "time": "Check opening times and tickets before travel",
-      "location": "Stuart Street, Cardiff Bay CF10 5BW",
-      "cost": "Paid admission · book ahead recommended",
-      "ageBands": [
-        "0-4",
-        "5-8",
-        "9-12"
-      ],
-      "description": "Hands-on science centre in Cardiff Bay. After A-Mazing Summer ends, use the visit page for regular opening times and prices.",
-      "url": "https://www.techniquest.org/visit/opening-times-and-prices/",
-      "sourceName": "Techniquest",
-      "indoorOutdoor": "indoor",
-      "confidence": "high",
-      "organiserUrl": "https://www.techniquest.org/visit/opening-times-and-prices/"
+      "organiserUrl": "https://bute-park.com/whats-on/"
     }
   ]
 }

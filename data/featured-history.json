@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-04T19:30:00+01:00",
+  "updatedAt": "2026-09-04T20:58:38+01:00",
   "campaigns": [
     {
       "campaignId": "weekend-2026-09-04",
@@ -12,17 +12,45 @@
       },
       "features": [
         {
-          "eventId": "llanishen-back-to-school-sat",
-          "seriesId": "llanishen-kids-activities",
-          "venueId": "llanishen-reservoir",
+          "eventId": "fonmon-crisp-potato-festival-sat",
+          "seriesId": "fonmon-castle-events",
+          "venueId": "fonmon-castle",
           "campaignId": "weekend-2026-09-04",
           "role": "hero",
-          "score": 86,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "score": 88,
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site",
             "email",
             "instagram"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "roath-farmers-market-sat",
+          "seriesId": "cardiff-farmers-markets",
+          "venueId": "roath-market",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 78,
+          "publishedAt": "2026-09-04T20:58:38+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "riverside-farmers-market-sun",
+          "seriesId": "cardiff-farmers-markets",
+          "venueId": "riverside-market",
+          "campaignId": "weekend-2026-09-04",
+          "role": "feature",
+          "score": 77,
+          "publishedAt": "2026-09-04T20:58:38+01:00",
+          "channels": [
+            "site",
+            "email"
           ],
           "override": null
         },
@@ -33,7 +61,7 @@
           "campaignId": "weekend-2026-09-04",
           "role": "feature",
           "score": 84,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site",
             "email",
@@ -48,7 +76,7 @@
           "campaignId": "weekend-2026-09-04",
           "role": "feature",
           "score": 72,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site",
             "email"
@@ -62,7 +90,7 @@
           "campaignId": "weekend-2026-09-04",
           "role": "feature",
           "score": 74,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site",
             "email"
@@ -76,23 +104,10 @@
           "campaignId": "weekend-2026-09-04",
           "role": "feature",
           "score": 70,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site",
             "email"
-          ],
-          "override": null
-        },
-        {
-          "eventId": "techniquest-amazing-summer-sat",
-          "seriesId": "techniquest-amazing-summer",
-          "venueId": "techniquest",
-          "campaignId": "weekend-2026-09-04",
-          "role": "backup",
-          "score": 68,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
-          "channels": [
-            "site"
           ],
           "override": null
         },
@@ -103,7 +118,7 @@
           "campaignId": "weekend-2026-09-04",
           "role": "backup",
           "score": 68,
-          "publishedAt": "2026-09-04T15:30:00+01:00",
+          "publishedAt": "2026-09-04T20:58:38+01:00",
           "channels": [
             "site"
           ],
