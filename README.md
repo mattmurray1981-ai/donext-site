@@ -4,9 +4,9 @@ Lean static site for [donext.co.uk](https://donext.co.uk) — a Friday-decision 
 
 ## Product
 
-**USP:** The best few Cardiff kids’ plans for this weekend. Locally checked, age-fit and mostly free. No Saturday-morning trawl.
+**USP:** Interesting things to do with kids in Cardiff.
 
-**Support:** We hunt Cardiff kids stuff. Every Friday at 3:30, get the best few locally checked plans for ages 0–12—mostly free, with age, price and booking details sorted.
+**Support:** A short, locally checked list for ages 0–12, refreshed every Friday. We look beyond the obvious and sort the ages, prices and booking details.
 
 ## Redesign (2026)
 
