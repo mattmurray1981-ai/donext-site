@@ -86,14 +86,16 @@ a:hover { color: var(--teal); }
   color: var(--ink);
 }
 .wordmark__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 1.35rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
 }
 .wordmark__place {
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--teal);
 }
 .nav {
