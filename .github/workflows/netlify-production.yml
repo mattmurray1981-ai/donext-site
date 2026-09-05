@@ -1,0 +1,56 @@
+name: Deploy production to Netlify
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: donext-netlify-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'mattmurray1981-ai/donext-site'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out deployment commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22.23.2
+          check-latest: false
+
+      - name: Stage tracked site files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/site"
+          git archive --format=tar "$GITHUB_SHA" | tar -xf - -C "$RUNNER_TEMP/site"
+          rm -rf "$RUNNER_TEMP/site/.github"
+          rm -f "$RUNNER_TEMP/site/.gitignore"
+          test -f "$RUNNER_TEMP/site/index.html"
+          test ! -e "$RUNNER_TEMP/site/.git"
+
+      - name: Deploy to Netlify production
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes netlify-cli@27.5.0 deploy \
+            --prod \
+            --dir "$RUNNER_TEMP/site" \
+            --site "$NETLIFY_SITE_ID" \
+            --message "GitHub Actions ${GITHUB_SHA}"
