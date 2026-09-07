@@ -24,7 +24,7 @@ jobs:
       - name: Check out deployment commit
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 1
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Node.js
@@ -32,6 +32,9 @@ jobs:
         with:
           node-version: 22.23.2
           check-latest: false
+
+      - name: Install production function dependencies
+        run: npm ci --omit=dev
 
       - name: Stage tracked site files
         shell: bash
@@ -43,6 +46,12 @@ jobs:
           rm -f "$RUNNER_TEMP/site/.gitignore"
           test -f "$RUNNER_TEMP/site/index.html"
           test ! -e "$RUNNER_TEMP/site/.git"
+
+      - name: Verify current production files and catalog are preserved
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
+        run: node .github/scripts/verify-live-deploy-inputs.mjs "$RUNNER_TEMP/site"
 
       - name: Deploy to Netlify production
         env:
@@ -56,4 +65,6 @@ jobs:
             --dir "$RUNNER_TEMP/site" \
             --site "$NETLIFY_SITE_ID" \
             --message "GitHub Actions ${GITHUB_SHA}"
+
+
 

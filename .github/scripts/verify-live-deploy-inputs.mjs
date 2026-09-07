@@ -1,0 +1,63 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+
+// Grok can publish directly to Netlify. A git deploy must not silently remove
+// production files/functions or replace its catalog with an older checkout.
+const root = path.resolve(process.argv[2]);
+const id = process.env.NETLIFY_SITE_ID;
+const headers = { Authorization: `Bearer ${process.env.NETLIFY_AUTH_TOKEN}` };
+async function get(endpoint) {
+  const response = await fetch(`https://api.netlify.com/api/v1${endpoint}`, { headers });
+  if (!response.ok) throw new Error(`Netlify deployment guard: HTTP ${response.status}`);
+  return response.json();
+}
+const site = await get(`/sites/${id}`);
+const live = site.published_deploy;
+if (!live?.id) throw new Error('Cannot identify the current production deploy');
+const files = await get(`/sites/${id}/files`);
+const planned = new Map();
+async function walk(directory) {
+  for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, entry.name);
+    if (entry.isDirectory()) await walk(absolute);
+    else planned.set('/' + path.relative(root, absolute).replaceAll(path.sep, '/').toLowerCase(), absolute);
+  }
+}
+await walk(root);
+const missing = files.map(file => file.path).filter(file => !planned.has(file.toLowerCase()));
+if (missing.length) throw new Error(`Production contains files absent from git; reconcile first: ${missing.join(', ')}`);
+const baseline = JSON.parse(await fs.readFile('.github/production-baseline.json', 'utf8'));
+const known = new Map(Object.entries(baseline.files).map(([file, sha]) => [file.toLowerCase(), sha]));
+const event = JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'));
+const priorPaths = new Map();
+if (/^[0-9a-f]{40}$/.test(event.before || '') && !/^0+$/.test(event.before)) {
+  const tree = execFileSync('git', ['ls-tree', '-r', '--name-only', event.before], { encoding: 'utf8' });
+  for (const file of tree.trim().split('\n')) priorPaths.set('/' + file.toLowerCase(), file);
+}
+const sha1 = bytes => crypto.createHash('sha1').update(bytes).digest('hex');
+for (const file of files) {
+  const key = file.path.toLowerCase();
+  const stagedSha = sha1(await fs.readFile(planned.get(key)));
+  if (stagedSha === file.sha || known.get(key) === file.sha) continue;
+  const previousPath = priorPaths.get(key);
+  const previousSha = previousPath ? sha1(execFileSync('git', ['show', `${event.before}:${previousPath}`])) : null;
+  if (previousSha !== file.sha) throw new Error(`Production has an unmerged change to ${file.path}; reconcile before replacing it`);
+}
+const originalCatalog = files.find(file => file.path === '/data/cardiff-today.json');
+const bytes = await fs.readFile(planned.get('/data/cardiff-today.json'));
+if (originalCatalog && crypto.createHash('sha1').update(bytes).digest('hex') !== originalCatalog.sha) {
+  const response = await fetch(`https://api.netlify.com/api/v1/sites/${id}/files/data/cardiff-today.json`, { headers: { ...headers, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
+  if (!response.ok) throw new Error('Cannot verify catalog freshness');
+  const current = await response.json();
+  const next = JSON.parse(bytes);
+  if (!(Date.parse(next.updatedAt) > Date.parse(current.updatedAt))) throw new Error('Git catalog differs from production without a newer checked timestamp; reconcile before deploying');
+}
+const inventory = await get(`/sites/${id}/functions?filter=${encodeURIComponent(`deploy:${live.id}`)}`);
+for (const fn of inventory.functions || []) {
+  if (!['.mjs', '.js', '.ts'].some(extension => planned.has(`/netlify/functions/${fn.n}${extension}`))) throw new Error(`Missing production function source: ${fn.n}`);
+}
+const latest = await get(`/sites/${id}`);
+if (latest.published_deploy?.id !== live.id) throw new Error('Production changed during verification; retry from current content');
+console.log(`Production preservation guard passed: ${files.length} paths, ${(inventory.functions || []).length} functions.`);

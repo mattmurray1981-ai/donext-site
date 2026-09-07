@@ -980,8 +980,9 @@ window.DONEXT_CARDIFF_REPORT_LEGACY = {
       date: '2026-09-05',
       tabLabel: 'Sat 5',
       label: 'Saturday 5 September',
-      featuredEventId: 'explore-learning-back-to-school',
+      featuredEventId: '999-day-cardiff-bay',
       eventIds: [
+        '999-day-cardiff-bay',
         'explore-learning-back-to-school',
         'indie-collectives-market',
         'canton-lego-club',
@@ -1019,6 +1020,22 @@ window.DONEXT_CARDIFF_REPORT_LEGACY = {
     }
   ],
   events: [
+    {
+      id: '999-day-cardiff-bay',
+      title: '999 Day in Cardiff Bay',
+      dates: ['2026-09-05'],
+      time: '10:00\u201315:00',
+      location: 'Roald Dahl Plass, Cardiff Bay, CF10 5BZ',
+      cost: 'Free',
+      ages: 'Family-friendly',
+      kind: 'event',
+      description: 'Live demonstrations, competitions and family-friendly activities hosted by South Wales Fire and Rescue Service.',
+      confidence: 'medium',
+      statusNote: 'Venue listing confirmed; the linked SWFRS organiser page is unavailable, so check before travel.',
+      sources: [
+        { name: 'Cardiff Harbour Authority', url: 'https://www.cardiffharbour.com/events/999-day-in-cardiff-bay/' }
+      ]
+    },
     {
       id: 'indie-collectives-market',
       title: 'Indie Collectives market',

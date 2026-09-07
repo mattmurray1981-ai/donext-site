@@ -10,7 +10,7 @@
     "verified": 4,
     "published": 0,
     "rejected": 1,
-    "notes": "First Gmail ingest newer_than:3d (Label_8 DoNext/Leads). Most posts junk: nostalgia CARDIFF DAYS GONE BY, van/pest/roofing/cleaning/PT/food ads, join-approvals. Gold lead: Cardiff Mums weekend roundup. Editorial skip: Canton Pride Family Sunday. Skipped Techniquest default. Llanishen free session cancelled on Eventbrite. ≥1 strong unusual weekend pick verified: Fonmon Crisp & Potato Festival (not auto-published). Also verified: National Cinema Weekend £4, Ms Rachel tribute, Sparkle Walk (18 Sep). Coverage gaps unchanged: north/east Cardiff, Llandaff/Whitchurch/Rhiwbina, Penarth, Barry, Caerphilly."
+    "notes": "First Gmail ingest newer_than:3d (Label_8 DoNext/Leads). Most posts junk: nostalgia CARDIFF DAYS GONE BY, van/pest/roofing/cleaning/PT/food ads, join-approvals. Gold lead: Cardiff Mums weekend roundup. Editorial skip: Canton Pride Family Sunday. Skipped Techniquest default. Llanishen free session cancelled on Eventbrite. \u22651 strong unusual weekend pick verified: Fonmon Crisp & Potato Festival (not auto-published). Also verified: National Cinema Weekend \u00a34, Ms Rachel tribute, Sparkle Walk (18 Sep). Coverage gaps unchanged: north/east Cardiff, Llandaff/Whitchurch/Rhiwbina, Penarth, Barry, Caerphilly."
   },
   {
     "runId": "20260904-2058",
@@ -23,6 +23,45 @@
     "verified": 8,
     "published": 8,
     "rejected": 6,
-    "notes": "FULL weekend re-run expanded registry. Weather: Met Office Cardiff Sat sunny ~20°C / Sun ~24°C early drizzle risk. Kept Fonmon hero (re-verified DigiTickets). Replaced Techniquest Sat with Roath Market; added Riverside Market Sun; Chapter Faces + Hubs + Indie Collectives + Ms Rachel; Techniquest Sun only as max-1 tourist backup. Editorial skip Canton Pride/Queer Art Market. Rejected vegan festival (organiser now 2027). Museum of Cardiff closed (leak). Source fails: hubs /hub-events/ 404 (event page OK), cadw /visit/events 404, WMC what's-on JS empty, Visit Cardiff stale July article, Eventbrite WebFetch 405 (curl 200), Met Office registry URL pointed at Stoke Gifford — used Cardiff gcjszevgx. Gmail: 50 threads newer_than:3d skimmed; 0 genuinely newer than prior checkpoint. Coverage gaps unchanged."
+    "notes": "FULL weekend re-run expanded registry. Weather: Met Office Cardiff Sat sunny ~20\u00b0C / Sun ~24\u00b0C early drizzle risk. Kept Fonmon hero (re-verified DigiTickets). Replaced Techniquest Sat with Roath Market; added Riverside Market Sun; Chapter Faces + Hubs + Indie Collectives + Ms Rachel; Techniquest Sun only as max-1 tourist backup. Editorial skip Canton Pride/Queer Art Market. Rejected vegan festival (organiser now 2027). Museum of Cardiff closed (leak). Source fails: hubs /hub-events/ 404 (event page OK), cadw /visit/events 404, WMC what's-on JS empty, Visit Cardiff stale July article, Eventbrite WebFetch 405 (curl 200), Met Office registry URL pointed at Stoke Gifford \u2014 used Cardiff gcjszevgx. Gmail: 50 threads newer_than:3d skimmed; 0 genuinely newer than prior checkpoint. Coverage gaps unchanged."
+  },
+  {
+    "runId": "20260906-1035",
+    "startedAt": "2026-09-06T09:25:00+01:00",
+    "finishedAt": "2026-09-06T10:35:00+01:00",
+    "sourcesChecked": 5,
+    "groupPostsProcessed": 150,
+    "candidatesNew": 8,
+    "candidatesDeduped": 1,
+    "verified": 2,
+    "published": 0,
+    "rejected": 6,
+    "notes": "Catch-up after stall at 2026-09-04T20:58:38+01:00. Gmail: ~150 facebookmail threads scanned after:2026/09/04 (est. ~201; Label_8 DoNext/Leads had 0 newer labeled hits \u2014 ingested unlabeled). Useful: NoFit Carnation verified (not published \u2014 catalog already 4 Sunday picks; not child-specific). Messy Play Mondays verified for term. Rejected Dragon's Den Sunday (Aberdare OOA), Aloud choir membership, Portishead inflatables OOA, EAE street dance marketing, DM toy sale, Cefn Mably pub music. Same-day publish: NO. Blocker: DoNext/Leads auto-label not applying to new facebookmail \u2014 unlabeled catch-up required. Coverage gaps unchanged."
+  },
+  {
+    "runId": "20260907-0825",
+    "startedAt": "2026-09-07T08:06:00+01:00",
+    "finishedAt": "2026-09-07T08:25:00+01:00",
+    "sourcesChecked": 44,
+    "groupPostsProcessed": 26,
+    "candidatesNew": 13,
+    "candidatesDeduped": 0,
+    "verified": 7,
+    "published": 8,
+    "rejected": 2,
+    "notes": "Mon morning shortlist. Cleared past Sun 6 Sep dated picks. Gmail: 160 threads scanned / 26 useful posts / 14 labeled. Web hunt: 44 sources. Published free Hub story/rhyme today+Thu; weekend St Fagans Food Festival + Brick Festival; TQ Toddler Day backup (TQ closed Mon\u2013Thu). Rejected Messy Play Mondays (Eventbrite 404) and Global Gardens Outdoor Play (sold out). Email sent to mattmurray1981@gmail.com; site deployed donext.co.uk."
+  },
+  {
+    "runId": "20260907-1206",
+    "startedAt": "2026-09-07T12:06:00+01:00",
+    "finishedAt": "2026-09-07T12:20:00+01:00",
+    "sourcesChecked": 8,
+    "groupPostsProcessed": 45,
+    "candidatesNew": 0,
+    "candidatesDeduped": 0,
+    "verified": 0,
+    "published": 0,
+    "rejected": 6,
+    "notes": "Midday hot alert SILENT. Gmail after checkpoint 08:25: ~45 facebookmail threads skimmed (50 after:2026/09/07 page); opened USKO free-trial karate (class marketing), Tiny Luxe party hire (body thin), Craft Cafe Mon 6pm Ardour (adult), Little Fizz term giveaway (FB contest not public drop-in), Footballers Gwent (OOA/marketing thin). Web light: Hubs /events (Canton Story 14:00 already morning-published), Outdoor Cardiff events empty, Chapter adult/Pride skip, Caerphilly Miners After School Art \u00a35 termly, Techniquest closed Mon\u2013Thu, Bute Park no new kids drop-in, Museum of Cardiff still closed (leak) so Lotta/Lola trail unverifiable. Paid baby sensory aggregator lead ignored. Prefer silence \u2014 no \u226580 free/unusual same-day verify."
   }
 ]

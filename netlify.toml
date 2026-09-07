@@ -1,16 +1,268 @@
+functionsDirectory = "./netlify/functions"
+functionsDirectoryOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
 [build]
-  publish = "."
+publish = "."
+publishOrigin = "config"
+functions = "./netlify/functions"
 
-# Netlify Forms are declared in index.html (weekend-brief, weekday-morning).
-# No build command — static site. Production publish follows your Netlify
-# branch settings (usually main). PR branches get Deploy Previews if enabled.
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[functions]
+
+  [functions."*"]
 
 [[redirects]]
-  from = "/now"
-  to = "/now.html"
-  status = 200
+from = "/thank-you"
+to = "/thank-you.html"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
 
 [[redirects]]
-  from = "/now/"
-  to = "/now.html"
-  status = 200
+from = "/thank-you/"
+to = "/thank-you.html"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/fonmon"
+to = "https://fonmoncastle.digitickets.co.uk/event-tickets/77908?catID=73101"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/fonmon-info"
+to = "https://fonmoncastle.com/whats-on"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/roath-market"
+to = "https://www.riversidemarket.org.uk/roath-market"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/riverside-market"
+to = "https://www.riversidemarket.org.uk/riversidemarket"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/homework-club"
+to = "https://cardiffhubs.co.uk/hub-events/homework-club/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/chapter-masks"
+to = "https://www.chapter.cymru/whats-on/faces-of-culture"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/ms-rachel"
+to = "https://www.funforlittleones.co.uk/cardiff"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/hub-story-craft"
+to = "https://cardiffhubs.co.uk/hub-events/144698/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/baby-rhyme"
+to = "https://cardiffhubs.co.uk/hub-events/rhyme-time/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/canton-rhyme"
+to = "https://cardiffhubs.co.uk/hub-events/story-and-rhyme-time/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/stfagans-food"
+to = "https://museum.wales/whatson/food-festival/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/brick-fest"
+to = "https://brickfestivalevents.com/event/cardiff-brick-festival-5/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/tq-toddler"
+to = "https://www.techniquest.org/events/toddler-day/"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/go/now"
+to = "/now"
+status = 302
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/api/hit"
+to = "/.netlify/functions/hit"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/api/metrics-day"
+to = "/.netlify/functions/metrics-day"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/now"
+to = "/now.html"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
+
+[[redirects]]
+from = "/now/"
+to = "/now.html"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]

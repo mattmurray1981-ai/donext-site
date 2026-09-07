@@ -8,6 +8,7 @@
 
   var DATA_URL = './data/cardiff-today.json';
   var AGE_BANDS = ['0-4', '5-8', '9-12'];
+  // Default matches SCHEMA.md staleAfterHours; catalog JSON may override.
   var DEFAULT_STALE_HOURS = 36;
 
   var _data = null;
@@ -65,6 +66,19 @@
     var d = new Date(iso);
     if (isNaN(d.getTime())) return Infinity;
     return (Date.now() - d.getTime()) / 3600000;
+  }
+
+  /** YYYY-MM-DD for "today" in Europe/London (catalog dates use this zone). */
+  function londonTodayISO() {
+    return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/London' });
+  }
+
+  /** Keep dated picks whose date is today or future (Europe/London calendar day). */
+  function currentDatedPicks(dated) {
+    var today = londonTodayISO();
+    return (dated || []).filter(function (p) {
+      return p && p.date && String(p.date) >= today;
+    });
   }
 
   function formatDateLabel(dateStr) {
@@ -245,7 +259,15 @@
     var listEl = document.getElementById('dated-picks');
     if (!heroEl || !listEl) return;
 
-    var filtered = (dated || []).filter(pickMatchesAge);
+    // Never show past-date events as current (Europe/London day).
+    var current = currentDatedPicks(dated);
+    if (!current.length) {
+      heroEl.innerHTML = '';
+      listEl.innerHTML = '<p class="empty-state">Weekend\u2019s over \u2014 next shortlist lands Friday 3:30. Back-pocket backups and notices below still apply.</p>';
+      return;
+    }
+
+    var filtered = current.filter(pickMatchesAge);
     if (!filtered.length) {
       heroEl.innerHTML = '';
       listEl.innerHTML = '<p class="empty-state">No dated picks match this age filter. Try All, or check the backups below.</p>';
@@ -348,6 +370,8 @@
     load: load,
     render: renderAll,
     publicCtaUrl: publicCtaUrl,
+    londonTodayISO: londonTodayISO,
+    currentDatedPicks: currentDatedPicks,
     AGE_BANDS: AGE_BANDS
   };
 })(window);
