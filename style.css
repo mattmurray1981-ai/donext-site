@@ -31,6 +31,18 @@ a, button, input, summary { -webkit-tap-highlight-color: transparent; }
 .nav a { text-decoration: none; color: var(--ink); padding-block: .65rem; }
 .nav .nav__cta { padding: .65rem 1rem; border-radius: 999px; background: var(--ink); color: #fff; }
 .nav .nav__cta:hover { background: var(--orange-ink); }
+.city-switch { position: relative; margin-right: auto; font-size: .875rem; }
+.city-switch > summary { display: flex; align-items: center; gap: .5rem; cursor: pointer; list-style: none; padding: .7rem .3rem; min-height: 2.75rem; font-weight: 600; }
+.city-switch > summary::-webkit-details-marker { display: none; }
+.city-switch__menu { position: absolute; top: calc(100% + .35rem); left: 0; min-width: 9rem; padding: .4rem; background: var(--card); border: 1px solid var(--line); border-radius: .7rem; box-shadow: 0 .5rem 1.5rem #22221f14; }
+.city-switch__menu a { display: block; padding: .7rem .8rem; text-decoration: none; border-radius: .4rem; }
+.city-switch__menu a:hover, .city-switch__menu a[aria-current="page"] { background: var(--orange-soft); }
+.city-switch__menu a[aria-current="page"] { font-weight: 600; }
+@media (max-width: 600px) {
+  .header-inner { gap: .6rem; }
+  .site-header .city-switch + .nav > a:not(.nav__cta) { display: none; }
+  .site-header .nav__cta { padding-inline: .8rem; }
+}
 .hero, .page-intro { padding: 2.3rem 0 1.4rem; }
 .eyebrow { color: var(--orange-ink); text-transform: uppercase; font-weight: 600; font-size: .75rem; letter-spacing: .085em; margin-bottom: .65rem; }
 .hero__title { font-family: var(--font-display); font-size: clamp(2.1rem, 4.6vw, 3.4rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.08; margin-bottom: .8rem; }

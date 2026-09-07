@@ -172,6 +172,9 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
         ['/netlify/functions/hit.mjs', 404],
         ['/__forms.html', 200],
       ];
+      if (staged.has('/bristol/index.html')) {
+        checks.push(['/bristol/', 200], ['/bristol/thank-you/', 200], ['/data/bristol-today.json', 200]);
+      }
       for (const [route, expectedStatus] of checks) {
         let response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
         if (route === '/now/' && [301, 308].includes(response.status)) {
@@ -189,7 +192,14 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
         if (route === '/now/') {
           const html = await response.text();
           if (!/<title\b[^>]*>[^<]*DoNext Cardiff[^<]*<\/title>/i.test(html) || !html.includes('/assets/brand/cardiff/donext-cardiff-avatar-v4.png') || !html.includes('/cardiff-catalog.js')) throw new Error('Candidate /now does not contain the expected DoNext page markup');
-        } else if (route === '/data/cardiff-today.json') {
+        } else if (route === '/bristol/') {
+          const html = await response.text();
+          if (!/<title\b[^>]*>[^<]*DoNext Bristol[^<]*<\/title>/i.test(html) || !html.includes('/assets/brand/bristol/donext-bristol-avatar-v4.png') || !html.includes('data-city="bristol"')) throw new Error('Candidate Bristol page has the wrong city identity');
+          if (!/<input\b[^>]*name=["']city["'][^>]*value=["']bristol["']/i.test(html) || !/action=["']\/bristol\/thank-you\/["']/i.test(html)) throw new Error('Candidate Bristol signup has lost its city or confirmation route');
+        } else if (route === '/bristol/thank-you/') {
+          const html = await response.text();
+          if (!html.includes('DoNext Bristol') || !html.includes('href="/bristol/"')) throw new Error('Candidate Bristol confirmation points to the wrong city');
+        } else if (route === '/data/cardiff-today.json' || route === '/data/bristol-today.json') {
           if (sha1(Buffer.from(await response.arrayBuffer())) !== staged.get(route).sha) throw new Error('Candidate public catalog differs from staged catalog');
         } else if (route === '/__forms.html') {
           const html = await response.text();

@@ -1,6 +1,10 @@
-# DoNext Cardiff
+# DoNext — Cardiff and Bristol
 
 Lean static site for [donext.co.uk](https://donext.co.uk) — a Friday-decision shortlist of Cardiff kids’ plans (ages 0–12), not an events database.
+
+Bristol lives at [donext.co.uk/bristol/](https://donext.co.uk/bristol/) with its own static metadata, orange city logo, catalog and signup confirmation. The shared renderer selects a fixed city catalog using `body[data-city]`; Bristol never falls back to Cardiff data. City navigation works without JavaScript.
+
+The Bristol catalog is `data/bristol-today.json`. Editorial launch notes and the independent featured history are in `.github/research/bristol-launch.md` and `.github/research/bristol-featured-history.json` (not deployed). Research and subscriber email automation for Bristol still need to be connected separately.
 
 ## Product
 
@@ -45,6 +49,8 @@ Netlify Forms (declared in static HTML at deploy time):
 - `weekday-morning` — optional weekday mornings.
 
 Hidden field declarations also live in `__forms.html`. Success redirect: `/thank-you`.
+
+Every current form also sends a hidden `city` field. Segment future mail by `cardiff` or `bristol`; historical submissions without this field are Cardiff. Bristol's success route is `/bristol/thank-you/`. Both city pages describe signup as interest registration while the email service is prepared.
 
 ## Routes
 

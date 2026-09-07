@@ -1,4 +1,8 @@
 # Generated from netlify.toml by export-netlify-redirects.py
+/bristol/index.html /bristol/ 301!
+/bristol/now /bristol/ 302!
+/bristol/now/ /bristol/ 302!
+/bristol/thank-you/index.html /bristol/thank-you/ 301!
 /data /404.html 404!
 /data/ /404.html 404!
 /data/sourcing /404.html 404!

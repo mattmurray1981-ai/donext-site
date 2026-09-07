@@ -1,0 +1,20 @@
+{
+  "city": "Bristol",
+  "campaigns": [
+    {
+      "id": "bristol-launch-2026-09-07",
+      "publishedAt": null,
+      "status": "prepared",
+      "windowStart": "2026-09-12",
+      "windowEnd": "2026-09-13",
+      "pickIds": [
+        "bristol-parallel-imprints-20260912",
+        "bristol-windmill-farm-fayre-20260912",
+        "bristol-rcg-fest-family-20260912",
+        "bristol-buzz-get-growing-20260913",
+        "bristol-bramble-get-growing-20260913"
+      ],
+      "heroId": "bristol-parallel-imprints-20260912"
+    }
+  ]
+}
