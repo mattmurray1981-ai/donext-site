@@ -14,7 +14,10 @@ async function api(endpoint, options = {}) {
     ...options,
     headers: { Authorization: `Bearer ${token}`, ...options.headers },
   });
-  if (!response.ok) throw new Error(`Netlify ${endpoint}: HTTP ${response.status}`);
+  if (!response.ok) {
+    const detail = await response.json().catch(() => ({}));
+    throw new Error(`Netlify ${endpoint}: HTTP ${response.status}; ${String(detail.message || detail.error || 'no error detail').replaceAll(token, '[redacted]')}`);
+  }
   return response.json();
 }
 
@@ -88,7 +91,7 @@ for (const file of Object.keys(originalFiles)) {
 }
 const assetRoot = '.github/brand-v4';
 const changes = brandFiles(source, await fs.readFile(`${assetRoot}/donext-cardiff-avatar-v4.png`), await fs.readFile(`${assetRoot}/donext-cardiff-share-v4.png`));
-changes.set('/assets/brand/cardiff/README.md', await fs.readFile(`${assetRoot}/README.md`));
+changes.set('/assets/brand/cardiff/README.md', Buffer.from('# DoNext Cardiff — approved orange identity\n\nUse [the canonical avatar](donext-cardiff-avatar-v4.png) for the website and social profile image, with a circular crop where required. Use [the share card](donext-cardiff-share-v4.png) for link previews. Preserve the artwork proportions and lettering.\n\nThe [editable Instagram feed template](instagram-feed-template.html) expects the avatar alongside it. Replace every placeholder, verify practical event details and inspect the composition before export.\n\nThe full production handoff and provenance remain in .github/brand-v4/ in the source repository.\n'));
 changes.set('/assets/brand/cardiff/instagram-feed-template.html', await fs.readFile(`${assetRoot}/instagram-feed-template.html`));
 const digest = { ...originalFiles };
 const changedByHash = new Map();
