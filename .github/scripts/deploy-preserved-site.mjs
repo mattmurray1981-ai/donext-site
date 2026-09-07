@@ -173,9 +173,23 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
         ['/__forms.html', 200],
       ];
       for (const [route, expectedStatus] of checks) {
-        const response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
+        let response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
+        if (route === '/now/' && [301, 308].includes(response.status)) {
+          const location = response.headers.get('location');
+          if (!location) throw new Error('Candidate /now/ redirect has no Location header');
+          const destination = new URL(location, base);
+          if (destination.href !== new URL('/now', base).href) throw new Error('Candidate /now/ redirected somewhere other than its exact same-origin /now canonical URL');
+          await response.arrayBuffer();
+          // Netlify normalizes the trailing slash before applying the rewrite.
+          // Follow this one known canonicalization only; all other routes and
+          // any second redirect still have to meet their exact status checks.
+          response = await fetchImpl(destination, { redirect: 'manual', signal: AbortSignal.timeout(30000) });
+        }
         if (response.status !== expectedStatus) throw new Error(`Candidate route ${route} returned ${response.status}, expected ${expectedStatus}`);
-        if (route === '/data/cardiff-today.json') {
+        if (route === '/now/') {
+          const html = await response.text();
+          if (!/<title\b[^>]*>[^<]*DoNext Cardiff[^<]*<\/title>/i.test(html) || !html.includes('/assets/brand/cardiff/donext-cardiff-avatar-v4.png') || !html.includes('/cardiff-catalog.js')) throw new Error('Candidate /now does not contain the expected DoNext page markup');
+        } else if (route === '/data/cardiff-today.json') {
           if (sha1(Buffer.from(await response.arrayBuffer())) !== staged.get(route).sha) throw new Error('Candidate public catalog differs from staged catalog');
         } else if (route === '/__forms.html') {
           const html = await response.text();
