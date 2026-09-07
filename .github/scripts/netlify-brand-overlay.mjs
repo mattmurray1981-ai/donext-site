@@ -79,9 +79,11 @@ if (mode === 'publish') {
 }
 
 const source = new Map();
-for (const file of Object.keys(originalFiles)) {
+// Unchanged assets are retained by digest. The complete original snapshot was
+// archived during inspection; fetch only source files affected by branding.
+for (const file of [...htmlPaths, '/style.css', '/weekend-brief.html']) {
   const response = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/files/${file.slice(1)}`, { headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
-  if (!response.ok) throw new Error(`Cannot read original deployed source: ${file}`);
+  if (!response.ok) throw new Error(`Cannot read original deployed source: ${file} (HTTP ${response.status})`);
   const bytes = Buffer.from(await response.arrayBuffer());
   if (crypto.createHash('sha1').update(bytes).digest('hex') !== originalFiles[file]) throw new Error(`Original source digest does not match: ${file}`);
   source.set(file, bytes);
