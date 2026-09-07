@@ -1,11 +1,13 @@
 name: Deploy production to Netlify
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths-ignore:
-      - '.github/**'
+      - '.github/research/**'
+      - '.github/brand-v4/**'
 
 permissions:
   contents: read
@@ -36,6 +38,9 @@ jobs:
       - name: Install production function dependencies
         run: npm ci --omit=dev
 
+      - name: Check date and recommendation behavior
+        run: node --test tests/catalog.test.cjs
+
       - name: Stage tracked site files
         shell: bash
         run: |
@@ -46,6 +51,7 @@ jobs:
           rm -f "$RUNNER_TEMP/site/.gitignore"
           test -f "$RUNNER_TEMP/site/index.html"
           test ! -e "$RUNNER_TEMP/site/.git"
+          python3 .github/scripts/export-netlify-redirects.py "$RUNNER_TEMP/site"
 
       - name: Verify current production files and catalog are preserved
         env:
@@ -53,18 +59,8 @@ jobs:
           NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
         run: node .github/scripts/verify-live-deploy-inputs.mjs "$RUNNER_TEMP/site"
 
-      - name: Deploy to Netlify production
+      - name: Publish verified site while preserving live functions
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
-        shell: bash
-        run: |
-          set -euo pipefail
-          npx --yes netlify-cli@27.5.0 deploy \
-            --prod \
-            --dir "$RUNNER_TEMP/site" \
-            --site "$NETLIFY_SITE_ID" \
-            --message "GitHub Actions ${GITHUB_SHA}"
-
-
-
+        run: node .github/scripts/deploy-preserved-site.mjs "$RUNNER_TEMP/site"
