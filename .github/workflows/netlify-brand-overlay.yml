@@ -1,0 +1,55 @@
+name: Safely update live Netlify branding
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Inspect live deployment or prepare a verified brand preview
+        type: choice
+        required: true
+        default: inspect
+        options:
+          - inspect
+          - preview
+          - publish
+      preview_id:
+        description: Verified preview deploy ID (publish only)
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: donext-netlify-production
+  cancel-in-progress: false
+
+jobs:
+  branding:
+    if: github.repository == 'mattmurray1981-ai/donext-site'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out trusted workflow branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.2
+      - name: Preserve and update live deployment
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
+          BRAND_MODE: ${{ inputs.mode }}
+          BRAND_PREVIEW_ID: ${{ inputs.preview_id }}
+        run: node .github/scripts/netlify-brand-overlay.mjs
+      - name: Save inspection and preservation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: netlify-brand-report
+          path: brand-report
+          retention-days: 7
+
