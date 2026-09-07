@@ -43,7 +43,7 @@ const originalFiles = Object.fromEntries(files.map(file => [file.path, file.sha]
 if (!Array.isArray(functions.functions) || !functions.functions.length) throw new Error('Cannot identify live function set');
 const originalFunctions = functions.functions;
 const functionsDigest = {}, functionsConfig = {};
-const configKeys = { dn: 'display_name', g: 'generator', bd: 'build_data', p: 'priority', m: 'memory', ro: 'routes', er: 'excluded_routes', vcpu: 'vcpu' };
+const configKeys = { dn: 'display_name', g: 'generator', bd: 'build_data', p: 'priority', ro: 'routes', er: 'excluded_routes', vcpu: 'vcpu' };
 for (const fn of originalFunctions) {
   if (!fn.n || !/^[0-9a-f]{64}$/.test(fn.d)) throw new Error('Function metadata lacks a usable digest');
   functionsDigest[fn.n] = fn.d;
@@ -104,7 +104,9 @@ for (const [file, bytes] of changes) {
   await fs.writeFile(artifactPath, bytes);
 }
 await assertLiveUnchanged();
-let preview = await api(`/sites/${siteId}/deploys`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ draft: true, title: `DoNext orange brand v4 overlay of ${liveId}`, files: digest, functions: functionsDigest, functions_config: functionsConfig, function_schedules: deploy.function_schedules || [] }) });
+// Memory is the existing platform default; explicitly setting it requests a
+// paid feature. Verify the effective memory remains identical after reuse.
+let preview = await api(`/sites/${siteId}/deploys?title=${encodeURIComponent(`DoNext orange brand v4 overlay of ${liveId}`)}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ draft: true, files: digest, functions: functionsDigest, functions_config: functionsConfig, function_schedules: deploy.function_schedules || [] }) });
 if (preview.required_functions?.length || preview.required_edge_functions?.length) throw new Error('Netlify cannot reuse existing function bundles; draft will not be published');
 for (const sha of preview.required || []) {
   const entry = changedByHash.get(sha);
