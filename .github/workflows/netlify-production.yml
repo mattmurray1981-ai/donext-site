@@ -44,6 +44,12 @@ jobs:
           test -f "$RUNNER_TEMP/site/index.html"
           test ! -e "$RUNNER_TEMP/site/.git"
 
+      - name: Verify current production files and catalog are preserved
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
+        run: node .github/scripts/verify-live-deploy-inputs.mjs "$RUNNER_TEMP/site"
+
       - name: Deploy to Netlify production
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -56,4 +62,5 @@ jobs:
             --dir "$RUNNER_TEMP/site" \
             --site "$NETLIFY_SITE_ID" \
             --message "GitHub Actions ${GITHUB_SHA}"
+
 
