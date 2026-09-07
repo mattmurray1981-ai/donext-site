@@ -1,9 +1,26 @@
-/** DoNext Cardiff: a dated, age-filtered shortlist. Calendar dates use London time. */
+/** DoNext city shortlists. Calendar dates use London time. */
 (function (global) {
   'use strict';
-  var DATA_URL = '/data/cardiff-today.json';
+  var CITIES = Object.freeze({
+    cardiff: Object.freeze({ id: 'cardiff', name: 'Cardiff', catalogUrl: '/data/cardiff-today.json' }),
+    bristol: Object.freeze({ id: 'bristol', name: 'Bristol', catalogUrl: '/data/bristol-today.json' })
+  });
   var AGE_BANDS = ['0-4', '5-8', '9-12'];
-  var _data = null, _activeAge = 'all', _activeWhen = 'weekend', _timer = null;
+  var _data = null, _activeAge = 'all', _activeWhen = 'weekend', _timer = null, _loadVersion = 0;
+
+  function resolveCity(value) {
+    var city = value == null || value === '' ? 'cardiff' : String(value).trim().toLowerCase();
+    if (!Object.prototype.hasOwnProperty.call(CITIES, city)) throw new Error('Unsupported catalog city');
+    return CITIES[city];
+  }
+  function validateCatalog(data, city) {
+    var expected = resolveCity(city);
+    if (!data || !Array.isArray(data.datedPicks) || !Array.isArray(data.evergreen)) throw new Error('Invalid catalog');
+    if (typeof data.city !== 'string' || data.city.trim().toLowerCase() !== expected.id) {
+      throw new Error('Catalog city does not match ' + expected.name);
+    }
+    return data;
+  }
 
   function escapeHtml(value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) {
@@ -379,6 +396,21 @@
     setText('catalog-freshness', 'Shortlist unavailable');
     console.error('[DoNext catalog]', message);
   }
+  function clearCatalog() {
+    _data = null;
+    global._donextCatalog = null;
+    if (_timer) global.clearInterval(_timer);
+    _timer = null;
+    ['hero-pick', 'dated-picks', 'notices', 'backups', 'brief-preview'].forEach(function (id) {
+      var element = document.getElementById(id);
+      if (element) element.innerHTML = '';
+    });
+    ['pick-count', 'catalog-headline', 'date-range'].forEach(function (id) { setText(id, ''); });
+    var banner = document.getElementById('stale-banner');
+    if (banner) { banner.hidden = true; banner.innerHTML = ''; }
+    document.querySelectorAll('.brief-nudge').forEach(function (nudge) { nudge.hidden = true; });
+    setText('catalog-freshness', 'Checking the latest picks…');
+  }
   function revealAnchor() {
     if (!global.location || !global.location.hash) return;
     var id;
@@ -389,22 +421,34 @@
     if (details) details.open = true;
     target.scrollIntoView({ block: 'start' });
   }
-  function load() {
-    return fetch(DATA_URL, { cache: 'no-store' }).then(function (response) {
+  function load(options) {
+    var version = ++_loadVersion;
+    var requested = options && Object.prototype.hasOwnProperty.call(options, 'city') ? options.city :
+      (document.body && document.body.getAttribute('data-city'));
+    var city;
+    clearCatalog();
+    return Promise.resolve().then(function () {
+      city = resolveCity(requested);
+      return fetch(city.catalogUrl, { cache: 'no-store' });
+    }).then(function (response) {
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     }).then(function (data) {
-      if (!data || !Array.isArray(data.datedPicks) || !Array.isArray(data.evergreen)) throw new Error('Invalid catalog');
+      if (version !== _loadVersion) return;
+      validateCatalog(data, city.id);
       _data = data; readSelection(); renderAll(); revealAnchor(); global._donextCatalog = data;
-      if (_timer) global.clearInterval(_timer);
       _timer = global.setInterval(renderAll, 60000);
       return data;
-    }).catch(function (error) { showError(error.message); });
+    }).catch(function (error) {
+      if (version !== _loadVersion) return;
+      clearCatalog();
+      showError(error.message);
+    });
   }
   var api = { load: load, render: renderAll, publicCtaUrl: publicCtaUrl, londonTodayISO: londonTodayISO,
     currentDatedPicks: currentDatedPicks, dateWindow: dateWindow, selectPicks: selectPicks, chooseHero: chooseHero,
     groupSessions: groupSessions, pickEndMs: pickEndMs, renderPickCard: renderPickCard, relevantNotices: relevantNotices,
-    emptyMessage: emptyMessage, AGE_BANDS: AGE_BANDS };
+    emptyMessage: emptyMessage, resolveCity: resolveCity, validateCatalog: validateCatalog, AGE_BANDS: AGE_BANDS };
   global.DoNextCatalog = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (global.addEventListener) {

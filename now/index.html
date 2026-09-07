@@ -29,11 +29,12 @@
   {"@context":"https://schema.org","@type":"WebSite","name":"DoNext Cardiff","url":"https://donext.co.uk/","description":"A checked shortlist of interesting things to do with kids in and around Cardiff."}
   </script>
 </head>
-<body>
+<body data-city="cardiff">
   <a class="skip-link" href="#weekend">Skip to the picks</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="DoNext Cardiff home"><img class="wordmark__logo" src="/assets/brand/cardiff/donext-cardiff-avatar-v4.png" width="1254" height="1254" alt="DoNext Cardiff"></a>
+      <details class="city-switch"><summary>Cardiff<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></summary><nav class="city-switch__menu" aria-label="Choose city"><a href="/" aria-current="page">Cardiff</a><a href="/bristol/">Bristol</a></nav></details>
       <nav class="nav" aria-label="Primary">
         <a href="#weekend">The picks</a>
         <a class="nav__cta" href="#brief">Friday brief</a>
@@ -75,6 +76,7 @@
           <p class="section-sub">Join the Friday brief list: a few Cardiff finds, who they suit, what they really cost and one useful tip for each.</p>
           <form class="signup" name="weekend-brief" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Friday weekend brief signup">
             <input type="hidden" name="form-name" value="weekend-brief">
+            <input type="hidden" name="city" value="cardiff">
             <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <label class="signup__label" for="email-weekend-brief">Your email</label>
             <div class="signup__row">
@@ -88,6 +90,7 @@
             <p>Register your interest in a short weekday morning email.</p>
             <form class="signup signup--compact" name="weekday-morning" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" aria-label="Weekday morning signup">
             <input type="hidden" name="form-name" value="weekday-morning">
+            <input type="hidden" name="city" value="cardiff">
             <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <label class="signup__label" for="email-weekday-morning">Your email</label>
             <div class="signup__row">

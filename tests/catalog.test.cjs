@@ -1,5 +1,8 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
 const catalog = require('../cardiff-catalog.js');
 
 function pick(overrides = {}) {
@@ -121,4 +124,151 @@ test('notices respect selected dates, Monday opening patterns, and weather expir
     { title: 'Weekend gate', date: '2026-09-12', relatedVenueIds: ['hub'] }];
   assert.deepEqual(catalog.relevantNotices(notices, [pick({ venueId: 'hub' })], 'weekend', now).map(item => item.title), ['Weekend gate']);
   assert.deepEqual(catalog.relevantNotices(notices, [], 'today', now).map(item => item.title), ['Weekday closure', 'Monday closure']);
+});
+
+test('city resolution defaults to Cardiff and only allows the two explicit catalogs', () => {
+  assert.deepEqual(catalog.resolveCity(), { id: 'cardiff', name: 'Cardiff', catalogUrl: '/data/cardiff-today.json' });
+  assert.equal(catalog.resolveCity(null).id, 'cardiff');
+  assert.equal(catalog.resolveCity('').id, 'cardiff');
+  assert.deepEqual(catalog.resolveCity('Bristol'), { id: 'bristol', name: 'Bristol', catalogUrl: '/data/bristol-today.json' });
+  for (const value of ['bath', '../cardiff', 'https://example.org/catalog', '__proto__', 'constructor']) {
+    assert.throws(() => catalog.resolveCity(value), /Unsupported catalog city/);
+  }
+});
+
+test('catalog identity must match the requested city before it can render', () => {
+  const bristol = { city: 'Bristol', datedPicks: [], evergreen: [] };
+  assert.equal(catalog.validateCatalog(bristol, 'bristol'), bristol);
+  assert.throws(() => catalog.validateCatalog(bristol, 'cardiff'), /does not match Cardiff/);
+  assert.throws(() => catalog.validateCatalog({ city: 'Cardiff', datedPicks: [], evergreen: [] }, 'bristol'), /does not match Bristol/);
+  assert.throws(() => catalog.validateCatalog({ datedPicks: [], evergreen: [] }, 'bristol'), /does not match Bristol/);
+  assert.throws(() => catalog.validateCatalog({ city: 'Bristol', datedPicks: [] }, 'bristol'), /Invalid catalog/);
+});
+
+// A small browser harness exercises actual load/render state, without a browser dependency.
+function browserCatalog({ city = null, fetcher, href = 'https://donext.co.uk/' } = {}) {
+  const elements = new Map(['hero-pick', 'dated-picks', 'notices', 'backups', 'brief-preview', 'pick-count',
+    'catalog-headline', 'date-range', 'weekend-heading', 'stale-banner', 'catalog-freshness', 'date-chips', 'age-chips']
+    .map(id => [id, { innerHTML: '', textContent: '', hidden: false, querySelectorAll: () => [] }]));
+  const nudge = { hidden: false };
+  const calls = [], errors = [], timers = new Map();
+  let timerId = 0;
+  const document = {
+    body: { getAttribute: name => name === 'data-city' ? city : null },
+    readyState: 'complete', activeElement: null,
+    getElementById: id => elements.get(id) || null,
+    querySelector: () => null,
+    querySelectorAll: selector => selector === '.brief-nudge' ? [nudge] : []
+  };
+  const window = {
+    location: new URL(href),
+    addEventListener() {},
+    setInterval(callback) { timers.set(++timerId, callback); return timerId; },
+    clearInterval(id) { timers.delete(id); }
+  };
+  class FixedDate extends Date {
+    constructor(...args) { super(...(args.length ? args : ['2026-09-07T15:00:00Z'])); }
+    static now() { return Date.parse('2026-09-07T15:00:00Z'); }
+  }
+  const context = vm.createContext({ window, document, URL, Intl, Date: FixedDate,
+    console: { error: (...args) => errors.push(args.join(' ')) },
+    fetch: async (url, options) => { calls.push({ url, options }); return fetcher(url); }
+  });
+  vm.runInContext(fs.readFileSync(path.join(__dirname, '../cardiff-catalog.js'), 'utf8'), context);
+  return { api: window.DoNextCatalog, window, document, elements, calls, errors, timers, nudge, context };
+}
+
+function cityCatalog(city) {
+  return { city, updatedAt: '2026-09-07T14:00:00+01:00',
+    datedPicks: [pick({ id: city.toLowerCase() + '-pick', title: city + ' discovery', location: city + ' venue' })],
+    evergreen: [pick({ id: city.toLowerCase() + '-backup', title: city + ' backup', role: 'backup' })] };
+}
+function okResponse(data) { return { ok: true, json: async () => data }; }
+
+test('browser load() remains Cardiff-compatible when a page has no city configuration', async () => {
+  const data = cityCatalog('Cardiff');
+  const browser = browserCatalog({ fetcher: () => okResponse(data) });
+  assert.equal(await browser.api.load(), data);
+  assert.deepEqual(browser.calls.map(call => call.url), ['/data/cardiff-today.json']);
+  assert.match(browser.elements.get('hero-pick').innerHTML, /Cardiff discovery/);
+  assert.equal(browser.window._donextCatalog.city, 'Cardiff');
+  assert.equal(browser.timers.size, 1);
+  assert.equal(browser.errors.length, 0);
+});
+
+test('Bristol body configuration loads only Bristol, independently of route/query text', async () => {
+  const data = cityCatalog('Bristol');
+  const browser = browserCatalog({ city: 'bristol', href: 'https://donext.co.uk/bristol/?city=cardiff', fetcher: () => okResponse(data) });
+  assert.equal(await browser.api.load(), data);
+  assert.deepEqual(browser.calls.map(call => call.url), ['/data/bristol-today.json']);
+  assert.match(browser.elements.get('hero-pick').innerHTML, /Bristol discovery/);
+  assert.match(browser.elements.get('brief-preview').innerHTML, /Bristol discovery/);
+  assert.doesNotMatch(browser.elements.get('hero-pick').innerHTML, /Cardiff discovery/);
+  assert.equal(browser.window._donextCatalog.city, 'Bristol');
+});
+
+test('browser rejects the wrong-city response and never tries a fallback catalog', async () => {
+  const browser = browserCatalog({ city: 'bristol', fetcher: () => okResponse(cityCatalog('Cardiff')) });
+  assert.equal(await browser.api.load(), undefined);
+  assert.deepEqual(browser.calls.map(call => call.url), ['/data/bristol-today.json']);
+  assert.equal(browser.elements.get('hero-pick').innerHTML, '');
+  assert.equal(browser.elements.get('brief-preview').innerHTML, '');
+  assert.match(browser.elements.get('dated-picks').innerHTML, /couldn’t load/);
+  assert.equal(browser.window._donextCatalog, null);
+  assert.equal(browser.timers.size, 0);
+  assert.equal(browser.nudge.hidden, true);
+  assert.match(browser.errors[0], /does not match Bristol/);
+});
+
+test('a failed Bristol reload clears Cardiff cards, backups and refresh state', async () => {
+  const browser = browserCatalog({ fetcher: url => url.includes('cardiff') ? okResponse(cityCatalog('Cardiff')) : { ok: false, status: 503 } });
+  await browser.api.load();
+  assert.match(browser.elements.get('backups').innerHTML, /Cardiff backup/);
+  await browser.api.load({ city: 'bristol' });
+  browser.api.render();
+  assert.deepEqual(browser.calls.map(call => call.url), ['/data/cardiff-today.json', '/data/bristol-today.json']);
+  assert.equal(browser.elements.get('hero-pick').innerHTML, '');
+  assert.equal(browser.elements.get('backups').innerHTML, '');
+  assert.equal(browser.elements.get('brief-preview').innerHTML, '');
+  assert.equal(browser.window._donextCatalog, null);
+  assert.equal(browser.timers.size, 0);
+});
+
+test('an unsupported page city fails without requesting Cardiff or a constructed URL', async () => {
+  const browser = browserCatalog({ city: '../cardiff', fetcher: () => { throw new Error('Unexpected fetch'); } });
+  await browser.api.load();
+  assert.equal(browser.calls.length, 0);
+  assert.equal(browser.window._donextCatalog, null);
+  assert.match(browser.errors[0], /Unsupported catalog city/);
+});
+
+test('a delayed Cardiff response cannot overwrite a newer Bristol load', async () => {
+  let finishCardiff;
+  const delayedCardiff = new Promise(resolve => { finishCardiff = resolve; });
+  const browser = browserCatalog({ fetcher: url => url.includes('cardiff') ? delayedCardiff : okResponse(cityCatalog('Bristol')) });
+  const oldLoad = browser.api.load({ city: 'cardiff' });
+  await Promise.resolve();
+  await browser.api.load({ city: 'bristol' });
+  finishCardiff(okResponse(cityCatalog('Cardiff')));
+  await oldLoad;
+  assert.equal(browser.window._donextCatalog.city, 'Bristol');
+  assert.match(browser.elements.get('hero-pick').innerHTML, /Bristol discovery/);
+  assert.equal(browser.timers.size, 1);
+  assert.equal(browser.errors.length, 0);
+});
+
+test('app bootstrap passes the body city and waits for the DOM when necessary', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8');
+  for (const readyState of ['complete', 'loading']) {
+    const calls = [];
+    let ready;
+    const context = vm.createContext({
+      window: { DoNextCatalog: { load: options => calls.push(options.city) } },
+      document: { readyState, body: { getAttribute: () => 'bristol' },
+        addEventListener: (name, callback) => { assert.equal(name, 'DOMContentLoaded'); ready = callback; } }
+    });
+    vm.runInContext(source, context);
+    if (readyState === 'loading') { assert.equal(calls.length, 0); ready(); }
+    assert.deepEqual(calls, ['bristol']);
+  }
 });

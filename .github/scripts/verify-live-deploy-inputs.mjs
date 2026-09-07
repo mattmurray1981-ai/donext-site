@@ -45,14 +45,16 @@ for (const file of files) {
   const previousSha = previousPath ? sha1(execFileSync('git', ['show', `${event.before}:${previousPath}`])) : null;
   if (previousSha !== file.sha) throw new Error(`Production has an unmerged change to ${file.path}; reconcile before replacing it`);
 }
-const originalCatalog = files.find(file => file.path === '/data/cardiff-today.json');
-const bytes = await fs.readFile(planned.get('/data/cardiff-today.json'));
-if (originalCatalog && crypto.createHash('sha1').update(bytes).digest('hex') !== originalCatalog.sha) {
-  const response = await fetch(`https://api.netlify.com/api/v1/sites/${id}/files/data/cardiff-today.json`, { headers: { ...headers, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
-  if (!response.ok) throw new Error('Cannot verify catalog freshness');
+for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json']) {
+  const originalCatalog = files.find(file => file.path === catalogPath);
+  if (!originalCatalog) continue;
+  const bytes = await fs.readFile(planned.get(catalogPath));
+  if (crypto.createHash('sha1').update(bytes).digest('hex') === originalCatalog.sha) continue;
+  const response = await fetch(`https://api.netlify.com/api/v1/sites/${id}/files${catalogPath}`, { headers: { ...headers, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
+  if (!response.ok) throw new Error(`Cannot verify catalog freshness: ${catalogPath}`);
   const current = await response.json();
   const next = JSON.parse(bytes);
-  if (!(Date.parse(next.updatedAt) > Date.parse(current.updatedAt))) throw new Error('Git catalog differs from production without a newer checked timestamp; reconcile before deploying');
+  if (!(Date.parse(next.updatedAt) > Date.parse(current.updatedAt))) throw new Error(`Git catalog ${catalogPath} differs from production without a newer checked timestamp; reconcile before deploying`);
 }
 const inventory = await get(`/sites/${id}/functions?filter=${encodeURIComponent(`deploy:${live.id}`)}`);
 for (const fn of inventory.functions || []) {

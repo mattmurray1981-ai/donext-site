@@ -27,6 +27,31 @@ functions = "./netlify/functions"
 
   [functions."*"]
 
+# Bristol has its own directory page, metadata, catalog and signup confirmation.
+[[redirects]]
+from = "/bristol/index.html"
+to = "/bristol/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/bristol/now"
+to = "/bristol/"
+status = 302
+force = true
+
+[[redirects]]
+from = "/bristol/now/"
+to = "/bristol/"
+status = 302
+force = true
+
+[[redirects]]
+from = "/bristol/thank-you/index.html"
+to = "/bristol/thank-you/"
+status = 301
+force = true
+
 # Internal research remains in the preserved deployment snapshot, but must not
 # be served publicly. Force the 404 so existing files cannot shadow these rules.
 [[redirects]]
