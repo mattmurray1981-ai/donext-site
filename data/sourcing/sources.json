@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-05T06:40:10+01:00",
+  "updatedAt": "2026-09-07T15:59:29+01:00",
   "notes": "Private ops registry for Cardiff kids 0–12 (~30 min). Facebook entries are name/geo only — no group URLs. neverPublishUrl required for facebook_group. Verified join targets refreshed 2026-09-05 from public evidence (council/news/NHS/charity); invented names removed.",
   "sources": [
     {
@@ -1057,6 +1057,28 @@
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
       "notes": "Park events site companion to FB group."
+    },
+    {
+      "id": "web-canopi",
+      "name": "The Canopi",
+      "type": "venue",
+      "url": "https://www.thecanopi.org/events",
+      "geo": "riverside",
+      "status": "active",
+      "kidsRelevance": "selective",
+      "checkCadence": "weekly",
+      "notes": "Independent creative venue. Daytime community events can suit older children; age/price check each event. First published yield in site-improvement run7September."
+    },
+    {
+      "id": "web-goodsheds",
+      "name": "Goodsheds",
+      "type": "venue",
+      "url": "https://www.goodshedsbarry.co.uk/whats-on/",
+      "geo": "barry",
+      "status": "active",
+      "kidsRelevance": "high",
+      "checkCadence": "weekly",
+      "notes": "Specific family events and creative sessions; official DesignMyNight booking widget. Check final child+adult price, not headline."
     }
   ]
 }
