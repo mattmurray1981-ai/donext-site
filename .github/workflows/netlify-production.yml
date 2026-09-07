@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
 
 permissions:
   contents: read
@@ -54,3 +56,4 @@ jobs:
             --dir "$RUNNER_TEMP/site" \
             --site "$NETLIFY_SITE_ID" \
             --message "GitHub Actions ${GITHUB_SHA}"
+
