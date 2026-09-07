@@ -3,8 +3,8 @@
   "campaigns": [
     {
       "id": "bristol-launch-2026-09-07",
-      "publishedAt": null,
-      "status": "prepared",
+      "publishedAt": "2026-09-07T15:45:44Z",
+      "status": "published",
       "windowStart": "2026-09-12",
       "windowEnd": "2026-09-13",
       "pickIds": [
@@ -14,7 +14,9 @@
         "bristol-buzz-get-growing-20260913",
         "bristol-bramble-get-growing-20260913"
       ],
-      "heroId": "bristol-parallel-imprints-20260912"
+      "heroId": "bristol-parallel-imprints-20260912",
+      "deployId": "6a9edc1cea9d1962d4364df8",
+      "url": "https://donext.co.uk/bristol/"
     }
   ]
 }
