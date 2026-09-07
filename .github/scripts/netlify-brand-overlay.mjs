@@ -76,15 +76,20 @@ if (mode === 'publish') {
 }
 
 const source = new Map();
-for (const file of [...htmlPaths, '/style.css']) {
+for (const file of Object.keys(originalFiles)) {
   const response = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/files/${file.slice(1)}`, { headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
   if (!response.ok) throw new Error(`Cannot read original deployed source: ${file}`);
   const bytes = Buffer.from(await response.arrayBuffer());
   if (crypto.createHash('sha1').update(bytes).digest('hex') !== originalFiles[file]) throw new Error(`Original source digest does not match: ${file}`);
   source.set(file, bytes);
+  const backupPath = path.join('brand-report', 'original', file);
+  await fs.mkdir(path.dirname(backupPath), { recursive: true });
+  await fs.writeFile(backupPath, bytes);
 }
 const assetRoot = '.github/brand-v4';
 const changes = brandFiles(source, await fs.readFile(`${assetRoot}/donext-cardiff-avatar-v4.png`), await fs.readFile(`${assetRoot}/donext-cardiff-share-v4.png`));
+changes.set('/assets/brand/cardiff/README.md', await fs.readFile(`${assetRoot}/README.md`));
+changes.set('/assets/brand/cardiff/instagram-feed-template.html', await fs.readFile(`${assetRoot}/instagram-feed-template.html`));
 const digest = { ...originalFiles };
 const changedByHash = new Map();
 for (const [file, bytes] of changes) {

@@ -36,6 +36,13 @@ export function brandFiles(source, avatar, share) {
   // Standalone SVG wrapper embeds the approved pixels unchanged.
   changes.set('/favicon.svg', Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${av.width}" height="${av.height}" viewBox="0 0 ${av.width} ${av.height}"><image width="${av.width}" height="${av.height}" href="data:image/png;base64,${avatar.toString('base64')}"/></svg>\n`));
   changes.set('/assets/brand/README.md', Buffer.from(`# DoNext city identity — v4\n\nApproved orange concept, 7 September 2026. The canonical Cardiff master is cardiff/donext-cardiff-avatar-v4.png (${av.width} × ${av.height}). Use these exact pixels for Instagram, Facebook and website branding. The website crops the square to a circle in CSS.\n\nThe bold stacked cream Do / Next lettering and widely spaced city name define the identity. Keep decorative skyline motifs and coloured city labels out of the mark. Change only the city name for future city editions; preserve lettering, spacing, orange field and circular safe area.\n\nSocial previews use cardiff/donext-cardiff-share-v4.png (${og.width} × ${og.height}). Page metadata declares its actual dimensions. Root favicon.svg embeds the same master unchanged; apple-touch-icon.png also uses the master. Existing v2/v3 files are historical only.\n\nDo not redraw the mark in a substitute font, stretch it, add shadows or place graphics within it. Use this master on all future feed, Story and email designs. Event artwork must retain readable what / when / where / ages / cost / organiser details.\n\nDeploy branding as a scoped overlay on the current published Netlify deployment. The live catalog, analytics functions and other production files may be newer than this repository; a whole-repository deploy can remove them.\n`));
+  if (source.has('/weekend-brief.html')) {
+    let email = source.get('/weekend-brief.html').toString('utf8');
+    const firstHeader = '<tr><td style="background:#0F766E;padding:18px 24px;">';
+    if (!email.includes(firstHeader)) throw new Error('Unexpected weekend email header structure');
+    email = email.replace(firstHeader, `${firstHeader}\n<a href="https://donext.co.uk/"><img src="https://donext.co.uk${avatarPath}" alt="DoNext Cardiff" width="88" height="88" style="display:block;border:0;border-radius:50%;margin-bottom:16px;"></a>`);
+    changes.set('/weekend-brief.html', Buffer.from(email));
+  }
   return changes;
 }
 
