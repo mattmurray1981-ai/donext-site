@@ -27,6 +27,179 @@ functions = "./netlify/functions"
 
   [functions."*"]
 
+# Internal research remains in the preserved deployment snapshot, but must not
+# be served publicly. Force the 404 so existing files cannot shadow these rules.
+[[redirects]]
+from = "/data"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/sourcing"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/sourcing/"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/sourcing/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/metrics"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/metrics/"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/metrics/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/featured-history.json"
+to = "/404.html"
+status = 404
+force = true
+
+# Cover the production lowercase paths and the tracked uppercase Markdown names.
+[[redirects]]
+from = "/data/featured-history.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/FEATURED-HISTORY.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/schema.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/SCHEMA.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/trust-gates.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/data/matthew-gaps.md"
+to = "/404.html"
+status = 404
+force = true
+
+# Repository notes, build inputs and tests are not public site content.
+[[redirects]]
+from = "/readme.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/README.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/preview.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/PREVIEW.md"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/inject_hit.py"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/package.json"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/package-lock.json"
+to = "/404.html"
+status = 404
+force = true
+
+# Block checked-in function source, not the /.netlify/functions runtime URLs.
+[[redirects]]
+from = "/netlify/functions"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/netlify/functions/"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/netlify/functions/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/tests"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/tests/"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/tests/*"
+to = "/404.html"
+status = 404
+force = true
+
 [[redirects]]
 from = "/thank-you"
 to = "/thank-you.html"
