@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-05",
+  "schemaVersion": 1,
+  "collectedAt": "2026-09-06T07:55:11+01:00",
+  "site": {
+    "pageviews": 7,
+    "paths": {
+      "/": 4,
+      "/now": 2,
+      "/smoke": 1
+    },
+    "refs": {
+      "bot": 1
+    },
+    "source": "https://donext.co.uk/api/metrics-day?date=2026-09-05"
+  },
+  "signups": {
+    "weekend_brief_total": 1,
+    "weekday_morning_total": 0,
+    "source": "Netlify Forms API totals (not day-delta)",
+    "note": "API returns cumulative submission_count only"
+  },
+  "social": {
+    "instagram_followers": null,
+    "instagram_note": "not on file (needs Graph/session)",
+    "facebook_page_followers": 0,
+    "facebook_note": "last known 2026-09-05 Page Insights scrape (DoNextcardiff); not re-verified this run"
+  },
+  "sourcing": {
+    "last_24h": {
+      "sources_checked": 0,
+      "candidates": 0,
+      "published": 0,
+      "note": "no runs.json entries in last 24h; latest runs are 20260904-2042 and 20260904-2058"
+    }
+  },
+  "featured": {
+    "last_24h": [],
+    "note": "featured-history updatedAt 2026-09-04T20:58:38+01:00; nothing new in last 24h"
+  },
+  "blockers": [
+    "Instagram followers: needs Graph token or warm session",
+    "Facebook followers: Graph token absent; last Insights scrape was 0 on 2026-09-05",
+    "Signups day-delta: Netlify Forms API exposes cumulative totals only"
+  ]
+}

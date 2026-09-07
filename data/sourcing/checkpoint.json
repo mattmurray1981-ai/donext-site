@@ -1,7 +1,8 @@
 {
   "gmailQuery": "from:groupupdates@facebookmail.com OR from:facebookmail.com",
   "label": "DoNext/Leads",
-  "lastProcessedAt": "2026-09-04T20:58:38+01:00",
-  "lastHistoryId": "5615849",
-  "lastRunId": "20260904-2058"
+  "lastProcessedAt": "2026-09-07T12:20:00+01:00",
+  "lastHistoryId": "5652783",
+  "lastRunId": "20260907-1206",
+  "notes": "Midday hot alert 20260907-1206 SILENT. No ping. Gmail after morning checkpoint skimmed; no publishable same-day free/unusual kids find."
 }

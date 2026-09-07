@@ -1,28 +1,44 @@
 # Featured history
 
-`featured-history.json` records editorial **campaigns** (e.g. a Friday weekend brief), not one entry per channel. Site, email, Instagram and Facebook that ship the same shortlist share one campaign and one feature row per event.
+`featured-history.json` is the anti-repeat ledger. Every time we publish picks (Mon–Thu shortlist, Friday weekend brief, Saturday same-day, midday hot alert), we append a **campaign** with one **feature** row per event.
+
+Site, email, Instagram and Facebook that ship the same shortlist share one campaign — not four duplicate rows.
 
 ## Feature row
 
 | Field | Notes |
 | --- | --- |
-| `eventId` | Matches a catalog pick `id` |
-| `seriesId` | Stable series key for recurring formats |
-| `venueId` | Stable venue key |
-| `campaignId` | e.g. `weekend-2026-09-04` |
-| `role` | `hero` \| `feature` \| `backup` |
+| `eventId` | Matches a catalog pick `id` (this specific date/instance) |
+| `seriesId` | Stable series key for recurring formats (e.g. `cardiff-farmers-markets`) |
+| `venueId` | Stable venue key (e.g. `chapter`) |
+| `campaignId` | e.g. `morning-2026-09-08`, `weekend-2026-09-11`, `sat-2026-09-12`, `midday-2026-09-09` |
+| `role` | `hero` \| `feature` \| `backup` \| `mention` (morning/midday thin touch) |
 | `score` | Publish ≥65, hero ≥80 |
 | `publishedAt` | ISO-8601 with UK offset |
 | `channels` | Subset of `site`, `email`, `instagram`, `facebook` |
 | `override` | Reason string when breaking a cooldown, else `null` |
 
-## Cooldowns
+## Cooldowns (hard rules — 2026-09-05)
 
-- **Exact event:** do not re-feature before it happens; one final reminder only when justified (record `override`).
-- **Recurring series:** 14 days after a normal feature; **28 days** after a hero.
-- **Same venue + category:** 14 days between hero placements.
-- **Tourist / evergreen backup:** 60 days.
-- **Morning vs midday:** block the same event and series on the same day.
-- **Midday alert:** score ≥80, free/cheap, unusual, within 48 hours, and absent from that morning’s shortlist.
+Before featuring anything, read this file and apply:
 
-Write a new campaign (or append features) alongside every successful publication of `cardiff-today.json`.
+| What | Cooldown |
+| --- | --- |
+| Same **eventId** | Never again as a “new” pick; one reminder only with `override` |
+| Same **seriesId** as **hero** | **21 days** |
+| Same **seriesId** as feature/mention | **14 days** |
+| Same **venueId** as Friday hero | **No two Fridays in a row** |
+| Tourist / evergreen backup (Museum, Techniquest, Castle, St Fagans, soft play) | **60 days** as anything but labelled backup; never hero |
+| Same event/series **same calendar day** across morning + midday + Sat | Blocked |
+| Midday hot alert | ≥80, free/unusual, within 48h, absent from that morning’s shortlist + 7-day history |
+
+If the only options left are inside cooldowns → publish fewer picks or “No strong fresh find today.” Never pad.
+
+## Campaign naming
+
+- `morning-YYYY-MM-DD` — Mon–Thu shortlist email
+- `weekend-YYYY-MM-DD` — Friday 3:30 brief (date = Friday)
+- `sat-YYYY-MM-DD` — Saturday same-day
+- `midday-YYYY-MM-DD` — hot alert (only when we ping)
+
+Write/update this file alongside every successful `cardiff-today.json` publish and every emailed shortlist.

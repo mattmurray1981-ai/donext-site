@@ -14,7 +14,8 @@ Private ops. Facebook groups = quiet leads only. Never publish group URLs. Publi
 
 - Query: value of `gmailQuery` in `checkpoint.json`  
   (`from:groupupdates@facebookmail.com OR from:facebookmail.com`).
-- Scope to label **`DoNext/Leads`**.
+- Prefer label **`DoNext/Leads`** when present, but **always also search unlabeled** `from:facebookmail.com OR from:groupupdates@facebookmail.com` since checkpoint — the Gmail auto-label is flaky and missing mail is worse than duplicates (dedupe handles overlaps).
+- When a filter/API can apply `DoNext/Leads`, label processed threads for hygiene.
 - Process only mail newer than `lastProcessedAt` / after `lastHistoryId`.
 - For each useful group-update email: create or update a `candidates.json` entry with **private** `groupName`, `leadUrl`, Gmail ids, extracted fields, `status: "new"`, and timestamps.
 - Do **not** store or log Facebook group profile URLs in any public file.
@@ -95,3 +96,7 @@ Also record `candidatesDeduped` and `rejected` on the run object even if they ar
 - Do not link this folder from the public site.
 - Do not modify `index.html` as part of a sourcing run.
 - Do not invent dated picks — empty `datedPicks` beats filler.
+
+## Trust / freshness
+
+See [`../TRUST-GATES.md`](../TRUST-GATES.md) for hard publish gates: organiser verify, `checkedAt`, confidence honesty, past-date rule (JS + catalog hygiene), Friday/same-day re-verify, prefer silence over pad, and logging rejects with `rejectReason`. Past calendar dates must never appear as current dated picks.
