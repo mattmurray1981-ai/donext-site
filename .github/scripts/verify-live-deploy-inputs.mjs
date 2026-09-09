@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import { validateRecoveryManifest } from './recovery-manifest.mjs';
+import { verifyStagedContract } from './site-contract.mjs';
 
 // Grok can publish directly to Netlify. A git deploy must not silently remove
 // production files/functions or replace its catalog with an older checkout.
@@ -16,7 +18,16 @@ async function get(endpoint) {
 const site = await get(`/sites/${id}`);
 const live = site.published_deploy;
 if (!live?.id) throw new Error('Cannot identify the current production deploy');
-const files = await get(`/sites/${id}/files`);
+const files = [];
+for (let page = 1; page <= 1000; page++) {
+  const batch = await get(`/deploys/${live.id}/files?page=${page}&per_page=100`);
+  if (!Array.isArray(batch) || batch.some(file => files.some(existing => existing.path.toLowerCase() === file.path.toLowerCase()))) throw new Error('Invalid or repeated production file inventory');
+  files.push(...batch);
+  if (batch.length < 100) break;
+  if (page === 1000) throw new Error('Production inventory pagination did not finish');
+}
+const recoveryPlan = process.env.NETLIFY_RECOVERY_MANIFEST ? JSON.parse(await fs.readFile(process.env.NETLIFY_RECOVERY_MANIFEST, 'utf8')) : null;
+const recovery = recoveryPlan ? validateRecoveryManifest(recoveryPlan, { siteId: id, liveId: live.id, files }) : null;
 const planned = new Map();
 async function walk(directory) {
   for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
@@ -26,11 +37,14 @@ async function walk(directory) {
   }
 }
 await walk(root);
-const missing = files.map(file => file.path).filter(file => !planned.has(file.toLowerCase()));
+const staged = new Map(await Promise.all([...planned].map(async ([key, file]) => [key, { bytes: await fs.readFile(file) }])));
+verifyStagedContract(staged);
+const missing = files.map(file => file.path).filter(file => !planned.has(file.toLowerCase()) && !recovery?.removed.has(file.toLowerCase()));
 if (missing.length) throw new Error(`Production contains files absent from git; reconcile first: ${missing.join(', ')}`);
+for (const key of recovery?.removed.keys() || []) if (planned.has(key)) throw new Error(`Recovery removal is still staged: ${key}`);
 const baseline = JSON.parse(await fs.readFile('.github/production-baseline.json', 'utf8'));
 const known = new Map(Object.entries(baseline.files).map(([file, sha]) => [file.toLowerCase(), sha]));
-const event = JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'));
+const event = process.env.GITHUB_EVENT_PATH ? JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8')) : {};
 const priorPaths = new Map();
 if (/^[0-9a-f]{40}$/.test(event.before || '') && !/^0+$/.test(event.before)) {
   const tree = execFileSync('git', ['ls-tree', '-r', '--name-only', event.before], { encoding: 'utf8' });
@@ -39,8 +53,9 @@ if (/^[0-9a-f]{40}$/.test(event.before || '') && !/^0+$/.test(event.before)) {
 const sha1 = bytes => crypto.createHash('sha1').update(bytes).digest('hex');
 for (const file of files) {
   const key = file.path.toLowerCase();
+  if (recovery?.removed.has(key)) continue;
   const stagedSha = sha1(await fs.readFile(planned.get(key)));
-  if (stagedSha === file.sha || known.get(key) === file.sha) continue;
+  if (stagedSha === file.sha || known.get(key) === file.sha || recovery?.expected.get(key) === file.sha) continue;
   const previousPath = priorPaths.get(key);
   const previousSha = previousPath ? sha1(execFileSync('git', ['show', `${event.before}:${previousPath}`])) : null;
   if (previousSha !== file.sha) throw new Error(`Production has an unmerged change to ${file.path}; reconcile before replacing it`);
@@ -52,7 +67,9 @@ for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json
   if (crypto.createHash('sha1').update(bytes).digest('hex') === originalCatalog.sha) continue;
   const response = await fetch(`https://api.netlify.com/api/v1/sites/${id}/files${catalogPath}`, { headers: { ...headers, 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
   if (!response.ok) throw new Error(`Cannot verify catalog freshness: ${catalogPath}`);
-  const current = await response.json();
+  const currentBytes = Buffer.from(await response.arrayBuffer());
+  if (sha1(currentBytes) !== originalCatalog.sha) throw new Error(`Production catalog changed during verification: ${catalogPath}`);
+  const current = JSON.parse(currentBytes);
   const next = JSON.parse(bytes);
   if (!(Date.parse(next.updatedAt) > Date.parse(current.updatedAt))) throw new Error(`Git catalog ${catalogPath} differs from production without a newer checked timestamp; reconcile before deploying`);
 }

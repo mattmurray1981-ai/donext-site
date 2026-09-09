@@ -1,0 +1,227 @@
+{
+  "preparedAt": "2026-09-08T12:44:15.307+01:00",
+  "status": "prepared-not-deployed",
+  "snapshotDirectory": "C:\\Users\\MatthewMurray\\Documents\\Codex\\2026-09-04\\are\\deliverables\\catalog-reconciliation-2026-09-08",
+  "restoredCardiffIds": [
+    "canopi-community-trade-day-20260912",
+    "goodsheds-wild-west-play-20260912",
+    "st-mellons-youth-baseball-20260909",
+    "penylan-lego-club-20260912"
+  ],
+  "restoredBristolIds": [
+    "bristol-parallel-imprints-20260912",
+    "bristol-windmill-farm-fayre-20260912",
+    "bristol-rcg-fest-family-20260912",
+    "bristol-buzz-get-growing-20260913",
+    "bristol-bramble-get-growing-20260913"
+  ],
+  "preservedPublicIds": {
+    "cardiff": [
+      "hubs-story-rhyme-rhydypennau-tue",
+      "hubs-story-time-central-tue",
+      "hubs-rhyme-llanishen-wed",
+      "miners-lego-club-wed",
+      "hubs-story-craft-llandaff-thu",
+      "hubs-nofit-circus-thu",
+      "miners-stay-play-fri",
+      "hubs-play-time-central-fri",
+      "techniquest-toddler-day-fri",
+      "st-fagans-food-festival-sat",
+      "cardiff-brick-festival-sat",
+      "st-fagans-food-festival-sun"
+    ],
+    "bristol": [
+      "blaise-dairy-garden-2026-09-12",
+      "bradley-stoke-lego-2026-09-08",
+      "kingswood-lego-2026-09-12",
+      "hanham-crafternoon-2026-09-10",
+      "tiny-planet-egg-2026-09-12",
+      "aardman-mini-museum-hunt-2026-09-12",
+      "blaise-community-garden-art-show-2026-09-12",
+      "filton-library-art-club-2026-09-12",
+      "bristol-central-library-rhyme-2026-09-12",
+      "mshed-harbour-railway-2026-09-12"
+    ]
+  },
+  "unknownEnds": [
+    {
+      "id": "bristol-central-library-rhyme-2026-09-12",
+      "sourceUrl": "https://www.bristol.gov.uk/residents/libraries-and-archives/services-for-children-and-young-people/baby-bounce-and-rhyme-and-storytime-sessions",
+      "reason": "Duration is approximately 20 minutes, not an exact finish."
+    },
+    {
+      "id": "mshed-harbour-railway-2026-09-12",
+      "sourceUrl": "https://www.bristolmuseums.org.uk/whats-on/m-shed/train-rides/",
+      "reason": "Only from 11:00 is published; last departure unknown."
+    },
+    {
+      "id": "mshed-harbour-railway-2026-09-13",
+      "sourceUrl": "https://www.bristolmuseums.org.uk/whats-on/m-shed/train-rides/",
+      "reason": "Only from 11:00 is published; last departure unknown."
+    }
+  ],
+  "priceCautions": [
+    "Hub pages lacking a price are not called free.",
+    "Blaise garden pages do not specify a separate admission charge; estate entry is free.",
+    "Windmill Hill child checkout total unverified; early-bird advertisement qualified.",
+    "Brick Festival checkout unavailable; organiser prices quoted with final total caveat.",
+    "Harbour Railway adult/child fares not published."
+  ],
+  "privateReasons": [
+    {
+      "id": "hubs-story-rhyme-rhydypennau-tue",
+      "rationale": "Free local under-5 session in Cyncoed — clear age fit and the strongest same-day indoor find on a heavy-rain Tuesday."
+    },
+    {
+      "id": "hubs-story-time-central-tue",
+      "rationale": "Same-slot free city-centre alternative for 2–4s — covers parents who can’t reach Rhydypennau."
+    },
+    {
+      "id": "hubs-rhyme-llanishen-wed",
+      "rationale": "Free north Cardiff under-5 slot with clearer weather expected Wednesday."
+    },
+    {
+      "id": "miners-lego-club-wed",
+      "rationale": "Cheap community drop-in covering older kids the hub rhyme sessions miss — within ~30 minutes."
+    },
+    {
+      "id": "hubs-story-craft-llandaff-thu",
+      "rationale": "Free Thursday craft session at a north Cardiff hub — strong midweek indoor plan."
+    },
+    {
+      "id": "hubs-nofit-circus-thu",
+      "rationale": "Unusual east Cardiff after-school skill session — distinctive over tourist staples."
+    },
+    {
+      "id": "miners-stay-play-fri",
+      "rationale": "Cheap Friday under-3 community session outside the tourist loop."
+    },
+    {
+      "id": "hubs-play-time-central-fri",
+      "rationale": "Free city-centre Friday under-4 session."
+    },
+    {
+      "id": "techniquest-toddler-day-fri",
+      "rationale": "Single tourist backup this week — dated Toddler Day after maintenance closure."
+    },
+    {
+      "id": "st-fagans-food-festival-sat",
+      "rationale": "Free, distinctive, locally rooted weekend festival with explicit family activities — standout look-ahead."
+    },
+    {
+      "id": "cardiff-brick-festival-sat",
+      "rationale": "Clear family LEGO day with official ticket path — strong paid indoor option beside the free Food Festival."
+    },
+    {
+      "id": "st-fagans-food-festival-sun",
+      "rationale": "Same free festival on Sunday — keeps the weekend window honest."
+    },
+    {
+      "id": "blaise-dairy-garden-2026-09-12",
+      "rationale": "NEW free Blaise Saturday — distinctive secret garden not used as yesterday’s feature; local outdoor treat."
+    },
+    {
+      "id": "bradley-stoke-lego-2026-09-08",
+      "rationale": "NEW free same-day indoor Lego slot north of the city — wet Tuesday afternoon rescue."
+    },
+    {
+      "id": "kingswood-lego-2026-09-12",
+      "rationale": "NEW free Saturday morning Lego east of the city — honest indoor weekend option not on cooldown."
+    },
+    {
+      "id": "hanham-crafternoon-2026-09-10",
+      "rationale": "NEW free midweek craft slot — fills Thu gap without repeating yesterday’s series."
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-12",
+      "rationale": "Scarce indie puppetry for 5+ right on the Bath weekend — unusual, complete, bookable."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-12",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    },
+    {
+      "id": "blaise-community-garden-art-show-2026-09-12",
+      "rationale": "Free local outdoor community day with kid-friendly trails — scarce Saturday only."
+    },
+    {
+      "id": "filton-library-art-club-2026-09-12",
+      "rationale": "Free, dated Saturday craft slot for 7–11s north of the city — indie library programme."
+    },
+    {
+      "id": "bristol-central-library-rhyme-2026-09-12",
+      "rationale": "Free central weekend 0–4 staple with clear official timetable — balances the shortlist age bands."
+    },
+    {
+      "id": "mshed-harbour-railway-2026-09-12",
+      "rationale": "Local distinctive harbour steam for the whole family on the target weekend — cheap outdoor treat."
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-12-1500",
+      "rationale": "Scarce indie puppetry for 5+ right on the Bath weekend — unusual, complete, bookable."
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-13",
+      "rationale": "Scarce indie puppetry for 5+ right on the Bath weekend — unusual, complete, bookable."
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-13-1500",
+      "rationale": "Scarce indie puppetry for 5+ right on the Bath weekend — unusual, complete, bookable."
+    },
+    {
+      "id": "mshed-harbour-railway-2026-09-13",
+      "rationale": "Local distinctive harbour steam for the whole family on the target weekend — cheap outdoor treat."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-08",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-09",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-10",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-11",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-13",
+      "rationale": "Free, local, playful, and ending this Sunday — strong all-ages indoor plan."
+    }
+  ],
+  "evidenceUrls": [
+    "https://cardiffhubs.co.uk/hub-events/story-time-and-craft/",
+    "https://cardiffhubs.co.uk/hub-events/rhyme-time/",
+    "https://cardiffhubs.co.uk/hub-events/story-and-rhyme-time/",
+    "https://cardiffhubs.co.uk/hub-events/story-and-rhyme-time-3/",
+    "https://cardiffhubs.co.uk/hub-events/story-time/",
+    "https://cardiffhubs.co.uk/hub-events/baby-rhymetime/",
+    "https://www.caerphillyminerscentre.co.uk/whats-on",
+    "https://cardiffhubs.co.uk/hub-events/145799/",
+    "https://cardiffhubs.co.uk/hub-events/no-fit-state-circus/",
+    "https://www.techniquest.org/events/toddler-day/",
+    "https://cardiffhubs.co.uk/hub-events/play-time/",
+    "https://museum.wales/whatson/food-festival/programme/",
+    "https://brickfestivalevents.com/event/cardiff-brick-festival-5/",
+    "https://www.goodshedsbarry.co.uk/whats-on/",
+    "https://cardiffhubs.co.uk/hub-events/clwb-lego/",
+    "https://www.thecanopi.org/events/community-trade-day",
+    "https://www.bristolmuseums.org.uk/whats-on/bristol-museum-and-art-gallery/mini-museum-hunt-aardman/",
+    "https://beta.southglos.gov.uk/activities-and-resources-for-children-and-young-people/",
+    "https://www.bristolmuseums.org.uk/whats-on/blaise-museum/blaise-100-garden/",
+    "https://www.bristol.gov.uk/residents/libraries-and-archives/services-for-children-and-young-people/baby-bounce-and-rhyme-and-storytime-sessions",
+    "https://www.spikeisland.org.uk/programme/events/i-am-making-art-parallel-imprints/",
+    "https://windmillhillcityfarm.org.uk/products/windmill-hill-city-farms-50th-anniversary-fayre",
+    "https://www.bristolmuseums.org.uk/whats-on/blaise-museum/blaise-100-dairy/",
+    "https://www.bristolmuseums.org.uk/whats-on/m-shed/train-rides/",
+    "https://www.theatreroyal.org.uk/events/tiny-planet/",
+    "https://www.redcatchcommunitygarden.com/event-details/rcg-fest",
+    "https://bristolgoodfood.org/2026/07/17/get-growing-trail-2026/",
+    "https://www.lockleazent.co.uk/event/buzz-community-garden-session-4-2-2/"
+  ],
+  "notes": "Reconciles captured public September 8 updates with retained September 7 discoveries. Expired records retained with correct timestamps. Source checks from audit and reconciliation; existing checkedAt preserved where not rechecked. No new automated source-coverage or mail-processing claim. Root publisher must append successful campaign history after deployment."
+}

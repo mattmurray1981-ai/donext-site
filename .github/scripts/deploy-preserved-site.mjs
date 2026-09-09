@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
+import { verifyStagedContract, verifyCityMarkup, releaseRoutes } from './site-contract.mjs';
+import { validateRecoveryManifest } from './recovery-manifest.mjs';
 
 // The preceding verify-live-deploy-inputs.mjs workflow step still owns the
 // catalog freshness / unmerged-production-change gate. This step publishes its
@@ -15,8 +17,9 @@ const stable = value => Array.isArray(value) ? value.map(stable) : value && type
   ? Object.fromEntries(Object.keys(value).sort().map(key => [key, stable(value[key])])) : value;
 const same = (left, right) => JSON.stringify(stable(left)) === JSON.stringify(stable(right));
 const pause = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+const EMERGENCY_FUNCTION_DONOR_ID = '6a9edc1cea9d1962d4364df8';
 
-export async function deployPreservedSite({ stageDirectory, siteId, token, commitSha = '', fetchImpl = fetch, sleep = pause, log = console.log }) {
+export async function deployPreservedSite({ stageDirectory, siteId, token, commitSha = '', recoveryPlan = null, fetchImpl = fetch, sleep = pause, log = console.log }) {
   if (!stageDirectory || !siteId || !token) throw new Error('Stage directory, NETLIFY_SITE_ID and NETLIFY_AUTH_TOKEN are required');
   if (!/^[a-zA-Z0-9-]+$/.test(siteId)) throw new Error('Invalid Netlify site ID');
   const root = await fs.realpath(stageDirectory);
@@ -98,6 +101,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
       if (!staged.has(required)) throw new Error(`Required staged file is missing: ${required}`);
     }
     if (!staged.get('/_redirects').bytes.toString().trim()) throw new Error('Generated _redirects is empty; API deploys require the exported routing artifact');
+    verifyStagedContract(staged);
     const formTags = staged.get('/__forms.html').bytes.toString().match(/<form\b[^>]*>/gi) || [];
     for (const name of ['weekend-brief', 'weekday-morning']) {
       if (!formTags.some(tag => new RegExp(`\\bname\\s*=\\s*["']${name}["']`, 'i').test(tag) && /\bdata-netlify\s*=\s*["']true["']/i.test(tag))) {
@@ -113,11 +117,38 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     if (live.edge_functions_present || live.available_edge_functions?.length) throw new Error('Edge functions require a separate preservation review');
     const originalFiles = await listFiles(liveId);
     const original = new Map(originalFiles.map(file => [cleanPath(file.path), file]));
-    const missing = originalFiles.filter(file => !staged.has(cleanPath(file.path)));
+    const recovery = recoveryPlan ? validateRecoveryManifest(recoveryPlan, { siteId, liveId, files: originalFiles }) : null;
+    const missing = originalFiles.filter(file => !staged.has(cleanPath(file.path)) && !recovery?.removed.has(cleanPath(file.path)));
     if (missing.length) throw new Error(`Original production files are missing from staged site: ${missing.map(file => file.path).join(', ')}`);
+    for (const key of recovery?.removed.keys() || []) {
+      if (staged.has(key)) throw new Error(`Recovery removal is still present in staged files: ${key}`);
+    }
+    // This also runs for direct CLI use: a repair must never roll today's research
+    // back just because a previous design/function deployment was healthier.
+    for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json']) {
+      if (!original.has(catalogPath) || original.get(catalogPath).sha === staged.get(catalogPath).sha) continue;
+      const response = await request(`/sites/${siteId}/files${catalogPath}`, { headers: { 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
+      const bytes = Buffer.from(await response.arrayBuffer());
+      if (sha1(bytes) !== original.get(catalogPath).sha) throw new Error(`Live catalog changed during preparation: ${catalogPath}`);
+      const current = JSON.parse(bytes), next = JSON.parse(staged.get(catalogPath).bytes);
+      if (!(Date.parse(next.updatedAt) > Date.parse(current.updatedAt))) throw new Error(`Reconcile the newer live research before replacing ${catalogPath}`);
+    }
     const inventory = await api(`/sites/${siteId}/functions?filter=${encodeURIComponent(`deploy:${liveId}`)}`);
-    const originalFunctions = inventory.functions;
+    if (!Array.isArray(inventory.functions)) throw new Error('Cannot identify current production functions');
+    const functionSourceId = recoveryPlan?.functionSourceDeployId || (inventory.functions.length ? liveId : EMERGENCY_FUNCTION_DONOR_ID);
+    const functionDeploy = functionSourceId === liveId ? live : await api(`/sites/${siteId}/deploys/${functionSourceId}`);
+    if (functionDeploy.state !== 'ready' || functionDeploy.edge_functions_present || functionDeploy.available_edge_functions?.length) throw new Error('Function donor must be a ready same-site deployment without edge functions');
+    const functionFiles = functionSourceId === liveId ? original : new Map((await listFiles(functionSourceId)).map(file => [cleanPath(file.path), file]));
+    const functionInventory = functionSourceId === liveId ? inventory : await api(`/sites/${siteId}/functions?filter=${encodeURIComponent(`deploy:${functionSourceId}`)}`);
+    const originalFunctions = functionInventory.functions;
     if (!Array.isArray(originalFunctions) || !originalFunctions.length) throw new Error('Cannot identify the live function set');
+    if (functionSourceId !== liveId) {
+      // Restore missing functions only. Never replace a surviving newer function.
+      for (const fn of inventory.functions) {
+        const donor = originalFunctions.find(value => value.n === fn.n);
+        if (!donor || !same(functionState([fn]), functionState([donor]))) throw new Error(`Recovery donor would change a surviving live function: ${fn.n}`);
+      }
+    }
     for (const name of ['hit', 'metrics-day']) {
       if (!originalFunctions.some(fn => fn.n === name)) throw new Error(`Required live function is missing: ${name}`);
     }
@@ -126,16 +157,16 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     const configKeys = { dn: 'display_name', g: 'generator', bd: 'build_data', p: 'priority', ro: 'routes', er: 'excluded_routes', vcpu: 'vcpu' };
     for (const fn of originalFunctions) {
       if (!/^[a-zA-Z0-9_-]+$/.test(fn.n || '') || !/^[0-9a-f]{64}$/.test(fn.d || '') || functionsDigest[fn.n]) throw new Error('Live function metadata is invalid or duplicated');
-      const sources = ['.mjs', '.js', '.ts'].map(extension => `/netlify/functions/${fn.n}${extension}`).filter(file => original.has(cleanPath(file)));
+      const sources = ['.mjs', '.js', '.ts'].map(extension => `/netlify/functions/${fn.n}${extension}`).filter(file => functionFiles.has(cleanPath(file)));
       if (sources.length !== 1) throw new Error(`Cannot identify exactly one original raw source for function ${fn.n}`);
       const source = cleanPath(sources[0]);
-      if (staged.get(source)?.sha !== original.get(source).sha) throw new Error(`Function ${fn.n} source changed; unchanged bundle reuse is unsafe`);
+      if (staged.get(source)?.sha !== functionFiles.get(source).sha) throw new Error(`Function ${fn.n} source changed; unchanged bundle reuse is unsafe`);
       functionsDigest[fn.n] = fn.d;
       functionsConfig[fn.n] = Object.fromEntries(Object.entries(configKeys).filter(([key]) => fn[key] != null).map(([key, outputKey]) => [outputKey, fn[key]]));
     }
     for (const [key, entry] of staged) {
       if (key.startsWith('/netlify/functions/') || ['/package.json', '/package-lock.json'].includes(key)) {
-        if (original.get(key)?.sha !== entry.sha) throw new Error(`Function source or dependency input changed: ${entry.path}; new bundles must be prepared separately`);
+        if (functionFiles.get(key)?.sha !== entry.sha) throw new Error(`Function source or dependency input changed: ${entry.path}; new bundles must be prepared separately`);
       }
     }
     async function assertLiveUnchanged() {
@@ -145,9 +176,9 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     async function verifyFunctions(deployId, deployMetadata) {
       const result = await api(`/sites/${siteId}/functions?filter=${encodeURIComponent(`deploy:${deployId}`)}`);
       if (!Array.isArray(result.functions) || !same(functionState(originalFunctions), functionState(result.functions))) throw new Error('Candidate function bundle or effective configuration changed');
-      if (!same(scheduleState(live.function_schedules), scheduleState(deployMetadata.function_schedules))) throw new Error('Candidate function schedules changed');
+      if (!same(scheduleState(functionDeploy.function_schedules), scheduleState(deployMetadata.function_schedules))) throw new Error('Candidate function schedules changed');
       for (const key of ['functions_region', 'functions_region_overrides']) {
-        if (!same(live[key] ?? null, deployMetadata[key] ?? null)) throw new Error(`Candidate ${key} changed`);
+        if (!same(functionDeploy[key] ?? null, deployMetadata[key] ?? null)) throw new Error(`Candidate ${key} changed`);
       }
     }
     async function verifyManifest(deployId) {
@@ -165,17 +196,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     async function verifyDraftHTTP(candidate) {
       const base = new URL(candidate.deploy_ssl_url);
       if (base.protocol !== 'https:' || !base.hostname.startsWith(`${candidate.id}--`) || !base.hostname.endsWith('.netlify.app')) throw new Error('Candidate preview URL is not the expected Netlify deploy URL');
-      const checks = [
-        ['/now/', 200],
-        ['/data/cardiff-today.json', 200],
-        ['/data/sourcing/sources.json', 404],
-        ['/netlify/functions/hit.mjs', 404],
-        ['/__forms.html', 200],
-      ];
-      if (staged.has('/bristol/index.html')) {
-        checks.push(['/bristol/', 200], ['/bristol/thank-you/', 200], ['/data/bristol-today.json', 200]);
-      }
-      for (const [route, expectedStatus] of checks) {
+      for (const [route, expectedStatus, city] of releaseRoutes) {
         let response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
         if (route === '/now/' && [301, 308].includes(response.status)) {
           const location = response.headers.get('location');
@@ -189,13 +210,8 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
           response = await fetchImpl(destination, { redirect: 'manual', signal: AbortSignal.timeout(30000) });
         }
         if (response.status !== expectedStatus) throw new Error(`Candidate route ${route} returned ${response.status}, expected ${expectedStatus}`);
-        if (route === '/now/') {
-          const html = await response.text();
-          if (!/<title\b[^>]*>[^<]*DoNext Cardiff[^<]*<\/title>/i.test(html) || !html.includes('/assets/brand/cardiff/donext-cardiff-avatar-v4.png') || !html.includes('/cardiff-catalog.js')) throw new Error('Candidate /now does not contain the expected DoNext page markup');
-        } else if (route === '/bristol/') {
-          const html = await response.text();
-          if (!/<title\b[^>]*>[^<]*DoNext Bristol[^<]*<\/title>/i.test(html) || !html.includes('/assets/brand/bristol/donext-bristol-avatar-v4.png') || !html.includes('data-city="bristol"')) throw new Error('Candidate Bristol page has the wrong city identity');
-          if (!/<input\b[^>]*name=["']city["'][^>]*value=["']bristol["']/i.test(html) || !/action=["']\/bristol\/thank-you\/["']/i.test(html)) throw new Error('Candidate Bristol signup has lost its city or confirmation route');
+        if (city) {
+          verifyCityMarkup(await response.text(), city);
         } else if (route === '/bristol/thank-you/') {
           const html = await response.text();
           if (!html.includes('DoNext Bristol') || !html.includes('href="/bristol/"')) throw new Error('Candidate Bristol confirmation points to the wrong city');
@@ -206,21 +222,32 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
           for (const name of ['weekend-brief', 'weekday-morning']) {
             if (!new RegExp(`\\bname\\s*=\\s*["']${name}["']`, 'i').test(html)) throw new Error(`Candidate form markup is missing: ${name}`);
           }
-        } else await response.arrayBuffer();
+        } else if (route.includes('/metrics-day?')) {
+          const metrics = await response.json();
+          if (metrics.date !== '1970-01-01' || typeof metrics.total !== 'number' || !metrics.paths || typeof metrics.paths !== 'object') throw new Error('Candidate metrics function did not return a valid read-only result');
+        } else {
+          const bytes = Buffer.from(await response.arrayBuffer());
+          if (expectedStatus === 200 && staged.has(route) && sha1(bytes) !== staged.get(route).sha) throw new Error(`Candidate asset differs from staged file: ${route}`);
+        }
+      }
+      for (const [route, status, destination] of [['/bristol/now', 302, '/bristol/'], ['/bristol/index.html', 301, '/bristol/']]) {
+        const response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
+        if (response.status !== status || new URL(response.headers.get('location') || '/', base).href !== new URL(destination, base).href) throw new Error(`Candidate city alias is wrong: ${route}`);
+        await response.arrayBuffer();
       }
     }
 
     const files = Object.fromEntries([...staged.values()].map(entry => [entry.path, entry.sha]));
     const byDigest = new Map([...staged.values()].map(entry => [entry.sha, entry]));
     await assertLiveUnchanged();
-    log(JSON.stringify({ phase: 'verified-inputs', sourceDeployId: liveId, originalFiles: originalFiles.length, stagedFiles: staged.size, reusedFunctions: Object.keys(functionsDigest) }));
+    log(JSON.stringify({ phase: 'verified-inputs', sourceDeployId: liveId, functionSourceDeployId: functionSourceId, originalFiles: originalFiles.length, stagedFiles: staged.size, reusedFunctions: Object.keys(functionsDigest), removedPaths: [...(recovery?.removed.keys() || [])] }));
     // Leave memory unset: the live platform default is preserved and verified
     // below. Sending an explicit memory configuration can request a paid feature.
     const title = `DoNext preserved site ${commitSha || 'manual'} from ${liveId}`;
     let candidate = await api(`/sites/${siteId}/deploys?title=${encodeURIComponent(title)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ draft: true, files, functions: functionsDigest, functions_config: functionsConfig, function_schedules: live.function_schedules || [] }),
+      body: JSON.stringify({ draft: true, files, functions: functionsDigest, functions_config: functionsConfig, function_schedules: functionDeploy.function_schedules || [] }),
     });
     candidateId = candidate.id;
     if (!/^[0-9a-f]{24}$/.test(candidateId || '')) throw new Error('API did not return a valid draft deployment ID');
@@ -250,7 +277,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     const publishedDeploy = await api(`/sites/${siteId}/deploys/${candidateId}`);
     await verifyFunctions(candidateId, publishedDeploy);
     await verifyManifest(candidateId);
-    const result = { phase: 'published', publishedDeployId: candidateId, preservedFrom: liveId, fileCount: manifest.count, functions: Object.keys(functionsDigest), url: publishedSite.ssl_url || publishedSite.url };
+    const result = { phase: 'published', publishedDeployId: candidateId, preservedFrom: liveId, functionSourceDeployId: functionSourceId, fileCount: manifest.count, functions: Object.keys(functionsDigest), url: publishedSite.ssl_url || publishedSite.url };
     log(JSON.stringify(result));
     return result;
   } catch (error) {
@@ -260,6 +287,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  deployPreservedSite({ stageDirectory: process.argv[2], siteId: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN, commitSha: process.env.GITHUB_SHA })
+  const recoveryPlan = process.env.NETLIFY_RECOVERY_MANIFEST ? JSON.parse(await fs.readFile(process.env.NETLIFY_RECOVERY_MANIFEST, 'utf8')) : null;
+  deployPreservedSite({ stageDirectory: process.argv[2], siteId: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN, commitSha: process.env.GITHUB_SHA, recoveryPlan })
     .catch(error => { console.error(error.message); process.exitCode = 1; });
 }
