@@ -51,6 +51,7 @@ if (/^[0-9a-f]{40}$/.test(event.before || '') && !/^0+$/.test(event.before)) {
   for (const file of tree.trim().split('\n')) priorPaths.set('/' + file.toLowerCase(), file);
 }
 const sha1 = bytes => crypto.createHash('sha1').update(bytes).digest('hex');
+const unreconciled = [];
 for (const file of files) {
   const key = file.path.toLowerCase();
   if (recovery?.removed.has(key)) continue;
@@ -58,8 +59,9 @@ for (const file of files) {
   if (stagedSha === file.sha || known.get(key) === file.sha || recovery?.expected.get(key) === file.sha) continue;
   const previousPath = priorPaths.get(key);
   const previousSha = previousPath ? sha1(execFileSync('git', ['show', `${event.before}:${previousPath}`])) : null;
-  if (previousSha !== file.sha) throw new Error(`Production has an unmerged change to ${file.path}; reconcile before replacing it`);
+  if (previousSha !== file.sha) unreconciled.push(`${file.path} ${file.sha}`);
 }
+if (unreconciled.length) throw new Error(`Production has unmerged changes; reconcile before replacing: ${unreconciled.join(', ')}`);
 for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json']) {
   const originalCatalog = files.find(file => file.path === catalogPath);
   if (!originalCatalog) continue;
