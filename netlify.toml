@@ -52,6 +52,30 @@ to = "/bristol/thank-you/"
 status = 301
 force = true
 
+[[redirects]]
+from = "/birmingham"
+to = "/birmingham.html"
+status = 200
+force = false
+
+[[redirects]]
+from = "/birmingham/"
+to = "/birmingham.html"
+status = 200
+force = false
+
+[[redirects]]
+from = "/birmingham/now"
+to = "/birmingham-now.html"
+status = 200
+force = false
+
+[[redirects]]
+from = "/birmingham/now/"
+to = "/birmingham-now.html"
+status = 200
+force = false
+
 # Internal research remains in the preserved deployment snapshot, but must not
 # be served publicly. Force the 404 so existing files cannot shadow these rules.
 [[redirects]]
