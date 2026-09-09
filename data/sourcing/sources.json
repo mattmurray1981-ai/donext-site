@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-07T13:54:53+01:00",
-  "notes": "Private ops registry for Cardiff kids 0\u201312 (~30 min). Facebook entries are name/geo only \u2014 no group URLs. neverPublishUrl required for facebook_group. Verified join targets refreshed 2026-09-05 from public evidence (council/news/NHS/charity); invented names removed.",
+  "updatedAt": "2026-09-09T13:55:00+01:00",
+  "notes": "Private ops registry for Cardiff kids 0–12 (~30 min). Facebook entries are name/geo only — no group URLs. neverPublishUrl required for facebook_group. Verified join targets refreshed 2026-09-05 from public evidence (council/news/NHS/charity); invented names removed.",
   "sources": [
     {
       "id": "web-met-office",
@@ -12,7 +12,7 @@
       "status": "active",
       "kidsRelevance": "outdoor-viability",
       "checkCadence": "daily",
-      "notes": "Weather / outdoor viability check \u2014 Cardiff forecast (gcnjn5n6d previously resolved to Stoke Gifford)."
+      "notes": "Weather / outdoor viability check — Cardiff forecast (gcnjn5n6d previously resolved to Stoke Gifford)."
     },
     {
       "id": "web-chapter",
@@ -133,7 +133,7 @@
       "status": "active",
       "kidsRelevance": "low",
       "checkCadence": "weekly",
-      "notes": "Nomadic intimate theatre; rare family fit \u2014 filter hard. confirm URL / current base."
+      "notes": "Nomadic intimate theatre; rare family fit — filter hard. confirm URL / current base."
     },
     {
       "id": "web-cardiff-castle",
@@ -155,7 +155,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Science centre events and visit info; core 0\u201312 fit."
+      "notes": "Science centre events and visit info; core 0–12 fit."
     },
     {
       "id": "web-cardiff-harbour",
@@ -177,7 +177,7 @@
       "status": "lead_only",
       "kidsRelevance": "rare-backup",
       "checkCadence": "friday",
-      "notes": "Soft plays only as rare indoor-rain backup \u2014 confirm specific venue URL per lead; do not treat as core hunt list."
+      "notes": "Soft plays only as rare indoor-rain backup — confirm specific venue URL per lead; do not treat as core hunt list."
     },
     {
       "id": "web-llanishen-lisvane-reservoirs",
@@ -243,7 +243,7 @@
       "status": "lead_only",
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
-      "notes": "Only if public community / open-day events \u2014 confirm URL. Not private-school-only."
+      "notes": "Only if public community / open-day events — confirm URL. Not private-school-only."
     },
     {
       "id": "web-cosmeston",
@@ -397,7 +397,7 @@
       "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
-      "notes": "Indie/maker markets at WMC when scheduled \u2014 filter family-friendly daytime."
+      "notes": "Indie/maker markets at WMC when scheduled — filter family-friendly daytime."
     },
     {
       "id": "web-chapter-markets",
@@ -496,7 +496,7 @@
       "status": "lead_only",
       "kidsRelevance": "medium",
       "checkCadence": "friday",
-      "notes": "Confirm-only press leads; never publish from article alone \u2014 find organiser CTA."
+      "notes": "Confirm-only press leads; never publish from article alone — find organiser CTA."
     },
     {
       "id": "listings-casgliad",
@@ -540,7 +540,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-parents",
@@ -551,7 +551,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-family-walks",
@@ -562,7 +562,7 @@
       "kidsRelevance": "high",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-mums",
@@ -573,7 +573,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-kids-clubs",
@@ -584,7 +584,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-community-news-cardiff",
@@ -595,7 +595,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-bay-residents",
@@ -606,7 +606,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-this-is-cardiff",
@@ -617,7 +617,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
     },
     {
       "id": "fb-family-events-south-wales",
@@ -628,7 +628,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Filter hard for Cardiff-relevant family plans. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Filter hard for Cardiff-relevant family plans. Placeholder — no group URL stored."
     },
     {
       "id": "fb-canton-riverside-pontcanna",
@@ -639,7 +639,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Neighbourhood cluster. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Neighbourhood cluster. Placeholder — no group URL stored."
     },
     {
       "id": "fb-cardiff-days-gone-by",
@@ -650,7 +650,7 @@
       "kidsRelevance": "low",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only \u2014 nostalgia group; skim for rare current family events. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only — nostalgia group; skim for rare current family events. Placeholder — no group URL stored."
     },
     {
       "id": "fb-family-fun-south-wales",
@@ -661,7 +661,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Filter for Cardiff / near-Cardiff. Placeholder \u2014 no group URL stored."
+      "notes": "Quiet ops lead only. Filter for Cardiff / near-Cardiff. Placeholder — no group URL stored."
     },
     {
       "id": "fb-rhiwbina-community-news",
@@ -700,7 +700,7 @@
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Optional search only \u2014 prefer Llandaff North & Whitchurch Daily Life Cardiff (better verified)."
+      "notes": "Optional search only — prefer Llandaff North & Whitchurch Daily Life Cardiff (better verified)."
     },
     {
       "id": "fb-barry-strollers",
@@ -768,7 +768,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "daily",
-      "notes": "City hubs calendar \u2014 filter Llanishen, Whitchurch, Rumney, Llanrumney, Ely for north/east coverage."
+      "notes": "City hubs calendar — filter Llanishen, Whitchurch, Rumney, Llanrumney, Ely for north/east coverage."
     },
     {
       "id": "web-splott-community-volunteers",
@@ -801,7 +801,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Green Squirrel / Railway Gardens \u2014 baby & parent sessions and family events."
+      "notes": "Green Squirrel / Railway Gardens — baby & parent sessions and family events."
     },
     {
       "id": "web-penarth-under5s",
@@ -862,7 +862,7 @@
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Often a Page \u2014 follow + notifications if no email. Vale 0\u20133 leads.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
+      "notes": "Often a Page — follow + notifications if no email. Vale 0–3 leads.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llanishen-thornhill",
@@ -914,7 +914,7 @@
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Official childcare directory \u2014 parent/toddler. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
+      "notes": "Official childcare directory — parent/toddler. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-penarth-parents",
@@ -940,7 +940,7 @@
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Official NCT branch \u2014 bumps/babies/play. Prefer Page follow if group N/A.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
+      "notes": "Official NCT branch — bumps/babies/play. Prefer Page follow if group N/A.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-parent-network-caerphilly",
@@ -966,7 +966,7 @@
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Charity Commission lists facebook.com/rumneyforum \u2014 likely Page; follow + notifications. East Cardiff events.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
+      "notes": "Charity Commission lists facebook.com/rumneyforum — likely Page; follow + notifications. East Cardiff events.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llanrumney-news",
@@ -1045,7 +1045,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Stay and Play 0\u20133 and community family sessions."
+      "notes": "Stay and Play 0–3 and community family sessions."
     },
     {
       "id": "web-friends-hailey-park",
@@ -1057,6 +1057,214 @@
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
       "notes": "Park events site companion to FB group."
+    },
+    {
+      "id": "fb-bristol-free-affordable-kids",
+      "name": "Bristol FREE and affordable things to do with kids",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 26K members; 20+ posts/day in Facebook search 2026-09-09. Strong first Bristol ops lead; join as DoNext Bristol if allowed, then All posts email alerts."
+    },
+    {
+      "id": "fb-bristol-kids-clubs-clubhub",
+      "name": "Bristol Kids Clubs and Activities - Club Hub UK",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 1.3K members in Facebook search 2026-09-09. Activity/class lead source; verify organiser pages before publishing."
+    },
+    {
+      "id": "fb-bristol-all-about-kids",
+      "name": "it's all about the Kids!! Bristol",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 13K members; 10+ posts/day in Facebook search 2026-09-09. Broad family lead source; filter hard for dated local events."
+    },
+    {
+      "id": "fb-bristol-things-children",
+      "name": "Things to do with children around Bristol",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 963 members in Facebook search 2026-09-09. Parent-recommendation lead source."
+    },
+    {
+      "id": "fb-bristol-parents-club",
+      "name": "Bristol Parents Club",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 9K members in Facebook search 2026-09-09. Parent network lead source."
+    },
+    {
+      "id": "fb-bristol-music-for-kids",
+      "name": "Music for kids in Bristol",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 764 members in Facebook search 2026-09-09. Specialist music/class leads."
+    },
+    {
+      "id": "fb-bristol-families-play",
+      "name": "Bristol Families Come Out To Play",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 198 members in Facebook search 2026-09-09. Smaller local family lead source."
+    },
+    {
+      "id": "fb-bristol-whats-on",
+      "name": "What's On: Bristol",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "bristol",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 18K members; 20+ posts/day in Facebook search 2026-09-09. Noisy events source; use keyword triage and organiser verification."
+    },
+    {
+      "id": "fb-birmingham-days-out-kids",
+      "name": "Days out with Kids - Birmingham UK",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "birmingham",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 635 members in Facebook search 2026-09-09. Direct Birmingham family-days-out lead source."
+    },
+    {
+      "id": "fb-west-midlands-kids-clubs-clubhub",
+      "name": "West Midlands Kids Clubs and Activities - Club Hub UK",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "birmingham-west-midlands",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 5.3K members; 8 posts/day in Facebook search 2026-09-09. Strong Birmingham/West Midlands activity lead source."
+    },
+    {
+      "id": "fb-birmingham-kid-clubs-sandwell",
+      "name": "Kid Clubs Birmingham and Sandwell",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "birmingham-sandwell",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 148 members in Facebook search 2026-09-09. Small but directly scoped kids-club source."
+    },
+    {
+      "id": "fb-west-mids-baby-toddler-events",
+      "name": "West Mids Baby & Toddler Events",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "birmingham-west-midlands",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public group found via web search 2026-09-09. Strong under-5 lead source; verify in Facebook before joining."
+    },
+    {
+      "id": "fb-south-birmingham-kids-parents-events",
+      "name": "Upcoming events for kids and parents in South Birmingham",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "south-birmingham",
+      "status": "join_candidate",
+      "kidsRelevance": "high",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Facebook group/post surfaced via web search 2026-09-09. Direct family-events source; verify group page before joining."
+    },
+    {
+      "id": "fb-sandwell-family-network",
+      "name": "Sandwell Family Network",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "sandwell",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public group surfaced via web search 2026-09-09. Nearby free/affordable family sessions; verify Birmingham fit before publishing."
+    },
+    {
+      "id": "fb-days-out-kids-west-midlands",
+      "name": "Days out with kids West Midlands",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "birmingham-west-midlands",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 2026 web result. Broad family days-out source; filter for Birmingham and nearby only."
+    },
+    {
+      "id": "fb-boldmere-mums-events",
+      "name": "Boldmere Mums - Awesome Events & Activities",
+      "type": "facebook_group",
+      "url": null,
+      "geo": "north-birmingham",
+      "status": "join_candidate",
+      "kidsRelevance": "medium",
+      "checkCadence": "daily",
+      "neverPublishUrl": true,
+      "needed": true,
+      "notes": "Public; 2026 web result. Useful for Sutton/Boldmere community events and PTA/playgroup leads."
     }
   ]
 }

@@ -46,3 +46,11 @@ See `JOIN-LIST-2026-09-05.md` for the phone join batches.
 2. Listings = verify organiser before publish.
 3. Soft play = rare indoor backup only.
 4. Do not invent URLs — `url: null` + notes when unsure.
+
+## Bristol and Birmingham Facebook group batch — 2026-09-09
+
+Private ops only. Do not publish group URLs or credit groups publicly. Join/check these as the relevant DoNext page where Facebook allows it, then set group notifications to All posts and email delivery to mattmurray1981@gmail.com. If Facebook only allows Matthew's personal profile to join, record that truthfully and keep the group as a quiet lead source.
+
+Bristol first batch: Bristol FREE and affordable things to do with kids; Bristol Kids Clubs and Activities - Club Hub UK; it's all about the Kids!! Bristol; Things to do with children around Bristol; Bristol Parents Club; Music for kids in Bristol; Bristol Families Come Out To Play; What's On: Bristol.
+
+Birmingham first batch: Days out with Kids - Birmingham UK; West Midlands Kids Clubs and Activities - Club Hub UK; Kid Clubs Birmingham and Sandwell; West Mids Baby & Toddler Events; Upcoming events for kids and parents in South Birmingham; Sandwell Family Network; Days out with kids West Midlands; Boldmere Mums - Awesome Events & Activities.
