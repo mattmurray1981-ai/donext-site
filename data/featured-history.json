@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-07T08:25:00+01:00",
+  "updatedAt": "2026-09-09T09:05:00+01:00",
   "campaigns": [
     {
       "campaignId": "weekend-2026-09-04",
@@ -217,7 +217,7 @@
             "site",
             "email"
           ],
-          "override": "dated free Food Festival — not generic St Fagans evergreen pad"
+          "override": "dated free Food Festival \u2014 not generic St Fagans evergreen pad"
         },
         {
           "eventId": "cardiff-brick-festival-sat",
@@ -244,6 +244,325 @@
           "channels": [
             "site",
             "email"
+          ],
+          "override": null
+        }
+      ]
+    },
+    {
+      "campaignId": "morning-2026-09-08",
+      "label": "Cardiff Tuesday shortlist 8 Sep 2026",
+      "publishedAt": "2026-09-08T08:45:00+01:00",
+      "window": {
+        "start": "2026-09-08",
+        "end": "2026-09-13"
+      },
+      "features": [
+        {
+          "eventId": "hubs-story-rhyme-rhydypennau-tue",
+          "seriesId": "cardiff-hubs-story-rhyme",
+          "venueId": "rhydypennau-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "hero",
+          "score": 84,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-story-time-central-tue",
+          "seriesId": "cardiff-hubs-story-time",
+          "venueId": "central-library-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 76,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-rhyme-llanishen-wed",
+          "seriesId": "cardiff-hubs-rhyme-time",
+          "venueId": "llanishen-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 80,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "miners-lego-club-wed",
+          "seriesId": "caerphilly-miners-lego",
+          "venueId": "caerphilly-miners",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 72,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-story-craft-llandaff-thu",
+          "seriesId": "cardiff-hubs-story-craft",
+          "venueId": "llandaff-north-gabalfa-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 78,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": "morning look-ahead reminder after morning-2026-09-07"
+        },
+        {
+          "eventId": "hubs-nofit-circus-thu",
+          "seriesId": "cardiff-hubs-nofit-circus",
+          "venueId": "star-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 74,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "miners-stay-play-fri",
+          "seriesId": "caerphilly-miners-stay-play",
+          "venueId": "caerphilly-miners",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 74,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-play-time-central-fri",
+          "seriesId": "cardiff-hubs-play-time",
+          "venueId": "central-library-hub",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 72,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "techniquest-toddler-day-fri",
+          "seriesId": "techniquest-toddler-day",
+          "venueId": "techniquest",
+          "campaignId": "morning-2026-09-08",
+          "role": "backup",
+          "score": 70,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": "morning look-ahead reminder after morning-2026-09-07"
+        },
+        {
+          "eventId": "st-fagans-food-festival-sat",
+          "seriesId": "st-fagans-food-festival",
+          "venueId": "st-fagans",
+          "campaignId": "morning-2026-09-08",
+          "role": "hero",
+          "score": 88,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": "morning look-ahead reminder after morning-2026-09-07"
+        },
+        {
+          "eventId": "cardiff-brick-festival-sat",
+          "seriesId": "cardiff-brick-festival",
+          "venueId": "niac-cyncoed",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 73,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": "morning look-ahead reminder after morning-2026-09-07"
+        },
+        {
+          "eventId": "st-fagans-food-festival-sun",
+          "seriesId": "st-fagans-food-festival",
+          "venueId": "st-fagans",
+          "campaignId": "morning-2026-09-08",
+          "role": "feature",
+          "score": 86,
+          "publishedAt": "2026-09-08T08:45:00+01:00",
+          "channels": [
+            "site",
+            "email"
+          ],
+          "override": "morning look-ahead reminder after morning-2026-09-07"
+        }
+      ]
+    },
+    {
+      "campaignId": "morning-2026-09-09",
+      "publishedAt": "2026-09-09T09:05:00+01:00",
+      "channels": [
+        "email",
+        "site"
+      ],
+      "features": [
+        {
+          "eventId": "hubs-rhyme-llanishen-wed",
+          "seriesId": "cardiff-hubs-rhyme-time",
+          "venueId": "llanishen-hub",
+          "role": "hero",
+          "score": 82,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": "same-day reminder of Tue look-ahead"
+        },
+        {
+          "eventId": "miners-lego-club-wed",
+          "seriesId": "caerphilly-miners-lego",
+          "venueId": "caerphilly-miners",
+          "role": "feature",
+          "score": 72,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-story-craft-llandaff-thu",
+          "seriesId": "cardiff-hubs-story-craft",
+          "venueId": "llandaff-north-hub",
+          "role": "feature",
+          "score": 78,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-nofit-circus-thu",
+          "seriesId": "cardiff-hubs-nofit-circus",
+          "venueId": "star-hub",
+          "role": "feature",
+          "score": 74,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "miners-stay-play-fri",
+          "seriesId": "caerphilly-miners-stay-play",
+          "venueId": "caerphilly-miners",
+          "role": "feature",
+          "score": 74,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "hubs-play-time-central-fri",
+          "seriesId": "cardiff-hubs-play-time",
+          "venueId": "central-library-hub",
+          "role": "feature",
+          "score": 72,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "techniquest-toddler-day-fri",
+          "seriesId": "techniquest-toddler-day",
+          "venueId": "techniquest",
+          "role": "backup",
+          "score": 70,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "st-fagans-food-festival-sat",
+          "seriesId": "st-fagans-food-festival",
+          "venueId": "st-fagans",
+          "role": "hero",
+          "score": 88,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": "weekend product reminder"
+        },
+        {
+          "eventId": "cardiff-brick-festival-sat",
+          "seriesId": "cardiff-brick-festival",
+          "venueId": "niac-cyncoed",
+          "role": "feature",
+          "score": 73,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
+          ],
+          "override": null
+        },
+        {
+          "eventId": "st-fagans-food-festival-sun",
+          "seriesId": "st-fagans-food-festival",
+          "venueId": "st-fagans",
+          "role": "feature",
+          "score": 86,
+          "publishedAt": "2026-09-09T09:05:00+01:00",
+          "channels": [
+            "email",
+            "site"
           ],
           "override": null
         }

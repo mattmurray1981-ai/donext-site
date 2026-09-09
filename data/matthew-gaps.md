@@ -12,16 +12,11 @@ You chose Workspace for `hello@donext.co.uk`.
 4. Admin Google account: your personal Gmail is fine
 5. Stop at **Verify domain** / DNS — don’t add records yet
 
-Reply **at verify** (or a screenshot). I’ll give exact DNS next.
+Reply **at verify** (or a screenshot).
 
-## Next — Facebook Batch A (phone)
-Join + set **All posts** email → `mattmurray1981@gmail.com`:
-1. Rhiwbina Community News
-2. Llandaff North & Whitchurch Daily Life Cardiff
-3. Penarth Parents
-4. Llanishen Residents' Group
-
-Reply the exact names joined so we flip them active.
+## Also — FB expansion groups
+Joined/requested most of Batch A/B (2026-09-07). On each **approved** group: notifications → **All posts** → email `mattmurray1981@gmail.com`.
 
 ## Done
-- Instagram Graph — Social Media Manager has token; they post when we hand cuts.
+- Instagram Graph — Social Media Manager posts when we hand cuts.
+- Core + expansion FB groups — in hunt list as active (confirm email alerts).

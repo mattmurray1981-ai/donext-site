@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-07T15:59:29+01:00",
-  "notes": "Private ops registry for Cardiff kids 0–12 (~30 min). Facebook entries are name/geo only — no group URLs. neverPublishUrl required for facebook_group. Verified join targets refreshed 2026-09-05 from public evidence (council/news/NHS/charity); invented names removed.",
+  "updatedAt": "2026-09-07T13:54:53+01:00",
+  "notes": "Private ops registry for Cardiff kids 0\u201312 (~30 min). Facebook entries are name/geo only \u2014 no group URLs. neverPublishUrl required for facebook_group. Verified join targets refreshed 2026-09-05 from public evidence (council/news/NHS/charity); invented names removed.",
   "sources": [
     {
       "id": "web-met-office",
@@ -12,7 +12,7 @@
       "status": "active",
       "kidsRelevance": "outdoor-viability",
       "checkCadence": "daily",
-      "notes": "Weather / outdoor viability check — Cardiff forecast (gcnjn5n6d previously resolved to Stoke Gifford)."
+      "notes": "Weather / outdoor viability check \u2014 Cardiff forecast (gcnjn5n6d previously resolved to Stoke Gifford)."
     },
     {
       "id": "web-chapter",
@@ -133,7 +133,7 @@
       "status": "active",
       "kidsRelevance": "low",
       "checkCadence": "weekly",
-      "notes": "Nomadic intimate theatre; rare family fit — filter hard. confirm URL / current base."
+      "notes": "Nomadic intimate theatre; rare family fit \u2014 filter hard. confirm URL / current base."
     },
     {
       "id": "web-cardiff-castle",
@@ -155,7 +155,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Science centre events and visit info; core 0–12 fit."
+      "notes": "Science centre events and visit info; core 0\u201312 fit."
     },
     {
       "id": "web-cardiff-harbour",
@@ -177,7 +177,7 @@
       "status": "lead_only",
       "kidsRelevance": "rare-backup",
       "checkCadence": "friday",
-      "notes": "Soft plays only as rare indoor-rain backup — confirm specific venue URL per lead; do not treat as core hunt list."
+      "notes": "Soft plays only as rare indoor-rain backup \u2014 confirm specific venue URL per lead; do not treat as core hunt list."
     },
     {
       "id": "web-llanishen-lisvane-reservoirs",
@@ -243,7 +243,7 @@
       "status": "lead_only",
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
-      "notes": "Only if public community / open-day events — confirm URL. Not private-school-only."
+      "notes": "Only if public community / open-day events \u2014 confirm URL. Not private-school-only."
     },
     {
       "id": "web-cosmeston",
@@ -397,7 +397,7 @@
       "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
-      "notes": "Indie/maker markets at WMC when scheduled — filter family-friendly daytime."
+      "notes": "Indie/maker markets at WMC when scheduled \u2014 filter family-friendly daytime."
     },
     {
       "id": "web-chapter-markets",
@@ -496,7 +496,7 @@
       "status": "lead_only",
       "kidsRelevance": "medium",
       "checkCadence": "friday",
-      "notes": "Confirm-only press leads; never publish from article alone — find organiser CTA."
+      "notes": "Confirm-only press leads; never publish from article alone \u2014 find organiser CTA."
     },
     {
       "id": "listings-casgliad",
@@ -540,7 +540,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-parents",
@@ -551,7 +551,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-family-walks",
@@ -562,7 +562,7 @@
       "kidsRelevance": "high",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-mums",
@@ -573,7 +573,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-kids-clubs",
@@ -584,7 +584,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-community-news-cardiff",
@@ -595,7 +595,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-bay-residents",
@@ -606,7 +606,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-this-is-cardiff",
@@ -617,7 +617,7 @@
       "kidsRelevance": "medium",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-family-events-south-wales",
@@ -628,7 +628,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Filter hard for Cardiff-relevant family plans. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Filter hard for Cardiff-relevant family plans. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-canton-riverside-pontcanna",
@@ -639,7 +639,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Neighbourhood cluster. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Neighbourhood cluster. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-cardiff-days-gone-by",
@@ -650,7 +650,7 @@
       "kidsRelevance": "low",
       "checkCadence": "friday",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only — nostalgia group; skim for rare current family events. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only \u2014 nostalgia group; skim for rare current family events. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-family-fun-south-wales",
@@ -661,7 +661,7 @@
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
-      "notes": "Quiet ops lead only. Filter for Cardiff / near-Cardiff. Placeholder — no group URL stored."
+      "notes": "Quiet ops lead only. Filter for Cardiff / near-Cardiff. Placeholder \u2014 no group URL stored."
     },
     {
       "id": "fb-rhiwbina-community-news",
@@ -669,12 +669,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "north-cardiff",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "HIGH confidence. Living Magazines 4.7k+; Council outreach. Phone join + All posts email."
+      "notes": "HIGH confidence. Living Magazines 4.7k+; Council outreach. Phone join + All posts email.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llanishen-residents",
@@ -682,12 +682,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "llanishen-heath",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Verified via mycardiffnorth + Council budget outreach. Community board. Phone + email alerts."
+      "notes": "Verified via mycardiffnorth + Council budget outreach. Community board. Phone + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-my-whitchurch",
@@ -700,7 +700,7 @@
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Optional search only — prefer Llandaff North & Whitchurch Daily Life Cardiff (better verified)."
+      "notes": "Optional search only \u2014 prefer Llandaff North & Whitchurch Daily Life Cardiff (better verified)."
     },
     {
       "id": "fb-barry-strollers",
@@ -708,12 +708,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "barry",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Barry parent/carer walking group (Barry & District News). Phone + email alerts."
+      "notes": "Barry parent/carer walking group (Barry & District News). Phone + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "web-vale-family-compass",
@@ -768,7 +768,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "daily",
-      "notes": "City hubs calendar — filter Llanishen, Whitchurch, Rumney, Llanrumney, Ely for north/east coverage."
+      "notes": "City hubs calendar \u2014 filter Llanishen, Whitchurch, Rumney, Llanrumney, Ely for north/east coverage."
     },
     {
       "id": "web-splott-community-volunteers",
@@ -801,7 +801,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Green Squirrel / Railway Gardens — baby & parent sessions and family events."
+      "notes": "Green Squirrel / Railway Gardens \u2014 baby & parent sessions and family events."
     },
     {
       "id": "web-penarth-under5s",
@@ -831,12 +831,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "llandaff",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Verified park friends group; free outdoor family event leads."
+      "notes": "Verified park friends group; free outdoor family event leads.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-caerphilly-baby-toddler",
@@ -844,12 +844,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "caerphilly",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Search on Facebook; confirm still active. Supplement to Parent Network / NCT."
+      "notes": "Search on Facebook; confirm still active. Supplement to Parent Network / NCT.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-vale-flying-start",
@@ -857,12 +857,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "vale",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Often a Page — follow + notifications if no email. Vale 0–3 leads."
+      "notes": "Often a Page \u2014 follow + notifications if no email. Vale 0\u20133 leads.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llanishen-thornhill",
@@ -870,12 +870,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "llanishen-heath",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Named in Cardiff Council stakeholder FB list. Phone join + email alerts."
+      "notes": "Named in Cardiff Council stakeholder FB list. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-heath-birchgrove",
@@ -883,12 +883,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "llanishen-heath",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Council-named community info group. Phone join + email alerts."
+      "notes": "Council-named community info group. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llandaff-north-whitchurch-daily",
@@ -896,12 +896,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "whitchurch-rhiwbina",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Wales Online + Council outreach. Better verified than 'My Whitchurch'. Phone + email."
+      "notes": "Wales Online + Council outreach. Better verified than 'My Whitchurch'. Phone + email.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-bethesda-toddlers-rhiwbina",
@@ -909,12 +909,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "whitchurch-rhiwbina",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Official childcare directory — parent/toddler. Phone join + email alerts."
+      "notes": "Official childcare directory \u2014 parent/toddler. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-penarth-parents",
@@ -922,12 +922,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "penarth",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "HIGH confidence parent group (Penarth Times, Nub News). Phone join + All posts email."
+      "notes": "HIGH confidence parent group (Penarth Times, Nub News). Phone join + All posts email.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-nct-cardiff-caerphilly-gwent",
@@ -935,12 +935,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "caerphilly",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Official NCT branch — bumps/babies/play. Prefer Page follow if group N/A."
+      "notes": "Official NCT branch \u2014 bumps/babies/play. Prefer Page follow if group N/A.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-parent-network-caerphilly",
@@ -948,12 +948,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "caerphilly",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Official early-years peer network via Caerphilly Early Years. Phone/follow + alerts."
+      "notes": "Official early-years peer network via Caerphilly Early Years. Phone/follow + alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-rumney-forum",
@@ -961,12 +961,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "rumney-llanrumney",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Charity Commission lists facebook.com/rumneyforum — likely Page; follow + notifications. East Cardiff events."
+      "notes": "Charity Commission lists facebook.com/rumneyforum \u2014 likely Page; follow + notifications. East Cardiff events.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "fb-llanrumney-news",
@@ -974,12 +974,12 @@
       "type": "facebook_group",
       "url": null,
       "geo": "rumney-llanrumney",
-      "status": "join_pending",
+      "status": "active",
       "kidsRelevance": "medium",
       "checkCadence": "daily",
       "neverPublishUrl": true,
       "needed": true,
-      "notes": "Council-named; medium confidence. Phone join + email alerts."
+      "notes": "Council-named; medium confidence. Phone join + email alerts.  Matthew joined/requested 2026-09-07; confirm All-posts email alerts to mattmurray1981@gmail.com."
     },
     {
       "id": "web-llanishen-hub",
@@ -1045,7 +1045,7 @@
       "status": "active",
       "kidsRelevance": "high",
       "checkCadence": "weekly",
-      "notes": "Stay and Play 0–3 and community family sessions."
+      "notes": "Stay and Play 0\u20133 and community family sessions."
     },
     {
       "id": "web-friends-hailey-park",
@@ -1057,28 +1057,6 @@
       "kidsRelevance": "medium",
       "checkCadence": "weekly",
       "notes": "Park events site companion to FB group."
-    },
-    {
-      "id": "web-canopi",
-      "name": "The Canopi",
-      "type": "venue",
-      "url": "https://www.thecanopi.org/events",
-      "geo": "riverside",
-      "status": "active",
-      "kidsRelevance": "selective",
-      "checkCadence": "weekly",
-      "notes": "Independent creative venue. Daytime community events can suit older children; age/price check each event. First published yield in site-improvement run7September."
-    },
-    {
-      "id": "web-goodsheds",
-      "name": "Goodsheds",
-      "type": "venue",
-      "url": "https://www.goodshedsbarry.co.uk/whats-on/",
-      "geo": "barry",
-      "status": "active",
-      "kidsRelevance": "high",
-      "checkCadence": "weekly",
-      "notes": "Specific family events and creative sessions; official DesignMyNight booking widget. Check final child+adult price, not headline."
     }
   ]
 }

@@ -8,11 +8,11 @@
     "/package-lock.json": "ca7804d332d5b9253ac76dffa80c347b3e5a3cb5",
     "/now.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
     "/now/index.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
-    "/netlify.toml": "3ec1a5e293010c599d0f47185f150f3d2f1f2591",
+    "/netlify.toml": "b96a5261effe97fe942785206d9d08546b4fd4a8",
     "/netlify/functions/metrics-day.mjs": "de003e7ead0c4eb258b07b78bbbf83610cf7a135",
     "/netlify/functions/hit.mjs": "8cef12f64ef412f250026088c45e6c72b32216b0",
     "/inject_hit.py": "d01ba828c1f284feea1ffc1a3417e2cf78d47f33",
-    "/index.html": "91bd1b45b141fdb5012a6a1f7356f1f1b24fb41a",
+    "/index.html": "e5ce2690b4525fa0ab7d621ef803439f0ac936d6",
     "/favicon.svg": "287467d5a19e6cb1a247707917df69d712897663",
     "/favicon.ico": "483049d5cd3bc9767fb0ca784544d137e4a300e2",
     "/data/sourcing/sources.json": "8faa475a0397d22c72fb5763a2ec0cfb91313be2",
@@ -63,6 +63,6 @@
     "/bristol-now.html": "65b97649f92448ff184b10b28265ab3c90b5d95e",
     "/bristol-catalog.js": "232ab4cd8fd0d974f856c4a63bdc903a1864eb16"
   },
-  "reviewedAt": "2026-09-09T13:40:00+01:00",
-  "reason": "Reviewed direct Netlify production changes from 8-9 September before restoring repaired city pages, privacy redirects, public catalogs and preserved functions."
+  "reviewedAt": "2026-09-09T13:45:00+01:00",
+  "reason": "Reviewed direct Netlify production changes from 8-9 September before restoring repaired city pages, privacy redirects, public catalogs and preserved functions. Internal sourcing/history files were imported unchanged; root page and Netlify routing are intentionally replaced by the repaired git version."
 }
