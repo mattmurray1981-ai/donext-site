@@ -29,6 +29,18 @@ functions = "./netlify/functions"
 
 # Bristol has its own directory page, metadata, catalog and signup confirmation.
 [[redirects]]
+from = "/bristol"
+to = "/bristol/index.html"
+status = 200
+force = true
+
+[[redirects]]
+from = "/bristol/"
+to = "/bristol/index.html"
+status = 200
+force = true
+
+[[redirects]]
 from = "/bristol/index.html"
 to = "/bristol/"
 status = 301
