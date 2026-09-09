@@ -3,16 +3,16 @@
   "files": {
     "/weekend-brief.html": "a17431adbee754a8623fbc7c342cd24d6b1c391f",
     "/thank-you.html": "e09b628aab3d7d67baf34deb76856c9c744ef92e",
-    "/style.css": "bc1bb40b7be205291a9b07a3738b09e57dd9f59e",
+    "/style.css": "dafb365aee74f742ddc25706b46e6a3fe8bb9f3b",
     "/package.json": "1c422b0d39fa51cc260c2ed13c684de566b891d2",
     "/package-lock.json": "ca7804d332d5b9253ac76dffa80c347b3e5a3cb5",
-    "/now.html": "e33286398912eb7087767d727354a884785febd1",
-    "/now/index.html": "e33286398912eb7087767d727354a884785febd1",
+    "/now.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
+    "/now/index.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
     "/netlify.toml": "3ec1a5e293010c599d0f47185f150f3d2f1f2591",
     "/netlify/functions/metrics-day.mjs": "de003e7ead0c4eb258b07b78bbbf83610cf7a135",
     "/netlify/functions/hit.mjs": "8cef12f64ef412f250026088c45e6c72b32216b0",
     "/inject_hit.py": "d01ba828c1f284feea1ffc1a3417e2cf78d47f33",
-    "/index.html": "4eca909953c152229eeaf5223a5def875f8a65ad",
+    "/index.html": "91bd1b45b141fdb5012a6a1f7356f1f1b24fb41a",
     "/favicon.svg": "287467d5a19e6cb1a247707917df69d712897663",
     "/favicon.ico": "483049d5cd3bc9767fb0ca784544d137e4a300e2",
     "/data/sourcing/sources.json": "8faa475a0397d22c72fb5763a2ec0cfb91313be2",
@@ -28,7 +28,7 @@
     "/data/metrics/daily/2026-09-05.json": "46883d7262b84d575e1162b7f17a79805a36a921",
     "/data/metrics/readme.md": "c51ffc4303b335ccb0fe777b72606bf8d98665e4",
     "/data/featured-history.json": "1ceee003ae64719eadd1584da11c60372a235e18",
-    "/data/cardiff-today.json": "70d0a84ef5022978b1af89bfd8a98382952daa54",
+    "/data/cardiff-today.json": "884cfce7b13d8fcedfb3b84b6c970408a625bf5d",
     "/data/trust-gates.md": "c64ac2417130a4a1d2d6873ee1229c7ae09e04b4",
     "/data/schema.md": "af108234d50645b68ac73ecda952859c0b5f73d0",
     "/data/matthew-gaps.md": "362cb38f9c72cbc13f01fc3e8d1db3eac5596de1",
@@ -53,6 +53,16 @@
     "/assets/brand/cardiff/donext-cardiff-avatar-v4.png": "0322f7c906b9dbfccfdd9f067e6e8537e6923473",
     "/assets/brand/cardiff/donext-cardiff-share-v4.png": "4c7349f276c11103014e53334ae17df13fc34fb3",
     "/assets/brand/cardiff/instagram-feed-template.html": "a244d6bd3dcfb4f79f31408ccad6dd978ae203a6",
-    "/assets/brand/cardiff/README.md": "5372e124c4a422335c753f21447da152dad9c2dc"
-  }
+    "/assets/brand/cardiff/README.md": "5372e124c4a422335c753f21447da152dad9c2dc",
+    "/data/bristol-today.json": "786ca478ca1f019dfb7ebdc3a8da9c7032a61d00",
+    "/data/birmingham-today.json": "1aea8c6703fc8df34b4bf3b756c7728733bee782",
+    "/birmingham.html": "f074497ca3fb525eb37c327aa5d614f6ea777539",
+    "/birmingham-now.html": "f7129ae4da933ce77b686479ec9695ac0220fe94",
+    "/birmingham-catalog.js": "4d9fc3f2f0c16d55b8b33492f888eb431de9d200",
+    "/bristol.html": "a025dfb261ef8fb26c17dddc6f7601e6d3cc7829",
+    "/bristol-now.html": "65b97649f92448ff184b10b28265ab3c90b5d95e",
+    "/bristol-catalog.js": "232ab4cd8fd0d974f856c4a63bdc903a1864eb16"
+  },
+  "reviewedAt": "2026-09-09T13:40:00+01:00",
+  "reason": "Reviewed direct Netlify production changes from 8-9 September before restoring repaired city pages, privacy redirects, public catalogs and preserved functions."
 }
