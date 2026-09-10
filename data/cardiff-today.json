@@ -1,26 +1,20 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-10T07:15:00+01:00",
+  "updatedAt": "2026-09-10T07:50:00+01:00",
   "staleAfterHours": 36,
-  "headline": "St Fagans Food Festival · No Fit State Circus skills",
-  "summary": "Today: No Fit State Circus skills; Story Time and Craft · Fri: Play Time; Stay and Play · Weekend: St Fagans Food Festival; Trading cards & retro games at Canopi",
+  "headline": "St Fagans Food Festival · Story Time & Craft · Circus skills",
+  "summary": "Today: Story Time and Craft (Llandaff); No Fit State Circus skills · Fri: Stay and Play; Play Time; TQ Toddler Day · Weekend: St Fagans Food Festival; Brick Festival; Penylan LEGO; Canopi trade day; Goodsheds Wild West play",
   "notices": [
     {
-      "title": "Techniquest maintenance closure",
-      "detail": "Closed 8–10 September. Toddler Day runs Friday 11 September, 09:00–16:00.",
-      "startDate": "2026-09-08",
+      "title": "Techniquest closed today (Thu)",
+      "detail": "Closed for maintenance Thu 10 Sep. Reopens Fri 11 Sep for Toddler Day (09:00–16:00), then Sat–Sun normal hours. Relaxed Session Sun 13 Sep 10:00–12:00.",
+      "startDate": "2026-09-10",
       "endDate": "2026-09-10",
       "expiresAt": "2026-09-10T23:59:59+01:00",
       "relatedVenueIds": [
         "techniquest"
       ],
-      "sourceName": "Techniquest",
-      "sourceUrl": "https://www.techniquest.org/visit/opening-times-and-prices/"
-    },
-    {
-      "title": "Techniquest closed Wed–Thu",
-      "detail": "Closed for maintenance Wed 9–Thu 10 Sep. Reopens Fri 11 Sep for Toddler Day (09:00–16:00), then Sat–Sun normal hours. Relaxed Session Sun 13 Sep 10:00–12:00.",
       "sourceName": "Techniquest",
       "sourceUrl": "https://www.techniquest.org/visit/opening-times-and-prices/"
     },
@@ -44,7 +38,7 @@
       "date": "2026-09-10",
       "time": "15:30–16:30",
       "location": "STAR Hub, Muirton Road, Tremorfa CF24 2SJ",
-      "cost": "Confirm at hub (listed as free community hub session; no fee on organiser page)",
+      "cost": "Confirm at hub (no fee listed on organiser page)",
       "ageBands": [
         "5-8",
         "9-12"
@@ -57,9 +51,9 @@
       "organiserUrl": "https://cardiffhubs.co.uk/hub-events/no-fit-state-circus/",
       "score": 74,
       "role": "feature",
-      "whyPicked": "Unusual east Cardiff after-school skill session — distinctive over tourist staples.",
+      "whyPicked": "Unusual east Cardiff after-school circus skills with No Fit State — ages 4+.",
       "parentHeadsUp": "Ages 4+. Confirm any cost/spaces with STAR Hub on the day.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "hub session · confirm cost/spaces"
     },
     {
@@ -81,9 +75,9 @@
       "organiserUrl": "https://cardiffhubs.co.uk/hub-events/story-time-and-craft/",
       "score": 78,
       "role": "feature",
-      "whyPicked": "Free Thursday craft session at a north Cardiff hub — strong midweek indoor plan.",
-      "parentHeadsUp": "Same format as Mondays.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "whyPicked": "Free Thursday story+craft at a north Cardiff hub — strongest same-day indoor plan.",
+      "parentHeadsUp": "Every Mon & Thu 10:30–11:30. Same format as Mondays.",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "free · no booking listed"
     },
     {
@@ -106,7 +100,7 @@
       "role": "feature",
       "whyPicked": "Free city-centre Friday under-4 session.",
       "parentHeadsUp": "No booking required.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "free · no booking required"
     },
     {
@@ -114,8 +108,8 @@
       "title": "Stay and Play",
       "date": "2026-09-11",
       "time": "09:30–11:00",
-      "location": "Caerphilly Miners Centre, Caerphilly",
-      "cost": "£1 per child",
+      "location": "Caerphilly Miners Centre, Watford Road, Caerphilly CF83 1BJ",
+      "cost": "Confirm at centre (no fee listed on organiser page)",
       "ageBands": [
         "0-4"
       ],
@@ -127,10 +121,10 @@
       "organiserUrl": "https://www.caerphillyminerscentre.co.uk/whats-on",
       "score": 74,
       "role": "feature",
-      "whyPicked": "Cheap Friday under-3 community session outside the tourist loop.",
-      "parentHeadsUp": "Ages 0–3 on organiser page.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
-      "bookingStatus": "£1 · drop-in"
+      "whyPicked": "Community under-3 Stay and Play outside the tourist loop.",
+      "parentHeadsUp": "Ages 0–3 on organiser page. Fee not listed this check — confirm on arrival.",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
+      "bookingStatus": "drop-in · no pre-booking"
     },
     {
       "id": "techniquest-toddler-day-fri",
@@ -151,9 +145,9 @@
       "bookingUrl": "https://tickets.techniquest.org/category/27758",
       "score": 70,
       "role": "backup",
-      "whyPicked": "Single tourist backup this week — dated Toddler Day after maintenance closure.",
-      "parentHeadsUp": "TQ closed Tue–Thu; Fri is Toddler Day until 16:00. Book tickets and Mini Wildlings ahead.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "whyPicked": "Single tourist backup this week — dated Toddler Day after Wed–Thu maintenance closure.",
+      "parentHeadsUp": "TQ closed Thu 10 Sep; Fri is Toddler Day 09:00–16:00. Book tickets and Mini Wildlings ahead.",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "paid · book ahead on Techniquest tickets"
     },
     {
@@ -162,7 +156,7 @@
       "date": "2026-09-12",
       "time": "10:00–18:00",
       "location": "St Fagans National Museum of History, Cardiff CF5 6XB",
-      "cost": "Free entry · parking charged · some activities paid",
+      "cost": "Free entry · parking £7/day · some activities paid",
       "ageBands": [
         "0-4",
         "5-8",
@@ -177,8 +171,8 @@
       "score": 88,
       "role": "hero",
       "whyPicked": "Free, distinctive, locally rooted weekend festival with explicit family activities — standout look-ahead.",
-      "parentHeadsUp": "No advance ticket needed for entry. Still the weekend product.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "parentHeadsUp": "Organiser: 10am–6pm both days. Busy 10:00–14:00; later afternoon quieter. No advance ticket for entry.",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "free entry · no booking required"
     },
     {
@@ -191,7 +185,7 @@
       "endsAt": "2026-09-12T16:00:00+01:00",
       "location": "The Canopi, 59–61 Tudor Street, Cardiff CF11 6AD",
       "neighbourhood": "Riverside",
-      "cost": "Free entry · buying cards is optional",
+      "cost": "Confirm entry on the day · buying/trading cards optional",
       "ageBands": [
         "5-8",
         "9-12"
@@ -206,12 +200,14 @@
       "indoorOutdoor": "indoor",
       "confidence": "medium",
       "role": "feature",
-      "score": 90,
-      "bookingStatus": "free entry · no booking link listed",
+      "score": 76,
+      "bookingStatus": "no booking link listed · confirm entry",
       "sessionId": "canopi-community-trade-day-20260912",
-      "checkedAt": "2026-09-08T12:44:15.307+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "See session details",
-      "venueId": "canopi-community-trade-day-20260912"
+      "venueId": "canopi-community-trade-day-20260912",
+      "whyPicked": "Local Riverside collectors’ afternoon — indie indoor option beside the Food Festival.",
+      "parentHeadsUp": "Organiser lists Sat 12 Sep 12:00–16:00 at The Canopi. Entry fee not stated on page this check."
     },
     {
       "id": "cardiff-brick-festival-sat",
@@ -234,8 +230,8 @@
       "score": 73,
       "role": "feature",
       "whyPicked": "Clear family LEGO day with official ticket path — strong paid indoor option beside the free Food Festival.",
-      "parentHeadsUp": "Under-5s free with paying adult (no ticket). Book on organiser site.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "parentHeadsUp": "Under-5s free with paying adult (no ticket). Book on organiser site — regularly sells out.",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "paid · book ahead"
     },
     {
@@ -261,15 +257,17 @@
       "organiserUrl": "https://cardiffhubs.co.uk/hub-events/clwb-lego/",
       "sourceName": "Cardiff Hubs",
       "indoorOutdoor": "indoor",
-      "confidence": "medium",
+      "confidence": "high",
       "role": "feature",
       "score": 78,
       "bookingStatus": "free drop-in",
       "scheduleBasis": "organiser weekly timetable",
       "sessionId": "penylan-lego-club-20260912",
-      "checkedAt": "2026-09-08T12:44:15.307+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "See session details",
-      "venueId": "penylan-lego-club"
+      "venueId": "penylan-lego-club",
+      "whyPicked": "Free weekly library LEGO hour — simple local alternative to the ticketed Brick Festival.",
+      "parentHeadsUp": "Ages 2+. Weekly Saturday 10:00–11:00 at Penylan Library."
     },
     {
       "id": "goodsheds-wild-west-play-20260912",
@@ -281,7 +279,7 @@
       "endsAt": "2026-09-12T11:30:00+01:00",
       "location": "Goodsheds, Hood Road, Barry CF62 5QU",
       "neighbourhood": "Barry",
-      "cost": "£18.70 for one child + one adult on booking page · extra adults £2 advertised",
+      "cost": "£17 per child advertised · tickets from £18.70 · extra adults £2",
       "ageBands": [
         "0-4",
         "5-8"
@@ -298,11 +296,13 @@
       "confidence": "high",
       "role": "feature",
       "score": 82,
-      "bookingStatus": "book ahead · one adult included",
+      "bookingStatus": "book ahead · DesignMyNight",
       "sessionId": "goodsheds-wild-west-play-20260912",
-      "checkedAt": "2026-09-08T12:44:15.307+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "Book tickets",
-      "venueId": "goodsheds-wild-west-play-20260912"
+      "venueId": "goodsheds-wild-west-play-20260912",
+      "whyPicked": "Barry indie play party with clear booking path — covers Vale/Barry gap.",
+      "parentHeadsUp": "Book ahead. Headline £17; checkout showed from £18.70. Adult must stay."
     },
     {
       "id": "st-fagans-food-festival-sun",
@@ -310,7 +310,7 @@
       "date": "2026-09-13",
       "time": "10:00–18:00",
       "location": "St Fagans National Museum of History, Cardiff CF5 6XB",
-      "cost": "Free entry · parking charged · some activities paid",
+      "cost": "Free entry · parking £7/day · some activities paid",
       "ageBands": [
         "0-4",
         "5-8",
@@ -326,7 +326,7 @@
       "role": "feature",
       "whyPicked": "Same free festival on Sunday — keeps the weekend window honest.",
       "parentHeadsUp": "Techniquest also runs a Relaxed Session Sun morning 10:00–12:00 if you want a quieter Bay option.",
-      "checkedAt": "2026-09-09T09:05:00+01:00",
+      "checkedAt": "2026-09-10T07:50:00+01:00",
       "bookingStatus": "free entry · no booking required"
     }
   ],
@@ -334,9 +334,9 @@
     {
       "id": "st-fagans",
       "title": "St Fagans National Museum of History",
-      "time": "Usually 10:00–17:00 (Food Festival weekend extends to 18:00)",
+      "time": "Usually 10:00–17:00 (Food Festival weekend 10:00–18:00)",
       "location": "St Fagans, Cardiff CF5 6XB",
-      "cost": "Free entry · parking charged",
+      "cost": "Free entry · parking £7/day",
       "ageBands": [
         "0-4",
         "5-8",
