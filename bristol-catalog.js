@@ -6,7 +6,7 @@
 (function (global) {
   'use strict';
 
-  var DATA_URL = './data/bristol-today.json';
+  var DATA_URL = '/data/bristol-today.json';
   var AGE_BANDS = ['0-4', '5-8', '9-12'];
   // Default matches SCHEMA.md staleAfterHours; catalog JSON may override.
   var DEFAULT_STALE_HOURS = 36;
