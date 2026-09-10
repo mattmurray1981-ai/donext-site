@@ -1,502 +1,171 @@
-functionsDirectory = "./netlify/functions"
-functionsDirectoryOrigin = "config"
-redirectsOrigin = "config"
-plugins = []
-headers = []
-
 [build]
-publish = "."
-publishOrigin = "config"
-functions = "./netlify/functions"
+  publish = "."
 
-  [build.environment]
-
-  [build.processing]
-
-    [build.processing.css]
-
-    [build.processing.html]
-
-    [build.processing.images]
-
-    [build.processing.js]
-
-  [build.services]
+# Netlify Forms are declared in index.html (weekend-brief, weekday-morning).
+# No build command — static site. Production publish follows your Netlify
+# branch settings (usually main). PR branches get Deploy Previews if enabled.
 
 [functions]
-
-  [functions."*"]
-
-# Bristol has its own directory page, metadata, catalog and signup confirmation.
-[[redirects]]
-from = "/bristol"
-to = "/bristol/index.html"
-status = 200
-force = true
+  directory = "netlify/functions"
 
 [[redirects]]
-from = "/bristol/"
-to = "/bristol/index.html"
-status = 200
-force = true
+  from = "/now"
+  to = "/now.html"
+  status = 200
 
 [[redirects]]
-from = "/bristol/index.html"
-to = "/bristol/"
-status = 301
-force = true
+  from = "/now/"
+  to = "/now.html"
+  status = 200
+
+
+# Bristol city lane (parallel to Cardiff — do not overwrite /now)
 
 [[redirects]]
-from = "/bristol/now"
-to = "/bristol/"
-status = 302
-force = true
+  from = "/bristol/now"
+  to = "/bristol-now.html"
+  status = 200
 
 [[redirects]]
-from = "/bristol/now/"
-to = "/bristol/"
-status = 302
-force = true
+  from = "/bristol/now/"
+  to = "/bristol-now.html"
+  status = 200
 
 [[redirects]]
-from = "/bristol/thank-you/index.html"
-to = "/bristol/thank-you/"
-status = 301
-force = true
+  from = "/bristol"
+  to = "/bristol.html"
+  status = 200
 
 [[redirects]]
-from = "/birmingham"
-to = "/birmingham.html"
-status = 200
-force = false
+  from = "/bristol/"
+  to = "/bristol.html"
+  status = 200
 
 [[redirects]]
-from = "/birmingham/"
-to = "/birmingham.html"
-status = 200
-force = false
+  from = "/go/bristol-now"
+  to = "/bristol/now"
+  status = 302
+
+
+# Birmingham city lane (parallel — do not overwrite /now, /bristol/*)
 
 [[redirects]]
-from = "/birmingham/now"
-to = "/birmingham-now.html"
-status = 200
-force = false
+  from = "/birmingham/now"
+  to = "/birmingham-now.html"
+  status = 200
 
 [[redirects]]
-from = "/birmingham/now/"
-to = "/birmingham-now.html"
-status = 200
-force = false
-
-# Internal research remains in the preserved deployment snapshot, but must not
-# be served publicly. Force the 404 so existing files cannot shadow these rules.
-[[redirects]]
-from = "/data"
-to = "/404.html"
-status = 404
-force = true
+  from = "/birmingham/now/"
+  to = "/birmingham-now.html"
+  status = 200
 
 [[redirects]]
-from = "/data/"
-to = "/404.html"
-status = 404
-force = true
+  from = "/birmingham"
+  to = "/birmingham.html"
+  status = 200
 
 [[redirects]]
-from = "/data/sourcing"
-to = "/404.html"
-status = 404
-force = true
+  from = "/birmingham/"
+  to = "/birmingham.html"
+  status = 200
 
 [[redirects]]
-from = "/data/sourcing/"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/birmingham-now"
+  to = "/birmingham/now"
+  status = 302
+
+
 
 [[redirects]]
-from = "/data/sourcing/*"
-to = "/404.html"
-status = 404
-force = true
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
 
 [[redirects]]
-from = "/data/metrics"
-to = "/404.html"
-status = 404
-force = true
+  from = "/thank-you/"
+  to = "/thank-you.html"
+  status = 200
+
+
+# Email / IG short links (avoid Gmail breaking ?query URLs)
 
 [[redirects]]
-from = "/data/metrics/"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/fonmon"
+  to = "https://fonmoncastle.digitickets.co.uk/event-tickets/77908?catID=73101"
+  status = 302
 
 [[redirects]]
-from = "/data/metrics/*"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/fonmon-info"
+  to = "https://fonmoncastle.com/whats-on"
+  status = 302
 
 [[redirects]]
-from = "/data/featured-history.json"
-to = "/404.html"
-status = 404
-force = true
-
-# Cover the production lowercase paths and the tracked uppercase Markdown names.
-[[redirects]]
-from = "/data/featured-history.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/roath-market"
+  to = "https://www.riversidemarket.org.uk/roath-market"
+  status = 302
 
 [[redirects]]
-from = "/data/FEATURED-HISTORY.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/riverside-market"
+  to = "https://www.riversidemarket.org.uk/riversidemarket"
+  status = 302
 
 [[redirects]]
-from = "/data/schema.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/homework-club"
+  to = "https://cardiffhubs.co.uk/hub-events/homework-club/"
+  status = 302
 
 [[redirects]]
-from = "/data/SCHEMA.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/chapter-masks"
+  to = "https://www.chapter.cymru/whats-on/faces-of-culture"
+  status = 302
 
 [[redirects]]
-from = "/data/trust-gates.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/ms-rachel"
+  to = "https://www.funforlittleones.co.uk/cardiff"
+  status = 302
 
 [[redirects]]
-from = "/data/matthew-gaps.md"
-to = "/404.html"
-status = 404
-force = true
-
-# Repository notes, build inputs and tests are not public site content.
-[[redirects]]
-from = "/readme.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/hub-story-craft"
+  to = "https://cardiffhubs.co.uk/hub-events/144698/"
+  status = 302
 
 [[redirects]]
-from = "/README.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/baby-rhyme"
+  to = "https://cardiffhubs.co.uk/hub-events/rhyme-time/"
+  status = 302
 
 [[redirects]]
-from = "/preview.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/canton-rhyme"
+  to = "https://cardiffhubs.co.uk/hub-events/story-and-rhyme-time/"
+  status = 302
 
 [[redirects]]
-from = "/PREVIEW.md"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/stfagans-food"
+  to = "https://museum.wales/whatson/food-festival/"
+  status = 302
 
 [[redirects]]
-from = "/inject_hit.py"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/brick-fest"
+  to = "https://brickfestivalevents.com/event/cardiff-brick-festival-5/"
+  status = 302
 
 [[redirects]]
-from = "/package.json"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/tq-toddler"
+  to = "https://www.techniquest.org/events/toddler-day/"
+  status = 302
 
 [[redirects]]
-from = "/package-lock.json"
-to = "/404.html"
-status = 404
-force = true
+  from = "/go/now"
+  to = "/now"
+  status = 302
 
-# Block checked-in function source, not the /.netlify/functions runtime URLs.
-[[redirects]]
-from = "/netlify/functions"
-to = "/404.html"
-status = 404
-force = true
 
 [[redirects]]
-from = "/netlify/functions/"
-to = "/404.html"
-status = 404
-force = true
+  from = "/api/hit"
+  to = "/.netlify/functions/hit"
+  status = 200
 
 [[redirects]]
-from = "/netlify/functions/*"
-to = "/404.html"
-status = 404
-force = true
-
-[[redirects]]
-from = "/tests"
-to = "/404.html"
-status = 404
-force = true
-
-[[redirects]]
-from = "/tests/"
-to = "/404.html"
-status = 404
-force = true
-
-[[redirects]]
-from = "/tests/*"
-to = "/404.html"
-status = 404
-force = true
-
-[[redirects]]
-from = "/thank-you"
-to = "/thank-you.html"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/thank-you/"
-to = "/thank-you.html"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/fonmon"
-to = "https://fonmoncastle.digitickets.co.uk/event-tickets/77908?catID=73101"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/fonmon-info"
-to = "https://fonmoncastle.com/whats-on"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/roath-market"
-to = "https://www.riversidemarket.org.uk/roath-market"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/riverside-market"
-to = "https://www.riversidemarket.org.uk/riversidemarket"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/homework-club"
-to = "https://cardiffhubs.co.uk/hub-events/homework-club/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/chapter-masks"
-to = "https://www.chapter.cymru/whats-on/faces-of-culture"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/ms-rachel"
-to = "https://www.funforlittleones.co.uk/cardiff"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/hub-story-craft"
-to = "https://cardiffhubs.co.uk/hub-events/144698/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/baby-rhyme"
-to = "https://cardiffhubs.co.uk/hub-events/rhyme-time/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/canton-rhyme"
-to = "https://cardiffhubs.co.uk/hub-events/story-and-rhyme-time/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/stfagans-food"
-to = "https://museum.wales/whatson/food-festival/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/brick-fest"
-to = "https://brickfestivalevents.com/event/cardiff-brick-festival-5/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/tq-toddler"
-to = "https://www.techniquest.org/events/toddler-day/"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/go/now"
-to = "/now"
-status = 302
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/api/hit"
-to = "/.netlify/functions/hit"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/api/metrics-day"
-to = "/.netlify/functions/metrics-day"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/now"
-to = "/now.html"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
-
-[[redirects]]
-from = "/now/"
-to = "/now.html"
-status = 200
-force = false
-
-  [redirects.query]
-
-  [redirects.conditions]
-
-  [redirects.headers]
+  from = "/api/metrics-day"
+  to = "/.netlify/functions/metrics-day"
+  status = 200
