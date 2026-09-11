@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-10T07:50:00+01:00",
+  "updatedAt": "2026-09-11T07:50:00+01:00",
   "staleAfterHours": 36,
-  "headline": "St Fagans Food Festival · Story Time & Craft · Circus skills",
-  "summary": "Today: Story Time and Craft (Llandaff); No Fit State Circus skills · Fri: Stay and Play; Play Time; TQ Toddler Day · Weekend: St Fagans Food Festival; Brick Festival; Penylan LEGO; Canopi trade day; Goodsheds Wild West play",
+  "headline": "St Fagans Food Festival · Play Time",
+  "summary": "Fri: Play Time; Stay and Play; Techniquest Toddler Day · Weekend: St Fagans Food Festival; Trading cards & retro games at Canopi",
   "notices": [
     {
       "title": "Techniquest closed today (Thu)",
@@ -32,54 +32,6 @@
     }
   ],
   "datedPicks": [
-    {
-      "id": "hubs-nofit-circus-thu",
-      "title": "No Fit State Circus skills",
-      "date": "2026-09-10",
-      "time": "15:30–16:30",
-      "location": "STAR Hub, Muirton Road, Tremorfa CF24 2SJ",
-      "cost": "Confirm at hub (no fee listed on organiser page)",
-      "ageBands": [
-        "5-8",
-        "9-12"
-      ],
-      "description": "Afternoon circus skills with No Fit State for children 4+. Thursdays 15:30–16:30 at STAR Hub Tremorfa.",
-      "url": "https://cardiffhubs.co.uk/hub-events/no-fit-state-circus/",
-      "sourceName": "Cardiff Hubs",
-      "indoorOutdoor": "indoor",
-      "confidence": "high",
-      "organiserUrl": "https://cardiffhubs.co.uk/hub-events/no-fit-state-circus/",
-      "score": 74,
-      "role": "feature",
-      "whyPicked": "Unusual east Cardiff after-school circus skills with No Fit State — ages 4+.",
-      "parentHeadsUp": "Ages 4+. Confirm any cost/spaces with STAR Hub on the day.",
-      "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "hub session · confirm cost/spaces"
-    },
-    {
-      "id": "hubs-story-craft-llandaff-thu",
-      "title": "Story Time and Craft",
-      "date": "2026-09-10",
-      "time": "10:30–11:30",
-      "location": "Llandaff North and Gabalfa Hub, College Road, Llandaff North CF14 2HU",
-      "cost": "Free",
-      "ageBands": [
-        "0-4",
-        "5-8"
-      ],
-      "description": "Share a story and make a craft tied to the tale. Every Monday and Thursday 10:30–11:30.",
-      "url": "https://cardiffhubs.co.uk/hub-events/story-time-and-craft/",
-      "sourceName": "Cardiff Hubs",
-      "indoorOutdoor": "indoor",
-      "confidence": "high",
-      "organiserUrl": "https://cardiffhubs.co.uk/hub-events/story-time-and-craft/",
-      "score": 78,
-      "role": "feature",
-      "whyPicked": "Free Thursday story+craft at a north Cardiff hub — strongest same-day indoor plan.",
-      "parentHeadsUp": "Every Mon & Thu 10:30–11:30. Same format as Mondays.",
-      "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "free · no booking listed"
-    },
     {
       "id": "hubs-play-time-central-fri",
       "title": "Play Time",
