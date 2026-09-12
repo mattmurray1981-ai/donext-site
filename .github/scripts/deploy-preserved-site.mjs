@@ -198,18 +198,18 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
       if (base.protocol !== 'https:' || !base.hostname.startsWith(`${candidate.id}--`) || !base.hostname.endsWith('.netlify.app')) throw new Error('Candidate preview URL is not the expected Netlify deploy URL');
       for (const [route, expectedStatus, city] of releaseRoutes) {
         let response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
-        if (route === '/now/' && [301, 308].includes(response.status)) {
+        if (['/now/', '/bristol/', '/birmingham/'].includes(route) && [301, 308].includes(response.status)) {
           const location = response.headers.get('location');
-          if (!location) throw new Error('Candidate /now/ redirect has no Location header');
+          if (!location) throw new Error(`Candidate ${route} redirect has no Location header`);
           const destination = new URL(location, base);
-          if (destination.href !== new URL('/now', base).href) throw new Error('Candidate /now/ redirected somewhere other than its exact same-origin /now canonical URL');
+          if (destination.href !== new URL(route.slice(0, -1), base).href) throw new Error(`Candidate ${route} redirected somewhere other than its exact same-origin slashless URL`);
           await response.arrayBuffer();
           // Netlify normalizes the trailing slash before applying the rewrite.
           // Follow this one known canonicalization only; all other routes and
           // any second redirect still have to meet their exact status checks.
           response = await fetchImpl(destination, { redirect: 'manual', signal: AbortSignal.timeout(30000) });
         }
-        if (response.status !== expectedStatus) throw new Error(`Candidate route ${route} returned ${response.status}, expected ${expectedStatus}`);
+        if (response.status !== expectedStatus) throw new Error(`Candidate route ${route} returned ${response.status}, expected ${expectedStatus}; location ${response.headers.get('location') || '(none)'}`);
         if (city) {
           verifyCityMarkup(await response.text(), city);
         } else if (/^\/(bristol|birmingham)\/thank-you\/$/.test(route)) {

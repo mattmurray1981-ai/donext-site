@@ -27,13 +27,13 @@
 /tests /404.html 404!
 /tests/ /404.html 404!
 /tests/* /404.html 404!
-/bristol /bristol/ 301!
+/bristol /bristol/index.html 200!
 /bristol/index.html /bristol/ 301!
 /bristol/now /bristol/ 302!
 /bristol/now/ /bristol/ 302!
 /bristol.html /bristol/ 301!
 /bristol-now.html /bristol/ 301!
-/birmingham /birmingham/ 301!
+/birmingham /birmingham/index.html 200!
 /birmingham/index.html /birmingham/ 301!
 /birmingham/now /birmingham/ 302!
 /birmingham/now/ /birmingham/ 302!

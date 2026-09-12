@@ -174,8 +174,8 @@ force = true
 
 [[redirects]]
 from = "/bristol"
-to = "/bristol/"
-status = 301
+to = "/bristol/index.html"
+status = 200
 force = true
 
 [[redirects]]
@@ -210,8 +210,8 @@ force = true
 
 [[redirects]]
 from = "/birmingham"
-to = "/birmingham/"
-status = 301
+to = "/birmingham/index.html"
+status = 200
 force = true
 
 [[redirects]]
