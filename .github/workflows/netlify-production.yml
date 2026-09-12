@@ -39,7 +39,9 @@ jobs:
         run: npm ci --omit=dev
 
       - name: Check date and recommendation behavior
-        run: node --test tests/catalog.test.cjs
+        run: |
+          python3 .github/scripts/generate-city-pages.py --check
+          node --test tests/catalog.test.cjs .github/scripts/deployment.test.mjs
 
       - name: Stage tracked site files
         shell: bash

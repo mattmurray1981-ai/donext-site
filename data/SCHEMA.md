@@ -1,6 +1,6 @@
 # cardiff-today.json schema
 
-Static Cardiff catalog consumed by the site at `/data/cardiff-today.json`.
+City catalogs consumed at `/data/{city}-today.json` for Cardiff, Bristol and Birmingham.
 
 ## Top level
 
@@ -9,7 +9,8 @@ Static Cardiff catalog consumed by the site at `/data/cardiff-today.json`.
 | `schemaVersion` | number | yes | Currently `1`. |
 | `city` | string | yes | Display city name, e.g. `"Cardiff"`. |
 | `updatedAt` | string (ISO-8601 with offset) | yes | Honest editorial/automation timestamp used for the last-updated stamp and stale banner. |
-| `staleAfterHours` | number | no | Defaults to `36`. If `now - updatedAt` exceeds this, the UI shows a stale banner. |
+| `sourceCheckedAt` | string (ISO-8601 with offset) | no | Last research update, preserved during formatting-only edits so stale warnings remain honest. |
+| `staleAfterHours` | number | no | Defaults to `36`. If `now - sourceCheckedAt` (or `updatedAt` on older catalogs) exceeds this, the UI shows a stale banner. |
 | `headline` | string | no | Optional short heading for the Cardiff report card. |
 | `summary` | string | no | Optional one-line status copy under the heading. |
 | `notices` | array of notice | no | Relevant closures / travel notes, collapsed below the shortlist. |

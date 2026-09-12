@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "city": "Cardiff",
-  "updatedAt": "2026-09-11T07:50:00+01:00",
+  "updatedAt": "2026-09-12T11:37:42+01:00",
   "staleAfterHours": 36,
-  "headline": "St Fagans Food Festival · Play Time",
-  "summary": "Fri: Play Time; Stay and Play; Techniquest Toddler Day · Weekend: St Fagans Food Festival; Trading cards & retro games at Canopi",
+  "headline": "This weekend in Cardiff & nearby",
+  "summary": "Choose a date and age range to find a plan that fits.",
   "notices": [
     {
       "title": "Techniquest closed today (Thu)",
@@ -17,18 +17,6 @@
       ],
       "sourceName": "Techniquest",
       "sourceUrl": "https://www.techniquest.org/visit/opening-times-and-prices/"
-    },
-    {
-      "title": "Museum of Cardiff — still closed",
-      "detail": "Museum of Cardiff (Old Library / The Hayes) remains closed due to a leak; organisers will update when they know more.",
-      "sourceName": "Museum of Cardiff",
-      "sourceUrl": "https://cardiffmuseum.com/"
-    },
-    {
-      "title": "National Museum Cardiff — open today",
-      "detail": "Open Tue–Sun 10:00–17:00 · closed Mondays. Free entry; book a free day ticket if you can.",
-      "sourceName": "Museum Wales",
-      "sourceUrl": "https://museum.wales/cardiff/visit/"
     }
   ],
   "datedPicks": [
@@ -50,10 +38,15 @@
       "organiserUrl": "https://cardiffhubs.co.uk/hub-events/play-time/",
       "score": 72,
       "role": "feature",
-      "whyPicked": "Free city-centre Friday under-4 session.",
-      "parentHeadsUp": "No booking required.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "free · no booking required"
+      "bookingStatus": "free · no booking required",
+      "seriesId": "hubs-play-time-central",
+      "sessionId": "hubs-play-time-central-fri",
+      "ageSuitability": "DoNext fit: ages 0–4 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Every Friday 10:30 for ages 0–4. No booking required.",
+      "parentTip": "No booking required.",
+      "startsAt": "2026-09-11T10:30:00+01:00",
+      "endsAt": "2026-09-11T11:30:00+01:00"
     },
     {
       "id": "miners-stay-play-fri",
@@ -73,10 +66,15 @@
       "organiserUrl": "https://www.caerphillyminerscentre.co.uk/whats-on",
       "score": 74,
       "role": "feature",
-      "whyPicked": "Community under-3 Stay and Play outside the tourist loop.",
-      "parentHeadsUp": "Ages 0–3 on organiser page. Fee not listed this check — confirm on arrival.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "drop-in · no pre-booking"
+      "bookingStatus": "drop-in · no pre-booking",
+      "seriesId": "miners-stay-play",
+      "sessionId": "miners-stay-play-fri",
+      "ageSuitability": "DoNext fit: ages 0–4 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Play, toys, music and craft for ages 0–3. No pre-booking — just turn up.",
+      "parentTip": "Ages 0–3 on organiser page. Fee not listed this check — confirm on arrival.",
+      "startsAt": "2026-09-11T09:30:00+01:00",
+      "endsAt": "2026-09-11T11:00:00+01:00"
     },
     {
       "id": "techniquest-toddler-day-fri",
@@ -97,10 +95,15 @@
       "bookingUrl": "https://tickets.techniquest.org/category/27758",
       "score": 70,
       "role": "backup",
-      "whyPicked": "Single tourist backup this week — dated Toddler Day after Wed–Thu maintenance closure.",
-      "parentHeadsUp": "TQ closed Thu 10 Sep; Fri is Toddler Day 09:00–16:00. Book tickets and Mini Wildlings ahead.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "paid · book ahead on Techniquest tickets"
+      "bookingStatus": "paid · book ahead on Techniquest tickets",
+      "seriesId": "techniquest-toddler-day",
+      "sessionId": "techniquest-toddler-day-fri",
+      "ageSuitability": "DoNext fit: ages 0–4 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Pre-schoolers get exclusive run of the exhibits plus Toddler Day extras. Sep extras: Star Stories Oi Frog! (£2 add-on) and Mini Wildlings by Flossy and Boo (included, book ahead).",
+      "parentTip": "TQ closed Thu 10 Sep; Fri is Toddler Day 09:00–16:00. Book tickets and Mini Wildlings ahead.",
+      "startsAt": "2026-09-11T09:00:00+01:00",
+      "endsAt": "2026-09-11T16:00:00+01:00"
     },
     {
       "id": "st-fagans-food-festival-sat",
@@ -122,10 +125,15 @@
       "organiserUrl": "https://museum.wales/whatson/food-festival/",
       "score": 88,
       "role": "hero",
-      "whyPicked": "Free, distinctive, locally rooted weekend festival with explicit family activities — standout look-ahead.",
-      "parentHeadsUp": "Organiser: 10am–6pm both days. Busy 10:00–14:00; later afternoon quieter. No advance ticket for entry.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "free entry · no booking required"
+      "bookingStatus": "free entry · no booking required",
+      "seriesId": "st-fagans-food-festival",
+      "sessionId": "st-fagans-food-festival-sat",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Annual free festival with 80+ food, drink and craft stalls among the historic buildings, cookery demos, live music and family activities including circus skills. Also Sunday 13 Sep.",
+      "parentTip": "Entry is free; budget £7 for parking and extra for purchases or paid activities. Check travel information before setting off.",
+      "startsAt": "2026-09-12T10:00:00+01:00",
+      "endsAt": "2026-09-12T18:00:00+01:00"
     },
     {
       "id": "canopi-community-trade-day-20260912",
@@ -143,7 +151,7 @@
         "9-12"
       ],
       "ageSuitability": "DoNext fit: card and gaming fans aged 8–12 with an adult; no organiser age limit stated.",
-      "description": "A local collectors’ afternoon with a trading room, space for trading-card games and vintage consoles. Free entry makes it easy to have a look before committing to anything.",
+      "description": "A local collectors’ afternoon with a trading room, space for trading-card games and vintage consoles. Confirm the entry charge with the organiser before travelling.",
       "appeal": "Take your card-game fan somewhere they can meet other enthusiasts and explore older consoles.",
       "parentTip": "Stay with your child and agree a swap or spending limit before they bring their cards.",
       "url": "https://www.thecanopi.org/events/community-trade-day",
@@ -157,9 +165,7 @@
       "sessionId": "canopi-community-trade-day-20260912",
       "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "See session details",
-      "venueId": "canopi-community-trade-day-20260912",
-      "whyPicked": "Local Riverside collectors’ afternoon — indie indoor option beside the Food Festival.",
-      "parentHeadsUp": "Organiser lists Sat 12 Sep 12:00–16:00 at The Canopi. Entry fee not stated on page this check."
+      "venueId": "canopi-community-trade-day-20260912"
     },
     {
       "id": "cardiff-brick-festival-sat",
@@ -181,10 +187,15 @@
       "organiserUrl": "https://brickfestivalevents.com/event/cardiff-brick-festival-5/",
       "score": 73,
       "role": "feature",
-      "whyPicked": "Clear family LEGO day with official ticket path — strong paid indoor option beside the free Food Festival.",
-      "parentHeadsUp": "Under-5s free with paying adult (no ticket). Book on organiser site — regularly sells out.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "paid · book ahead"
+      "bookingStatus": "paid · book ahead",
+      "seriesId": "cardiff-brick-festival",
+      "sessionId": "cardiff-brick-festival-sat",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "LEGO fan day: large displays, building area, speed builds, traders with loose bricks and sets. Book ahead — regularly sells out.",
+      "parentTip": "Under-5s free with paying adult (no ticket). Book on organiser site — regularly sells out.",
+      "startsAt": "2026-09-12T10:00:00+01:00",
+      "endsAt": "2026-09-12T16:00:00+01:00"
     },
     {
       "id": "penylan-lego-club-20260912",
@@ -217,9 +228,7 @@
       "sessionId": "penylan-lego-club-20260912",
       "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "See session details",
-      "venueId": "penylan-lego-club",
-      "whyPicked": "Free weekly library LEGO hour — simple local alternative to the ticketed Brick Festival.",
-      "parentHeadsUp": "Ages 2+. Weekly Saturday 10:00–11:00 at Penylan Library."
+      "venueId": "penylan-lego-club"
     },
     {
       "id": "goodsheds-wild-west-play-20260912",
@@ -252,9 +261,7 @@
       "sessionId": "goodsheds-wild-west-play-20260912",
       "checkedAt": "2026-09-10T07:50:00+01:00",
       "ctaLabel": "Book tickets",
-      "venueId": "goodsheds-wild-west-play-20260912",
-      "whyPicked": "Barry indie play party with clear booking path — covers Vale/Barry gap.",
-      "parentHeadsUp": "Book ahead. Headline £17; checkout showed from £18.70. Adult must stay."
+      "venueId": "goodsheds-wild-west-play-20260912"
     },
     {
       "id": "st-fagans-food-festival-sun",
@@ -276,10 +283,15 @@
       "organiserUrl": "https://museum.wales/whatson/food-festival/",
       "score": 86,
       "role": "feature",
-      "whyPicked": "Same free festival on Sunday — keeps the weekend window honest.",
-      "parentHeadsUp": "Techniquest also runs a Relaxed Session Sun morning 10:00–12:00 if you want a quieter Bay option.",
       "checkedAt": "2026-09-10T07:50:00+01:00",
-      "bookingStatus": "free entry · no booking required"
+      "bookingStatus": "free entry · no booking required",
+      "seriesId": "st-fagans-food-festival",
+      "sessionId": "st-fagans-food-festival-sun",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Second day of the free St Fagans Food Festival — stalls, demos, music and family activities across the museum site.",
+      "parentTip": "Entry is free; budget £7 for parking and extra for purchases or paid activities. Check travel information before setting off.",
+      "startsAt": "2026-09-13T10:00:00+01:00",
+      "endsAt": "2026-09-13T18:00:00+01:00"
     }
   ],
   "evergreen": [
@@ -367,5 +379,6 @@
       "venueId": "bute-park",
       "ctaLabel": "See visiting details"
     }
-  ]
+  ],
+  "sourceCheckedAt": "2026-09-11T07:50:00+01:00"
 }

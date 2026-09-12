@@ -45,9 +45,9 @@ export function validatePublicCatalog(data, city) {
 }
 
 export function verifyCityMarkup(html, city) {
-  const title = city === 'bristol' ? 'Bristol' : 'Cardiff';
-  const route = city === 'bristol' ? '/bristol/' : '/';
-  const confirmation = city === 'bristol' ? '/bristol/thank-you/' : '/thank-you';
+  const title = city.charAt(0).toUpperCase() + city.slice(1);
+  const route = city === 'cardiff' ? '/' : `/${city}/`;
+  const confirmation = city === 'cardiff' ? '/thank-you' : `/${city}/thank-you/`;
   if (!new RegExp(`<title\\b[^>]*>[^<]*DoNext ${title}[^<]*</title>`, 'i').test(html) ||
       !new RegExp(`data-city=["']${city}["']`).test(html) || !html.includes(`/assets/brand/${city}/donext-${city}-avatar-v4.png`) ||
       !html.includes(`https://donext.co.uk${route}`) || !/src=["']\/cardiff-catalog\.js["']/.test(html) || !/src=["']\/app\.js["']/.test(html)) {
@@ -67,8 +67,8 @@ export function verifyCityMarkup(html, city) {
 }
 
 export function verifyStagedContract(staged) {
-  for (const city of ['cardiff', 'bristol']) {
-    const htmlPath = city === 'cardiff' ? '/index.html' : '/bristol/index.html';
+  for (const city of ['cardiff', 'bristol', 'birmingham']) {
+    const htmlPath = city === 'cardiff' ? '/index.html' : `/${city}/index.html`;
     verifyCityMarkup(text(staged.get(htmlPath)), city);
     validatePublicCatalog(JSON.parse(text(staged.get(`/data/${city}-today.json`))), city);
     for (const kind of ['avatar', 'share']) {
@@ -76,11 +76,11 @@ export function verifyStagedContract(staged) {
       if (!staged.get(asset)?.bytes?.length) throw new Error(`Missing city asset: ${asset}`);
     }
   }
-  for (const file of ['/base.css', '/style.css', '/cardiff-catalog.js', '/app.js', '/thank-you.html', '/bristol/thank-you/index.html']) {
+  for (const file of ['/base.css', '/style.css', '/cardiff-catalog.js', '/app.js', '/thank-you.html', '/bristol/thank-you/index.html', '/birmingham/thank-you/index.html']) {
     if (!staged.get(file)?.bytes?.length) throw new Error(`Missing shared release file: ${file}`);
   }
   const renderer = text(staged.get('/cardiff-catalog.js'));
-  for (const feature of ['selectPicks', 'pickEndMs', 'groupSessions', 'validateCatalog', '/data/bristol-today.json']) {
+  for (const feature of ['selectPicks', 'pickEndMs', 'groupSessions', 'validateCatalog', '/data/bristol-today.json', '/data/birmingham-today.json']) {
     if (!renderer.includes(feature)) throw new Error(`Catalog renderer is missing required behavior: ${feature}`);
   }
   const redirects = text(staged.get('/_redirects')).split('\n').map(line => line.trim().split(/\s+/));
@@ -91,10 +91,10 @@ export function verifyStagedContract(staged) {
 
 export const releaseRoutes = [
   ['/', 200, 'cardiff'], ['/now/', 200, 'cardiff'], ['/bristol/', 200, 'bristol'],
-  ['/bristol/thank-you/', 200], ['/thank-you', 200],
-  ['/data/cardiff-today.json', 200], ['/data/bristol-today.json', 200],
+  ['/birmingham/', 200, 'birmingham'], ['/birmingham/thank-you/', 200], ['/bristol/thank-you/', 200], ['/thank-you', 200],
+  ['/data/cardiff-today.json', 200], ['/data/bristol-today.json', 200], ['/data/birmingham-today.json', 200],
   ['/base.css', 200], ['/style.css', 200], ['/cardiff-catalog.js', 200], ['/app.js', 200],
-  ...['cardiff', 'bristol'].flatMap(city => ['avatar', 'share'].map(kind => [`/assets/brand/${city}/donext-${city}-${kind}-v4.png`, 200])),
+  ...['cardiff', 'bristol', 'birmingham'].flatMap(city => ['avatar', 'share'].map(kind => [`/assets/brand/${city}/donext-${city}-${kind}-v4.png`, 200])),
   ['/data/sourcing/sources.json', 404], ['/data/sourcing/candidates.json', 404],
   ['/data/sourcing/join-list-2026-09-05.md', 404], ['/data/featured-history.json', 404],
   ['/data/metrics/daily/2026-09-06.json', 404], ['/netlify/functions/hit.mjs', 404],

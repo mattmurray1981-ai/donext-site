@@ -62,7 +62,7 @@ for (const file of files) {
   if (previousSha !== file.sha) unreconciled.push(`${file.path} ${file.sha}`);
 }
 if (unreconciled.length) throw new Error(`Production has unmerged changes; reconcile before replacing: ${unreconciled.join(', ')}`);
-for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json']) {
+for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json', '/data/birmingham-today.json']) {
   const originalCatalog = files.find(file => file.path === catalogPath);
   if (!originalCatalog) continue;
   const bytes = await fs.readFile(planned.get(catalogPath));
