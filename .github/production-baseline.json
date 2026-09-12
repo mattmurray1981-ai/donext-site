@@ -2,17 +2,17 @@
   "deployId": "6a9eca9e8b6e2bbf069def57",
   "files": {
     "/weekend-brief.html": "a17431adbee754a8623fbc7c342cd24d6b1c391f",
-    "/thank-you.html": "e09b628aab3d7d67baf34deb76856c9c744ef92e",
+    "/thank-you.html": "c42a4f088b6e01c9793a6055a9a206cf37f2ae1f",
     "/style.css": "dafb365aee74f742ddc25706b46e6a3fe8bb9f3b",
     "/package.json": "1c422b0d39fa51cc260c2ed13c684de566b891d2",
     "/package-lock.json": "ca7804d332d5b9253ac76dffa80c347b3e5a3cb5",
-    "/now.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
+    "/now.html": "92dd9ac44d3881eb84fbb316d7003f2cb9b8479f",
     "/now/index.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
     "/netlify.toml": "b96a5261effe97fe942785206d9d08546b4fd4a8",
     "/netlify/functions/metrics-day.mjs": "de003e7ead0c4eb258b07b78bbbf83610cf7a135",
     "/netlify/functions/hit.mjs": "8cef12f64ef412f250026088c45e6c72b32216b0",
     "/inject_hit.py": "d01ba828c1f284feea1ffc1a3417e2cf78d47f33",
-    "/index.html": "e5ce2690b4525fa0ab7d621ef803439f0ac936d6",
+    "/index.html": "60014d3a96c121ce07d5f647ca56bbf5a814e286",
     "/favicon.svg": "287467d5a19e6cb1a247707917df69d712897663",
     "/favicon.ico": "483049d5cd3bc9767fb0ca784544d137e4a300e2",
     "/data/sourcing/sources.json": "8faa475a0397d22c72fb5763a2ec0cfb91313be2",
@@ -28,12 +28,12 @@
     "/data/metrics/daily/2026-09-05.json": "46883d7262b84d575e1162b7f17a79805a36a921",
     "/data/metrics/readme.md": "c51ffc4303b335ccb0fe777b72606bf8d98665e4",
     "/data/featured-history.json": "1ceee003ae64719eadd1584da11c60372a235e18",
-    "/data/cardiff-today.json": "884cfce7b13d8fcedfb3b84b6c970408a625bf5d",
+    "/data/cardiff-today.json": "99f0d623b5102d71208fa973003c86cdf47d9d0b",
     "/data/trust-gates.md": "c64ac2417130a4a1d2d6873ee1229c7ae09e04b4",
     "/data/schema.md": "af108234d50645b68ac73ecda952859c0b5f73d0",
     "/data/matthew-gaps.md": "362cb38f9c72cbc13f01fc3e8d1db3eac5596de1",
     "/data/featured-history.md": "427fb765c39f9cf3d3c9d4f77f9e242060af63f5",
-    "/cardiff-catalog.js": "baaf57bb9e421831290dfe447638c23c0f16607a",
+    "/cardiff-catalog.js": "bb542fbef13246ba0ac98061b4bf07101b6ab19c",
     "/cardiff-activities.js": "881d6a0ce7698672d99b0bb048fbedd66a4c2e41",
     "/base.css": "c0f3540864da69a2f8c20d97225f98fe374e96ea",
     "/assets/js/hit.js": "a73ee86f3fdc8cab89278b39a1b37db6cced839a",
@@ -54,8 +54,8 @@
     "/assets/brand/cardiff/donext-cardiff-share-v4.png": "4c7349f276c11103014e53334ae17df13fc34fb3",
     "/assets/brand/cardiff/instagram-feed-template.html": "a244d6bd3dcfb4f79f31408ccad6dd978ae203a6",
     "/assets/brand/cardiff/README.md": "5372e124c4a422335c753f21447da152dad9c2dc",
-    "/data/bristol-today.json": "786ca478ca1f019dfb7ebdc3a8da9c7032a61d00",
-    "/data/birmingham-today.json": "1aea8c6703fc8df34b4bf3b756c7728733bee782",
+    "/data/bristol-today.json": "0a10767cfa6d80f8fd87583feb6d24eeee765d8c",
+    "/data/birmingham-today.json": "ae259b04019c59b12347862a66b5370933705011",
     "/birmingham.html": "f074497ca3fb525eb37c327aa5d614f6ea777539",
     "/birmingham-now.html": "f7129ae4da933ce77b686479ec9695ac0220fe94",
     "/birmingham-catalog.js": "4d9fc3f2f0c16d55b8b33492f888eb431de9d200",
@@ -64,5 +64,10 @@
     "/bristol-catalog.js": "232ab4cd8fd0d974f856c4a63bdc903a1864eb16"
   },
   "reviewedAt": "2026-09-09T13:45:00+01:00",
-  "reason": "Reviewed direct Netlify production changes from 8-9 September before restoring repaired city pages, privacy redirects, public catalogs and preserved functions. Internal sourcing/history files were imported unchanged; root page and Netlify routing are intentionally replaced by the repaired git version."
+  "reason": "Reviewed direct Netlify production changes from 8-9 September before restoring repaired city pages, privacy redirects, public catalogs and preserved functions. Internal sourcing/history files were imported unchanged; root page and Netlify routing are intentionally replaced by the repaired git version.",
+  "reconciliation": {
+    "verifiedAt": "2026-09-12T10:43:53.937960+00:00",
+    "sourceCommit": "de2c734b1473a9d63d6bed21d268f23c5008dfbe",
+    "method": "Public response bytes were compared with the source commit; only exact matches updated the corresponding file hashes. The original deployId identifies the initial baseline, not this later reconciliation."
+  }
 }

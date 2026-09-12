@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-09",
+  "schemaVersion": 1,
+  "collectedAt": "2026-09-10T06:55:57+01:00",
+  "site": {
+    "pageviews": 43,
+    "paths": {
+      "/": 24,
+      "/?utm_source=chatgpt.com": 5,
+      "/now": 3,
+      "/thank-you": 2,
+      "/birmingham/now": 2,
+      "/birmingham/now (fbclid)": 2,
+      "/bristol/": 1,
+      "/bristol/now (fbclid)": 1,
+      "/deploy-check": 1,
+      "/portrait-deploy": 1,
+      "/ (fbclid)": 1
+    },
+    "refs": {
+      "https://www.facebook.com/": 4,
+      "https://chatgpt.com/": 5,
+      "https://donext.co.uk/?utm_source=chatgpt.com": 3,
+      "https://donext.co.uk/now": 1,
+      "https://donext.co.uk/": 6,
+      "https://www.google.com/": 2
+    },
+    "source": "https://donext.co.uk/api/metrics-day?date=2026-09-09"
+  },
+  "signups": {
+    "weekend_brief_total": 2,
+    "weekday_morning_total": 1,
+    "source": "Netlify Forms API totals (not day-delta)",
+    "note": "weekend-brief +1 vs 2026-09-08 (was 1); weekday-morning +1 vs 2026-09-08 (was 0)"
+  },
+  "social": {
+    "instagram_followers": null,
+    "instagram_note": "not on file (needs Graph/session)",
+    "facebook_page_followers": 0,
+    "facebook_note": "last known 2026-09-05 Page Insights scrape (DoNextcardiff); not re-verified this run"
+  },
+  "sourcing": {
+    "last_24h": {
+      "sources_checked": 56,
+      "candidates": 4,
+      "published": 23,
+      "runIds": [
+        "20260909-0830",
+        "20260909-0841",
+        "20260909-1205",
+        "20260910-0750"
+      ],
+      "note": "Wed shortlist + catch-up published; midday silent; Thu morning shortlist 11 picks (deploy held for Site Integrity)"
+    }
+  },
+  "featured": {
+    "last_24h": [
+      {
+        "campaignId": "morning-2026-09-09",
+        "label": "Cardiff Wednesday shortlist 9 Sep 2026",
+        "publishedAt": "2026-09-09T09:05:00+01:00",
+        "featureCount": 9
+      },
+      {
+        "campaignId": "morning-2026-09-10",
+        "label": "Cardiff Thursday shortlist 10 Sep 2026",
+        "publishedAt": "2026-09-10T07:50:00+01:00",
+        "featureCount": 9
+      }
+    ],
+    "note": "featured-history campaigns in window; file updatedAt 2026-09-10T07:50:00+01:00"
+  },
+  "blockers": [
+    "Instagram followers: needs Graph token or warm session",
+    "Facebook followers: Graph token absent; last Insights scrape was 0 on 2026-09-05",
+    "Signups day-delta: Netlify Forms API exposes cumulative totals only"
+  ]
+}

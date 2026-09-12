@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-10",
+  "schemaVersion": 1,
+  "collectedAt": "2026-09-11T07:49:00+01:00",
+  "site": {
+    "pageviews": 27,
+    "paths": {
+      "/": 19,
+      "/bristol/now": 5,
+      "/birmingham/now": 1,
+      "/integrity-sweep": 1,
+      "/now": 1
+    },
+    "refs": {
+      "https://donext.co.uk/bristol": 2
+    },
+    "source": "https://donext.co.uk/api/metrics-day?date=2026-09-10"
+  },
+  "signups": {
+    "weekend_brief_total": 2,
+    "weekday_morning_total": 1,
+    "source": "Netlify Forms API totals (not day-delta)",
+    "note": "unchanged vs 2026-09-09 snapshot (weekend-brief 2, weekday-morning 1); last submissions 2026-09-09"
+  },
+  "social": {
+    "instagram_followers": null,
+    "instagram_note": "not on file (needs Graph/session)",
+    "facebook_page_followers": 0,
+    "facebook_note": "last known 2026-09-05 Page Insights scrape (DoNextcardiff); not re-verified this run"
+  },
+  "sourcing": {
+    "last_24h": {
+      "sources_checked": 32,
+      "candidates": 1,
+      "published": 11,
+      "runIds": [
+        "20260910-0750",
+        "20260910-1248"
+      ],
+      "note": "Thu morning shortlist 11 picks (deploy held Site Integrity); midday hot alert SILENT; duplicate morning ledger entry cardiff-morning-shortlist-20260910-0808 not double-counted"
+    }
+  },
+  "featured": {
+    "last_24h": [
+      {
+        "campaignId": "morning-2026-09-10",
+        "label": "Cardiff Thursday shortlist 10 Sep 2026",
+        "publishedAt": "2026-09-10T07:50:00+01:00",
+        "featureCount": 9
+      }
+    ],
+    "note": "featured-history campaigns in window; file updatedAt 2026-09-10T07:50:00+01:00; no Fri morning (Mon\u2013Thu only)"
+  },
+  "blockers": [
+    "Instagram followers: needs Graph token or warm session",
+    "Facebook followers: Graph token absent; last Insights scrape was 0 on 2026-09-05",
+    "Signups day-delta: Netlify Forms API exposes cumulative totals only"
+  ]
+}
