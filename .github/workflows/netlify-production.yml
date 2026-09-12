@@ -41,7 +41,10 @@ jobs:
       - name: Check date and recommendation behavior
         run: |
           python3 .github/scripts/generate-city-pages.py --check
-          node --test tests/catalog.test.cjs .github/scripts/deployment.test.mjs
+          node --test tests/catalog.test.cjs tests/functions.test.mjs .github/scripts/deployment.test.mjs .github/scripts/function-repairs.test.mjs
+
+      - name: Prepare reviewed function repairs
+        run: node .github/scripts/prepare-function-repairs.mjs "$RUNNER_TEMP/function-repairs"
 
       - name: Stage tracked site files
         shell: bash
@@ -65,4 +68,4 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
-        run: node .github/scripts/deploy-preserved-site.mjs "$RUNNER_TEMP/site"
+        run: NETLIFY_FUNCTION_REPAIRS="$RUNNER_TEMP/function-repairs/repairs.json" node .github/scripts/deploy-preserved-site.mjs "$RUNNER_TEMP/site"
