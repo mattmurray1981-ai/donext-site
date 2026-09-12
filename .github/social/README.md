@@ -4,7 +4,7 @@ Independent Instagram and Facebook Page publishing using Meta's API and the exis
 
 ## Current status
 
-Implementation prepared; all three cities disabled; empty queue; **no direct Meta publishing test has happened**. Handles are expected identities, not proof that the accounts exist. Cardiff and Birmingham Page IDs must be discovered and pinned after authorisation. Existing Bristol ID came from its connected account. No credentials or subscriber records belong in this public repository.
+Implementation prepared; all three cities disabled; empty queue; **no direct Meta publishing test has happened**. On 12 September 2026, a signed-in Meta Graph API Explorer read using the DoNext app returned Bristol Page `1278713381995669` linked to Instagram `17841427092617738` / `donext_bristol`, and Cardiff Page `1003042559562888` linked to Instagram `17841444957174775` / `donext_cardiff`. Those Page IDs are pinned. Birmingham was not returned by that authorisation; its handle remains an expected identity, not proof that the account exists. No credentials or subscriber records belong in this public repository.
 
 ## One-time connection
 
@@ -12,7 +12,7 @@ Implementation prepared; all three cities disabled; empty queue; **no direct Met
 2. Authorise `pages_show_list`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`, and `pages_manage_posts` for those Pages. Obtain the matching **Page access token** for each city using Meta's supported token flow. Do not use an Instagram Login token with this Facebook Login adapter. Use supported long-lived credentials and track expiry/revocation; this implementation does not refresh them.
 3. Store tokens as GitHub Actions secrets `META_CARDIFF_PAGE_TOKEN`, `META_BRISTOL_PAGE_TOKEN`, `META_BIRMINGHAM_PAGE_TOKEN`. Never send them in chat, commit them, or put them in Actions variables. They are passed only to Meta via an Authorization header. The workflow does not print provider bodies.
 4. Run **DoNext direct social publishing → check**. This is read-only: verifies the token identifies the expected Page and Instagram handle, not that a write will succeed. Pin confirmed Page IDs in `accounts.json`.
-5. Provision branch `donext-publishing-state` with `state.json` containing `{"version":1,"posts":{}}`. The publisher refuses to invent missing state; it must be created once and retained. Its records are public IDs/statuses and content hashes, never secrets or subscriber addresses.
+5. Branch `donext-publishing-state` was provisioned on 12 September 2026 with an empty version-1 `state.json`. Retain that history; do not initialise it again. The publisher refuses to invent missing state. Its records are public IDs/statuses and content hashes, never secrets or subscriber addresses.
 6. Prepare one genuinely current, fact-checked JPEG post for a connected city, enable that city, set Actions variable `DONEXT_SOCIAL_ENABLED=true`, and run `publish`. Check the published permalink/account before enabling more cities. Authentication failure is a blocker, not a successful connection.
 
 GitHub secrets: https://github.com/mattmurray1981-ai/donext-site/settings/secrets/actions
