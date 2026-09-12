@@ -113,5 +113,59 @@
     "verified": 10,
     "published": 10,
     "notes": "Wed shortlist. Hero Llanishen Rhyme. No new Gmail publishes."
+  },
+  {
+    "runId": "20260909-1205",
+    "startedAt": "2026-09-09T12:05:00+01:00",
+    "finishedAt": "2026-09-09T12:12:00+01:00",
+    "sourcesChecked": 8,
+    "groupPostsProcessed": 35,
+    "candidatesNew": 0,
+    "candidatesDeduped": 0,
+    "verified": 0,
+    "published": 0,
+    "rejected": 10,
+    "notes": "Midday hot alert SILENT. Gmail after checkpoint 09:05: 35 facebookmail threads newer than morning (50-page after:2026/09/09; Label_8 DoNext/Leads 0). Opened: Glamorgan Cricket Sophia fireworks Thu 5 Nov (paid, out of window); Holly Corsi DanceFit Boys Street Dance (class marketing, no venue/time/cost/ages/public organiser CTA); Heidoo Carey Fighting Homelessness free fitness for parents/carers (adult, not 0\u201312 kids plan); Sophie Chitate-Lewis x3 / Motio Camps / Sophie Fry / Musical Minds / Princes Street Totally Tots (empty FB bodies \u2014 unverifiable). Web light: Hubs /hub-events 404, /events weekly Mon kids only (no new same-day afternoon free); Outdoor Cardiff events empty; Chapter adult films / Iris LGBTQ skip; Techniquest closed Wed\u2013Thu maintenance; Museum of Cardiff still closed (leak); Bute Park Carnation listing no same-day free kids drop-in; St Fagans Food Festival already morning-published; Caerphilly Miners Lego morning already published / Stay & Play Fri only. Met Office sunny intervals ~19\u00b0C rain <5% rest of Wed. Prefer silence \u2014 no \u226580 free/unusual same-day verify."
+  },
+  {
+    "runId": "20260910-0750",
+    "type": "morning-shortlist",
+    "startedAt": "2026-09-10T07:12:00+01:00",
+    "finishedAt": "2026-09-10T07:50:00+01:00",
+    "sourcesChecked": 22,
+    "groupPostsProcessed": 0,
+    "candidatesNew": 1,
+    "candidatesDeduped": 0,
+    "verified": 11,
+    "published": 11,
+    "rejected": 2,
+    "notes": "Thu morning shortlist. Gmail MCP unavailable (0 facebookmail). Re-verified Hubs Story Time+Craft + No Fit State Circus (today); Play Time + Miners Stay&Play + TQ Toddler Day (Fri); St Fagans Food Festival Sat/Sun hero; Brick Festival; Penylan LEGO; Canopi trade day (medium \u2014 entry fee not stated); Goodsheds Wild West via DesignMyNight. Rejected Global Gardens Outdoor Play (Eventbrite page stale/date conflict Sep12 vs Sep13; not organiser-clean). Outdoor Cardiff events empty. Chapter cinema-heavy / no clear kids drop-in. Museum of Cardiff still closed (leak). Met Office: Thu wet/breezy afternoon \u2014 indoor hubs strong; weekend Food Festival still outdoor-viable with rain risk Sat. Catalog refreshed in deploy tree. Do NOT deploy \u2014 await Site Integrity GREEN. featured-history.json had been overwritten with Birmingham campaigns \u2014 restored to Cardiff + morning-2026-09-10."
+  },
+  {
+    "runId": "cardiff-morning-shortlist-20260910-0808",
+    "campaignId": "morning-2026-09-10",
+    "startedAt": "2026-09-10T08:08:44+02:00",
+    "finishedAt": "2026-09-10T07:15:00+01:00",
+    "sourcesChecked": 22,
+    "groupPostsProcessed": 0,
+    "candidates": 12,
+    "verified": 11,
+    "published": 11,
+    "emailSent": false,
+    "emailBlocker": "user-Gmail needsAuth",
+    "notes": "First Cardiff morning-shortlist routine fire. Sibling Bristol+Birmingham cuts present. Combined HTML ready. Organiser re-verify pass on Llandaff craft, St Fagans Food Festival, mac Stories 4 Nature, Bournville Heritage Open Day. Deploy held for Site Integrity GREEN. Gmail MCP needsAuth blocks send + facebookmail ingest."
+  },
+  {
+    "runId": "20260910-1248",
+    "startedAt": "2026-09-10T12:48:40+01:00",
+    "finishedAt": "2026-09-10T12:55:00+01:00",
+    "sourcesChecked": 10,
+    "groupPostsProcessed": 46,
+    "candidatesNew": 0,
+    "candidatesDeduped": 0,
+    "verified": 0,
+    "published": 0,
+    "rejected": 16,
+    "notes": "Midday hot alert SILENT. Gmail after checkpoint 07:50: 46 facebookmail threads; Label_8 DoNext/Leads newer today 0. Opened kids-adjacent: next-Sunday charity party; Little Rays ~2 weeks (empty body); tennis membership giveaway; mascot party packages; gymnastics class marketing (empty); October makers market; Halloween reminder; St Fagans share already published. Web light: Hubs No Fit State re-verified but morning-published score 74/cost unclear; Outdoor empty; TQ closed today; Museum Cardiff still leak-closed; Miners Fri Stay & Play only; NMC open tourist staple; rain rising PM. Prefer silence \u2014 no \u226580 free/unusual same-day verify."
   }
 ]

@@ -8,7 +8,7 @@
     "/package-lock.json": "ca7804d332d5b9253ac76dffa80c347b3e5a3cb5",
     "/now.html": "92dd9ac44d3881eb84fbb316d7003f2cb9b8479f",
     "/now/index.html": "bc864c6b4cbf877124dd67f89e6a59d47197d31c",
-    "/netlify.toml": "b96a5261effe97fe942785206d9d08546b4fd4a8",
+    "/netlify.toml": "551405bed8c528e81c715f9d94f3f94dac31e783",
     "/netlify/functions/metrics-day.mjs": "de003e7ead0c4eb258b07b78bbbf83610cf7a135",
     "/netlify/functions/hit.mjs": "8cef12f64ef412f250026088c45e6c72b32216b0",
     "/inject_hit.py": "d01ba828c1f284feea1ffc1a3417e2cf78d47f33",
@@ -68,6 +68,8 @@
   "reconciliation": {
     "verifiedAt": "2026-09-12T10:43:53.937960+00:00",
     "sourceCommit": "de2c734b1473a9d63d6bed21d268f23c5008dfbe",
-    "method": "Public response bytes were compared with the source commit; only exact matches updated the corresponding file hashes. The original deployId identifies the initial baseline, not this later reconciliation."
+    "method": "Public response bytes were compared with the source commit; only exact matches updated the corresponding file hashes. The original deployId identifies the initial baseline, not this later reconciliation.",
+    "authenticatedSnapshot": "6aa3bece16888ff60b662757",
+    "routingReview": "Live TOML is Netlify-expanded configuration. Its redirect semantics exactly match de2c734; planned aliases and restored privacy routes are intentional repairs. All three newer sourcing files are preserved byte-for-byte."
   }
 }

@@ -279,6 +279,13 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     const publishedDeploy = await api(`/sites/${siteId}/deploys/${candidateId}`);
     await verifyFunctions(candidateId, publishedDeploy);
     await verifyManifest(candidateId);
+    // Read form definitions only; never fetch subscriber details into CI logs.
+    try {
+      const forms = await api(`/sites/${siteId}/forms`);
+      log(JSON.stringify({ phase: 'signup-form-definitions', forms: forms.map(form => ({ name: form.name, submissions: form.submission_count })) }));
+    } catch (error) {
+      log(JSON.stringify({ phase: 'signup-form-definitions-unavailable', detail: redact(error.message) }));
+    }
     const result = { phase: 'published', publishedDeployId: candidateId, preservedFrom: liveId, functionSourceDeployId: functionSourceId, fileCount: manifest.count, functions: Object.keys(functionsDigest), url: publishedSite.ssl_url || publishedSite.url };
     log(JSON.stringify(result));
     return result;
