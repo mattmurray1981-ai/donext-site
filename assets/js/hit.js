@@ -1,1 +1,0 @@
-(function(){try{var p=location.pathname+(location.search||"");var r=document.referrer||"";fetch("/.netlify/functions/hit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path:p,ref:r}),keepalive:true}).catch(function(){})}catch(e){}})();
