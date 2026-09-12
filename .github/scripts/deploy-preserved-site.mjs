@@ -125,7 +125,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     }
     // This also runs for direct CLI use: a repair must never roll today's research
     // back just because a previous design/function deployment was healthier.
-    for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json']) {
+    for (const catalogPath of ['/data/cardiff-today.json', '/data/bristol-today.json', '/data/birmingham-today.json']) {
       if (!original.has(catalogPath) || original.get(catalogPath).sha === staged.get(catalogPath).sha) continue;
       const response = await request(`/sites/${siteId}/files${catalogPath}`, { headers: { 'Content-Type': 'application/vnd.bitballoon.v1.raw' } });
       const bytes = Buffer.from(await response.arrayBuffer());
@@ -212,10 +212,12 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
         if (response.status !== expectedStatus) throw new Error(`Candidate route ${route} returned ${response.status}, expected ${expectedStatus}`);
         if (city) {
           verifyCityMarkup(await response.text(), city);
-        } else if (route === '/bristol/thank-you/') {
+        } else if (/^\/(bristol|birmingham)\/thank-you\/$/.test(route)) {
           const html = await response.text();
-          if (!html.includes('DoNext Bristol') || !html.includes('href="/bristol/"')) throw new Error('Candidate Bristol confirmation points to the wrong city');
-        } else if (route === '/data/cardiff-today.json' || route === '/data/bristol-today.json') {
+          const slug = route.split('/')[1];
+          const name = slug.charAt(0).toUpperCase() + slug.slice(1);
+          if (!html.includes(`DoNext ${name}`) || !html.includes(`href="/${slug}/"`)) throw new Error(`Candidate ${name} confirmation points to the wrong city`);
+        } else if (['/data/cardiff-today.json', '/data/bristol-today.json', '/data/birmingham-today.json'].includes(route)) {
           if (sha1(Buffer.from(await response.arrayBuffer())) !== staged.get(route).sha) throw new Error('Candidate public catalog differs from staged catalog');
         } else if (route === '/__forms.html') {
           const html = await response.text();
@@ -230,7 +232,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
           if (expectedStatus === 200 && staged.has(route) && sha1(bytes) !== staged.get(route).sha) throw new Error(`Candidate asset differs from staged file: ${route}`);
         }
       }
-      for (const [route, status, destination] of [['/bristol/now', 302, '/bristol/'], ['/bristol/index.html', 301, '/bristol/']]) {
+      for (const [route, status, destination] of ['bristol', 'birmingham'].flatMap(slug => [[`/${slug}/now`, 302, `/${slug}/`], [`/${slug}/index.html`, 301, `/${slug}/`]])) {
         const response = await fetchImpl(new URL(route, base), { redirect: 'manual', signal: AbortSignal.timeout(30000) });
         if (response.status !== status || new URL(response.headers.get('location') || '/', base).href !== new URL(destination, base).href) throw new Error(`Candidate city alias is wrong: ${route}`);
         await response.arrayBuffer();

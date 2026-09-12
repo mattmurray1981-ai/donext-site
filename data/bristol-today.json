@@ -1,30 +1,11 @@
 {
   "schemaVersion": 1,
   "city": "Bristol",
-  "updatedAt": "2026-09-11T07:47:00+01:00",
+  "updatedAt": "2026-09-12T11:37:42+01:00",
   "staleAfterHours": 36,
-  "headline": "Thu–weekend Bristol kids shortlist (10–13 Sep)",
-  "summary": "NEW: Winterbourne Saturday Lego, today’s Staple Hill / Emersons Green / Horfield / Bedminster / Hanham morning rhymes — plus still-true Cadbury Heath Lego before refurb, Thu–Fri Crafternoons, Blaise Saturday, Tiny Planet in Bath. Aardman free trail corrected to through 1 Nov (not ending Sun). Harbour trains this weekend CANCELLED.",
-  "notices": [
-    {
-      "title": "Weather (Met Office Bristol)",
-      "detail": "Thu 10: dry morning then cloudier, rain chance rising from ~1pm (30–60% mid/late afternoon), high ~19°C, breezy. Fri 11: improving after damp overnight — sunny intervals ~22°C, rain chance low daytime. Sat 12: sunny intervals ~22°C, rain chance rises ~30–40% from mid-afternoon. Sun 13: brighter after early damp (~50% early), drying ~22°C. Outdoor viable Fri–Sun mornings; watch Thu afternoon rain and Sat late.",
-      "sourceName": "Met Office Bristol",
-      "sourceUrl": "https://weather.metoffice.gov.uk/forecast/gcnhtnumz"
-    },
-    {
-      "title": "Harbour railway this weekend",
-      "detail": "M Shed Bristol Harbour Railway train rides on Sat 12 & Sun 13 Sep are CANCELLED (organiser notice). Next advertised weekend is 26–27 Sep — call 0117 352 6600 to confirm before travel.",
-      "sourceName": "Bristol Museums / M Shed",
-      "sourceUrl": "https://www.bristolmuseums.org.uk/whats-on/m-shed/train-rides/"
-    },
-    {
-      "title": "Aardman mini-museum hunt dates",
-      "detail": "Organiser page now lists Mini-museum hunt! 50 years of Aardman at BMAG as 13 Feb–1 Nov 2026 (not ending 13 Sep). Free trail still available Tue–Sun.",
-      "sourceName": "Bristol Museums",
-      "sourceUrl": "https://www.bristolmuseums.org.uk/whats-on/bristol-museum-and-art-gallery/mini-museum-hunt-aardman/"
-    }
-  ],
+  "headline": "This weekend in Bristol & nearby",
+  "summary": "Choose a date and age range to find a plan that fits.",
+  "notices": [],
   "datedPicks": [
     {
       "id": "winterbourne-lego-2026-09-12",
@@ -46,10 +27,15 @@
       "confidence": "high",
       "score": 88,
       "role": "hero",
-      "whyPicked": "NEW free Saturday Lego never featured — fills north-fringe gap without repeating yesterday’s Cadbury Heath hero.",
-      "parentHeadsUp": "Drop-in; email Winterbourne.Library@southglos.gov.uk. Next dated slots also 10 Oct / 7 Nov / 5 Dec.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "winterbourne-lego",
+      "sessionId": "winterbourne-lego-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free monthly Saturday Lego club for primary-aged children; adult must accompany. Creative build session on the north fringe.",
+      "parentTip": "Drop-in; email Winterbourne.Library@southglos.gov.uk. Next dated slots also 10 Oct / 7 Nov / 5 Dec.",
+      "startsAt": "2026-09-12T10:00:00+01:00",
+      "endsAt": "2026-09-12T11:00:00+01:00"
     },
     {
       "id": "kingswood-crafternoon-2026-09-11",
@@ -72,10 +58,15 @@
       "confidence": "high",
       "score": 80,
       "role": "feature",
-      "whyPicked": "Still-true free Friday craft before weekend Blaise/Lego plans.",
-      "parentHeadsUp": "Ages 4+; staffed Fri 10–5. Reminder (featured yesterday).",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "kingswood-crafternoon",
+      "sessionId": "kingswood-crafternoon-2026-09-11",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free weekly after-school crafts for children aged 4+; adult must accompany. Drop-in Friday Crafternoon.",
+      "parentTip": "Ages 4+; an adult must accompany. Drop in during the session.",
+      "startsAt": "2026-09-11T15:30:00+01:00",
+      "endsAt": "2026-09-11T16:30:00+01:00"
     },
     {
       "id": "cadbury-heath-lego-2026-09-12",
@@ -97,10 +88,15 @@
       "confidence": "high",
       "score": 88,
       "role": "feature",
-      "whyPicked": "Still-true free Saturday Lego with refurb urgency — yesterday’s hero (reminder only for email).",
-      "parentHeadsUp": "Drop-in; email CadburyHeath.Library@southglos.gov.uk. Library closes for refurb from 21 Sep (reopens 14 Dec).",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "cadbury-heath-lego",
+      "sessionId": "cadbury-heath-lego-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free creative Lego club for primary-aged children — listen to stories/poems then build a model to display. Adult must accompany. Dated Saturday session before Cadbury Heath Library closes for refurbishment from 21 September.",
+      "parentTip": "Drop-in; email CadburyHeath.Library@southglos.gov.uk. Library closes for refurb from 21 Sep (reopens 14 Dec).",
+      "startsAt": "2026-09-12T10:30:00+01:00",
+      "endsAt": "2026-09-12T11:30:00+01:00"
     },
     {
       "id": "patchway-lego-2026-09-12",
@@ -122,10 +118,15 @@
       "confidence": "high",
       "score": 82,
       "role": "feature",
-      "whyPicked": "Still-true free Saturday Lego north Bristol.",
-      "parentHeadsUp": "Drop-in; email Patchway.Library@southglos.gov.uk.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "patchway-lego",
+      "sessionId": "patchway-lego-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free monthly Saturday Lego club for primary-aged children; adult must accompany. Second Saturday of the month drop-in.",
+      "parentTip": "Drop-in; email Patchway.Library@southglos.gov.uk.",
+      "startsAt": "2026-09-12T10:00:00+01:00",
+      "endsAt": "2026-09-12T11:00:00+01:00"
     },
     {
       "id": "kingswood-lego-2026-09-12",
@@ -147,10 +148,15 @@
       "confidence": "high",
       "score": 82,
       "role": "feature",
-      "whyPicked": "Still-true free Saturday morning Lego east of the city.",
-      "parentHeadsUp": "Drop-in; email Kingswood.Library@southglos.gov.uk. Staffed Sat 9.30am–12.30pm.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "kingswood-lego",
+      "sessionId": "kingswood-lego-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free fortnightly Saturday Lego club for primary-aged children; adult must accompany. Creative build-and-display session.",
+      "parentTip": "Drop-in; email Kingswood.Library@southglos.gov.uk. Staffed Sat 9.30am–12.30pm.",
+      "startsAt": "2026-09-12T10:30:00+01:00",
+      "endsAt": "2026-09-12T11:15:00+01:00"
     },
     {
       "id": "staple-hill-lego-2026-09-12",
@@ -172,10 +178,15 @@
       "confidence": "high",
       "score": 78,
       "role": "backup",
-      "whyPicked": "Still-true free Saturday Lego east/north — catalog backup.",
-      "parentHeadsUp": "Drop-in; email StapleHill.Library@southglos.gov.uk.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "staple-hill-lego",
+      "sessionId": "staple-hill-lego-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free monthly Saturday Lego club for primary-aged children; adult must accompany.",
+      "parentTip": "Drop-in; email StapleHill.Library@southglos.gov.uk.",
+      "startsAt": "2026-09-12T10:30:00+01:00",
+      "endsAt": "2026-09-12T11:30:00+01:00"
     },
     {
       "id": "blaise-dairy-garden-2026-09-12",
@@ -198,10 +209,15 @@
       "confidence": "high",
       "score": 90,
       "role": "feature",
-      "whyPicked": "Still-true free Blaise Saturday secret garden.",
-      "parentHeadsUp": "Same estate as Community Garden Art Show (9.45am–3pm). Light rain risk rises mid-afternoon Sat — morning window better.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "blaise-dairy-garden",
+      "sessionId": "blaise-dairy-garden-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Secret Dairy Garden with open-air amphitheatre, historic planting and Nash-designed Dairy (1803–5). Picnic welcome; Friends of Blaise volunteers on hand.",
+      "parentTip": "Picnics welcome. The nearby Community Garden Art Show runs 09:45–15:00.",
+      "startsAt": "2026-09-12T11:00:00+01:00",
+      "endsAt": "2026-09-12T13:00:00+01:00"
     },
     {
       "id": "blaise-community-garden-art-show-2026-09-12",
@@ -224,10 +240,15 @@
       "confidence": "high",
       "score": 92,
       "role": "feature",
-      "whyPicked": "Still-true free local outdoor community day with kid-friendly trails.",
-      "parentHeadsUp": "Dogs on leads welcome. Pair with Dairy Garden 11am–1pm.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "blaise-community-garden-art-show",
+      "sessionId": "blaise-community-garden-art-show-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Working community garden with ponds, beehives, insect trails and an Art Show plus Garden Café — family-friendly Blaise 100 Saturday.",
+      "parentTip": "Dogs on leads welcome. Pair with Dairy Garden 11am–1pm.",
+      "startsAt": "2026-09-12T09:45:00+01:00",
+      "endsAt": "2026-09-12T15:00:00+01:00"
     },
     {
       "id": "filton-library-art-club-2026-09-12",
@@ -249,10 +270,15 @@
       "confidence": "high",
       "score": 90,
       "role": "feature",
-      "whyPicked": "Still-true free Saturday craft slot for 7–11s north of the city.",
-      "parentHeadsUp": "Drop-in; email Filton.Library@southglos.gov.uk.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "filton-library-art-club",
+      "sessionId": "filton-library-art-club-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free monthly arts and crafts for ages 7–11; adult must accompany. Second Saturday of the month drop-in.",
+      "parentTip": "Drop-in; email Filton.Library@southglos.gov.uk.",
+      "startsAt": "2026-09-12T11:00:00+01:00",
+      "endsAt": "2026-09-12T11:45:00+01:00"
     },
     {
       "id": "bristol-central-library-rhyme-2026-09-12",
@@ -273,16 +299,21 @@
       "confidence": "high",
       "score": 78,
       "role": "feature",
-      "whyPicked": "Still-true free central weekend 0–4 with clear official timetable.",
-      "parentHeadsUp": "No booking needed (unlike St George). All year for Central.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "bristol-central-library-rhyme",
+      "sessionId": "bristol-central-library-rhyme-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 0–4 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Librarian-led nursery rhymes and songs for babies and toddlers (0–3; storytime suit 1–4). All-year Saturday session; older siblings welcome.",
+      "parentTip": "No booking needed (unlike St George). All year for Central. Finish time is not confirmed; check before travelling.",
+      "timeStatus": "end-unconfirmed",
+      "startsAt": "2026-09-12T10:45:00+01:00"
     },
     {
       "id": "tiny-planet-egg-2026-09-12",
       "title": "Tiny Planet (Half a String) at the egg",
       "date": "2026-09-12",
-      "time": "Sat 12 & Sun 13 Sep · 11.30am & 3pm (55 mins)",
+      "time": "11:30–12:25",
       "location": "the egg, Theatre Royal Bath, 36 Monmouth Street, Bath BA1 2AN",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=the+egg+Theatre+Royal+Bath+36+Monmouth+Street+BA1+2AN",
       "cost": "£11–£14 inc. fees",
@@ -298,10 +329,105 @@
       "confidence": "high",
       "score": 92,
       "role": "feature",
-      "whyPicked": "Still-true scarce indie puppetry for 5+ on the Bath weekend.",
-      "parentHeadsUp": "~30–40 min from central Bristol. Egg Café opens 30 mins before shows. Book tickets online.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "book ahead"
+      "bookingStatus": "book ahead",
+      "seriesId": "tiny-planet-egg",
+      "sessionId": "tiny-planet-egg-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "parentTip": "~30–40 min from central Bristol. Egg Café opens 30 mins before shows. Book tickets online.",
+      "startsAt": "2026-09-12T11:30:00+01:00",
+      "endsAt": "2026-09-12T12:25:00+01:00"
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-12-2026-09-12-1500",
+      "title": "Tiny Planet (Half a String) at the egg",
+      "date": "2026-09-12",
+      "time": "15:00–15:55",
+      "location": "the egg, Theatre Royal Bath, 36 Monmouth Street, Bath BA1 2AN",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=the+egg+Theatre+Royal+Bath+36+Monmouth+Street+BA1+2AN",
+      "cost": "£11–£14 inc. fees",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "url": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "organiserUrl": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "sourceName": "Theatre Royal Bath / the egg",
+      "indoorOutdoor": "indoor",
+      "confidence": "high",
+      "score": 92,
+      "role": "feature",
+      "checkedAt": "2026-09-10T07:35:00+01:00",
+      "bookingStatus": "book ahead",
+      "seriesId": "tiny-planet-egg",
+      "sessionId": "tiny-planet-egg-2026-09-12-2026-09-12-1500",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "parentTip": "~30–40 min from central Bristol. Egg Café opens 30 mins before shows. Book tickets online.",
+      "startsAt": "2026-09-12T15:00:00+01:00",
+      "endsAt": "2026-09-12T15:55:00+01:00"
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-12-2026-09-13-1130",
+      "title": "Tiny Planet (Half a String) at the egg",
+      "date": "2026-09-13",
+      "time": "11:30–12:25",
+      "location": "the egg, Theatre Royal Bath, 36 Monmouth Street, Bath BA1 2AN",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=the+egg+Theatre+Royal+Bath+36+Monmouth+Street+BA1+2AN",
+      "cost": "£11–£14 inc. fees",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "url": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "organiserUrl": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "sourceName": "Theatre Royal Bath / the egg",
+      "indoorOutdoor": "indoor",
+      "confidence": "high",
+      "score": 92,
+      "role": "feature",
+      "checkedAt": "2026-09-10T07:35:00+01:00",
+      "bookingStatus": "book ahead",
+      "seriesId": "tiny-planet-egg",
+      "sessionId": "tiny-planet-egg-2026-09-12-2026-09-13-1130",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "parentTip": "~30–40 min from central Bristol. Egg Café opens 30 mins before shows. Book tickets online.",
+      "startsAt": "2026-09-13T11:30:00+01:00",
+      "endsAt": "2026-09-13T12:25:00+01:00"
+    },
+    {
+      "id": "tiny-planet-egg-2026-09-12-2026-09-13-1500",
+      "title": "Tiny Planet (Half a String) at the egg",
+      "date": "2026-09-13",
+      "time": "15:00–15:55",
+      "location": "the egg, Theatre Royal Bath, 36 Monmouth Street, Bath BA1 2AN",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=the+egg+Theatre+Royal+Bath+36+Monmouth+Street+BA1+2AN",
+      "cost": "£11–£14 inc. fees",
+      "ageBands": [
+        "5-8",
+        "9-12"
+      ],
+      "description": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "url": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "organiserUrl": "https://www.theatreroyal.org.uk/events/tiny-planet/",
+      "sourceName": "Theatre Royal Bath / the egg",
+      "indoorOutdoor": "indoor",
+      "confidence": "high",
+      "score": 92,
+      "role": "feature",
+      "checkedAt": "2026-09-10T07:35:00+01:00",
+      "bookingStatus": "book ahead",
+      "seriesId": "tiny-planet-egg",
+      "sessionId": "tiny-planet-egg-2026-09-12-2026-09-13-1500",
+      "ageSuitability": "DoNext fit: ages 5–8, 9–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Puppet theatre with live folk song and camera projection: a whole world no bigger than a house. Distinctive family show for ages 5+ — book ahead for weekend slots.",
+      "parentTip": "~30–40 min from central Bristol. Egg Café opens 30 mins before shows. Book tickets online.",
+      "startsAt": "2026-09-13T15:00:00+01:00",
+      "endsAt": "2026-09-13T15:55:00+01:00"
     },
     {
       "id": "aardman-mini-museum-hunt-2026-09-12",
@@ -324,10 +450,46 @@
       "confidence": "high",
       "score": 86,
       "role": "feature",
-      "whyPicked": "Still-true free all-ages indoor trail — date window corrected this run (through 1 Nov, not ending Sun 13).",
-      "parentHeadsUp": "Drop-in, no booking. Separate paid Aardman exhibition at M Shed is frequently sold out — this free hunt is at BMAG only.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
-      "bookingStatus": "free drop-in"
+      "bookingStatus": "free drop-in",
+      "seriesId": "aardman-mini-museum-hunt",
+      "sessionId": "aardman-mini-museum-hunt-2026-09-12",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free family detective trail: pick up a map and hunt tiny Aardman treasures hidden around the galleries. Organiser page lists the trail 13 Feb–1 Nov 2026 (not a short summer-only run).",
+      "parentTip": "Drop-in, no booking. Separate paid Aardman exhibition at M Shed is frequently sold out — this free hunt is at BMAG only.",
+      "startsAt": "2026-09-12T10:00:00+01:00",
+      "endsAt": "2026-09-12T17:00:00+01:00"
+    },
+    {
+      "id": "aardman-mini-museum-hunt-2026-09-12-sunday",
+      "title": "Mini-museum hunt! 50 years of Aardman",
+      "date": "2026-09-13",
+      "time": "10:00–17:00",
+      "location": "Bristol Museum & Art Gallery, Queens Road, Bristol BS8 1RL",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bristol+Museum+and+Art+Gallery+Queens+Road+BS8+1RL",
+      "cost": "Free (donations welcome)",
+      "ageBands": [
+        "0-4",
+        "5-8",
+        "9-12"
+      ],
+      "description": "Free family detective trail: pick up a map and hunt tiny Aardman treasures hidden around the galleries. Organiser page lists the trail 13 Feb–1 Nov 2026 (not a short summer-only run).",
+      "url": "https://www.bristolmuseums.org.uk/whats-on/bristol-museum-and-art-gallery/mini-museum-hunt-aardman/",
+      "organiserUrl": "https://www.bristolmuseums.org.uk/whats-on/bristol-museum-and-art-gallery/mini-museum-hunt-aardman/",
+      "sourceName": "Bristol Museums",
+      "indoorOutdoor": "indoor",
+      "confidence": "high",
+      "score": 86,
+      "role": "feature",
+      "checkedAt": "2026-09-10T07:35:00+01:00",
+      "bookingStatus": "free drop-in",
+      "seriesId": "aardman-mini-museum-hunt",
+      "sessionId": "aardman-mini-museum-hunt-2026-09-12-sunday",
+      "ageSuitability": "DoNext fit: ages 0–12 with an adult. Check the organiser’s age guidance before booking.",
+      "appeal": "Free family detective trail: pick up a map and hunt tiny Aardman treasures hidden around the galleries. Organiser page lists the trail 13 Feb–1 Nov 2026 (not a short summer-only run).",
+      "parentTip": "Drop-in, no booking. Separate paid Aardman exhibition at M Shed is frequently sold out — this free hunt is at BMAG only.",
+      "startsAt": "2026-09-13T10:00:00+01:00",
+      "endsAt": "2026-09-13T17:00:00+01:00"
     }
   ],
   "evergreen": [
@@ -350,7 +512,6 @@
       "confidence": "high",
       "score": 80,
       "role": "backup",
-      "whyPicked": "Always-on free creative drop-in for families at a harbourside indie gallery.",
       "parentHeadsUp": "Available Tuesday–Sunday 11am–6pm.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
       "bookingStatus": "free drop-in"
@@ -375,9 +536,9 @@
       "statusNote": "Homepage confirms open 7 days; confirm current entry/donation details on arrival.",
       "score": 72,
       "role": "backup",
-      "whyPicked": "Local indie outdoor staple when you need a simple farm visit.",
       "checkedAt": "2026-09-10T07:35:00+01:00",
       "bookingStatus": "check on arrival"
     }
-  ]
+  ],
+  "sourceCheckedAt": "2026-09-11T07:47:00+01:00"
 }

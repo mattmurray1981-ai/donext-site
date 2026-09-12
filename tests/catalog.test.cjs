@@ -126,11 +126,12 @@ test('notices respect selected dates, Monday opening patterns, and weather expir
   assert.deepEqual(catalog.relevantNotices(notices, [], 'today', now).map(item => item.title), ['Weekday closure', 'Monday closure']);
 });
 
-test('city resolution defaults to Cardiff and only allows the two explicit catalogs', () => {
+test('city resolution defaults to Cardiff and only allows the three explicit catalogs', () => {
   assert.deepEqual(catalog.resolveCity(), { id: 'cardiff', name: 'Cardiff', catalogUrl: '/data/cardiff-today.json' });
   assert.equal(catalog.resolveCity(null).id, 'cardiff');
   assert.equal(catalog.resolveCity('').id, 'cardiff');
   assert.deepEqual(catalog.resolveCity('Bristol'), { id: 'bristol', name: 'Bristol', catalogUrl: '/data/bristol-today.json' });
+  assert.deepEqual(catalog.resolveCity('Birmingham'), { id: 'birmingham', name: 'Birmingham', catalogUrl: '/data/birmingham-today.json' });
   for (const value of ['bath', '../cardiff', 'https://example.org/catalog', '__proto__', 'constructor']) {
     assert.throws(() => catalog.resolveCity(value), /Unsupported catalog city/);
   }
@@ -184,6 +185,29 @@ function cityCatalog(city) {
     evergreen: [pick({ id: city.toLowerCase() + '-backup', title: city + ' backup', role: 'backup' })] };
 }
 function okResponse(data) { return { ok: true, json: async () => data }; }
+
+test('Birmingham loads its own catalog and rejects another city response', async () => {
+  const data = cityCatalog('Birmingham');
+  const browser = browserCatalog({ city: 'birmingham', fetcher: () => okResponse(data) });
+  await browser.api.load();
+  assert.deepEqual(browser.calls.map(call => call.url), ['/data/birmingham-today.json']);
+  assert.match(browser.elements.get('hero-pick').innerHTML, /Birmingham discovery/);
+  assert.throws(() => catalog.validateCatalog(cityCatalog('Cardiff'), 'birmingham'), /does not match Birmingham/);
+});
+
+test('an editorial update does not erase an old source-check warning', async () => {
+  const data = { ...cityCatalog('Bristol'), sourceCheckedAt: '2026-09-01T09:00:00+01:00' };
+  const browser = browserCatalog({ city: 'bristol', fetcher: () => okResponse(data) });
+  await browser.api.load();
+  assert.equal(browser.elements.get('stale-banner').hidden, false);
+  assert.match(browser.elements.get('catalog-freshness').textContent, /Shortlist updated/);
+});
+
+test('directions encode the venue safely and disappear when no location is known', () => {
+  const html = catalog.renderPickCard(pick({ location: 'Gallery & Garden, Bristol' }));
+  assert.match(html, /query=Gallery%20%26%20Garden%2C%20Bristol/);
+  assert.doesNotMatch(catalog.renderPickCard(pick({ location: '' })), /Get directions/);
+});
 
 test('browser load() remains Cardiff-compatible when a page has no city configuration', async () => {
   const data = cityCatalog('Cardiff');

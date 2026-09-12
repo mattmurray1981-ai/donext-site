@@ -73,3 +73,14 @@ Open `/` or `/now.html`. Do not open `index.html` via `file://` — catalog fetc
 
 - `cardiff-activities.js` — legacy hardcoded activities; **not** loaded on the homepage.
 - Old club / leaderboard / swipe / personalisation UI — removed from the public pages.
+
+
+## City pages and publishing
+
+Cardiff, Bristol and Birmingham share the catalog renderer and page templates. Edit `.github/templates/` and run `python3 .github/scripts/generate-city-pages.py`; generated pages are checked in CI. City definitions live in `.github/cities.json`. Each city has its own catalog and both signup forms carry a hidden `city` value. Birmingham uses the approved corrected logo.
+
+Signup links: `/#brief`, `/bristol/#brief`, `/birmingham/#brief`. These collect interest in Friday or weekday emails; no email delivery service is configured in this repository. Confirm Netlify form detection and a recorded test submission before announcing email delivery.
+
+For another city, add its definition and approved assets, register its catalog in the shared renderer, extend the release routes/contract and add aliases in `netlify.toml`. Then regenerate pages and `_redirects`. Run `node --test tests/catalog.test.cjs .github/scripts/deployment.test.mjs`. Direct publishers must preserve this structure and pass the same checks. Publishing old page or renderer copies can undo the signup and expiry fixes.
+
+On 12 September 2026 the three catalogs were reconciled against identical live JSON, normalized to explicit session times, and cleaned of internal sourcing fields. Existing per-event `checkedAt` and catalog research timestamps were retained: this was an editorial repair, not a claim of freshly checked organiser availability.
