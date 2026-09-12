@@ -1,3 +1,4 @@
+import { verifyFunctionRepair } from './function-repairs.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -19,7 +20,7 @@ const same = (left, right) => JSON.stringify(stable(left)) === JSON.stringify(st
 const pause = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 const EMERGENCY_FUNCTION_DONOR_ID = '6a9edc1cea9d1962d4364df8';
 
-export async function deployPreservedSite({ stageDirectory, siteId, token, commitSha = '', recoveryPlan = null, fetchImpl = fetch, sleep = pause, log = console.log }) {
+export async function deployPreservedSite({ stageDirectory, siteId, token, commitSha = '', recoveryPlan = null, functionRepairs = [], fetchImpl = fetch, sleep = pause, log = console.log }) {
   if (!stageDirectory || !siteId || !token) throw new Error('Stage directory, NETLIFY_SITE_ID and NETLIFY_AUTH_TOKEN are required');
   if (!/^[a-zA-Z0-9-]+$/.test(siteId)) throw new Error('Invalid Netlify site ID');
   const root = await fs.realpath(stageDirectory);
@@ -154,19 +155,29 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     }
     const functionsDigest = {};
     const functionsConfig = {};
+    const repairedSources = new Set();
+    const repairBundles = new Map();
     const configKeys = { dn: 'display_name', g: 'generator', bd: 'build_data', p: 'priority', ro: 'routes', er: 'excluded_routes', vcpu: 'vcpu' };
     for (const fn of originalFunctions) {
       if (!/^[a-zA-Z0-9_-]+$/.test(fn.n || '') || !/^[0-9a-f]{64}$/.test(fn.d || '') || functionsDigest[fn.n]) throw new Error('Live function metadata is invalid or duplicated');
       const sources = ['.mjs', '.js', '.ts'].map(extension => `/netlify/functions/${fn.n}${extension}`).filter(file => functionFiles.has(cleanPath(file)));
       if (sources.length !== 1) throw new Error(`Cannot identify exactly one original raw source for function ${fn.n}`);
       const source = cleanPath(sources[0]);
-      if (staged.get(source)?.sha !== functionFiles.get(source).sha) throw new Error(`Function ${fn.n} source changed; unchanged bundle reuse is unsafe`);
       functionsDigest[fn.n] = fn.d;
+      if (staged.get(source)?.sha !== functionFiles.get(source).sha) {
+        const update = functionRepairs.find(repair => repair.name === fn.n);
+        if (!update) throw new Error(`Function ${fn.n} source changed; unchanged bundle reuse is unsafe`);
+        const bytes = await fs.readFile(update.path);
+        functionsDigest[fn.n] = verifyFunctionRepair(update, { name: fn.n, sourcePath: source, oldSha: functionFiles.get(source).sha, newSha: staged.get(source)?.sha, bytes });
+        repairBundles.set(update.sha, { name: fn.n, bytes, invocationMode: update.invocationMode });
+        repairedSources.add(source);
+      }
       functionsConfig[fn.n] = Object.fromEntries(Object.entries(configKeys).filter(([key]) => fn[key] != null).map(([key, outputKey]) => [outputKey, fn[key]]));
+      if (repairBundles.has(functionsDigest[fn.n])) functionsConfig[fn.n].build_data = { ...(fn.bd || {}), runtimeAPIVersion: 2 };
     }
     for (const [key, entry] of staged) {
       if (key.startsWith('/netlify/functions/') || ['/package.json', '/package-lock.json'].includes(key)) {
-        if (functionFiles.get(key)?.sha !== entry.sha) throw new Error(`Function source or dependency input changed: ${entry.path}; new bundles must be prepared separately`);
+        if (functionFiles.get(key)?.sha !== entry.sha && !repairedSources.has(key)) throw new Error(`Function source or dependency input changed: ${entry.path}; new bundles must be prepared separately`);
       }
     }
     async function assertLiveUnchanged() {
@@ -175,7 +186,11 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     }
     async function verifyFunctions(deployId, deployMetadata) {
       const result = await api(`/sites/${siteId}/functions?filter=${encodeURIComponent(`deploy:${deployId}`)}`);
-      if (!Array.isArray(result.functions) || !same(functionState(originalFunctions), functionState(result.functions))) throw new Error('Candidate function bundle or effective configuration changed');
+      const expectedFunctions = originalFunctions.map(fn => {
+        const bundle = repairBundles.get(functionsDigest[fn.n]);
+        return bundle ? { ...fn, d: functionsDigest[fn.n], s: bundle.bytes.length, bd: functionsConfig[fn.n].build_data } : fn;
+      });
+      if (!Array.isArray(result.functions) || !same(functionState(expectedFunctions), functionState(result.functions))) throw new Error('Candidate function bundle or effective configuration changed');
       if (!same(scheduleState(functionDeploy.function_schedules), scheduleState(deployMetadata.function_schedules))) throw new Error('Candidate function schedules changed');
       for (const key of ['functions_region', 'functions_region_overrides']) {
         if (!same(functionDeploy[key] ?? null, deployMetadata[key] ?? null)) throw new Error(`Candidate ${key} changed`);
@@ -242,7 +257,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     const files = Object.fromEntries([...staged.values()].map(entry => [entry.path, entry.sha]));
     const byDigest = new Map([...staged.values()].map(entry => [entry.sha, entry]));
     await assertLiveUnchanged();
-    log(JSON.stringify({ phase: 'verified-inputs', sourceDeployId: liveId, functionSourceDeployId: functionSourceId, originalFiles: originalFiles.length, stagedFiles: staged.size, reusedFunctions: Object.keys(functionsDigest), removedPaths: [...(recovery?.removed.keys() || [])] }));
+    log(JSON.stringify({ phase: 'verified-inputs', sourceDeployId: liveId, functionSourceDeployId: functionSourceId, originalFiles: originalFiles.length, stagedFiles: staged.size, functions: Object.keys(functionsDigest), repairedFunctions: [...repairBundles.values()].map(bundle => bundle.name), removedPaths: [...(recovery?.removed.keys() || [])] }));
     // Leave memory unset: the live platform default is preserved and verified
     // below. Sending an explicit memory configuration can request a paid feature.
     const title = `DoNext preserved site ${commitSha || 'manual'} from ${liveId}`;
@@ -253,7 +268,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
     });
     candidateId = candidate.id;
     if (!/^[0-9a-f]{24}$/.test(candidateId || '')) throw new Error('API did not return a valid draft deployment ID');
-    if (candidate.required_functions?.length || candidate.required_edge_functions?.length) throw new Error('Netlify cannot reuse existing function bundles; draft will not be published');
+    if (candidate.required_edge_functions?.length || (candidate.required_functions || []).some(digest => !repairBundles.has(digest))) throw new Error('Netlify requested an unprepared function bundle; draft will not be published');
     if (!Array.isArray(candidate.required)) throw new Error('Draft did not return a required-file digest list');
     for (const digest of candidate.required) {
       const entry = byDigest.get(digest);
@@ -261,12 +276,17 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
       const encodedPath = entry.path.slice(1).split('/').map(encodeURIComponent).join('/');
       await api(`/deploys/${candidateId}/files/${encodedPath}`, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: entry.bytes });
     }
+    for (const digest of candidate.required_functions || []) {
+      const bundle = repairBundles.get(digest);
+      await api(`/deploys/${candidateId}/functions/${bundle.name}?runtime=js&invocation_mode=${bundle.invocationMode}`, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: bundle.bytes });
+    }
     for (let attempt = 0; candidate.state !== 'ready' && attempt < 90; attempt++) {
       if (['error', 'rejected'].includes(candidate.state)) throw new Error(`Draft processing failed: ${redact(candidate.error_message || candidate.state)}`);
       await sleep(2000);
       candidate = await api(`/sites/${siteId}/deploys/${candidateId}`);
     }
     if (candidate.state !== 'ready') throw new Error('Draft did not become ready within three minutes');
+    log(JSON.stringify({ phase: 'checking-draft', candidateDeployId: candidateId, previewUrl: candidate.deploy_ssl_url }));
     await verifyFunctions(candidateId, candidate);
     const manifest = await verifyManifest(candidateId);
     await verifyDraftHTTP(candidate);
@@ -297,6 +317,7 @@ export async function deployPreservedSite({ stageDirectory, siteId, token, commi
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const recoveryPlan = process.env.NETLIFY_RECOVERY_MANIFEST ? JSON.parse(await fs.readFile(process.env.NETLIFY_RECOVERY_MANIFEST, 'utf8')) : null;
-  deployPreservedSite({ stageDirectory: process.argv[2], siteId: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN, commitSha: process.env.GITHUB_SHA, recoveryPlan })
+  const functionRepairs = process.env.NETLIFY_FUNCTION_REPAIRS ? JSON.parse(await fs.readFile(process.env.NETLIFY_FUNCTION_REPAIRS, 'utf8')) : [];
+  deployPreservedSite({ stageDirectory: process.argv[2], siteId: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN, commitSha: process.env.GITHUB_SHA, recoveryPlan, functionRepairs })
     .catch(error => { console.error(error.message); process.exitCode = 1; });
 }
