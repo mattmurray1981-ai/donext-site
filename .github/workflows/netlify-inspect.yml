@@ -1,0 +1,30 @@
+name: Inspect live files for reconciliation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/netlify-inspect.yml', '.github/scripts/inspect-live-reconciliation.mjs']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    if: github.repository == 'mattmurray1981-ai/donext-site'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.2
+      - name: Capture exact live files without publishing
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ab135705-766e-44d1-b5b9-55c787bd2286
+        run: node .github/scripts/inspect-live-reconciliation.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netlify-reconciliation
+          path: netlify-reconciliation
+          retention-days: 1
