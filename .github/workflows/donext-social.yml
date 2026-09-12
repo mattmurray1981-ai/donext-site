@@ -1,0 +1,64 @@
+name: DoNext direct social publishing
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Validate the queue, check account identities, or publish eligible posts
+        type: choice
+        options: [validate, check, publish]
+        default: validate
+  schedule:
+    - cron: '17,47 * * * *'
+  pull_request:
+    paths: ['.github/social/**', '.github/workflows/donext-social.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: donext-direct-social-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.event_name != 'schedule' || vars.DONEXT_SOCIAL_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.2
+      - run: node --test .github/social/publisher.test.mjs
+      - run: node .github/social/publisher.mjs validate
+
+  operate:
+    needs: validate
+    if: >-
+      github.repository == 'mattmurray1981-ai/donext-site' &&
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'schedule' && vars.DONEXT_SOCIAL_ENABLED == 'true') ||
+       (github.event_name == 'workflow_dispatch' && inputs.mode == 'check') ||
+       (github.event_name == 'workflow_dispatch' && inputs.mode == 'publish' && vars.DONEXT_SOCIAL_ENABLED == 'true'))
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 22.23.2
+      - name: Verify accounts or process the queue
+        env:
+          MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+          GITHUB_TOKEN: ${{ github.token }}
+          META_CARDIFF_PAGE_TOKEN: ${{ secrets.META_CARDIFF_PAGE_TOKEN }}
+          META_BRISTOL_PAGE_TOKEN: ${{ secrets.META_BRISTOL_PAGE_TOKEN }}
+          META_BIRMINGHAM_PAGE_TOKEN: ${{ secrets.META_BIRMINGHAM_PAGE_TOKEN }}
+        run: node .github/social/publisher.mjs "$MODE"
