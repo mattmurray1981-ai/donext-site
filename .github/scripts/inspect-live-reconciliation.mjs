@@ -29,3 +29,6 @@ const latest = await (await get(`/sites/${siteId}`)).json();
 if (latest.published_deploy?.id !== site.published_deploy?.id) throw new Error('Live deploy changed during inspection');
 await fs.writeFile(path.join(output, 'manifest.json'), JSON.stringify({ deployId: site.published_deploy.id, checkedAt: new Date().toISOString(), files: expected }, null, 2));
 console.log(`Inspected ${Object.keys(expected).length} exact files from deploy ${site.published_deploy.id}; no production writes.`);
+
+const inventory = await (await get(`/sites/${siteId}/functions?filter=${encodeURIComponent(`deploy:${site.published_deploy.id}`)}`)).json();
+console.log(JSON.stringify({functions: inventory.functions.map(fn => Object.fromEntries(["n","d","dn","g","bd","p","m","r","rg","s","ro","er","vcpu"].map(key => [key, fn[key] ?? null])))}));
