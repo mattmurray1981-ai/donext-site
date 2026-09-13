@@ -22,7 +22,9 @@ Added two specific workshop alternatives to the earlier Bristol planet-making dr
 
 Additional lead: [Docks Heritage Weekend](https://www.bristolmuseums.org.uk/whats-on/m-shed/docks-heritage-weekend/) has a dated 19–20 September programme, including Saturday paper boats and a Tuesday–Sunday quiz trail. The opened page does not supply complete activity times/pricing/booking. Keep as a lead; do not imply crane visits or boat trips are free. No Docks claim included in this post.
 
-## Published/scheduled caption
+## Corrected caption — live edit pending
+
+The user requested removal of internal production commentary on 13 September 2026. The clean copy below removes that paragraph. This file update does not confirm a live Instagram edit; that remains pending. Preserve the existing post, dates and platform AI disclosure.
 
 NEXT WEEKEND IN BRISTOL 🧡
 19–20 September: three free ways to get making at the South Bristol Arts Trail.
@@ -53,9 +55,11 @@ Map and access: southbristolarts.co.uk/visit/
 DoNext Bristol: donext.co.uk/bristol/
 Details checked 13 September; check the organiser before travelling.
 
-Cover is an AI-generated illustration, not a photograph of the workshops. Original DoNext city logo on slide 2.
-
 #BristolWithKids #SouthBristolArtsTrail #FreeBristol #DoNextBristol
+
+## Caption style correction
+
+Keep production notes, asset provenance, branding instructions and references to logo placement out of public captions and subscriber emails. Public copy should focus on useful family plans. Keep artwork instructions and provenance in internal research notes; preserve required disclosures and use appropriate platform disclosure settings. The daily drafting instructions have been updated accordingly.
 
 ## Higher editorial standard
 
