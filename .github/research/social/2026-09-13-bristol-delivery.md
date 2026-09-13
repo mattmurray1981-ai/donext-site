@@ -2,7 +2,7 @@
 
 ## Delivery record
 
-Status: **scheduled; live publication verification pending**. The user separately authorised pushing the already-connected account after reviewing the draft batch. This action is separate from the draft-only recurring task.
+Status: **PUBLISHED**. Metricool returned Instagram provider status `PUBLISHED` and [the public Instagram permalink](https://www.instagram.com/p/DdOIwbcCnGh/) on verification at `2026-09-13T09:32:17+01:00`. Analytics had not yet ingested the post; publication confirmation comes from the provider's delivery record. The user separately authorised pushing the already-connected account after reviewing the draft batch. This action is separate from the draft-only recurring task.
 
 - Destination: Instagram `@donext_bristol` only, via connected Metricool brand `6899892`.
 - Scheduled for `2026-09-13T09:30:00+01:00`; event dates are **19–20 September**, not today.
