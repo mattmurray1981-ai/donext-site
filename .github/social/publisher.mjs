@@ -136,40 +136,69 @@ export async function publish(post, account, meta, ledger, { sleep = ms => new P
   return { status: 'published', key, mediaId };
 }
 
+export async function operate(mode, queue, accounts, {
+  env = process.env, log = console.log, createMeta = metaClient,
+  createLedger = token => new GitHubLedger(token), now = () => Date.now(), sleep
+} = {}) {
+  if (!['check', 'publish'].includes(mode)) fail('Unknown command');
+  if (env.GITHUB_REPOSITORY !== REPOSITORY) fail('Unexpected repository');
+  if (mode === 'publish' && env.GITHUB_REF !== 'refs/heads/main') fail('Publishing requires main');
+  const report = { accountFailures: [], postFailures: [], published: 0, skipped: 0 };
+  const due = mode === 'publish' ? queue.filter(post => eligible(post, accounts, now())) : [];
+  if (mode === 'publish' && !due.length) { log('No eligible posts. Nothing published.'); return report; }
+  if (due.length > 20) fail('More than 20 due posts; inspect queue before publishing');
+  // An unrelated city with no due content must not block delivery or require a token.
+  const cities = mode === 'check' ? Object.keys(accounts) : [...new Set(due.map(post => post.city))];
+  const clients = {};
+  for (const city of cities) {
+    const token = env[`META_${city.toUpperCase()}_PAGE_TOKEN`];
+    if (!token) { log(`${city}: connection required`); report.accountFailures.push(city); continue; }
+    try {
+      const meta = createMeta(token);
+      const account = await verifyAccount(meta, accounts[city]);
+      clients[city] = { meta, account };
+      log(`${city}: identity verified as @${account.instagramUsername}; publishing permission still needs a live test`);
+    } catch {
+      // Never echo provider errors: a response or unexpected exception may contain credentials.
+      log(`${city}: connection check failed; verify authorisation and expected account identity`);
+      report.accountFailures.push(city);
+    }
+  }
+  if (mode === 'check' || !Object.keys(clients).length) return report;
+  if (!env.GITHUB_TOKEN) fail('Publishing ledger credentials missing');
+  const ledger = createLedger(env.GITHUB_TOKEN);
+  const head = await ledger.api('git/ref/heads/main');
+  if (head.object.sha !== env.GITHUB_SHA) fail('Main changed since checkout; run again from current main');
+  for (const post of due) {
+    if (!eligible(post, accounts, now())) continue;
+    const client = clients[post.city];
+    if (!client) continue;
+    try {
+      // Reload durable state for each independent entry. A failed save must not carry
+      // speculative state or a stale compare-and-swap SHA into the next delivery.
+      await ledger.load();
+      if (!eligible(post, accounts, now())) continue;
+      const result = await publish(post, client.account, client.meta, ledger, { now, sleep });
+      log(JSON.stringify(result));
+      if (result.status === 'published') report.published++;
+      else report.skipped++;
+    } catch {
+      const key = `${post.city}/${post.network}/${post.id}`;
+      log(`${key}: delivery failed or uncertain; inspect the ledger before any retry`);
+      report.postFailures.push(key);
+    }
+  }
+  return report;
+}
+
 async function main() {
   const accounts = JSON.parse(await readFile('.github/social/accounts.json', 'utf8'));
   const queue = validate(JSON.parse(await readFile('.github/social/queue.json', 'utf8')), accounts);
   const mode = process.argv[2] ?? 'validate';
   if (mode === 'validate') { console.log(`Queue valid: ${queue.length} entries. No API calls.`); return; }
-  if (!['check', 'publish'].includes(mode)) fail('Unknown command');
-  if (process.env.GITHUB_REPOSITORY !== REPOSITORY) fail('Unexpected repository');
-  if (mode === 'publish' && process.env.GITHUB_REF !== 'refs/heads/main') fail('Publishing requires main');
-  const clients = {};
-  let missing = false;
-  for (const [city, expected] of Object.entries(accounts)) {
-    if (mode === 'publish' && !expected.enabled) continue;
-    const token = process.env[`META_${city.toUpperCase()}_PAGE_TOKEN`];
-    if (!token) { console.log(`${city}: connection required`); missing = true; continue; }
-    const meta = metaClient(token);
-    const account = await verifyAccount(meta, expected);
-    clients[city] = { meta, account };
-    console.log(`${city}: identity verified as @${account.instagramUsername}; publishing permission still needs a live test`);
-  }
-  if (missing) fail('Account authorisation incomplete');
-  if (mode === 'check') return;
-  const due = queue.filter(post => eligible(post, accounts, Date.now()));
-  if (!due.length) { console.log('No eligible posts. Nothing published.'); return; }
-  if (due.length > 20) fail('More than 20 due posts; inspect queue before publishing');
-  if (!process.env.GITHUB_TOKEN) fail('Publishing ledger credentials missing');
-  const ledger = new GitHubLedger(process.env.GITHUB_TOKEN);
-  const head = await ledger.api('git/ref/heads/main');
-  if (head.object.sha !== process.env.GITHUB_SHA) fail('Main changed since checkout; run again from current main');
-  await ledger.load();
-  for (const post of due) {
-    if (!eligible(post, accounts, Date.now())) continue;
-    const client = clients[post.city];
-    console.log(JSON.stringify(await publish(post, client.account, client.meta, ledger)));
-  }
+  const report = await operate(mode, queue, accounts);
+  console.log(JSON.stringify({ status: 'run-summary', ...report }));
+  if (report.accountFailures.length || report.postFailures.length) fail('Some accounts or posts failed; independent eligible posts were processed. Review the run summary.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch(error => {

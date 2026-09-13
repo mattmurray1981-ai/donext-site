@@ -8,6 +8,10 @@ Implementation prepared; all three cities disabled; empty queue; **no direct Met
 
 ## One-time connection
 
+On 13 September the user authorised managed social posting across the city accounts without a paid scheduler. The recurring content task now includes publication through verified working routes; Bristol's existing free Metricool connection remains usable while direct Meta authorisation is unfinished. Email delivery remains separate. Do not duplicate a campaign across the Metricool and direct routes.
+
+Changes to this publisher on main automatically run a read-only account check. It reports each missing or invalid city connection independently, without printing credential values. A successful identity check still does not prove write permission. Direct publication continues to require both existing enable gates and a current, ready post.
+
 1. Use a Meta developer app with the Instagram API with Facebook Login use case. Each Instagram account must be Professional and linked to its matching Facebook Page. The authorising Facebook account must have the necessary Page/app access. Meta can require additional business verification or app review depending on the app/access arrangement; do not claim that signing in alone completes API setup.
 2. Authorise `pages_show_list`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`, and `pages_manage_posts` for those Pages. Obtain the matching **Page access token** for each city using Meta's supported token flow. Do not use an Instagram Login token with this Facebook Login adapter. Use supported long-lived credentials and track expiry/revocation; this implementation does not refresh them.
 3. Store tokens as GitHub Actions secrets `META_CARDIFF_PAGE_TOKEN`, `META_BRISTOL_PAGE_TOKEN`, `META_BIRMINGHAM_PAGE_TOKEN`. Never send them in chat, commit them, or put them in Actions variables. They are passed only to Meta via an Authorization header. The workflow does not print provider bodies.
