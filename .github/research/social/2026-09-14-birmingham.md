@@ -37,7 +37,7 @@ SUNDAY
 
 Children with a grown-up. The festivals welcome mixed ages; we’d especially pick the Sun and Tudor visit for curious school-age children. Bring coats for the outdoor stops.
 
-Programmes: birminghamheritageweek.co.uk/event/brum-transport-festival/ and /event/moor-pool-heritage-festival/; birmingham.ac.uk/the-exchange/events/helios; birminghammuseums.org.uk/events/marvellous-makers
+Programmes: https://birminghamheritageweek.co.uk/event/brum-transport-festival/; https://birminghamheritageweek.co.uk/event/moor-pool-heritage-festival/; https://www.birmingham.ac.uk/the-exchange/events/helios; https://www.birminghammuseums.org.uk/events/marvellous-makers
 Blakesley booking: https://www.birminghammuseums.org.uk/events/heritage-open-day-and-birmingham-heritage-week-explore-blakesley
 https://donext.co.uk/birmingham/
 
