@@ -257,3 +257,77 @@ test('CLI check emits all connection failures and exits unsuccessfully without t
   assert.deepEqual(summary.accountFailures, ['cardiff', 'bristol', 'birmingham']);
   assert.match(result.stderr, /Some accounts or posts failed/);
 });
+
+async function accountDiagnostic(fetcher, env = operationEnv) {
+  const logs = [];
+  const report = await operate('check', [], accounts, {
+    env, log: message => logs.push(message),
+    createMeta: token => metaClient(token, async (url, options) => {
+      assert.equal(options.method, 'GET');
+      assert.equal(url.pathname, '/v24.0/me');
+      return fetcher(url, options);
+    }),
+    createLedger: () => { throw new Error('Read-only check must not open ledger'); }
+  });
+  assert.deepEqual(report.accountFailures, ['cardiff']);
+  assert.equal(logs.length, 1);
+  assert.equal(logs.join('\n').includes('cardiff-secret'), false);
+  return JSON.parse(logs[0]);
+}
+
+test('read-only checks report missing token without contacting Meta', async () => {
+  const result = await accountDiagnostic(() => { throw new Error('Must not fetch'); }, { ...operationEnv, META_CARDIFF_PAGE_TOKEN: '' });
+  assert.equal(result.reason, 'missing_token');
+  assert.equal(result.status, 'account-check');
+  assert.equal(result.city, 'cardiff');
+});
+
+test('Meta error diagnostics include only safe numeric allowlisted fields', async () => {
+  const result = await accountDiagnostic(async () => ({
+    ok: false, status: 400,
+    json: async () => ({ error: { code: 190, error_subcode: 463, message: 'cardiff-secret', type: 'cardiff-secret', fbtrace_id: 'cardiff-secret', access_token: 'cardiff-secret' } })
+  }));
+  assert.equal(result.reason, 'meta_http_error');
+  assert.equal(result.httpStatus, 400);
+  assert.equal(result.metaCode, 190);
+  assert.equal(result.metaSubcode, 463);
+  assert.deepEqual(Object.keys(result).sort(), ['city', 'httpStatus', 'message', 'metaCode', 'metaSubcode', 'reason', 'result', 'status']);
+  for (const unsafe of ['cardiff-secret', '190', -1, Infinity, 1.5, 1_000_000_001, { value: 190 }]) {
+    const omitted = await accountDiagnostic(async () => ({ ok: false, status: 403, json: async () => ({ error: { code: unsafe, error_subcode: unsafe } }) }));
+    assert.equal(omitted.httpStatus, 403);
+    assert.equal(Object.hasOwn(omitted, 'metaCode'), false);
+    assert.equal(Object.hasOwn(omitted, 'metaSubcode'), false);
+  }
+  const unsafeStatus = await accountDiagnostic(async () => ({ ok: false, status: 'cardiff-secret', json: async () => ({}) }));
+  assert.equal(unsafeStatus.reason, 'meta_http_error');
+  assert.equal(Object.hasOwn(unsafeStatus, 'httpStatus'), false);
+});
+
+test('identity mismatch diagnostics distinguish Page, missing linkage and Instagram username without leaking returned identities', async () => {
+  const cases = [
+    [{ id: '99', instagram_business_account: { id: '22', username: 'cardiff-secret' } }, 'page_id_mismatch'],
+    [{ id: '11' }, 'instagram_account_missing'],
+    [{ id: '11', instagram_business_account: null }, 'instagram_account_missing'],
+    [{ id: '11', instagram_business_account: { id: '22', username: 'cardiff-secret' } }, 'instagram_username_mismatch'],
+    [null, 'malformed_response'],
+    [{ id: 'cardiff-secret' }, 'malformed_response'],
+    [{ id: '11', instagram_business_account: { id: 'cardiff-secret', username: 'donext_cardiff' } }, 'malformed_response']
+  ];
+  for (const [body, reason] of cases) {
+    const result = await accountDiagnostic(async () => ({ ok: true, json: async () => body }));
+    assert.equal(result.reason, reason);
+    assert.equal(Object.hasOwn(result, 'httpStatus'), false);
+  }
+});
+
+test('network and malformed responses remain credential-safe and distinct', async () => {
+  const network = await accountDiagnostic(async () => { throw new Error('cardiff-secret'); });
+  assert.equal(network.reason, 'network_error');
+  const malformed = await accountDiagnostic(async () => ({ ok: true, json: async () => { throw new Error('cardiff-secret'); } }));
+  assert.equal(malformed.reason, 'malformed_response');
+  const missingResponse = await accountDiagnostic(async () => undefined);
+  assert.equal(missingResponse.reason, 'malformed_response');
+  const nonJsonError = await accountDiagnostic(async () => ({ ok: false, status: 502, json: async () => { throw new Error('cardiff-secret'); } }));
+  assert.equal(nonJsonError.reason, 'meta_http_error');
+  assert.equal(nonJsonError.httpStatus, 502);
+});

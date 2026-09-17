@@ -9,6 +9,18 @@ const MAX_AGE = 36 * 60 * 60 * 1000;
 const fail = message => { throw new Error(message); };
 const timestamp = value => typeof value === 'string' && /T.*(Z|[+-]\d\d:\d\d)$/.test(value) && Number.isFinite(Date.parse(value));
 
+// Only locally constructed, fixed diagnostics may reach logs. Provider messages,
+// response bodies, exception messages and credential values are never included.
+class DiagnosticError extends Error {
+  constructor(message, reason, details = {}) {
+    super(message);
+    this.diagnostic = { reason, ...details };
+  }
+}
+const diagnosticFail = (message, reason, details) => { throw new DiagnosticError(message, reason, details); };
+const providerNumber = value => Number.isSafeInteger(value) && value >= 0 && value <= 1_000_000_000;
+const diagnosticDetails = error => error instanceof DiagnosticError ? error.diagnostic : { reason: 'unexpected_error' };
+
 export function validate(queue, accounts) {
   if (!Array.isArray(queue)) fail('Queue must be an array');
   const keys = new Set();
@@ -43,9 +55,24 @@ export function eligible(post, accounts, now) {
 export async function request(url, options = {}, fetcher = fetch) {
   let response;
   try { response = await fetcher(url, { ...options, redirect: 'error', signal: AbortSignal.timeout(30000) }); }
-  catch { fail('Remote request failed; result may be uncertain. Inspect the ledger before retrying.'); }
-  if (!response.ok) fail(`Remote request failed (HTTP ${response.status})`);
-  try { return await response.json(); } catch { fail('Remote response was not JSON'); }
+  catch { diagnosticFail('Remote request failed; result may be uncertain. Inspect the ledger before retrying.', 'network_error'); }
+  if (!response || typeof response.ok !== 'boolean') diagnosticFail('Remote response was malformed', 'malformed_response');
+  if (!response.ok) {
+    const details = {};
+    if (Number.isInteger(response.status) && response.status >= 100 && response.status <= 599) details.httpStatus = response.status;
+    const isMeta = new URL(url).origin === new URL(GRAPH).origin;
+    if (isMeta) {
+      // These numeric fields are the complete allowlist. Do not retain message,
+      // type, trace IDs, URLs or any other provider-controlled value.
+      try {
+        const body = await response.json();
+        if (providerNumber(body?.error?.code)) details.metaCode = body.error.code;
+        if (providerNumber(body?.error?.error_subcode)) details.metaSubcode = body.error.error_subcode;
+      } catch { /* An error body is optional; HTTP status remains useful. */ }
+    }
+    diagnosticFail(`Remote request failed (HTTP ${details.httpStatus ?? 'unknown'})`, isMeta ? 'meta_http_error' : 'remote_http_error', details);
+  }
+  try { return await response.json(); } catch { diagnosticFail('Remote response was not JSON', 'malformed_response'); }
 }
 
 export function metaClient(token, fetcher = fetch) {
@@ -62,9 +89,12 @@ export function metaClient(token, fetcher = fetch) {
 
 export async function verifyAccount(meta, expected) {
   const page = await meta('me', { fields: 'id,name,instagram_business_account{id,username}' });
+  if (!page || !/^\d+$/.test(page.id ?? '')) diagnosticFail('Page identity response was malformed', 'malformed_response');
+  if (expected.pageId && page.id !== expected.pageId) diagnosticFail('Facebook Page ID mismatch', 'page_id_mismatch');
   const ig = page.instagram_business_account;
-  if (!/^\d+$/.test(page.id ?? '') || !/^\d+$/.test(ig?.id ?? '') || ig?.username !== expected.instagramUsername) fail('Token does not identify the expected city Page and linked Instagram account');
-  if (expected.pageId && page.id !== expected.pageId) fail('Facebook Page ID mismatch');
+  if (!ig) diagnosticFail('Expected Page has no visible linked Instagram account', 'instagram_account_missing');
+  if (!/^\d+$/.test(ig.id ?? '') || typeof ig.username !== 'string') diagnosticFail('Linked Instagram identity response was malformed', 'malformed_response');
+  if (ig.username !== expected.instagramUsername) diagnosticFail('Linked Instagram username mismatch', 'instagram_username_mismatch');
   // This proves read access and identity, not permission to publish. The first live test does that.
   return { pageId: page.id, instagramId: ig.id, instagramUsername: ig.username };
 }
@@ -152,15 +182,18 @@ export async function operate(mode, queue, accounts, {
   const clients = {};
   for (const city of cities) {
     const token = env[`META_${city.toUpperCase()}_PAGE_TOKEN`];
-    if (!token) { log(`${city}: connection required`); report.accountFailures.push(city); continue; }
+    if (!token) {
+      log(JSON.stringify({ status: 'account-check', city, result: 'failed', reason: 'missing_token', message: `${city}: connection required` }));
+      report.accountFailures.push(city); continue;
+    }
     try {
       const meta = createMeta(token);
       const account = await verifyAccount(meta, accounts[city]);
       clients[city] = { meta, account };
       log(`${city}: identity verified as @${account.instagramUsername}; publishing permission still needs a live test`);
-    } catch {
-      // Never echo provider errors: a response or unexpected exception may contain credentials.
-      log(`${city}: connection check failed; verify authorisation and expected account identity`);
+    } catch (error) {
+      // Identity failure alone does not establish that a credential is invalid.
+      log(JSON.stringify({ status: 'account-check', city, result: 'failed', ...diagnosticDetails(error), message: `${city}: connection check failed; verify authorisation and expected account identity` }));
       report.accountFailures.push(city);
     }
   }
