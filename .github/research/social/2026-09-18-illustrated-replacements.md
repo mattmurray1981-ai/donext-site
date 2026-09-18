@@ -120,3 +120,34 @@ Recheck factual validity if publishing on a later date. All subscriber emails re
 
 ## Design standard going forward
 Orange, cream, navy and teal; tactile illustration, recognisable activity, bold child-centred headline. One idea per slide, legible logistics, exact approved city logo. Keep production notes and asset names out of public captions. Do not repeat plain text-box cards. Use AI disclosure for generated illustration; never present it as venue photography.
+
+
+## Completed replacement delivery — 18 September 2026, 11:05 BST
+User confirmed permanent deletion at action time. All four old Instagram posts deleted individually and absence verified; all four Facebook versions moved to 30-day trash, confirmed by Meta success toast and absence. Initial mixed-network bulk operation failed with 'Posts not moved to trash'; no blind repeat. Facebook-only batch then succeeded.
+
+Removed Instagram IDs: 17946630684338736, 18206029633365409, 18194134087381626, 18116515490286434.
+Removed Facebook IDs: 122108936835467906, 122108233065467906, 122107344453467906, 122106439047467906.
+
+Four replacements submitted once for 11:04 BST, all eight destinations confirmed PUBLISHED. This is an explicitly requested one-off replacement of prior campaigns, not the normal daily publishing cadence.
+
+### Big days out. Small bill. 🧡
+Metricool ID 378018759; UUID 8096888922864568545; AI disclosure enabled.
+- facebook: PUBLISHED — https://facebook.com/122102722563467906/posts/122109537033467906
+- instagram: PUBLISHED — https://www.instagram.com/p/DdbLd58CNoV/
+
+### Little hands. Big ideas. Zero entry bill. 🎨
+Metricool ID 378018905; UUID 5844030078468967935; AI disclosure enabled.
+- facebook: PUBLISHED — https://facebook.com/122102722563467906/posts/122109537021467906
+- instagram: PUBLISHED — https://www.instagram.com/p/DdbLd6OCOlX/
+
+### Tiny people. Big singalong. 🎵
+Metricool ID 378019044; UUID 3238146788413427462; AI disclosure enabled.
+- facebook: PUBLISHED — https://facebook.com/122102722563467906/posts/122109537039467906
+- instagram: PUBLISHED — https://www.instagram.com/p/DdbLd34iGB3/
+
+### A little detective mission for your next Bristol day out 🔎
+Metricool ID 378019226; UUID 3886941544220149643; AI disclosure enabled.
+- facebook: PUBLISHED — https://facebook.com/122102722563467906/posts/122109537027467906
+- instagram: PUBLISHED — https://www.instagram.com/p/DdbLd3viPZ4/
+
+Today's weekend roundup remains PENDING for 15:30 BST, unchanged UUID -8515379660775473028. Original Arts Trail preserved; its caption edited in place to remove 'Original DoNext city logo on slide 2.' and saved. No email sent. No paid services purchased.
